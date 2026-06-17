@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast-Track: Amazon KDP з ШІ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              DEFAULT: '#05070a',
+              light: '#0a0f1a',
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #a855f7 0%, #6366f1 45%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-btn {
+      background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+    }
+
+    .neon-border {
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.15),
+        inset 0 0 20px rgba(59, 130, 246, 0.03);
+    }
+
+    .bonus-accent {
+      display: inline;
+      font-weight: 800;
+      font-size: 1.05em;
+      background: linear-gradient(90deg, #e9d5ff 0%, #a78bfa 35%, #818cf8 70%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.45));
+    }
+
+    @media (min-width: 640px) {
+      .bonus-accent { font-size: 1.12em; }
+    }
+
+    .header-btn-border {
+      border: 1px solid rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 18px rgba(139, 92, 246, 0.2);
+    }
+
+    .hero-bg {
+      background-color: #05070a;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 70% at 55% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 85% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    }
+
+    .speaker-glow {
+      background: radial-gradient(ellipse 70% 80% at 50% 55%, rgba(99, 102, 241, 0.35) 0%, rgba(139, 92, 246, 0.15) 40%, transparent 70%);
+    }
+
+    .speaker-photo {
+      image-rendering: auto;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .timer-digit {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.12);
+    }
+
+    .names-line {
+      white-space: nowrap;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    @media (min-width: 1024px) {
+      .names-line { font-size: 0.625rem; }
+    }
+
+    @media (min-width: 1280px) {
+      .names-line { font-size: 0.75rem; }
+    }
+
+    @media (min-width: 1536px) {
+      .names-line { font-size: 0.875rem; }
+    }
+
+    .audience-card {
+      background: #f3f4f6;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .audience-card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .audience-card-body {
+        padding: 1.5rem;
+      }
+    }
+
+    .audience-card-title {
+      flex-shrink: 0;
+      margin-bottom: 0.625rem;
+      font-size: 0.875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: #111827;
+    }
+
+    @media (min-width: 640px) {
+      .audience-card-title {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    .audience-card-text {
+      margin: 0;
+      flex: 1;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: #374151;
+      text-align: justify;
+      text-justify: inter-word;
+      text-wrap: pretty;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    .why-text {
+      text-align: justify;
+      text-justify: inter-word;
+      text-wrap: pretty;
+      hyphens: auto;
+    }
+
+    .why-card {
+      background: linear-gradient(135deg, #0f1420 0%, #12101f 50%, #0a0e18 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .book-3d {
+      perspective: 900px;
+      width: 140px;
+      height: 180px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) {
+      .book-3d { width: 160px; height: 200px; }
+    }
+
+    .book-3d-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: rotateY(-22deg) rotateX(8deg);
+      transform-style: preserve-3d;
+    }
+
+    .book-cover {
+      position: absolute;
+      inset: 0;
+      border-radius: 4px 10px 10px 4px;
+      background: linear-gradient(145deg, #1e293b 0%, #0f172a 60%, #1a1040 100%);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(139, 92, 246, 0.15),
+        inset 0 0 40px rgba(59, 130, 246, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transform: translateZ(12px);
+    }
+
+    .book-spine {
+      position: absolute;
+      left: -14px;
+      top: 4px;
+      width: 18px;
+      height: calc(100% - 8px);
+      background: linear-gradient(180deg, #ff9900 0%, #e88b00 50%, #cc7a00 100%);
+      border-radius: 3px 0 0 3px;
+      transform: rotateY(-90deg) translateZ(0px);
+      transform-origin: right center;
+      box-shadow: -4px 0 12px rgba(255, 153, 0, 0.3);
+    }
+
+    .book-pages {
+      position: absolute;
+      inset: 4px 0 4px 8px;
+      background: linear-gradient(90deg, #e2e8f0 0%, #f8fafc 100%);
+      border-radius: 2px 8px 8px 2px;
+      transform: translateZ(0);
+    }
+
+    .amazon-a {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      font-family: Inter, sans-serif;
+    }
+
+    .amazon-smile {
+      width: 52px;
+      height: 8px;
+      border-bottom: 4px solid #ff9900;
+      border-radius: 0 0 50% 50%;
+      margin-top: -4px;
+    }
+
+    .how-step {
+      background: #fff;
+      border: 1px solid rgba(139, 92, 246, 0.12);
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.06);
+    }
+
+    .how-step-num {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      align-self: center;
+      background: linear-gradient(135deg, #a855f7, #3b82f6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 1;
+      color: white;
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+
+    .how-step-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+
+    .how-section-bg {
+      background-color: #f4f2fa;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 20% 0%, rgba(168, 85, 247, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    }
+
+    .bonus-section {
+      background-color: #f4f2fa;
+      background-image:
+        radial-gradient(ellipse 60% 50% at 10% 0%, rgba(168, 85, 247, 0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 95% 100%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+    }
+
+    .bonus-bento {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(59, 130, 246, 0.35), rgba(99, 102, 241, 0.4));
+      border-radius: 20px;
+      padding: 1px;
+      box-shadow: 0 20px 50px rgba(99, 102, 241, 0.12);
+    }
+
+    .bonus-bento-inner {
+      background: #fff;
+      border-radius: 19px;
+    }
+
+    .bonus-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6d28d9;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .bonus-card {
+      background: linear-gradient(145deg, #0c0c0f 0%, #12101f 55%, #0a0e18 100%);
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .bonus-card-glow {
+      position: absolute;
+      right: -15%;
+      bottom: -25%;
+      width: 65%;
+      height: 50%;
+      background: radial-gradient(ellipse at 60% 60%, rgba(59, 130, 246, 0.5) 0%, rgba(139, 92, 246, 0.3) 40%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .bonus-step-num {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      color: white;
+      background: linear-gradient(135deg, #a855f7, #3b82f6);
+    }
+
+    .bonus-perk {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.07) 0%, rgba(59, 130, 246, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.14);
+      border-radius: 12px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .bonus-perk:hover {
+      border-color: rgba(139, 92, 246, 0.28);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.08);
+    }
+
+    .bonus-perk-title {
+      background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .goal-section {
+      background-color: #030304;
+      background-image:
+        radial-gradient(ellipse 55% 45% at 0% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 100% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    }
+
+    .goal-headline {
+      font-size: clamp(1.35rem, 4vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .goal-headline .muted {
+      color: rgba(255, 255, 255, 0.32);
+    }
+
+    .goal-icon-tile {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #12121a 0%, #0a0a10 100%);
+      border: 1px solid rgba(139, 92, 246, 0.22);
+      box-shadow:
+        0 0 28px rgba(99, 102, 241, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .goal-icon-tile svg {
+      filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.55));
+    }
+
+    .goal-block-title {
+      background: linear-gradient(90deg, #c084fc 0%, #818cf8 45%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .inside-section {
+      background: linear-gradient(180deg, #e6e0f8 0%, #f9f7ff 55%, #ffffff 100%);
+    }
+
+    .inside-video-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f6f4fb 55%, #f3f1f8 100%);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(139, 92, 246, 0.1);
+      box-shadow: 0 2px 12px rgba(99, 102, 241, 0.05);
+    }
+
+    .inside-step-num {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      align-self: center;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+      color: white;
+      background: linear-gradient(135deg, #a855f7, #3b82f6);
+      box-shadow: 0 3px 10px rgba(139, 92, 246, 0.22);
+    }
+
+    .inside-video-title {
+      font-size: 0.8125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      color: #111827;
+    }
+
+    @media (min-width: 640px) {
+      .inside-video-title {
+        font-size: 0.875rem;
+      }
+    }
+
+    .inside-video-desc {
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: #4b5563;
+    }
+
+    .reviews-section {
+      background-color: #f4f2fa;
+      background-image:
+        radial-gradient(ellipse 60% 50% at 90% 0%, rgba(168, 85, 247, 0.1) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+    }
+
+    .video-card {
+      background: #fff;
+      border: 1px solid rgba(139, 92, 246, 0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.07);
+    }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0a0a0f;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .speakers-section {
+      background-color: #030304;
+      background-image:
+        radial-gradient(ellipse 50% 40% at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 100% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    }
+
+    .speaker-name {
+      background: linear-gradient(180deg, #38bdf8 0%, #6366f1 45%, #a855f7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .speaker-card {
+      position: relative;
+      border-radius: 16px;
+      border: 1px solid rgba(59, 130, 246, 0.18);
+      background: linear-gradient(145deg, rgba(12, 12, 18, 0.95) 0%, rgba(8, 10, 16, 0.98) 100%);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .speaker-card-glow {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 55%;
+      background: radial-gradient(ellipse at 50% 90%, rgba(59, 130, 246, 0.3) 0%, rgba(99, 102, 241, 0.12) 45%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .speaker-photo-slot {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 200px;
+      overflow: hidden;
+      border-radius: 12px;
+      background:
+        radial-gradient(ellipse 95% 55% at 50% 0%, rgba(0, 0, 0, 0.5) 0%, transparent 58%),
+        radial-gradient(ellipse 70% 65% at 50% 88%, rgba(59, 130, 246, 0.22) 0%, transparent 62%);
+    }
+
+    /* Підсвітка за спікером */
+    .speaker-photo-slot::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      transform: translateX(-50%);
+      width: 72%;
+      height: 70%;
+      background: radial-gradient(ellipse at 50% 65%, rgba(59, 130, 246, 0.5) 0%, rgba(99, 102, 241, 0.22) 38%, transparent 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Тінь під ногами */
+    .speaker-photo-slot::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 4%;
+      transform: translateX(-50%);
+      width: 58%;
+      height: 18px;
+      background: radial-gradient(ellipse, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 45%, transparent 72%);
+      filter: blur(8px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .speaker-photo-slot img {
+      position: relative;
+      z-index: 2;
+      max-height: 260px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+      image-rendering: auto;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      filter:
+        drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55))
+        drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35))
+        drop-shadow(0 0 40px rgba(59, 130, 246, 0.12));
+    }
+
+    .speaker-stat-value {
+      font-size: 0.95rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .speaker-stat-label {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.42);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 3px;
+      line-height: 1.2;
+    }
+
+    .pricing-text-card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(139, 92, 246, 0.14);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+      padding: 1.25rem 1.35rem;
+    }
+
+    @media (min-width: 640px) {
+      .pricing-text-card { padding: 1.5rem 1.75rem; }
+    }
+
+    .pricing-hl {
+      font-weight: 700;
+      color: #5b21b6;
+    }
+
+    .faq-section {
+      background: #fff;
+    }
+
+    .faq-title {
+      font-size: clamp(1.65rem, 4.2vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #0a0a0a;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .faq-title { margin-bottom: 2.25rem; }
+    }
+
+    .faq-list {
+      border-top: 1px solid #e8eaed;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e8eaed;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1.35rem 0;
+      text-align: left;
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: #0a0a0a;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+
+    @media (min-width: 640px) {
+      .faq-question {
+        font-size: 1.125rem;
+        padding: 1.5rem 0;
+      }
+    }
+
+    .faq-question:hover {
+      color: #1f2937;
+    }
+
+    .faq-caret {
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+      color: #0a0a0a;
+      transition: transform 0.22s ease;
+      transform: rotate(0deg);
+    }
+
+    .faq-item.is-open .faq-caret {
+      transform: rotate(90deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 2rem 1.35rem 0;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: #111827;
+      font-weight: 400;
+    }
+
+    @media (min-width: 640px) {
+      .faq-answer-inner {
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+        max-width: 92%;
+      }
+    }
+
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      background-color: #05070a;
+      background-image:
+        radial-gradient(ellipse 90% 80% at 50% 45%, rgba(124, 58, 237, 0.42) 0%, transparent 58%),
+        radial-gradient(ellipse 55% 45% at 15% 85%, rgba(59, 130, 246, 0.28) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 88% 15%, rgba(168, 85, 247, 0.22) 0%, transparent 50%);
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(5, 7, 10, 0.4) 100%);
+      pointer-events: none;
+    }
+
+    .final-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.75rem;
+      border-radius: 14px;
+      font-size: 0.8125rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(90deg, #9333ea 0%, #6366f1 45%, #2563eb 100%);
+      box-shadow:
+        0 0 48px rgba(147, 51, 234, 0.55),
+        0 12px 32px rgba(37, 99, 235, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    @media (min-width: 640px) {
+      .final-cta-btn {
+        padding: 1.15rem 2.25rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    .final-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 0 56px rgba(147, 51, 234, 0.65),
+        0 16px 40px rgba(37, 99, 235, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      opacity: 0.96;
+    }
+
+    .final-cta-note {
+      margin-top: 1.5rem;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    .site-footer {
+      background: #030508;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .site-footer a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.45);
+      transition: color 0.2s;
+    }
+
+    .site-footer a:hover {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-white bg-navy">
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-screen flex flex-col overflow-hidden">
+
+    <!-- Header -->
+    <header class="w-full px-4 sm:px-6 lg:px-10 pt-5 pb-4">
+      <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 shrink-0 order-1 lg:order-none">
+          <span class="flex gap-[3px]">
+            <span class="w-[3px] h-5 bg-white rounded-full"></span>
+            <span class="w-[3px] h-5 bg-white/70 rounded-full"></span>
+          </span>
+          <span class="text-sm sm:text-base font-bold tracking-[0.15em] uppercase">Fast-Track</span>
+        </a>
+
+        <!-- Navigation -->
+        <nav class="order-3 lg:order-none w-full lg:w-auto">
+          <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2 sm:gap-x-7 text-[11px] sm:text-xs font-medium tracking-wide text-gray-300 uppercase">
+            <li><a href="#for-whom" class="hover:text-white transition-colors">Для кого</a></li>
+            <li><a href="#how-it-works" class="hover:text-white transition-colors">Програма</a></li>
+            <li><a href="#authors" class="hover:text-white transition-colors">Про авторів</a></li>
+            <li><a href="#results" class="hover:text-white transition-colors">Результати</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header CTA -->
+        <a href="#join"
+           class="order-2 lg:order-none shrink-0 header-btn-border rounded px-4 py-2.5 text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+          ОТРИМАТИ ДОСТУП
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Hero Content -->
+    <div class="flex-1 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pb-10 lg:pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-2 xl:gap-4 items-end min-h-0">
+
+        <!-- Left Column -->
+        <div class="lg:col-span-4 flex flex-col justify-center order-1 lg:order-none pt-4 lg:pt-8 lg:pb-4 lg:pr-2 xl:pr-4">
+
+          <p class="text-[11px] sm:text-xs font-medium tracking-wide text-purple-300/90 mb-4 sm:mb-5">
+            Онлайн-інтенсив. Старт одразу після оплати.
+          </p>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-[2.75rem] font-extrabold leading-[1.1] tracking-tight mb-5 sm:mb-6">
+            <span class="gradient-text">Fast-Track:</span>
+            <span class="text-white"> Як підкорити Amazon KDP за допомогою ШІ</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-7 sm:mb-8">
+            Стабільний дохід у валюті на книгах — без складів та письменницького таланту. Отримайте покрокову модель всього за один вечір!
+          </p>
+
+          <a href="#join"
+             id="join"
+             class="gradient-btn inline-flex flex-row items-center justify-center gap-2 w-full px-4 sm:px-6 py-4 rounded-lg text-xs sm:text-sm lg:text-base font-bold text-white shadow-lg shadow-purple-900/30 hover:opacity-90 transition-opacity whitespace-nowrap">
+            <span>Отримати доступ за 499 грн</span>
+            <span class="text-white/70 font-medium text-[10px] sm:text-xs shrink-0">(замість <s class="opacity-80">3000 грн</s>)</span>
+          </a>
+
+          <!-- Countdown Timer -->
+          <div class="mt-6 sm:mt-8">
+            <p class="text-sm sm:text-base font-semibold text-gray-300 mb-4">
+              Спеціальна ціна діє до:
+            </p>
+            <div id="countdown" class="flex gap-3 sm:gap-4" aria-live="polite">
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
+                <span id="cd-days" class="block text-2xl sm:text-4xl font-extrabold text-white tabular-nums leading-none">00</span>
+                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">днів</span>
+              </div>
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
+                <span id="cd-hours" class="block text-2xl sm:text-4xl font-extrabold text-white tabular-nums leading-none">00</span>
+                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">год</span>
+              </div>
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
+                <span id="cd-mins" class="block text-2xl sm:text-4xl font-extrabold text-white tabular-nums leading-none">00</span>
+                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">хв</span>
+              </div>
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
+                <span id="cd-secs" class="block text-2xl sm:text-4xl font-extrabold gradient-text tabular-nums leading-none">00</span>
+                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">сек</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Column — Speakers Photo -->
+        <div class="lg:col-span-5 flex items-end justify-center order-2 lg:order-none relative z-10 -my-4 lg:my-0">
+          <div class="speaker-glow absolute inset-0 pointer-events-none"></div>
+          <div class="relative w-full max-w-[420px] sm:max-w-[500px] md:max-w-[580px] lg:max-w-[640px] xl:max-w-[720px] flex items-end justify-center">
+            <img
+              src="images/speakers.png"
+              width="972"
+              height="1024"
+              alt="Олег Бєлоцерковець та Микола Матушевський — спікери інтенсиву"
+              class="speaker-photo w-full h-auto max-h-[520px] sm:max-h-[580px] md:max-h-[640px] lg:max-h-[680px] xl:max-h-[720px] object-contain object-bottom"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="lg:col-span-3 flex flex-col justify-center gap-4 sm:gap-5 order-3 lg:order-none lg:pl-2 xl:pl-4 pt-2 lg:pt-8 lg:pb-8">
+
+          <!-- Speakers -->
+          <div class="w-full min-w-0">
+            <p class="names-line font-bold text-white leading-tight">
+              Олег Бєлоцерковець &amp; Микола Матушевський
+            </p>
+          </div>
+
+          <!-- Offer Magnet -->
+          <div class="neon-border rounded-lg bg-white/[0.02] px-5 py-5 sm:px-6 sm:py-6">
+            <p class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-purple-400 mb-3">
+              🎁 ГАРАНТОВАНИЙ БОНУС
+            </p>
+            <p class="text-sm sm:text-[15px] text-gray-200 leading-relaxed">
+              Після оплати ви отримуєте
+              <span class="bonus-accent">стратегічну сесію у подарунок</span>
+              з експертом для розбору вашого індивідуального плану.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Audience Section -->
+  <section id="for-whom" class="bg-white text-gray-900 py-14 sm:py-16 lg:py-20">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-10 sm:mb-12 lg:mb-14 max-w-4xl">
+        Кому варто приєднатися?
+      </h2>
+
+      <!-- Row 1: 3 cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+
+        <article class="audience-card rounded-xl overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden shrink-0">
+            <img src="images/audience/moms.png" alt="Мами в декреті" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="audience-card-body">
+            <h3 class="audience-card-title">Мами в декреті</h3>
+            <p class="audience-card-text">
+              Коли дитина спить, у вас є 2–3 години вільного часу. Замість гортання стрічки соцмереж ви можете створити актив, який приносить власні гроші в доларах та євро.
+            </p>
+          </div>
+        </article>
+
+        <article class="audience-card rounded-xl overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden shrink-0">
+            <img src="images/audience/employees.png" alt="Ті, хто працюють в наймі" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="audience-card-body">
+            <h3 class="audience-card-title">Ті, хто працюють в наймі</h3>
+            <p class="audience-card-text">
+              Якщо вам набридло працювати зранку до вечора за фіксовану зарплату і ви хочете додатковий дохід у валюті, не звільняючись з роботи прямо зараз.
+            </p>
+          </div>
+        </article>
+
+        <article class="audience-card rounded-xl overflow-hidden md:col-span-2 lg:col-span-1">
+          <div class="aspect-[4/3] overflow-hidden shrink-0">
+            <img src="images/audience/freelancers.png" alt="Фрілансери та маркетологи" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="audience-card-body">
+            <h3 class="audience-card-title">Фрілансери та маркетологи</h3>
+            <p class="audience-card-text">
+              Якщо ви втомилися від нескінченних правок клієнтів, демпінгу та роботи ночами. Час створити свій проєкт, який працює на вас 24/7.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Row 2: 2 cards centered -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6 mt-5 sm:mt-6 items-stretch">
+
+        <article class="audience-card rounded-xl overflow-hidden lg:col-span-2 lg:col-start-2">
+          <div class="aspect-[4/3] overflow-hidden shrink-0">
+            <img src="images/audience/emigrants.png" alt="Ті, хто за кордоном" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="audience-card-body">
+            <h3 class="audience-card-title">Ті, хто за кордоном</h3>
+            <p class="audience-card-text">
+              Якщо ви переїхали, зіткнулися з мовним бар'єром і важко знайти хорошу роботу на місці. Цьому бізнесу байдуже, де ви перебуваєте фізично.
+            </p>
+          </div>
+        </article>
+
+        <article class="audience-card rounded-xl overflow-hidden lg:col-span-2">
+          <div class="aspect-[4/3] overflow-hidden shrink-0">
+            <img src="images/audience/entrepreneurs.png" alt="Підприємці" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="audience-card-body">
+            <h3 class="audience-card-title">Підприємці</h3>
+            <p class="audience-card-text">
+              Якщо ви втомилися від товарного бізнесу з його касовими розривами, закупівлями, складами, доставкою та митницею. Тут цього просто немає.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Now Section -->
+  <section class="bg-[#05070a] text-white py-14 sm:py-16 lg:py-20 border-t border-white/5">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+
+      <!-- Card: book + text -->
+      <div class="why-card rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 mb-8 sm:mb-10 lg:mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div class="lg:col-span-4 flex justify-center lg:justify-start py-4 lg:py-2">
+            <div class="book-3d" aria-hidden="true">
+              <div class="book-3d-inner">
+                <div class="book-pages"></div>
+                <div class="book-spine"></div>
+                <div class="book-cover">
+                  <span class="amazon-a">a</span>
+                  <span class="amazon-smile"></span>
+                  <span class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">KDP Book</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-8">
+            <p class="why-text text-xs sm:text-sm lg:text-[15px] text-gray-300 leading-[1.7]">
+              Продовжувати сподіватися, що фінансова свобода чи додатковий дохід з'являться самі собою — програшний варіант. Настав час змінювати правила гри. Але давайте відверто: <strong class="text-white font-semibold">жодні зміни не почнуться,</strong> поки ви не усвідомите, що робота в наймі або класичний бізнес забирають 100% вашого часу і не приносять бажаного доходу. Чим довше ви ігноруєте нові технології та глобальні ринки, <strong class="text-white font-semibold">тим важче буде зробити прорив.</strong> Ви не винні, що раніше запуск бізнесу вимагав тисяч доларів. Але у 2026 році не використовувати штучний інтелект для заробітку це свідома відмова від капіталу. Наша експрес-діагностика допоможе вам <strong class="text-white font-semibold">отримати чіткий план та зрозуміти, як вийти на&nbsp;дохід&nbsp;$2000+&nbsp;в&nbsp;місяць.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom: headline + CTA -->
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold uppercase leading-[1.15] tracking-tight max-w-2xl text-center lg:text-left">
+          <span class="gradient-text">Настав час змінювати</span>
+          <span class="text-white"> правила гри</span>
+        </h2>
+        <a href="#join"
+           class="gradient-btn shrink-0 inline-flex items-center justify-center px-8 sm:px-10 py-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all text-center whitespace-nowrap">
+          Приєднатися до інтенсиву
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="how-section-bg text-gray-900 py-14 sm:py-16 lg:py-20">
+    <div class="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-10">
+
+      <h2 class="text-center text-2xl sm:text-3xl lg:text-[2.75rem] font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10">
+        <span class="text-gray-900">Як це </span>
+        <span class="gradient-text">працює?</span>
+      </h2>
+
+      <div class="space-y-3 sm:space-y-4">
+
+        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
+          <span class="how-step-num">1</span>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
+              Як влаштований бізнес на Amazon KDP
+            </h3>
+            <p class="text-sm text-gray-600 leading-snug">
+              Крок за кроком розбираєте, як працює Amazon KDP у 2026 році та чому цей ринок приносить $33 млрд на рік.
+            </p>
+          </div>
+        </article>
+
+        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
+          <span class="how-step-num">2</span>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
+              Алгоритм вибору прибуткової ніші
+            </h3>
+            <p class="text-sm text-gray-600 leading-snug">
+              Вчитеся знаходити теми книг, які приносять від $2000 на місяць, і не витрачати свій час задарма.
+            </p>
+          </div>
+        </article>
+
+        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
+          <span class="how-step-num">3</span>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
+              Реальні цифри та кейси
+            </h3>
+            <p class="text-sm text-gray-600 leading-snug">
+              На прикладі наших особистих кабінетів та кабінетів учнів ви бачите, скільки роялті приносять книги.
+            </p>
+          </div>
+        </article>
+
+        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
+          <span class="how-step-num">4</span>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
+              Покроковий план запуску
+            </h3>
+            <p class="text-sm text-gray-600 leading-snug">
+              Отримуєте чіткий алгоритм дій: від швидкого аналізу ринку до публікації першої книги.
+            </p>
+          </div>
+        </article>
+
+        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
+          <span class="how-step-num">5</span>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
+              Розбір страхів та бар'єрів
+            </h3>
+            <p class="text-sm text-gray-600 leading-snug">
+              Переконуєтеся, що відсутність англійської чи навичок письменника більше не є перешкодою завдяки ШІ.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-8 sm:mt-10">
+        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-8 py-3.5 rounded-xl text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/25">
+          Приєднатися до інтенсиву
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Bonus -->
+  <section id="bonus" class="bonus-section text-gray-900 py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[920px] mx-auto px-4 sm:px-6">
+
+      <div class="text-center mb-6 sm:mb-7">
+        <span class="bonus-pill mb-3 mx-auto">🎁 Головний бонус</span>
+        <h2 class="text-xl sm:text-2xl lg:text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight">
+          <span class="gradient-text">Персональна стратегічна сесія</span>
+        </h2>
+      </div>
+
+      <div class="bonus-bento">
+        <div class="bonus-bento-inner p-4 sm:p-5">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+            <!-- How to get -->
+            <div class="bonus-card p-4 sm:p-5 flex flex-col">
+              <div class="bonus-card-glow" aria-hidden="true"></div>
+              <div class="relative z-10 flex flex-col h-full">
+                <h3 class="text-xs font-extrabold uppercase tracking-wider text-purple-300/90 mb-3">
+                  Як його отримати
+                </h3>
+                <ol class="space-y-2.5 flex-1">
+                  <li class="flex items-start gap-2.5 text-[13px] sm:text-sm text-gray-200 leading-snug">
+                    <span class="bonus-step-num">1</span>
+                    <span>Переглянути 5 відеолекцій.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5 text-[13px] sm:text-sm text-gray-200 leading-snug">
+                    <span class="bonus-step-num">2</span>
+                    <span>Заповнити коротку анкету діагностики.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5 text-[13px] sm:text-sm text-gray-200 leading-snug">
+                    <span class="bonus-step-num">3</span>
+                    <span>Зв'язатися з менеджером та узгодити час сесії.</span>
+                  </li>
+                </ol>
+                <p class="mt-3 pt-3 border-t border-white/10 text-[12px] text-gray-400 leading-snug">
+                  <strong class="text-gray-300 font-semibold">Важливо:</strong> бонус доступний 30 днів з моменту оплати.
+                </p>
+              </div>
+            </div>
+
+            <!-- What you get -->
+            <div class="flex flex-col min-w-0">
+              <h3 class="text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-3">
+                Що ви отримаєте
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 flex-1">
+                <article class="bonus-perk p-3">
+                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
+                    Зустріч з експертами
+                  </p>
+                  <p class="text-[12px] text-gray-600 leading-snug">
+                    Зустрінетеся з Олегом Бєлоцерковцем та Миколою Матушевським.
+                  </p>
+                </article>
+                <article class="bonus-perk p-3">
+                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
+                    Ваша ситуація
+                  </p>
+                  <p class="text-[12px] text-gray-600 leading-snug">
+                    Заглибитеся у ваші стартові можливості: бюджет, час, навички.
+                  </p>
+                </article>
+                <article class="bonus-perk p-3">
+                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
+                    Сліпі зони
+                  </p>
+                  <p class="text-[12px] text-gray-600 leading-snug">
+                    Побачите, що заважає вам запустити онлайн-бізнес.
+                  </p>
+                </article>
+                <article class="bonus-perk p-3">
+                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
+                    $2000+ / місяць
+                  </p>
+                  <p class="text-[12px] text-gray-600 leading-snug">
+                    Отримаєте персональну стратегію виходу на $2000+ на місяць.
+                  </p>
+                </article>
+              </div>
+              <p class="mt-3 text-[11px] sm:text-[12px] text-gray-500 leading-snug">
+                Якщо попросите — спеціаліст розповість про формат і спецумови системного менторства.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-6">
+        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-7 py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/20">
+          Отримати бонус
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Goal -->
+  <section id="goal" class="goal-section py-12 sm:py-14 lg:py-16">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
+
+      <h2 class="goal-headline text-white mb-6 sm:mb-8 max-w-3xl">
+        Вийти із <span class="muted">замкнутого кола</span> фінансових обмежень та повернути віру у власні сили
+      </h2>
+
+      <p class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-gray-500 mb-5 sm:mb-6">
+        Наша мета:
+      </p>
+
+      <div class="space-y-6 sm:space-y-7">
+
+        <article class="flex gap-4 sm:gap-5 items-start">
+          <div class="goal-icon-tile" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L14.5 8.5L20 9.5L16 13.5L17 19L12 16.5L7 19L8 13.5L4 9.5L9.5 8.5L12 3Z" fill="url(#goal-grad-1)"/>
+              <defs>
+                <linearGradient id="goal-grad-1" x1="4" y1="3" x2="20" y2="19" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#a855f7"/>
+                  <stop offset="1" stop-color="#3b82f6"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0 pt-0.5">
+            <h3 class="goal-block-title text-sm sm:text-base font-extrabold uppercase tracking-tight leading-tight mb-2">
+              Реальні точки зростання
+            </h3>
+            <p class="text-[13px] sm:text-sm text-gray-300 leading-relaxed">
+              Допомогти вам вже з першого кроку побачити реальні точки зростання, вийти із замкнутого кола фінансових обмежень та повернути віру у власні сили. Ми хочемо, щоб ви зрозуміли, що можна жити по-іншому: мати власний дохід у декреті, створити надійний валютний капітал поза наймом або нарешті забути про постійні правки та нічну роботу на фрілансі.
+            </p>
+          </div>
+        </article>
+
+        <article class="flex gap-4 sm:gap-5 items-start">
+          <div class="goal-icon-tile" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 4h9l3 3v13a1 1 0 01-1 1H6a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="url(#goal-grad-2)" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M15 4v3h3" stroke="url(#goal-grad-2)" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M8 12h8M8 15.5h5" stroke="url(#goal-grad-2)" stroke-width="1.6" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="goal-grad-2" x1="5" y1="4" x2="19" y2="20" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#a855f7"/>
+                  <stop offset="1" stop-color="#38bdf8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0 pt-0.5">
+            <h3 class="goal-block-title text-sm sm:text-base font-extrabold uppercase tracking-tight leading-tight mb-2">
+              Система за вечір
+            </h3>
+            <p class="text-[13px] sm:text-sm text-gray-300 leading-relaxed">
+              Ми створили цей інтенсив, щоб показати вам, як влаштована бізнес-модель Amazon KDP. Розкажемо, як саме вам заробляти <strong class="text-white font-semibold">$2000+/місяць</strong> із мінімальними стартовими вкладеннями.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Inside -->
+  <section id="inside" class="inside-section text-gray-900 py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
+
+      <h2 class="goal-headline text-gray-900 mb-5 sm:mb-6 max-w-3xl">
+        На вас чекає <span class="gradient-text">5 відео</span>:
+      </h2>
+
+      <div class="space-y-2.5 sm:space-y-3">
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">1</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 1: <span class="gradient-text">Amazon KDP у 2026 році</span>
+              </h3>
+              <p class="inside-video-desc">
+                Як працює модель друку за запитом (Print on Demand) і де ховаються гроші?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">2</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 2: <span class="gradient-text">Секрети вибору ніші</span>
+              </h3>
+              <p class="inside-video-desc">
+                Як знайти тему книги за допомогою ШІ, яка гарантовано приносить від $2000/місяць?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">3</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 3: <span class="gradient-text">Анатомія успішної книги</span>
+              </h3>
+              <p class="inside-video-desc">
+                Розбір ТОП-3 бестселерів із різних ніш, які заробляють від $3000 кожна.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">4</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 4: <span class="gradient-text">Економіка та реальні цифри</span>
+              </h3>
+              <p class="inside-video-desc">
+                Скільки роялті отримуємо ми та наші студенти?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">5</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 5: <span class="gradient-text">Покроковий план дій</span>
+              </h3>
+              <p class="inside-video-desc">
+                Ваші основні кроки до створення стабільного валютного активу та підготовка до стратегічної сесії.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Результати учнів — замініть VIDEO_ID_1, VIDEO_ID_2… на ID з YouTube -->
+  <section id="results" class="reviews-section text-gray-900 py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[960px] mx-auto px-4 sm:px-6">
+
+      <div class="text-center mb-6 sm:mb-8">
+        <h2 class="text-xl sm:text-2xl lg:text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight">
+          <span class="text-gray-900">Що кажуть </span>
+          <span class="gradient-text">ті, хто вже створює книги на Amazon</span>
+        </h2>
+        <p class="mt-3 text-sm text-gray-600 max-w-xl mx-auto leading-relaxed">
+          Реальні історії тих, хто вже отримує дохід на Amazon KDP.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+
+        <!-- Відео 1: у посиланні youtube.com/watch?v=ABC123xyz → ABC123xyz -->
+        <article class="video-card">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1?rel=0"
+              title="Історія учасника інтенсиву — 1"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+
+        <!-- Відео 2 -->
+        <article class="video-card">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2?rel=0"
+              title="Історія учасника інтенсиву — 2"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+
+        <!-- Відео 3 — приберіть блок, якщо відгуків менше -->
+        <article class="video-card sm:col-span-2 sm:max-w-[calc(50%-0.625rem)] sm:mx-auto w-full">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_3?rel=0"
+              title="Історія учасника інтенсиву — 3"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Speakers -->
+  <section id="authors" class="speakers-section py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[960px] mx-auto px-4 sm:px-6">
+
+      <h2 class="text-center text-xl sm:text-2xl lg:text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight mb-6 sm:mb-8">
+        <span class="text-white">Ваші провідники </span>
+        <span class="gradient-text">в світ Amazon KDP</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Олег -->
+        <article class="speaker-card p-4 sm:p-5">
+          <div class="speaker-card-glow" aria-hidden="true"></div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="speaker-photo-slot mb-3">
+              <img src="images/speaker-oleg.png" alt="" width="400" height="500" loading="lazy" />
+            </div>
+            <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">
+              Олег Бєлоцерковець
+            </h3>
+            <div class="grid grid-cols-3 gap-2 mb-3">
+              <div class="text-center">
+                <p class="speaker-stat-value">15+</p>
+                <p class="speaker-stat-label">років eCommerce</p>
+              </div>
+              <div class="text-center">
+                <p class="speaker-stat-value">10</p>
+                <p class="speaker-stat-label">років Amazon KDP</p>
+              </div>
+              <div class="text-center">
+                <p class="speaker-stat-value">300+</p>
+                <p class="speaker-stat-label">книг у 2025</p>
+              </div>
+            </div>
+            <p class="mt-auto text-[12px] sm:text-[13px] text-gray-400 leading-snug text-center pt-3 border-t border-white/8">
+              Автор методики «Формула запуску»
+            </p>
+          </div>
+        </article>
+
+        <!-- Микола -->
+        <article class="speaker-card p-4 sm:p-5">
+          <div class="speaker-card-glow" aria-hidden="true"></div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="speaker-photo-slot mb-3">
+              <img src="images/speaker-mykola.png" alt="" width="400" height="500" loading="lazy" />
+            </div>
+            <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">
+              Микола Матушевський
+            </h3>
+            <div class="grid grid-cols-3 gap-2 mb-3">
+              <div class="text-center">
+                <p class="speaker-stat-value">17+</p>
+                <p class="speaker-stat-label">років eCommerce</p>
+              </div>
+              <div class="text-center">
+                <p class="speaker-stat-value">10</p>
+                <p class="speaker-stat-label">років Amazon KDP</p>
+              </div>
+              <div class="text-center">
+                <p class="speaker-stat-value">300+</p>
+                <p class="speaker-stat-label">книг у 2025</p>
+              </div>
+            </div>
+            <p class="mt-auto text-[12px] sm:text-[13px] text-gray-400 leading-snug text-center pt-3 border-t border-white/8">
+              Вихід на $100&nbsp;000+ роялті на рік
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why 499 -->
+  <section id="pricing" class="inside-section text-gray-900 py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[720px] mx-auto px-4 sm:px-6">
+
+      <h2 class="goal-headline text-gray-900 mb-5 sm:mb-6 text-center max-w-none">
+        Чому це коштує <span class="gradient-text">499 грн?</span>
+      </h2>
+
+      <div class="pricing-text-card">
+        <p class="why-text text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
+          Ми могли б продавати ці знання за <span class="pricing-hl">сотні доларів</span>, адже зібрали тут усе, що самі перевіряли на практиці останні <span class="pricing-hl">10 років</span>. Але ми робимо цей крок <span class="pricing-hl">максимально доступним</span>, щоб відсіяти теоретиків і знайти людей, <span class="pricing-hl">готових до реальних дій</span>.
+        </p>
+        <p class="why-text mt-4 text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
+          Ми створили цю <span class="pricing-hl">експрес-діагностику</span>, щоб показати вам прозору математику ринку <span class="pricing-hl">Amazon KDP</span> та алгоритми аналізу ніш за допомогою <span class="pricing-hl">ШІ</span>. Наша ціль — щоб ви за <span class="pricing-hl">1 вечір</span> переконалися в ефективності моделі, забрали головний бонус — <span class="pricing-hl">Персональну стратегічну сесію</span> з експертом нашої команди — і отримали чіткий індивідуальний план виходу на <span class="pricing-hl">$2000/місяць</span>.
+        </p>
+      </div>
+
+      <div class="text-center mt-6 sm:mt-7">
+        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-7 py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/20">
+          Отримати доступ за 499 грн
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-section text-gray-900 py-12 sm:py-14 lg:py-16">
+    <div class="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-10">
+
+      <h2 class="faq-title">
+        <span class="gradient-text">Часті</span><span> запитання</span>
+      </h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Я не знаю англійської мови, як я зможу продавати книги?</span>
+            <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <div class="faq-answer-inner">
+              ШІ повністю нівелює мовний бар'єр, створюючи професійний контент та описи для будь-якого ринку.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Скільки часу потрібно для проходження інтенсиву?</span>
+            <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <div class="faq-answer-inner">
+              Всього 1 вечір. Короткі лекції без води.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Чи потрібен великий стартовий капітал?</span>
+            <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <div class="faq-answer-inner">
+              Для публікації книг стартовий капітал на закупівлю товару становить $0, оскільки Amazon сам друкує книгу після покупки. Проте для швидкого старту вам знадобляться мінімальні вкладення.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Чи буде підтримка, якщо виникнуть питання?</span>
+            <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <div class="faq-answer-inner">
+              Так, ми з радістю допоможемо розібратися з технічними питаннями в особистому кабінеті.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="final-cta" class="final-cta py-14 sm:py-16 lg:py-20">
+    <div class="relative z-10 max-w-[720px] mx-auto px-4 sm:px-6 text-center">
+
+      <h2 class="text-2xl sm:text-3xl lg:text-[2.35rem] font-extrabold uppercase leading-[1.12] tracking-tight text-white mb-4 sm:mb-5">
+        Чи готові ви перестати <span class="gradient-text">витрачати сили даремно?</span>
+      </h2>
+
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-7 sm:mb-8 max-w-lg mx-auto">
+        Натискайте на кнопку та підключайтеся прямо зараз!
+      </p>
+
+      <a href="#join" class="final-cta-btn">
+        Приєднатися всього за 499 грн
+      </a>
+
+      <p class="final-cta-note">
+        Кількість місць обмежена
+      </p>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-5 flex justify-end">
+      <a href="policy.html">Політика конфіденційності</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const deadline = new Date();
+      deadline.setDate(deadline.getDate() + 3);
+      deadline.setHours(23, 59, 59, 0);
+
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minsEl = document.getElementById('cd-mins');
+      const secsEl = document.getElementById('cd-secs');
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        const diff = deadline - Date.now();
+        if (diff <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minsEl.textContent = '00';
+          secsEl.textContent = '00';
+          return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        daysEl.textContent = pad(d);
+        hoursEl.textContent = pad(h);
+        minsEl.textContent = pad(m);
+        secsEl.textContent = pad(s);
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    (function () {
+      document.querySelectorAll('.faq-item').forEach(function (item) {
+        var btn = item.querySelector('.faq-question');
+        var panel = item.querySelector('.faq-answer');
+        if (!btn || !panel) return;
+
+        btn.addEventListener('click', function () {
+          var isOpen = item.classList.contains('is-open');
+
+          document.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
+            if (openItem === item) return;
+            openItem.classList.remove('is-open');
+            var openBtn = openItem.querySelector('.faq-question');
+            var openPanel = openItem.querySelector('.faq-answer');
+            if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+            if (openPanel) {
+              openPanel.style.maxHeight = '0';
+              openPanel.hidden = true;
+            }
+          });
+
+          if (isOpen) {
+            item.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+            panel.style.maxHeight = '0';
+            panel.hidden = true;
+          } else {
+            item.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+            panel.hidden = false;
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
