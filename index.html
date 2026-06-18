@@ -1566,7 +1566,7 @@
     </div>
   </section>
 
-  <!-- Результати учнів — замініть VIDEO_ID_1, VIDEO_ID_2… на ID з YouTube -->
+  <!-- Результати учнів -->
   <section id="results" class="reviews-section text-gray-900 py-10 sm:py-12 lg:py-14">
     <div class="max-w-[960px] mx-auto px-4 sm:px-6">
 
@@ -1582,11 +1582,10 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
 
-        <!-- Відео 1: у посиланні youtube.com/watch?v=ABC123xyz → ABC123xyz -->
         <article class="video-card">
           <div class="video-embed">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1?rel=0"
+              src="https://www.youtube-nocookie.com/embed/1qUj8TUGZBA?rel=0"
               title="Історія учасника інтенсиву — 1"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1595,11 +1594,10 @@
           </div>
         </article>
 
-        <!-- Відео 2 -->
         <article class="video-card">
           <div class="video-embed">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2?rel=0"
+              src="https://www.youtube-nocookie.com/embed/UzycLXKTfok?rel=0"
               title="Історія учасника інтенсиву — 2"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1608,12 +1606,23 @@
           </div>
         </article>
 
-        <!-- Відео 3 — приберіть блок, якщо відгуків менше -->
-        <article class="video-card sm:col-span-2 sm:max-w-[calc(50%-0.625rem)] sm:mx-auto w-full">
+        <article class="video-card">
           <div class="video-embed">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/VIDEO_ID_3?rel=0"
+              src="https://www.youtube-nocookie.com/embed/XRdsRh22mEo?rel=0"
               title="Історія учасника інтенсиву — 3"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/KVjiYVacIV8?rel=0"
+              title="Історія учасника інтенсиву — 4"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
@@ -1672,7 +1681,7 @@
           <div class="speaker-card-glow" aria-hidden="true"></div>
           <div class="relative z-10 flex flex-col h-full">
             <div class="speaker-photo-slot mb-3">
-              <img src="images/speaker-mykola.png" alt="" width="400" height="500" loading="lazy" />
+              <img src="images/speaker-mykola.png?v=1" alt="Микола Матушевський" width="408" height="612" loading="lazy" />
             </div>
             <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">
               Микола Матушевський
@@ -1781,7 +1790,7 @@
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Так, ми з радістю допоможемо розібратися з технічними питаннями в особистому кабінеті.
+              Так, ми з радістю допоможемо. Напишіть на <a href="mailto:ai.kdp.academy@gmail.com" class="text-violet-400 hover:text-violet-300 underline underline-offset-2">ai.kdp.academy@gmail.com</a> — відповімо з питаннями щодо доступу, оплати та особистого кабінету.
             </div>
           </div>
         </div>
@@ -1815,7 +1824,8 @@
   </section>
 
   <footer class="site-footer">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-5 flex justify-end">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-5 flex flex-wrap items-center justify-end gap-x-6 gap-y-2">
+      <a href="mailto:ai.kdp.academy@gmail.com">Підтримка: ai.kdp.academy@gmail.com</a>
       <a href="policy.html">Політика конфіденційності</a>
     </div>
   </footer>
