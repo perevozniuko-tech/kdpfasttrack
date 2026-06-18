@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Політика конфіденційності Fast-Track: правила обробки персональних даних онлайн-інтенсиву Amazon KDP. ALFA EDELWEISS LLC." />
+  <meta name="theme-color" content="#05070a" />
   <title>Політика конфіденційності — Fast-Track</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -70,20 +74,97 @@
     }
 
     .site-footer {
-      background: #030508;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #000;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .site-footer a {
+    .site-footer-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem 2rem;
+      padding: 1.75rem 0 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .site-footer-inner {
+        grid-template-columns: minmax(140px, auto) 1fr auto;
+        align-items: end;
+        gap: 0 2.5rem;
+      }
+    }
+
+    .site-footer-copy {
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.06em;
-      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.42);
+      line-height: 1.4;
+    }
+
+    .site-footer-legal {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    @media (min-width: 768px) {
+      .site-footer-legal {
+        padding-top: 0;
+        padding-left: 2.5rem;
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.22);
+      }
+    }
+
+    .site-footer-legal p,
+    .site-footer-legal a {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.55;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.88);
       transition: color 0.2s;
     }
 
-    .site-footer a:hover {
-      color: rgba(255, 255, 255, 0.85);
+    .site-footer-legal a.site-footer-email {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .site-footer-legal a.site-footer-email:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .site-footer-policy {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      justify-self: start;
+    }
+
+    @media (min-width: 768px) {
+      .site-footer-policy {
+        justify-self: end;
+        align-self: end;
+      }
+    }
+
+    .site-footer-policy a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.88);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .site-footer-policy a:hover {
+      color: #fff;
     }
   </style>
 </head>
@@ -206,9 +287,21 @@
   </main>
 
   <footer class="site-footer mt-auto">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-5 flex flex-wrap items-center justify-end gap-x-6 gap-y-2">
-      <a href="mailto:ai.kdp.academy@gmail.com">Підтримка: ai.kdp.academy@gmail.com</a>
-      <a href="policy.html">Політика конфіденційності</a>
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="site-footer-inner">
+        <p class="site-footer-copy">© 2026 Fast-Track</p>
+
+        <div class="site-footer-legal">
+          <p>Alfa Edelweiss LLC</p>
+          <p>7901 4th St N Ste 300, St. Petersburg, FL 33702, United States</p>
+          <a href="mailto:ai.kdp.academy@gmail.com" class="site-footer-email">ai.kdp.academy@gmail.com</a>
+        </div>
+
+        <div class="site-footer-policy">
+          <a href="policy.html">Політика конфіденційності</a>
+          <a href="offer.html">Публічна оферта</a>
+        </div>
+      </div>
     </div>
   </footer>
 
