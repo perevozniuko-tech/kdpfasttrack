@@ -65,6 +65,8 @@
     }
 
     .hero-bg {
+      position: relative;
+      overflow: hidden;
       background-color: #05070a;
       background-image:
         radial-gradient(ellipse 80% 60% at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
@@ -73,13 +75,190 @@
     }
 
     .speaker-glow {
-      background: radial-gradient(ellipse 70% 80% at 50% 55%, rgba(99, 102, 241, 0.35) 0%, rgba(139, 92, 246, 0.15) 40%, transparent 70%);
+      background: radial-gradient(ellipse 55% 45% at 50% 92%, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 72%);
+    }
+
+    .hero-main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+      padding: 0.85rem 0 2.25rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-main {
+        padding: 0 0 1.75rem;
+      }
+    }
+
+    .hero-grid {
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        align-items: start;
+      }
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-right {
+        gap: 1.25rem;
+        padding-top: 1.85rem;
+      }
+    }
+
+    .hero-photo-col {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-photo-col {
+        padding-top: 1.85rem;
+        align-self: end;
+      }
+    }
+
+    .hero-photo-stage {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      line-height: 0;
+    }
+
+    .hero-photo-stage::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 28%;
+      background: radial-gradient(ellipse at 50% 80%, rgba(99, 102, 241, 0.18) 0%, rgba(59, 130, 246, 0.06) 45%, transparent 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-photo-stage::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 34%;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(5, 7, 10, 0.18) 48%,
+        rgba(5, 7, 10, 0.72) 82%,
+        #05070a 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-photo-col::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.45) 12%, rgba(167, 139, 250, 0.9) 50%, rgba(96, 165, 250, 0.45) 88%, transparent 100%);
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.35);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .hero-section-wave {
+      display: block;
+      line-height: 0;
+      background-color: #05070a;
+      pointer-events: none;
+    }
+
+    .hero-section-wave svg {
+      display: block;
+      width: 100%;
+      height: 52px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-section-wave svg {
+        height: 60px;
+      }
     }
 
     .speaker-photo {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 460px;
+      object-fit: contain;
+      object-position: bottom center;
       image-rendering: auto;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+      margin-bottom: 0;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, rgba(0, 0, 0, 0.4) 94%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 80%, rgba(0, 0, 0, 0.4) 94%, transparent 100%);
+    }
+
+    @media (min-width: 640px) {
+      .speaker-photo { max-height: 520px; }
+    }
+
+    @media (min-width: 1024px) {
+      .speaker-photo {
+        max-height: min(68vh, 580px);
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .speaker-photo { max-height: min(70vh, 620px); }
+    }
+
+    .hero-names {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    @media (min-width: 640px) {
+      .hero-names { font-size: 0.75rem; }
+    }
+
+    @media (min-width: 1280px) {
+      .hero-names { font-size: 0.8125rem; }
     }
 
     .timer-digit {
@@ -798,23 +977,14 @@
 <body class="font-sans antialiased text-white bg-navy">
 
   <!-- Hero Section -->
-  <section class="hero-bg min-h-screen flex flex-col overflow-hidden">
+  <section class="hero-bg flex flex-col">
 
     <!-- Header -->
-    <header class="w-full px-4 sm:px-6 lg:px-10 pt-5 pb-4">
-      <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
-
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-2 shrink-0 order-1 lg:order-none">
-          <span class="flex gap-[3px]">
-            <span class="w-[3px] h-5 bg-white rounded-full"></span>
-            <span class="w-[3px] h-5 bg-white/70 rounded-full"></span>
-          </span>
-          <span class="text-sm sm:text-base font-bold tracking-[0.15em] uppercase">Fast-Track</span>
-        </a>
+    <header class="w-full px-4 sm:px-6 lg:px-10 pt-4 pb-2.5 relative z-20">
+      <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-6">
 
         <!-- Navigation -->
-        <nav class="order-3 lg:order-none w-full lg:w-auto">
+        <nav class="order-2 lg:order-none lg:col-start-2 justify-self-center w-full lg:w-auto">
           <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2 sm:gap-x-7 text-[11px] sm:text-xs font-medium tracking-wide text-gray-300 uppercase">
             <li><a href="#for-whom" class="hover:text-white transition-colors">Для кого</a></li>
             <li><a href="#how-it-works" class="hover:text-white transition-colors">Програма</a></li>
@@ -826,59 +996,59 @@
 
         <!-- Header CTA -->
         <a href="#join"
-           class="order-2 lg:order-none shrink-0 header-btn-border rounded px-4 py-2.5 text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+           class="order-1 lg:order-none lg:col-start-3 justify-self-end shrink-0 header-btn-border rounded px-4 py-2.5 text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-white hover:bg-white/5 transition-colors whitespace-nowrap">
           ОТРИМАТИ ДОСТУП
         </a>
       </div>
     </header>
 
     <!-- Main Hero Content -->
-    <div class="flex-1 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pb-10 lg:pb-16">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-2 xl:gap-4 items-end min-h-0">
+    <div class="hero-main w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="hero-grid grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 xl:gap-5">
 
         <!-- Left Column -->
-        <div class="lg:col-span-4 flex flex-col justify-center order-1 lg:order-none pt-4 lg:pt-8 lg:pb-4 lg:pr-2 xl:pr-4">
+        <div class="hero-left lg:col-span-4 order-1 lg:order-none lg:pr-3 xl:pr-5">
 
-          <p class="text-[11px] sm:text-xs font-medium tracking-wide text-purple-300/90 mb-4 sm:mb-5">
+          <p class="text-[11px] sm:text-xs font-medium tracking-wide text-purple-300/90 mb-3 sm:mb-4">
             Онлайн-інтенсив. Старт одразу після оплати.
           </p>
 
-          <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-[2.75rem] font-extrabold leading-[1.1] tracking-tight mb-5 sm:mb-6">
+          <h1 class="text-[1.65rem] sm:text-3xl md:text-[2.1rem] xl:text-[2.65rem] font-extrabold leading-[1.08] tracking-tight mb-4 sm:mb-5">
             <span class="gradient-text">Fast-Track:</span>
             <span class="text-white"> Як підкорити Amazon KDP за допомогою ШІ</span>
           </h1>
 
-          <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-7 sm:mb-8">
+          <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed mb-5 sm:mb-6 max-w-md">
             Стабільний дохід у валюті на книгах — без складів та письменницького таланту. Отримайте покрокову модель всього за один вечір!
           </p>
 
           <a href="#join"
              id="join"
-             class="gradient-btn inline-flex flex-row items-center justify-center gap-2 w-full px-4 sm:px-6 py-4 rounded-lg text-xs sm:text-sm lg:text-base font-bold text-white shadow-lg shadow-purple-900/30 hover:opacity-90 transition-opacity whitespace-nowrap">
+             class="gradient-btn inline-flex flex-row items-center justify-center gap-2 w-full max-w-md px-4 sm:px-6 py-3.5 sm:py-4 rounded-lg text-xs sm:text-sm font-bold text-white shadow-lg shadow-purple-900/30 hover:opacity-90 transition-opacity">
             <span>Отримати доступ за 499 грн</span>
             <span class="text-white/70 font-medium text-[10px] sm:text-xs shrink-0">(замість <s class="opacity-80">3000 грн</s>)</span>
           </a>
 
           <!-- Countdown Timer -->
-          <div class="mt-6 sm:mt-8">
-            <p class="text-sm sm:text-base font-semibold text-gray-300 mb-4">
+          <div class="mt-7 sm:mt-8">
+            <p class="text-sm font-semibold text-gray-300 mb-3 sm:mb-4">
               Спеціальна ціна діє до:
             </p>
-            <div id="countdown" class="flex gap-3 sm:gap-4" aria-live="polite">
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
-                <span id="cd-days" class="block text-2xl sm:text-4xl font-extrabold text-white tabular-nums leading-none">00</span>
+            <div id="countdown" class="flex flex-wrap gap-2.5 sm:gap-3" aria-live="polite">
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
+                <span id="cd-days" class="block text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none">00</span>
                 <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">днів</span>
               </div>
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
-                <span id="cd-hours" class="block text-2xl sm:text-4xl font-extrabold text-white tabular-nums leading-none">00</span>
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
+                <span id="cd-hours" class="block text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none">00</span>
                 <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">год</span>
               </div>
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
-                <span id="cd-mins" class="block text-2xl sm:text-4xl font-extrabold text-white tabular-nums leading-none">00</span>
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
+                <span id="cd-mins" class="block text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none">00</span>
                 <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">хв</span>
               </div>
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-3 text-center min-w-[64px] sm:min-w-[76px]">
-                <span id="cd-secs" class="block text-2xl sm:text-4xl font-extrabold gradient-text tabular-nums leading-none">00</span>
+              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
+                <span id="cd-secs" class="block text-xl sm:text-3xl font-extrabold gradient-text tabular-nums leading-none">00</span>
                 <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">сек</span>
               </div>
             </div>
@@ -886,15 +1056,15 @@
         </div>
 
         <!-- Center Column — Speakers Photo -->
-        <div class="lg:col-span-5 flex items-end justify-center order-2 lg:order-none relative z-10 -my-4 lg:my-0">
+        <div class="hero-photo-col lg:col-span-5 order-2 lg:order-none relative">
           <div class="speaker-glow absolute inset-0 pointer-events-none"></div>
-          <div class="relative w-full max-w-[420px] sm:max-w-[500px] md:max-w-[580px] lg:max-w-[640px] xl:max-w-[720px] flex items-end justify-center">
+          <div class="hero-photo-stage">
             <img
-              src="images/speakers.png"
-              width="972"
-              height="1024"
+              src="images/speakers.png?v=10"
+              width="918"
+              height="744"
               alt="Олег Бєлоцерковець та Микола Матушевський — спікери інтенсиву"
-              class="speaker-photo w-full h-auto max-h-[520px] sm:max-h-[580px] md:max-h-[640px] lg:max-h-[680px] xl:max-h-[720px] object-contain object-bottom"
+              class="speaker-photo"
               decoding="async"
               fetchpriority="high"
             />
@@ -902,21 +1072,19 @@
         </div>
 
         <!-- Right Column -->
-        <div class="lg:col-span-3 flex flex-col justify-center gap-4 sm:gap-5 order-3 lg:order-none lg:pl-2 xl:pl-4 pt-2 lg:pt-8 lg:pb-8">
+        <div class="hero-right lg:col-span-3 order-3 lg:order-none lg:pl-2 xl:pl-4">
 
-          <!-- Speakers -->
           <div class="w-full min-w-0">
-            <p class="names-line font-bold text-white leading-tight">
+            <p class="hero-names">
               Олег Бєлоцерковець &amp; Микола Матушевський
             </p>
           </div>
 
-          <!-- Offer Magnet -->
-          <div class="neon-border rounded-lg bg-white/[0.02] px-5 py-5 sm:px-6 sm:py-6">
-            <p class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-purple-400 mb-3">
+          <div class="neon-border rounded-lg bg-white/[0.02] px-4 sm:px-5 py-4 sm:py-5">
+            <p class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-purple-400 mb-2.5 sm:mb-3">
               🎁 ГАРАНТОВАНИЙ БОНУС
             </p>
-            <p class="text-sm sm:text-[15px] text-gray-200 leading-relaxed">
+            <p class="text-[13px] sm:text-sm text-gray-200 leading-relaxed">
               Після оплати ви отримуєте
               <span class="bonus-accent">стратегічну сесію у подарунок</span>
               з експертом для розбору вашого індивідуального плану.
@@ -928,8 +1096,23 @@
     </div>
   </section>
 
+  <!-- Перехід hero → білий блок (поза hero, не перекриває контент) -->
+  <div class="hero-section-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="heroWaveLine" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.45"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,30 C280,10 520,38 760,22 C1000,6 1240,34 1440,18 L1440,56 L0,56 Z" fill="#ffffff"/>
+      <path d="M0,26 C280,8 520,34 760,18 C1000,2 1240,30 1440,14" fill="none" stroke="url(#heroWaveLine)" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
+
   <!-- Audience Section -->
-  <section id="for-whom" class="bg-white text-gray-900 py-14 sm:py-16 lg:py-20">
+  <section id="for-whom" class="bg-white text-gray-900 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
 
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-10 sm:mb-12 lg:mb-14 max-w-4xl">
