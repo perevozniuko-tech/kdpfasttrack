@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Онлайн-інтенсив Fast-Track: як заробляти на Amazon KDP за допомогою ШІ. 5 відеолекцій, стратегічна сесія з експертом. Старт одразу після оплати — від 499 грн." />
+  <meta name="description" content="Онлайн-інтенсив Fast-Track для емігрантів: як заробляти на Amazon KDP у $, €, £ за допомогою ШІ. 5 відеолекцій і стратегічна сесія з експертом — від 499 грн." />
   <meta name="theme-color" content="#05070a" />
   <title>Fast-Track: Amazon KDP з ШІ</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -235,6 +235,107 @@
       mask-image: linear-gradient(to bottom, #000 0%, #000 80%, rgba(0, 0, 0, 0.4) 94%, transparent 100%);
     }
 
+    .hero-speaker-badges {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 11%;
+      z-index: 4;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.5rem;
+      padding: 0 5% 0;
+      pointer-events: none;
+    }
+
+    .hero-speaker-badge {
+      flex: 0 1 38%;
+      max-width: 38%;
+      min-width: 0;
+      padding: 0.5rem 0.6rem 0.55rem;
+      border-radius: 14px;
+      text-align: center;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.94) 0%,
+        rgba(255, 255, 255, 0.82) 100%
+      );
+      border: 1px solid rgba(255, 255, 255, 0.92);
+      box-shadow:
+        0 0 0 1px rgba(139, 92, 246, 0.12),
+        0 0 24px rgba(139, 92, 246, 0.28),
+        0 8px 20px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(14px) saturate(1.15);
+      -webkit-backdrop-filter: blur(14px) saturate(1.15);
+    }
+
+    .hero-speaker-badge-highlight {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #7c3aed;
+    }
+
+    .hero-speaker-badge-label,
+    .hero-speaker-badge-caption {
+      margin: 0;
+      font-size: 0.5625rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #374151;
+    }
+
+    .hero-speaker-badge-label {
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-speaker-badge-caption {
+      margin-top: 0.2rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-speaker-badge {
+        padding: 0.55rem 0.7rem 0.6rem;
+        border-radius: 15px;
+      }
+
+      .hero-speaker-badge-highlight {
+        font-size: 1.05rem;
+      }
+
+      .hero-speaker-badge-label,
+      .hero-speaker-badge-caption {
+        font-size: 0.625rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-speaker-badges {
+        bottom: 12%;
+        padding: 0 6% 0;
+        gap: 0.6rem;
+      }
+
+      .hero-speaker-badge {
+        flex-basis: 36%;
+        max-width: 36%;
+        padding: 0.6rem 0.75rem 0.65rem;
+        border-radius: 16px;
+      }
+
+      .hero-speaker-badge-highlight {
+        font-size: 1.15rem;
+      }
+
+      .hero-speaker-badge-label,
+      .hero-speaker-badge-caption {
+        font-size: 0.6875rem;
+      }
+    }
+
     @media (min-width: 640px) {
       .speaker-photo { max-height: 520px; }
     }
@@ -338,6 +439,134 @@
       text-wrap: pretty;
       hyphens: auto;
       -webkit-hyphens: auto;
+    }
+
+    .audience-card-text-only {
+      padding: 1.25rem 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .audience-card-text-only {
+        padding: 1.5rem;
+      }
+    }
+
+    .audience-emoji {
+      display: block;
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7c3aed;
+      margin-bottom: 0.75rem;
+    }
+
+    .speakers-section .section-eyebrow {
+      color: #c4b5fd;
+    }
+
+    .case-card {
+      background: #fff;
+      border: 1px solid rgba(139, 92, 246, 0.12);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.07);
+      height: 100%;
+    }
+
+    .case-amount {
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+      background: linear-gradient(90deg, #a855f7 0%, #6366f1 45%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .case-timing {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .case-point-label {
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 0.25rem;
+    }
+
+    .case-point-text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #374151;
+      margin: 0 0 0.85rem;
+    }
+
+    .case-author {
+      font-size: 0.8125rem;
+      font-style: italic;
+      color: #6b7280;
+      margin: 0;
+    }
+
+    .benefits-strip {
+      border-bottom: 1px solid rgba(139, 92, 246, 0.08);
+    }
+
+    .benefits-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 0.625rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .benefit-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: #374151;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.07) 0%, rgba(59, 130, 246, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.16);
+      white-space: nowrap;
+    }
+
+    .benefit-chip::before {
+      content: "✓";
+      font-size: 0.7rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (max-width: 639px) {
+      .benefit-chip {
+        font-size: 0.75rem;
+        padding: 0.45rem 0.75rem;
+        white-space: normal;
+      }
     }
 
     .why-text {
@@ -558,16 +787,77 @@
         radial-gradient(ellipse 40% 35% at 100% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
     }
 
+    .goal-block {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
     .goal-headline {
       font-size: clamp(1.35rem, 4vw, 2.25rem);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.02em;
       text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .goal-headline { margin-bottom: 1.75rem; }
+    }
+
+    .goal-headline-line {
+      display: block;
+    }
+
+    .goal-headline-line + .goal-headline-line {
+      margin-top: 0.2rem;
+    }
+
+    @media (min-width: 640px) {
+      .goal-headline-line + .goal-headline-line {
+        margin-top: 0.3rem;
+      }
     }
 
     .goal-headline .muted {
       color: rgba(255, 255, 255, 0.32);
+    }
+
+    .goal-text {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #d1d5db;
+      text-align: left;
+      text-wrap: pretty;
+    }
+
+    .goal-text + .goal-text {
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .goal-text + .goal-text {
+        margin-top: 1.125rem;
+      }
+    }
+
+    .goal-hl {
+      font-weight: 700;
+      color: #c4b5fd;
+    }
+
+    @media (min-width: 640px) {
+      .goal-text {
+        font-size: 1.125rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .goal-text {
+        font-size: 1.25rem;
+      }
     }
 
     .goal-icon-tile {
@@ -648,11 +938,193 @@
       color: #4b5563;
     }
 
+    .includes-section {
+      background-color: #030304;
+      background-image:
+        radial-gradient(ellipse 70% 55% at 15% 0%, rgba(124, 58, 237, 0.22) 0%, transparent 58%),
+        radial-gradient(ellipse 55% 45% at 90% 100%, rgba(59, 130, 246, 0.14) 0%, transparent 55%);
+    }
+
+    .includes-title {
+      font-size: clamp(1.35rem, 3.8vw, 2.15rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .includes-title { margin-bottom: 2.5rem; }
+    }
+
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 640px) {
+      .includes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .includes-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.1rem;
+      }
+    }
+
+    .includes-card {
+      position: relative;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(145deg, rgba(168, 85, 247, 0.42), rgba(59, 130, 246, 0.28), rgba(99, 102, 241, 0.22));
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .includes-card:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        0 0 28px rgba(124, 58, 237, 0.18);
+    }
+
+    .includes-card-inner {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      border-radius: 15px;
+      padding: 1.2rem 1.15rem 1.15rem;
+      background: linear-gradient(155deg, rgba(14, 14, 20, 0.98) 0%, rgba(9, 11, 18, 0.99) 100%);
+    }
+
+    @media (min-width: 640px) {
+      .includes-card-inner {
+        padding: 1.35rem 1.25rem 1.25rem;
+      }
+    }
+
+    .includes-card-glow {
+      position: absolute;
+      right: -20%;
+      top: -30%;
+      width: 70%;
+      height: 65%;
+      background: radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.16) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .includes-card-num {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 2rem;
+      margin-bottom: 0.75rem;
+      padding: 0 0.45rem;
+      border-radius: 8px;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #fff;
+      background: linear-gradient(135deg, #a855f7, #6366f1 55%, #3b82f6);
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    }
+
+    .includes-card-title {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 0.55rem;
+      font-size: 0.8125rem;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #f9fafb;
+    }
+
+    @media (min-width: 640px) {
+      .includes-card-title { font-size: 0.875rem; }
+    }
+
+    .includes-card-desc {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 0.8125rem;
+      line-height: 1.62;
+      color: rgba(209, 213, 219, 0.88);
+    }
+
+    @media (min-width: 640px) {
+      .includes-card-desc { font-size: 0.875rem; }
+    }
+
     .reviews-section {
       background-color: #f4f2fa;
       background-image:
         radial-gradient(ellipse 60% 50% at 90% 0%, rgba(168, 85, 247, 0.1) 0%, transparent 55%),
         radial-gradient(ellipse 50% 40% at 0% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+    }
+
+    .results-hero {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .results-hero { margin-bottom: 2rem; }
+    }
+
+    .results-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.625rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6d28d9;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.22);
+    }
+
+    @media (min-width: 640px) {
+      .results-hero-badge {
+        font-size: 0.6875rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .results-hero-heading {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    @media (min-width: 640px) {
+      .results-hero-heading { gap: 0.45rem; }
+    }
+
+    .results-hero-line {
+      display: block;
+      font-size: clamp(1.35rem, 3.8vw, 2.15rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
     }
 
     .video-card {
@@ -676,6 +1148,44 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    .video-case-head {
+      padding: 1rem 1rem 0.85rem;
+      text-align: center;
+    }
+
+    .video-case-name {
+      margin: 0 0 0.35rem;
+      font-size: 0.9375rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    .video-case-stat {
+      margin: 0;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (min-width: 640px) {
+      .video-case-name {
+        font-size: 1rem;
+      }
+
+      .video-case-stat {
+        font-size: 0.75rem;
+      }
     }
 
     .speakers-section {
@@ -773,21 +1283,56 @@
     }
 
     .speaker-stat-value {
-      font-size: 0.95rem;
+      font-size: 1.0625rem;
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -0.02em;
-      text-transform: uppercase;
       color: #fff;
     }
 
+    @media (min-width: 640px) {
+      .speaker-stat-value { font-size: 1.1875rem; }
+    }
+
     .speaker-stat-label {
-      font-size: 10px;
-      color: rgba(255, 255, 255, 0.42);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.78);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 3px;
-      line-height: 1.2;
+      letter-spacing: 0.03em;
+      margin-top: 0.25rem;
+      line-height: 1.25;
+    }
+
+    @media (min-width: 640px) {
+      .speaker-stat-label { font-size: 0.75rem; }
+    }
+
+    .speaker-stats {
+      padding: 0.75rem 0.35rem;
+      margin-bottom: 0.75rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .speaker-bio {
+      margin: 0;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.55;
+      color: rgba(243, 244, 246, 0.92);
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .speaker-bio {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        padding-top: 1rem;
+      }
     }
 
     .pricing-text-card {
@@ -896,6 +1441,126 @@
         padding-bottom: 1.5rem;
         max-width: 92%;
       }
+    }
+
+    .faq-footer {
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .faq-footer { margin-top: 3rem; }
+    }
+
+    .faq-footer-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(59, 130, 246, 0.35), rgba(34, 158, 217, 0.4));
+      box-shadow:
+        0 20px 50px rgba(99, 102, 241, 0.1),
+        0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+
+    .faq-footer-card-inner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 19px;
+      padding: 1.75rem 1.25rem 1.5rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(168, 85, 247, 0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 100% 100%, rgba(34, 158, 217, 0.06) 0%, transparent 55%),
+        #fafbff;
+    }
+
+    @media (min-width: 640px) {
+      .faq-footer-card-inner {
+        padding: 2.25rem 2rem 2rem;
+      }
+    }
+
+    .faq-footer-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1rem;
+      border-radius: 14px;
+      color: #7c3aed;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.14) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.18);
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+    }
+
+    .faq-footer-title {
+      margin: 0 0 0.5rem;
+      font-size: 1.0625rem;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+    }
+
+    @media (min-width: 640px) {
+      .faq-footer-title { font-size: 1.25rem; }
+    }
+
+    .faq-footer-text {
+      margin: 0 auto 1.35rem;
+      max-width: 28rem;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: #4b5563;
+    }
+
+    @media (min-width: 640px) {
+      .faq-footer-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .faq-telegram-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 14px;
+      font-size: 0.8125rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(135deg, #2aabee 0%, #229ed9 55%, #1a8fc7 100%);
+      box-shadow:
+        0 10px 28px rgba(34, 158, 217, 0.35),
+        0 2px 8px rgba(34, 158, 217, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    @media (min-width: 640px) {
+      .faq-telegram-btn {
+        padding: 0.95rem 1.75rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    .faq-telegram-btn:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 14px 36px rgba(34, 158, 217, 0.42),
+        0 4px 12px rgba(34, 158, 217, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      opacity: 0.98;
+    }
+
+    .faq-telegram-btn svg {
+      flex-shrink: 0;
+      width: 1.15rem;
+      height: 1.15rem;
     }
 
     .final-cta {
@@ -1068,7 +1733,7 @@
         <nav class="order-2 lg:order-none lg:col-start-2 justify-self-center w-full lg:w-auto">
           <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2 sm:gap-x-7 text-[11px] sm:text-xs font-medium tracking-wide text-gray-300 uppercase">
             <li><a href="#for-whom" class="hover:text-white transition-colors">Для кого</a></li>
-            <li><a href="#how-it-works" class="hover:text-white transition-colors">Програма</a></li>
+            <li><a href="#inside" class="hover:text-white transition-colors">Програма</a></li>
             <li><a href="#authors" class="hover:text-white transition-colors">Про авторів</a></li>
             <li><a href="#results" class="hover:text-white transition-colors">Результати</a></li>
             <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
@@ -1091,23 +1756,23 @@
         <div class="hero-left lg:col-span-4 order-1 lg:order-none lg:pr-3 xl:pr-5">
 
           <p class="text-[11px] sm:text-xs font-medium tracking-wide text-purple-300/90 mb-3 sm:mb-4">
-            Онлайн-інтенсив. Старт одразу після оплати.
+            Онлайн-інтенсив для емігрантів • Старт одразу після оплати
           </p>
 
           <h1 class="text-[1.65rem] sm:text-3xl md:text-[2.1rem] xl:text-[2.65rem] font-extrabold leading-[1.08] tracking-tight mb-4 sm:mb-5">
             <span class="gradient-text">Fast-Track:</span>
-            <span class="text-white"> Як підкорити Amazon KDP за допомогою ШІ</span>
+            <span class="text-white"> Як підкорити Amazon KDP за кордоном за допомогою ШІ</span>
           </h1>
 
           <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed mb-5 sm:mb-6 max-w-md">
-            Стабільний дохід у валюті на книгах — без складів та письменницького таланту. Отримайте покрокову модель всього за один вечір!
+            Живете в новій країні і шукаєте стабільний дохід у $, €, £? Без складів, письменницького таланту та вільної англійської — отримайте покроковий план всього за один вечір!
           </p>
 
           <a href="#join"
              id="join"
              class="gradient-btn inline-flex flex-row items-center justify-center gap-2 w-full max-w-md px-4 sm:px-6 py-3.5 sm:py-4 rounded-lg text-xs sm:text-sm font-bold text-white shadow-lg shadow-purple-900/30 hover:opacity-90 transition-opacity">
             <span>Отримати доступ за 499 грн</span>
-            <span class="text-white/70 font-medium text-[10px] sm:text-xs shrink-0">(замість <s class="opacity-80">3000 грн</s>)</span>
+            <span class="text-white/70 font-medium text-[10px] sm:text-xs shrink-0">(замість <s class="opacity-80">3 000 грн</s>)</span>
           </a>
 
           <!-- Countdown Timer -->
@@ -1149,6 +1814,16 @@
               decoding="async"
               fetchpriority="high"
             />
+            <div class="hero-speaker-badges">
+              <div class="hero-speaker-badge hero-speaker-badge--left">
+                <p class="hero-speaker-badge-highlight">$100 000+</p>
+                <p class="hero-speaker-badge-caption">на рік</p>
+              </div>
+              <div class="hero-speaker-badge hero-speaker-badge--right">
+                <p class="hero-speaker-badge-label">Автор методики</p>
+                <p class="hero-speaker-badge-highlight">«Формула запуску»</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1192,121 +1867,107 @@
     </svg>
   </div>
 
+  <!-- Benefits -->
+  <section class="benefits-strip bg-white pt-7 pb-6 sm:pt-8 sm:pb-7" aria-label="Переваги інтенсиву">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <ul class="benefits-grid">
+        <li class="benefit-chip">без досвіду</li>
+        <li class="benefit-chip">без знання іноземних мов</li>
+        <li class="benefit-chip">заробляйте у $, €, £</li>
+        <li class="benefit-chip">не потрібно звільнятись з роботи</li>
+        <li class="benefit-chip">не потрібно спілкуватись з клієнтами</li>
+        <li class="benefit-chip">працюйте з будь-якої точки світу</li>
+        <li class="benefit-chip">приділяйте 2–3 години на день</li>
+        <li class="benefit-chip">вийдіть на дохід $10 000 через рік</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Audience Section -->
-  <section id="for-whom" class="bg-white text-gray-900 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20">
+  <section id="for-whom" class="bg-white text-gray-900 pt-4 pb-14 sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-10 sm:mb-12 lg:mb-14 max-w-4xl">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-10 sm:mb-12 lg:mb-14 max-w-4xl gradient-text">
         Кому варто приєднатися?
       </h2>
 
-      <!-- Row 1: 3 cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
 
-        <article class="audience-card rounded-xl overflow-hidden">
-          <div class="aspect-[4/3] overflow-hidden shrink-0">
-            <img src="images/audience/moms.png" alt="Мами в декреті" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-          <div class="audience-card-body">
-            <h3 class="audience-card-title">Мами в декреті</h3>
-            <p class="audience-card-text">
-              Коли дитина спить, у вас є 2–3 години вільного часу. Замість гортання стрічки соцмереж ви можете створити актив, який приносить власні гроші в доларах та євро.
-            </p>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">✈️</span>
+          <h3 class="audience-card-title mb-2">Нещодавно переїхали за кордон</h3>
+          <p class="audience-card-text">
+            Ви нещодавно переїхали за кордон або часто змінюєте країни та міста — мовний бар'єр заважає знайти хорошу роботу, а нова країна ще здається чужою. За допомогою ШІ ви можете створювати книги навіть без вільного знання мови.
+          </p>
         </article>
 
-        <article class="audience-card rounded-xl overflow-hidden">
-          <div class="aspect-[4/3] overflow-hidden shrink-0">
-            <img src="images/audience/employees.png" alt="Ті, хто працюють в наймі" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-          <div class="audience-card-body">
-            <h3 class="audience-card-title">Ті, хто працюють в наймі</h3>
-            <p class="audience-card-text">
-              Якщо вам набридло працювати зранку до вечора за фіксовану зарплату і ви хочете додатковий дохід у валюті, не звільняючись з роботи прямо зараз.
-            </p>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">💼</span>
+          <h3 class="audience-card-title mb-2">Влаштувались на роботу, але хочете більше</h3>
+          <p class="audience-card-text">
+            Ви влаштувались на фізичну роботу, але шукаєте можливості онлайн, або у вас вже є робота, але хочеться додаткового доходу в € або $, без звільнення. Двох-трьох вільних годин ввечері достатньо, щоб поступово будувати актив, який приносить гроші паралельно з основною роботою.
+          </p>
         </article>
 
-        <article class="audience-card rounded-xl overflow-hidden md:col-span-2 lg:col-span-1">
-          <div class="aspect-[4/3] overflow-hidden shrink-0">
-            <img src="images/audience/freelancers.png" alt="Фрілансери та маркетологи" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-          <div class="audience-card-body">
-            <h3 class="audience-card-title">Фрілансери та маркетологи</h3>
-            <p class="audience-card-text">
-              Якщо ви втомилися від нескінченних правок клієнтів, демпінгу та роботи ночами. Час створити свій проєкт, який працює на вас 24/7.
-            </p>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">💻</span>
+          <h3 class="audience-card-title mb-2">ІТ-спеціаліст або фрілансер за кордоном</h3>
+          <p class="audience-card-text">
+            Якщо ви є ІТ-спеціаліст або фрілансер і мешкаєте за кордоном та маєте бажання заробляти більше, або вам набридли нескінченні правки, клієнти та робота по ночах — час створити дохід, що поступово росте і не залежить від настрою замовника.
+          </p>
         </article>
 
       </div>
 
-      <!-- Row 2: 2 cards centered -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6 mt-5 sm:mt-6 items-stretch">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-stretch max-w-4xl mx-auto mt-5 sm:mt-6">
 
-        <article class="audience-card rounded-xl overflow-hidden lg:col-span-2 lg:col-start-2">
-          <div class="aspect-[4/3] overflow-hidden shrink-0">
-            <img src="images/audience/emigrants.png" alt="Ті, хто за кордоном" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-          <div class="audience-card-body">
-            <h3 class="audience-card-title">Ті, хто за кордоном</h3>
-            <p class="audience-card-text">
-              Якщо ви переїхали, зіткнулися з мовним бар'єром і важко знайти хорошу роботу на місці. Цьому бізнесу байдуже, де ви перебуваєте фізично.
-            </p>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">📦</span>
+          <h3 class="audience-card-title mb-2">Вже купуєте на Amazon — час заробляти на ньому</h3>
+          <p class="audience-card-text">
+            Ви мешкаєте в Америці чи Європі і вже маєте позитивний досвід — регулярно щось купуєте на Amazon. Зараз якраз є нагода заробляти на цій же платформі. Створюйте, публікуйте та продавайте книги, створені за допомогою ШІ, та отримуйте дохід з кожного продажу.
+          </p>
         </article>
 
-        <article class="audience-card rounded-xl overflow-hidden lg:col-span-2">
-          <div class="aspect-[4/3] overflow-hidden shrink-0">
-            <img src="images/audience/entrepreneurs.png" alt="Підприємці" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-          <div class="audience-card-body">
-            <h3 class="audience-card-title">Підприємці</h3>
-            <p class="audience-card-text">
-              Якщо ви втомилися від товарного бізнесу з його касовими розривами, закупівлями, складами, доставкою та митницею. Тут цього просто немає.
-            </p>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">🌍</span>
+          <h3 class="audience-card-title mb-2">Хочете дохід, не прив'язаний до країни</h3>
+          <p class="audience-card-text">
+            Польща, Німеччина, Чехія, США, Канада чи Таїланд — байдуже, де ви живете: ви створюєте книги за допомогою ШІ та поступово виходите на глобальний ринок, продаючи свій цифровий продукт майже по усьому світу на різних мовах.
+          </p>
         </article>
 
+      </div>
+
+      <div class="text-center mt-10 sm:mt-12">
+        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-8 py-3.5 rounded-xl text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/25">
+          Приєднатися до інтенсиву
+        </a>
       </div>
 
     </div>
   </section>
 
-  <!-- Why Now Section -->
-  <section class="bg-[#05070a] text-white py-14 sm:py-16 lg:py-20 border-t border-white/5">
-    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+  <!-- Manifest -->
+  <section id="manifest" class="bg-[#05070a] text-white py-14 sm:py-16 lg:py-20 border-t border-white/5">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6 lg:px-10">
 
-      <!-- Card: book + text -->
-      <div class="why-card rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 mb-8 sm:mb-10 lg:mb-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          <div class="lg:col-span-4 flex justify-center lg:justify-start py-4 lg:py-2">
-            <div class="book-3d" aria-hidden="true">
-              <div class="book-3d-inner">
-                <div class="book-pages"></div>
-                <div class="book-spine"></div>
-                <div class="book-cover">
-                  <span class="amazon-a">a</span>
-                  <span class="amazon-smile"></span>
-                  <span class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">KDP Book</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="lg:col-span-8">
-            <p class="why-text text-xs sm:text-sm lg:text-[15px] text-gray-300 leading-[1.7]">
-              Продовжувати сподіватися, що фінансова свобода чи додатковий дохід з'являться самі собою — програшний варіант. Настав час змінювати правила гри. Але давайте відверто: <strong class="text-white font-semibold">жодні зміни не почнуться,</strong> поки ви не усвідомите, що робота в наймі або класичний бізнес забирають 100% вашого часу і не приносять бажаного доходу. Чим довше ви ігноруєте нові технології та глобальні ринки, <strong class="text-white font-semibold">тим важче буде зробити прорив.</strong> Ви не винні, що раніше запуск бізнесу вимагав тисяч доларів. Але у 2026 році не використовувати штучний інтелект для заробітку це свідома відмова від капіталу. Наша експрес-діагностика допоможе вам <strong class="text-white font-semibold">отримати чіткий план та зрозуміти, як вийти на&nbsp;дохід&nbsp;$2000+&nbsp;в&nbsp;місяць.</strong>
-            </p>
-          </div>
-        </div>
-      </div>
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold uppercase leading-[1.15] tracking-tight mb-6 sm:mb-8 text-center lg:text-left">
+        <span class="gradient-text">Настав час будувати</span>
+        <span class="text-white"> свій дохід у новій країні</span>
+      </h2>
 
-      <!-- Bottom: headline + CTA -->
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
-        <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold uppercase leading-[1.15] tracking-tight max-w-2xl text-center lg:text-left">
-          <span class="gradient-text">Настав час змінювати</span>
-          <span class="text-white"> правила гри</span>
-        </h2>
+      <p class="manifest-text text-base sm:text-lg lg:text-xl text-gray-200 leading-[1.65] mb-8 sm:mb-10 max-w-3xl">
+        Переїзд за кордон — вже великий крок. Але мовний бар'єр, чужа система і робота не за фахом нікуди не діваються. Більшість просто чекають, поки «все налагодиться». А час іде.
+      </p>
+      <p class="manifest-text text-base sm:text-lg lg:text-xl text-gray-200 leading-[1.65] mb-8 sm:mb-10 max-w-3xl">
+        Раніше вийти на глобальний ринок вимагало знання мови, досвіду і великого капіталу. Зараз частину цієї роботи бере на себе штучний інтелект. Ви створюєте книги за його участю, Amazon друкує й доставляє — а дохід у $, €, £ надходить незалежно від країни проживання.
+      </p>
+      <p class="manifest-text text-base sm:text-lg lg:text-xl text-gray-200 leading-[1.65] mb-8 sm:mb-10 max-w-3xl">
+        Саме це ми розбираємо на інтенсиві — за один вечір, крок за кроком, з конкретним планом під вашу ситуацію.
+      </p>
+
+      <div class="text-center lg:text-left">
         <a href="#join"
            class="gradient-btn shrink-0 inline-flex items-center justify-center px-8 sm:px-10 py-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all text-center whitespace-nowrap">
           Приєднатися до інтенсиву
@@ -1320,9 +1981,8 @@
   <section id="how-it-works" class="how-section-bg text-gray-900 py-14 sm:py-16 lg:py-20">
     <div class="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-10">
 
-      <h2 class="text-center text-2xl sm:text-3xl lg:text-[2.75rem] font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10">
-        <span class="text-gray-900">Як це </span>
-        <span class="gradient-text">працює?</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10 text-center gradient-text">
+        Як це працює?
       </h2>
 
       <div class="space-y-3 sm:space-y-4">
@@ -1334,7 +1994,7 @@
               Як влаштований бізнес на Amazon KDP
             </h3>
             <p class="text-sm text-gray-600 leading-snug">
-              Крок за кроком розбираєте, як працює Amazon KDP у 2026 році та чому цей ринок приносить $33 млрд на рік.
+              Крок за кроком ви розбираєте, як працює Amazon KDP у 2026 році та чому цей ринок приносить $33 млрд на рік.
             </p>
           </div>
         </article>
@@ -1346,7 +2006,7 @@
               Алгоритм вибору прибуткової ніші
             </h3>
             <p class="text-sm text-gray-600 leading-snug">
-              Вчитеся знаходити теми книг, які приносять від $2000 на місяць, і не витрачати свій час задарма.
+              Ви вчитеся знаходити теми книг, які приносять від $2 000 на місяць, і не витрачати свій час задарма.
             </p>
           </div>
         </article>
@@ -1358,7 +2018,7 @@
               Реальні цифри та кейси
             </h3>
             <p class="text-sm text-gray-600 leading-snug">
-              На прикладі наших особистих кабінетів та кабінетів учнів ви бачите, скільки роялті приносять книги.
+              На прикладі наших особистих кабінетів та кабінетів учнів ви бачите, скільки заробляють книги.
             </p>
           </div>
         </article>
@@ -1370,7 +2030,7 @@
               Покроковий план запуску
             </h3>
             <p class="text-sm text-gray-600 leading-snug">
-              Отримуєте чіткий алгоритм дій: від швидкого аналізу ринку до публікації першої книги.
+              Ви отримуєте чіткий алгоритм дій: від швидкого аналізу ринку до публікації першої книги.
             </p>
           </div>
         </article>
@@ -1382,7 +2042,7 @@
               Розбір страхів та бар'єрів
             </h3>
             <p class="text-sm text-gray-600 leading-snug">
-              Переконуєтеся, що відсутність англійської чи навичок письменника більше не є перешкодою завдяки ШІ.
+              Ви переконуєтеся, що відсутність англійської чи навичок письменника більше не є перешкодою завдяки ШІ.
             </p>
           </div>
         </article>
@@ -1393,6 +2053,173 @@
         <a href="#join" class="gradient-btn inline-flex items-center justify-center px-8 py-3.5 rounded-xl text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/25">
           Приєднатися до інтенсиву
         </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Inside / Program -->
+  <section id="inside" class="inside-section text-gray-900 py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10 max-w-3xl gradient-text">
+        На вас чекає 5 відео:
+      </h2>
+
+      <div class="space-y-2.5 sm:space-y-3">
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">1</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 1: <span class="gradient-text">Amazon KDP у 2026 році</span>
+              </h3>
+              <p class="inside-video-desc">
+                Як працює модель друку за запитом (Print on Demand) і де ховаються гроші?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">2</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 2: <span class="gradient-text">Секрети вибору ніші</span>
+              </h3>
+              <p class="inside-video-desc">
+                Як знайти тему книги за допомогою ШІ, яка гарантовано приносить від $2 000/місяць — без знання англійської?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">3</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 3: <span class="gradient-text">Анатомія успішної книги</span>
+              </h3>
+              <p class="inside-video-desc">
+                Розбір ТОП-3 бестселерів із різних ніш, які заробляють від $3 000 кожна.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">4</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 4: <span class="gradient-text">Економіка та реальні цифри</span>
+              </h3>
+              <p class="inside-video-desc">
+                Скільки заробляємо ми та наші студенти — на прикладі реальних кабінетів?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-3.5">
+          <div class="flex gap-3 sm:gap-3.5 items-center">
+            <span class="inside-step-num shrink-0">5</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">
+                Відео 5: <span class="gradient-text">Покроковий план дій</span>
+              </h3>
+              <p class="inside-video-desc">
+                Після інтенсиву ви знаєте, що робити далі — без здогадок і зупинок на старті.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What You Get in the Intensive -->
+  <section id="includes" class="includes-section text-white py-12 sm:py-14 lg:py-16">
+    <div class="max-w-[1040px] mx-auto px-4 sm:px-6">
+
+      <h2 class="includes-title">
+        <span class="gradient-text">Що ви отримуєте</span>
+        <span class="text-white"> в інтенсиві</span>
+      </h2>
+
+      <div class="includes-grid">
+
+        <article class="includes-card">
+          <div class="includes-card-inner">
+            <div class="includes-card-glow" aria-hidden="true"></div>
+            <span class="includes-card-num">01</span>
+            <h3 class="includes-card-title">5 відеолекцій без зайвого</h3>
+            <p class="includes-card-desc">
+              Вся програма в особистому кабінеті — доступна 24/7 з будь-якого пристрою. Заходите у зручний час і проходите у своєму темпі. Один вечір — і ви розумієте, як запустити бізнес на Amazon з країни, де живете зараз.
+            </p>
+          </div>
+        </article>
+
+        <article class="includes-card">
+          <div class="includes-card-inner">
+            <div class="includes-card-glow" aria-hidden="true"></div>
+            <span class="includes-card-num">02</span>
+            <h3 class="includes-card-title">Алгоритм вибору ніші за допомогою ШІ</h3>
+            <p class="includes-card-desc">
+              Конкретні інструменти та підходи — без здогадок і без знання англійської. Ви знаєте, з чого починати одразу після інтенсиву.
+            </p>
+          </div>
+        </article>
+
+        <article class="includes-card">
+          <div class="includes-card-inner">
+            <div class="includes-card-glow" aria-hidden="true"></div>
+            <span class="includes-card-num">03</span>
+            <h3 class="includes-card-title">Реальні цифри, не теорія</h3>
+            <p class="includes-card-desc">
+              Ви бачите реальні кабінети, реальні продажі та реальні суми наших студентів з різних країн — без прикрас і маркетингових обіцянок.
+            </p>
+          </div>
+        </article>
+
+        <article class="includes-card">
+          <div class="includes-card-inner">
+            <div class="includes-card-glow" aria-hidden="true"></div>
+            <span class="includes-card-num">04</span>
+            <h3 class="includes-card-title">Персональна стратегічна сесія з експертом</h3>
+            <p class="includes-card-desc">
+              У будь-який зручний час ви зустрічаєтеся з Олегом або Миколою особисто. Вони розберуть вашу конкретну ситуацію — країну проживання, час, бюджет — і складуть план саме під вас.
+            </p>
+          </div>
+        </article>
+
+        <article class="includes-card">
+          <div class="includes-card-inner">
+            <div class="includes-card-glow" aria-hidden="true"></div>
+            <span class="includes-card-num">05</span>
+            <h3 class="includes-card-title">Підтримка з технічних питань</h3>
+            <p class="includes-card-desc">
+              Якщо під час перегляду виникнуть запитання — команда на зв'язку в особистому кабінеті.
+            </p>
+          </div>
+        </article>
+
+        <article class="includes-card">
+          <div class="includes-card-inner">
+            <div class="includes-card-glow" aria-hidden="true"></div>
+            <span class="includes-card-num">06</span>
+            <h3 class="includes-card-title">Розбір реальних бестселерів</h3>
+            <p class="includes-card-desc">
+              Ви бачите зсередини, як влаштовані книги, які вже продаються на глобальному ринку — і розумієте, що саме робить їх успішними.
+            </p>
+          </div>
+        </article>
+
       </div>
 
     </div>
@@ -1418,7 +2245,7 @@
               <div class="bonus-card-glow" aria-hidden="true"></div>
               <div class="relative z-10 flex flex-col h-full">
                 <h3 class="text-xs font-extrabold uppercase tracking-wider text-purple-300/90 mb-3">
-                  Як його отримати
+                  Як отримати
                 </h3>
                 <ol class="space-y-2.5 flex-1">
                   <li class="flex items-start gap-2.5 text-[13px] sm:text-sm text-gray-200 leading-snug">
@@ -1459,7 +2286,7 @@
                     Ваша ситуація
                   </p>
                   <p class="text-[12px] text-gray-600 leading-snug">
-                    Заглибитеся у ваші стартові можливості: бюджет, час, навички.
+                    Заглибитеся у ваші стартові можливості: бюджет, час, країна проживання, навички.
                   </p>
                 </article>
                 <article class="bonus-perk p-3">
@@ -1467,7 +2294,7 @@
                     Сліпі зони
                   </p>
                   <p class="text-[12px] text-gray-600 leading-snug">
-                    Побачите, що заважає вам запустити онлайн-бізнес.
+                    Побачите, що заважає вам запустити онлайн-бізнес з-за кордону.
                   </p>
                 </article>
                 <article class="bonus-perk p-3">
@@ -1475,7 +2302,7 @@
                     $2000+ / місяць
                   </p>
                   <p class="text-[12px] text-gray-600 leading-snug">
-                    Отримаєте персональну стратегію виходу на $2000+ на місяць.
+                    Отримаєте персональну стратегію виходу на $2 000+ на місяць.
                   </p>
                 </article>
               </div>
@@ -1501,173 +2328,62 @@
   <section id="goal" class="goal-section py-12 sm:py-14 lg:py-16">
     <div class="max-w-[880px] mx-auto px-4 sm:px-6">
 
-      <h2 class="goal-headline text-white mb-6 sm:mb-8 max-w-3xl">
-        Вийти із <span class="muted">замкнутого кола</span> фінансових обмежень та повернути віру у власні сили
-      </h2>
+      <div class="goal-block">
+        <h2 class="goal-headline">
+          <span class="goal-headline-line gradient-text">Настав час будувати</span>
+          <span class="goal-headline-line text-white">свій дохід у новій країні</span>
+        </h2>
 
-      <p class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] text-gray-500 mb-5 sm:mb-6">
-        Наша мета:
-      </p>
-
-      <div class="space-y-6 sm:space-y-7">
-
-        <article class="flex gap-4 sm:gap-5 items-start">
-          <div class="goal-icon-tile" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 3L14.5 8.5L20 9.5L16 13.5L17 19L12 16.5L7 19L8 13.5L4 9.5L9.5 8.5L12 3Z" fill="url(#goal-grad-1)"/>
-              <defs>
-                <linearGradient id="goal-grad-1" x1="4" y1="3" x2="20" y2="19" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#a855f7"/>
-                  <stop offset="1" stop-color="#3b82f6"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div class="flex-1 min-w-0 pt-0.5">
-            <h3 class="goal-block-title text-sm sm:text-base font-extrabold uppercase tracking-tight leading-tight mb-2">
-              Реальні точки зростання
-            </h3>
-            <p class="text-[13px] sm:text-sm text-gray-300 leading-relaxed">
-              Допомогти вам вже з першого кроку побачити реальні точки зростання, вийти із замкнутого кола фінансових обмежень та повернути віру у власні сили. Ми хочемо, щоб ви зрозуміли, що можна жити по-іншому: мати власний дохід у декреті, створити надійний валютний капітал поза наймом або нарешті забути про постійні правки та нічну роботу на фрілансі.
-            </p>
-          </div>
-        </article>
-
-        <article class="flex gap-4 sm:gap-5 items-start">
-          <div class="goal-icon-tile" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 4h9l3 3v13a1 1 0 01-1 1H6a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="url(#goal-grad-2)" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M15 4v3h3" stroke="url(#goal-grad-2)" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M8 12h8M8 15.5h5" stroke="url(#goal-grad-2)" stroke-width="1.6" stroke-linecap="round"/>
-              <defs>
-                <linearGradient id="goal-grad-2" x1="5" y1="4" x2="19" y2="20" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#a855f7"/>
-                  <stop offset="1" stop-color="#38bdf8"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div class="flex-1 min-w-0 pt-0.5">
-            <h3 class="goal-block-title text-sm sm:text-base font-extrabold uppercase tracking-tight leading-tight mb-2">
-              Система за вечір
-            </h3>
-            <p class="text-[13px] sm:text-sm text-gray-300 leading-relaxed">
-              Ми створили цей інтенсив, щоб показати вам, як влаштована бізнес-модель Amazon KDP. Розкажемо, як саме вам заробляти <strong class="text-white font-semibold">$2000+/місяць</strong> із мінімальними стартовими вкладеннями.
-            </p>
-          </div>
-        </article>
-
+        <p class="goal-text">
+          Більшість емігрантів думають, що нова країна ускладнює старт у бізнесі. <span class="goal-hl">Насправді — навпаки.</span> Ви вже живете там, де Amazon платить у <span class="goal-hl">$, €, £</span>, де інфраструктура працює і де мільйони людей щодня купують книги на цій платформі.
+        </p>
+        <p class="goal-text">
+          <span class="goal-hl">За один вечір</span> ви розберете бізнес-модель <span class="goal-hl">Amazon KDP</span>, побачите реальні цифри і отримаєте план — як за участю <span class="goal-hl">ШІ</span> будувати <span class="goal-hl">власний дохід</span> з країни, де живете зараз.
+        </p>
       </div>
 
     </div>
   </section>
 
-  <!-- What's Inside -->
-  <section id="inside" class="inside-section text-gray-900 py-10 sm:py-12 lg:py-14">
-    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
-
-      <h2 class="goal-headline text-gray-900 mb-5 sm:mb-6 max-w-3xl">
-        На вас чекає <span class="gradient-text">5 відео</span>:
-      </h2>
-
-      <div class="space-y-2.5 sm:space-y-3">
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">1</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 1: <span class="gradient-text">Amazon KDP у 2026 році</span>
-              </h3>
-              <p class="inside-video-desc">
-                Як працює модель друку за запитом (Print on Demand) і де ховаються гроші?
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">2</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 2: <span class="gradient-text">Секрети вибору ніші</span>
-              </h3>
-              <p class="inside-video-desc">
-                Як знайти тему книги за допомогою ШІ, яка гарантовано приносить від $2000/місяць?
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">3</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 3: <span class="gradient-text">Анатомія успішної книги</span>
-              </h3>
-              <p class="inside-video-desc">
-                Розбір ТОП-3 бестселерів із різних ніш, які заробляють від $3000 кожна.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">4</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 4: <span class="gradient-text">Економіка та реальні цифри</span>
-              </h3>
-              <p class="inside-video-desc">
-                Скільки роялті отримуємо ми та наші студенти?
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">5</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 5: <span class="gradient-text">Покроковий план дій</span>
-              </h3>
-              <p class="inside-video-desc">
-                Ваші основні кроки до створення стабільного валютного активу та підготовка до стратегічної сесії.
-              </p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Результати учнів -->
+  <!-- Результати студентів -->
   <section id="results" class="reviews-section text-gray-900 py-10 sm:py-12 lg:py-14">
     <div class="max-w-[960px] mx-auto px-4 sm:px-6">
 
-      <div class="text-center mb-6 sm:mb-8">
-        <h2 class="text-xl sm:text-2xl lg:text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight">
-          <span class="text-gray-900">Що кажуть </span>
-          <span class="gradient-text">ті, хто вже створює книги на Amazon</span><span class="text-gray-900">?</span>
+      <div class="results-hero">
+        <span class="results-hero-badge">Реальні кейси студентів</span>
+        <h2 class="results-hero-heading">
+          <span class="results-hero-line gradient-text">Вони вже зробили вибір</span>
+          <span class="results-hero-line gradient-text">Тепер черга за вами</span>
         </h2>
-        <p class="mt-3 text-sm text-gray-600 max-w-xl mx-auto leading-relaxed">
-          Реальні історії тих, хто вже отримує дохід на Amazon KDP.
-        </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
 
         <article class="video-card">
+          <div class="video-case-head">
+            <h3 class="video-case-name">Вікторія</h3>
+            <p class="video-case-stat">1300+ ПРОДАЖІВ ТА $7,409.39 ДОХОДУ</p>
+          </div>
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/Ri_ic8ZB5x0?rel=0"
+              title="Вікторія — 1300+ продажів та $7,409.39 доходу"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-case-head">
+            <h3 class="video-case-name">Наталія</h3>
+            <p class="video-case-stat">$23,178.85 З НУЛЯ НА 3 КНИГАХ</p>
+          </div>
           <div class="video-embed">
             <iframe
               src="https://www.youtube-nocookie.com/embed/1qUj8TUGZBA?rel=0"
-              title="Історія учасника інтенсиву — 1"
+              title="Наталія — $23,178.85 з нуля на 3 книгах"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
@@ -1676,10 +2392,14 @@
         </article>
 
         <article class="video-card">
+          <div class="video-case-head">
+            <h3 class="video-case-name">Євгенія</h3>
+            <p class="video-case-stat">1770+ ПРОДАЖІВ ТА $7,592.97 ДОХОДУ</p>
+          </div>
           <div class="video-embed">
             <iframe
               src="https://www.youtube-nocookie.com/embed/UzycLXKTfok?rel=0"
-              title="Історія учасника інтенсиву — 2"
+              title="Євгенія — 1770+ продажів та $7,592.97 доходу"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
@@ -1688,22 +2408,14 @@
         </article>
 
         <article class="video-card">
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/XRdsRh22mEo?rel=0"
-              title="Історія учасника інтенсиву — 3"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+          <div class="video-case-head">
+            <h3 class="video-case-name">Денис</h3>
+            <p class="video-case-stat">$197,667.95 З ОДНОГО АКАУНТУ</p>
           </div>
-        </article>
-
-        <article class="video-card">
           <div class="video-embed">
             <iframe
               src="https://www.youtube-nocookie.com/embed/KVjiYVacIV8?rel=0"
-              title="Історія учасника інтенсиву — 4"
+              title="Денис — $197,667.95 З ОДНОГО АКАУНТУ"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
@@ -1720,9 +2432,8 @@
   <section id="authors" class="speakers-section py-10 sm:py-12 lg:py-14">
     <div class="max-w-[960px] mx-auto px-4 sm:px-6">
 
-      <h2 class="text-center text-xl sm:text-2xl lg:text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight mb-6 sm:mb-8">
-        <span class="text-white">Ваші провідники </span>
-        <span class="gradient-text">в світ Amazon KDP</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10 text-center gradient-text">
+        Ваші провідники в світ Amazon KDP
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1732,27 +2443,27 @@
           <div class="speaker-card-glow" aria-hidden="true"></div>
           <div class="relative z-10 flex flex-col h-full">
             <div class="speaker-photo-slot mb-3">
-              <img src="images/speaker-oleg.png" alt="" width="400" height="500" loading="lazy" />
+              <img src="images/speaker-oleg.png" alt="Олег Бєлоцерковець" width="400" height="500" loading="lazy" />
             </div>
             <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">
               Олег Бєлоцерковець
             </h3>
-            <div class="grid grid-cols-3 gap-2 mb-3">
+            <div class="speaker-stats grid grid-cols-3 gap-2 sm:gap-3">
               <div class="text-center">
                 <p class="speaker-stat-value">15+</p>
-                <p class="speaker-stat-label">років eCommerce</p>
+                <p class="speaker-stat-label">Років<br>eCommerce</p>
               </div>
               <div class="text-center">
                 <p class="speaker-stat-value">10</p>
-                <p class="speaker-stat-label">років Amazon KDP</p>
+                <p class="speaker-stat-label">Років<br>Amazon KDP</p>
               </div>
               <div class="text-center">
                 <p class="speaker-stat-value">300+</p>
-                <p class="speaker-stat-label">книг у 2025</p>
+                <p class="speaker-stat-label">Книг<br>у 2025</p>
               </div>
             </div>
-            <p class="mt-auto text-[12px] sm:text-[13px] text-gray-400 leading-snug text-center pt-3 border-t border-white/8">
-              Автор методики «Формула запуску»
+            <p class="speaker-bio mt-auto">
+              Автор методики «Формула запуску» — системи виходу на перші продажі без знання англійської.
             </p>
           </div>
         </article>
@@ -1767,22 +2478,22 @@
             <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">
               Микола Матушевський
             </h3>
-            <div class="grid grid-cols-3 gap-2 mb-3">
+            <div class="speaker-stats grid grid-cols-3 gap-2 sm:gap-3">
               <div class="text-center">
                 <p class="speaker-stat-value">17+</p>
-                <p class="speaker-stat-label">років eCommerce</p>
+                <p class="speaker-stat-label">Років<br>eCommerce</p>
               </div>
               <div class="text-center">
                 <p class="speaker-stat-value">10</p>
-                <p class="speaker-stat-label">років Amazon KDP</p>
+                <p class="speaker-stat-label">Років<br>Amazon KDP</p>
               </div>
               <div class="text-center">
                 <p class="speaker-stat-value">300+</p>
-                <p class="speaker-stat-label">книг у 2025</p>
+                <p class="speaker-stat-label">Книг<br>у 2025</p>
               </div>
             </div>
-            <p class="mt-auto text-[12px] sm:text-[13px] text-gray-400 leading-snug text-center pt-3 border-t border-white/8">
-              Вихід на $100&nbsp;000+ роялті на рік
+            <p class="speaker-bio mt-auto">
+              Вихід на $100 000+ на рік через правильну стратегію ніш та ШІ-автоматизацію контенту.
             </p>
           </div>
         </article>
@@ -1802,10 +2513,13 @@
 
       <div class="pricing-text-card">
         <p class="why-text text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
-          Ми могли б продавати ці знання за <span class="pricing-hl">сотні доларів</span>, адже зібрали тут усе, що самі перевіряли на практиці останні <span class="pricing-hl">10 років</span>. Але ми робимо цей крок <span class="pricing-hl">максимально доступним</span>, щоб відсіяти теоретиків і знайти людей, <span class="pricing-hl">готових до реальних дій</span>.
+          Ми працюємо в Amazon KDP 10 років і за цей час перевірили на практиці все — що працює, що ні, і де насправді ховаються гроші. Цей інтенсив — концентрат того, що реально дає результат.
         </p>
         <p class="why-text mt-4 text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
-          Ми створили цю <span class="pricing-hl">експрес-діагностику</span>, щоб показати вам прозору математику ринку <span class="pricing-hl">Amazon KDP</span> та алгоритми аналізу ніш за допомогою <span class="pricing-hl">ШІ</span>. Наша ціль — щоб ви за <span class="pricing-hl">1 вечір</span> переконалися в ефективності моделі, забрали головний бонус — <span class="pricing-hl">Персональну стратегічну сесію</span> з експертом нашої команди — і отримали чіткий індивідуальний план виходу на <span class="pricing-hl">$2000/місяць</span>.
+          499 грн — не символічна ціна «аби продати». Це фільтр. Нам важливо працювати з людьми, які готові діяти, а не просто цікавляться темою.
+        </p>
+        <p class="why-text mt-4 text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
+          За один вечір ви побачите реальні цифри, зрозумієте, як влаштована модель, і отримаєте персональну стратегічну сесію — щоб скласти план конкретно під вашу ситуацію.
         </p>
       </div>
 
@@ -1830,12 +2544,12 @@
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Я не знаю англійської мови, як я зможу продавати книги?</span>
+            <span>Я не знаю англійської мови — як я зможу продавати книги?</span>
             <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              ШІ повністю нівелює мовний бар'єр, створюючи професійний контент та описи для будь-якого ринку.
+              Саме для цього і існує ШІ. ChatGPT, Claude та інші AI-інструменти повністю беруть на себе написання контенту, переклад і SEO-оптимізацію для Amazon. Ви задаєте напрям — ШІ виконує роботу. Мовний бар'єр більше не існує у 2026 році.
             </div>
           </div>
         </div>
@@ -1847,7 +2561,7 @@
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Всього 1 вечір. Короткі лекції без води.
+              Один вечір. 5 коротких відеолекцій без зайвого матеріалу — пройдете за 2–3 години. Доступ відкривається одразу після оплати і діє 4 дні, тож ви самі обираєте зручний час.
             </div>
           </div>
         </div>
@@ -1859,7 +2573,31 @@
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Для публікації книг стартовий капітал на закупівлю товару становить $0, оскільки Amazon сам друкує книгу після покупки. Проте для швидкого старту вам знадобляться мінімальні вкладення.
+              Початкові вкладення на старті потрібні — але їх розмір залежить від вас: від мінімального запуску до більш активного масштабування. Amazon друкує книгу лише після покупки, тому склад і закупівля товару не потрібні. Скільки саме інвестувати — вирішуєте ви, виходячи зі свого бюджету, цілей і темпу, з яким хочете рухатись.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Я живу в Польщі / Німеччині / Канаді. Чи можу я вести такий бізнес?</span>
+            <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <div class="faq-answer-inner">
+              Так, і це одна з головних переваг Amazon KDP. Бізнес не прив'язаний до вашої фізичної локації. Amazon приймає реєстрацію та переказує кошти у більшість країн світу. Де б ви не жили — ваші книги продаються глобально.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Як Amazon переказує кошти за кордон?</span>
+            <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <div class="faq-answer-inner">
+              Amazon переказує кошти на ваш банківський рахунок у більшість країн світу — у $, € або £. Жодних складних схем. Ви продаєте на платформі, Amazon переказує вам гроші.
             </div>
           </div>
         </div>
@@ -1871,11 +2609,34 @@
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Так, ми з радістю допоможемо. Напишіть на <a href="mailto:ai.kdp.academy@gmail.com" class="text-violet-400 hover:text-violet-300 underline underline-offset-2">ai.kdp.academy@gmail.com</a> — відповімо з питаннями щодо доступу, оплати та особистого кабінету.
+              Так. Після оплати ви отримуєте доступ до особистого кабінету, де є підтримка з технічних питань. Також у вас є 30 днів, щоб скористатися персональною стратегічною сесією з експертом.
             </div>
           </div>
         </div>
 
+      </div>
+
+      <div class="faq-footer">
+        <div class="faq-footer-card">
+          <div class="faq-footer-card-inner">
+            <div class="faq-footer-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <p class="faq-footer-title">Не знайшли відповідь на ваше запитання?</p>
+            <p class="faq-footer-text">Ми будемо раді проконсультувати вас під час особистої бесіди</p>
+            <!-- TODO: підставити посилання на Telegram -->
+            <a href="#" id="faq-telegram-link" class="faq-telegram-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              Написати в Telegram
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1885,8 +2646,8 @@
   <section id="final-cta" class="final-cta py-14 sm:py-16 lg:py-20">
     <div class="relative z-10 max-w-[720px] mx-auto px-4 sm:px-6 text-center">
 
-      <h2 class="text-2xl sm:text-3xl lg:text-[2.35rem] font-extrabold uppercase leading-[1.12] tracking-tight text-white mb-4 sm:mb-5">
-        Чи готові ви перестати <span class="gradient-text">витрачати сили даремно?</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-[2.35rem] font-extrabold uppercase leading-[1.12] tracking-tight mb-4 sm:mb-5 gradient-text">
+        Зробіть перший крок до власного доходу у $, €, £
       </h2>
 
       <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-7 sm:mb-8 max-w-lg mx-auto">
@@ -1910,14 +2671,14 @@
         <p class="site-footer-copy">© 2026 Fast-Track</p>
 
         <div class="site-footer-legal">
-          <p>Alfa Edelweiss LLC</p>
-          <p>7901 4th St N Ste 300, St. Petersburg, FL 33702, United States</p>
-          <a href="mailto:ai.kdp.academy@gmail.com" class="site-footer-email">ai.kdp.academy@gmail.com</a>
+          <p>ALFA EDELWEISS LLC</p>
+          <p>7901 4TH ST N STE 300, ST. PETERSBURG, FL 33702, UNITED STATES</p>
+          <a href="mailto:ai.kdp.academy@gmail.com" class="site-footer-email">AI.KDP.ACADEMY@GMAIL.COM</a>
         </div>
 
         <div class="site-footer-policy">
-          <a href="policy.html">Політика конфіденційності</a>
-          <a href="offer.html">Публічна оферта</a>
+          <a href="https://kdpfasttrack.vercel.app/policy.html">Політика конфіденційності</a>
+          <a href="https://kdpfasttrack.vercel.app/offer.html">Публічна оферта</a>
         </div>
       </div>
     </div>
