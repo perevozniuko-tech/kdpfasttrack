@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Онлайн-інтенсив Fast-Track для емігрантів: як заробляти на Amazon KDP у $, €, £ за допомогою ШІ. 5 відеолекцій і стратегічна сесія з експертом — від 499 грн." />
-  <meta name="theme-color" content="#05070a" />
-  <title>Fast-Track: Amazon KDP з ШІ</title>
+  <meta name="description" content="Опануйте AI та почніть заробляти на Amazon KDP від $3000/місяць. Онлайн-інтенсив Fast-Track — доступ одразу після оплати." />
+  <meta name="theme-color" content="#080b10" />
+  <title>Fast-Track: Amazon KDP × AI 2026</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="favicon.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,43 +20,60 @@
             sans: ['Inter', 'system-ui', 'sans-serif'],
           },
           colors: {
-            navy: {
-              DEFAULT: '#05070a',
-              light: '#0a0f1a',
+            brand: {
+              DEFAULT: '#FF9900',
+              light: '#FFB84D',
+              dark: '#E47911',
             },
+            surface: '#0d1117',
           },
         },
       },
     };
   </script>
   <style>
+
+    :root {
+      --kdp-bg: #0B0F1A;
+      --kdp-surface: #111827;
+      --kdp-surface2: #1A2235;
+      --kdp-gold: #F5A623;
+      --kdp-gold-dark: #d4a017;
+      --kdp-gold-light: #f0c14b;
+      --kdp-orange: #ff9900;
+      --kdp-orange-light: #ffb84d;
+      --kdp-text: #F0F4FF;
+      --kdp-muted: #8A9BB5;
+      --kdp-border: rgba(245, 166, 35, 0.22);
+    }
+
     .gradient-text {
-      background: linear-gradient(90deg, #a855f7 0%, #6366f1 45%, #3b82f6 100%);
+      background: linear-gradient(90deg, #f0c14b 0%, #F5A623 45%, #ff9900 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
+    .text-gold { color: #F5A623; }
+
     .gradient-btn {
-      background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+      background: var(--btn-cta-gradient);
+      color: var(--btn-cta-text);
+      box-shadow: 0 4px 24px var(--btn-cta-shadow);
     }
 
     .neon-border {
-      border: 1px solid rgba(59, 130, 246, 0.35);
+      border: 1px solid rgba(255, 153, 0, 0.35);
       box-shadow:
-        0 0 20px rgba(59, 130, 246, 0.15),
-        inset 0 0 20px rgba(59, 130, 246, 0.03);
+        0 0 20px rgba(255, 153, 0, 0.15),
+        inset 0 0 20px rgba(255, 153, 0, 0.03);
     }
 
     .bonus-accent {
       display: inline;
       font-weight: 800;
       font-size: 1.05em;
-      background: linear-gradient(90deg, #e9d5ff 0%, #a78bfa 35%, #818cf8 70%, #60a5fa 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.45));
+      color: #E8832A;
     }
 
     @media (min-width: 640px) {
@@ -64,39 +81,366 @@
     }
 
     .header-btn-border {
-      border: 1px solid rgba(139, 92, 246, 0.5);
-      box-shadow: 0 0 18px rgba(139, 92, 246, 0.2);
+      border: none;
+      box-shadow: 0 4px 20px var(--btn-cta-shadow);
+      background: var(--btn-cta-gradient);
+      color: var(--btn-cta-text) !important;
     }
 
     .hero-bg {
       position: relative;
-      overflow: hidden;
-      background-color: #05070a;
+      overflow: visible;
+      background-color: #0B0F1A;
       background-image:
-        radial-gradient(ellipse 80% 60% at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 70% at 55% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 50% at 85% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 60% at 15% 50%, rgba(255, 153, 0, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 70% at 75% 80%, rgba(245, 166, 35, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 85% 30%, rgba(240, 193, 75, 0.05) 0%, transparent 50%);
     }
 
     .speaker-glow {
-      background: radial-gradient(ellipse 55% 45% at 50% 92%, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 72%);
+      background: radial-gradient(ellipse 55% 45% at 50% 92%, rgba(255, 153, 0, 0.15) 0%, rgba(245, 166, 35, 0.06) 50%, transparent 72%);
     }
 
     .hero-main {
       position: relative;
       z-index: 1;
-      flex: 1;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      min-height: 0;
-      padding: 0.85rem 0 2.25rem;
+      padding: 0.75rem 0 1.5rem;
     }
 
     @media (min-width: 1024px) {
-      .hero-main {
-        padding: 0 0 1.75rem;
+      .hero-main { padding: 1rem 0 1.75rem; }
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-headline {
+      max-width: 750px;
+      width: 100%;
+      margin: 0 auto 16px;
+      padding: 0;
+      font-size: var(--fs-hero);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .hero-headline-line {
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .hero-headline-line {
+        white-space: nowrap;
       }
+    }
+
+    .hero-headline-line--single {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 380px) {
+      .hero-headline-line--single {
+        font-size: clamp(28px, 8.5vw, 40px);
+        letter-spacing: -0.03em;
+      }
+    }
+
+    .hero-headline-accent {
+      color: #E8832A;
+      font-weight: 900;
+    }
+
+    .hero-tagline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0 auto 1rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(232, 131, 42, 0.35);
+      background: rgba(232, 131, 42, 0.08);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #E8832A;
+    }
+
+    @media (min-width: 640px) {
+      .hero-tagline-pill { font-size: 0.75rem; }
+    }
+
+    .hero-lead {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin: 0 auto 32px;
+    }
+
+    .hero-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 6px 8px;
+      list-style: none;
+      margin: 0 auto 28px;
+      padding: 0;
+      max-width: 640px;
+    }
+
+    .hero-benefits .benefit-chip {
+      display: inline-flex;
+      width: auto;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.3;
+      padding: 5px 11px;
+      white-space: nowrap;
+      text-align: center;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: none;
+    }
+
+    .hero-benefits .benefit-chip::before {
+      display: none;
+      content: none;
+    }
+
+    @media (min-width: 640px) {
+      .hero-benefits .benefit-chip {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      height: 150px;
+      margin: 0 auto 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-visual { height: 175px; max-width: 420px; margin-bottom: 1.15rem; }
+    }
+
+    .hero-watermark {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(4rem, 18vw, 7rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: rgba(255, 107, 0, 0.07);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .hero-books {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 240px;
+      height: 140px;
+      z-index: 1;
+    }
+
+    @media (min-width: 640px) {
+      .hero-books { width: 270px; height: 155px; }
+    }
+
+    .hero-book {
+      position: absolute;
+      border-radius: 6px 10px 10px 6px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-book--back-left {
+      width: 72px;
+      height: 100px;
+      left: 18%;
+      bottom: 18px;
+      transform: rotate(-18deg);
+      opacity: 0.85;
+    }
+
+    .hero-book--back-right {
+      width: 72px;
+      height: 100px;
+      right: 18%;
+      bottom: 18px;
+      transform: rotate(14deg);
+      opacity: 0.85;
+    }
+
+    .hero-book--front {
+      width: 96px;
+      height: 132px;
+      left: 50%;
+      bottom: 8px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      z-index: 2;
+    }
+
+    .hero-book-marble {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff 0%, #d1d5db 35%, #1f2937 100%);
+      border: 2px solid #e5e7eb;
+    }
+
+    .hero-book-label {
+      font-size: 0.875rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: #111827;
+    }
+
+    .hero-float-badge {
+      position: absolute;
+      z-index: 3;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08);
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .hero-float-badge--sales {
+      left: 0;
+      bottom: 28%;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.7rem;
+      background: #1f2937;
+      color: #fff;
+      border: none;
+      font-size: 0.75rem;
+    }
+
+    .hero-float-badge--sales svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .hero-float-badge--sales strong {
+      color: #FF6B00;
+      font-weight: 800;
+    }
+
+    .hero-float-badge--exp {
+      right: 0;
+      bottom: 38%;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.65rem;
+      max-width: 11rem;
+      white-space: normal;
+      text-align: left;
+      line-height: 1.3;
+      font-size: 0.625rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-float-badge--exp { font-size: 0.6875rem; max-width: 12.5rem; }
+    }
+
+    .hero-float-icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      background: #FF6B00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 24rem;
+      margin: 0 auto;
+    }
+
+    .hero-note {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .hero-action {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .hero-price {
+      margin-bottom: 0.85rem;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .hero-price-amount {
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #FFB84D 0%, #FF9900 48%, #E47911 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .hero-timer-wrap {
+      margin-top: 1rem;
+      padding: 0;
+    }
+
+    .hero-timer-wrap > p {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-timer-wrap #countdown {
+      justify-content: center;
     }
 
     .hero-grid {
@@ -133,22 +477,41 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      overflow: visible;
     }
 
     @media (min-width: 1024px) {
       .hero-photo-col {
-        padding-top: 1.85rem;
-        align-self: end;
+        padding-top: 0;
+        align-self: center;
       }
     }
 
     .hero-photo-stage {
       position: relative;
       width: 100%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      max-width: 640px;
+      margin: 0 auto;
+      display: block;
       line-height: 0;
+      overflow: visible;
+      padding: 0 0.5rem;
+    }
+
+    .speaker-photo {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: contain;
+      object-position: center bottom;
+      -webkit-mask-image: none;
+      mask-image: none;
+      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.1));
+      transform: translateZ(0);
     }
 
     .hero-photo-stage::before {
@@ -159,7 +522,7 @@
       transform: translateX(-50%);
       width: 70%;
       height: 28%;
-      background: radial-gradient(ellipse at 50% 80%, rgba(99, 102, 241, 0.18) 0%, rgba(59, 130, 246, 0.06) 45%, transparent 72%);
+      background: radial-gradient(ellipse at 50% 80%, rgba(255, 153, 0, 0.14) 0%, rgba(245, 166, 35, 0.05) 45%, transparent 72%);
       pointer-events: none;
       z-index: 0;
     }
@@ -175,9 +538,9 @@
       background: linear-gradient(
         to bottom,
         transparent 0%,
-        rgba(5, 7, 10, 0.18) 48%,
-        rgba(5, 7, 10, 0.72) 82%,
-        #05070a 100%
+        rgba(11, 15, 26, 0.18) 48%,
+        rgba(11, 15, 26, 0.72) 82%,
+        #0B0F1A 100%
       );
       pointer-events: none;
       z-index: 2;
@@ -191,8 +554,8 @@
       bottom: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.45) 12%, rgba(167, 139, 250, 0.9) 50%, rgba(96, 165, 250, 0.45) 88%, transparent 100%);
-      box-shadow: 0 0 12px rgba(139, 92, 246, 0.35);
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 153, 0, 0.4) 12%, rgba(245, 166, 35, 0.85) 50%, rgba(255, 153, 0, 0.4) 88%, transparent 100%);
+      box-shadow: 0 0 12px rgba(245, 166, 35, 0.3);
       pointer-events: none;
       z-index: 3;
     }
@@ -200,7 +563,7 @@
     .hero-section-wave {
       display: block;
       line-height: 0;
-      background-color: #05070a;
+      background-color: #0B0F1A;
       pointer-events: none;
     }
 
@@ -216,30 +579,11 @@
       }
     }
 
-    .speaker-photo {
-      position: relative;
-      z-index: 1;
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      max-height: 460px;
-      object-fit: contain;
-      object-position: bottom center;
-      image-rendering: auto;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
-      margin-bottom: 0;
-      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, rgba(0, 0, 0, 0.4) 94%, transparent 100%);
-      mask-image: linear-gradient(to bottom, #000 0%, #000 80%, rgba(0, 0, 0, 0.4) 94%, transparent 100%);
-    }
-
     .hero-speaker-badges {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 11%;
+      bottom: 10%;
       z-index: 4;
       display: flex;
       justify-content: space-between;
@@ -263,8 +607,8 @@
       );
       border: 1px solid rgba(255, 255, 255, 0.92);
       box-shadow:
-        0 0 0 1px rgba(139, 92, 246, 0.12),
-        0 0 24px rgba(139, 92, 246, 0.28),
+        0 0 0 1px rgba(245, 166, 35, 0.12),
+        0 0 24px rgba(255, 153, 0, 0.18),
         0 8px 20px rgba(0, 0, 0, 0.16);
       backdrop-filter: blur(14px) saturate(1.15);
       -webkit-backdrop-filter: blur(14px) saturate(1.15);
@@ -276,7 +620,7 @@
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -0.02em;
-      color: #7c3aed;
+      color: #d4a017;
     }
 
     .hero-speaker-badge-label,
@@ -336,20 +680,6 @@
       }
     }
 
-    @media (min-width: 640px) {
-      .speaker-photo { max-height: 520px; }
-    }
-
-    @media (min-width: 1024px) {
-      .speaker-photo {
-        max-height: min(68vh, 580px);
-      }
-    }
-
-    @media (min-width: 1280px) {
-      .speaker-photo { max-height: min(70vh, 620px); }
-    }
-
     .hero-names {
       font-size: 0.6875rem;
       font-weight: 700;
@@ -367,9 +697,9 @@
     }
 
     .timer-digit {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
-      border: 1px solid rgba(139, 92, 246, 0.35);
-      box-shadow: 0 0 12px rgba(139, 92, 246, 0.12);
+      background: #1A2235;
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     .names-line {
@@ -463,20 +793,20 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #7c3aed;
+      color: #F5A623;
       margin-bottom: 0.75rem;
     }
 
     .speakers-section .section-eyebrow {
-      color: #c4b5fd;
+      color: #f0c14b;
     }
 
     .case-card {
       background: #fff;
-      border: 1px solid rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(245, 166, 35, 0.12);
       border-radius: 16px;
       padding: 1.25rem 1.5rem;
-      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.07);
+      box-shadow: 0 8px 30px rgba(255, 153, 0, 0.07);
       height: 100%;
     }
 
@@ -485,7 +815,7 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 0.35rem;
-      background: linear-gradient(90deg, #a855f7 0%, #6366f1 45%, #3b82f6 100%);
+      background: linear-gradient(90deg, #F5A623 0%, #E8892B 45%, #ffb84d 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -515,14 +845,14 @@
     }
 
     .case-author {
-      font-size: 0.8125rem;
-      font-style: italic;
-      color: #6b7280;
+      font-size: 16px;
+      font-style: normal;
+      color: #444444;
       margin: 0;
     }
 
     .benefits-strip {
-      border-bottom: 1px solid rgba(139, 92, 246, 0.08);
+      border-bottom: 1px solid rgba(245, 166, 35, 0.08);
     }
 
     .benefits-grid {
@@ -545,8 +875,8 @@
       font-weight: 600;
       line-height: 1.25;
       color: #374151;
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.07) 0%, rgba(59, 130, 246, 0.05) 100%);
-      border: 1px solid rgba(139, 92, 246, 0.16);
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.07) 0%, rgba(255, 153, 0, 0.05) 100%);
+      border: 1px solid rgba(245, 166, 35, 0.16);
       white-space: nowrap;
     }
 
@@ -555,7 +885,7 @@
       font-size: 0.7rem;
       font-weight: 800;
       line-height: 1;
-      background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+      background: linear-gradient(135deg, #F5A623 0%, #ffb84d 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -576,11 +906,64 @@
       hyphens: auto;
     }
 
-    .why-card {
-      background: linear-gradient(135deg, #0f1420 0%, #12101f 50%, #0a0e18 100%);
-      border: 1px solid rgba(139, 92, 246, 0.15);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    .access-list {
+      list-style: none;
+      margin: 2rem auto 0;
+      padding: 0;
+      max-width: 680px;
+      display: grid;
+      gap: 0.85rem;
     }
+
+    .access-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .access-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #F5A623;
+      font-weight: 700;
+    }
+
+    .reason-card {
+      background: #fff;
+      border: 1px solid rgba(245, 166, 35, 0.14);
+      border-radius: 16px;
+      padding: 1.5rem;
+      height: 100%;
+      box-shadow: 0 8px 30px rgba(255, 153, 0, 0.06);
+    }
+
+    .reason-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.35;
+      margin-bottom: 0.65rem;
+      color: #111827;
+    }
+
+    .reason-card p {
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: #4b5563;
+    }
+
+    .case-desc {
+      padding: 0.85rem 1rem 1rem;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #4b5563;
+      border-top: 1px solid rgba(245, 166, 35, 0.1);
+    }
+
 
     .book-3d {
       perspective: 900px;
@@ -605,12 +988,12 @@
       position: absolute;
       inset: 0;
       border-radius: 4px 10px 10px 4px;
-      background: linear-gradient(145deg, #1e293b 0%, #0f172a 60%, #1a1040 100%);
-      border: 1px solid rgba(139, 92, 246, 0.35);
+      background: linear-gradient(145deg, #1e293b 0%, #0f172a 60%, #1a1408 100%);
+      border: 1px solid rgba(245, 166, 35, 0.35);
       box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(139, 92, 246, 0.15),
-        inset 0 0 40px rgba(59, 130, 246, 0.08);
+        0 0 30px rgba(245, 166, 35, 0.15),
+        inset 0 0 40px rgba(255, 153, 0, 0.08);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -658,8 +1041,8 @@
 
     .how-step {
       background: #fff;
-      border: 1px solid rgba(139, 92, 246, 0.12);
-      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.06);
+      border: 1px solid rgba(245, 166, 35, 0.12);
+      box-shadow: 0 4px 20px rgba(255, 153, 0, 0.06);
     }
 
     .how-step-num {
@@ -667,7 +1050,7 @@
       height: 40px;
       flex-shrink: 0;
       align-self: center;
-      background: linear-gradient(135deg, #a855f7, #3b82f6);
+      background: linear-gradient(135deg, #F5A623, #ffb84d);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -676,7 +1059,7 @@
       font-size: 16px;
       line-height: 1;
       color: white;
-      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+      box-shadow: 0 4px 12px rgba(245, 166, 35, 0.3);
     }
 
     .how-step-icon {
@@ -688,24 +1071,24 @@
     }
 
     .how-section-bg {
-      background-color: #f4f2fa;
+      background-color: #faf6ee;
       background-image:
-        radial-gradient(ellipse 70% 50% at 20% 0%, rgba(168, 85, 247, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 40% at 90% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+        radial-gradient(ellipse 70% 50% at 20% 0%, rgba(245, 166, 35, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 100%, rgba(255, 153, 0, 0.1) 0%, transparent 50%);
     }
 
     .bonus-section {
-      background-color: #f4f2fa;
+      background-color: #faf6ee;
       background-image:
-        radial-gradient(ellipse 60% 50% at 10% 0%, rgba(168, 85, 247, 0.14) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 95% 100%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+        radial-gradient(ellipse 60% 50% at 10% 0%, rgba(245, 166, 35, 0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 95% 100%, rgba(255, 153, 0, 0.12) 0%, transparent 50%);
     }
 
     .bonus-bento {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(59, 130, 246, 0.35), rgba(99, 102, 241, 0.4));
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.5), rgba(245, 166, 35, 0.4), rgba(240, 193, 75, 0.35));
       border-radius: 20px;
       padding: 1px;
-      box-shadow: 0 20px 50px rgba(99, 102, 241, 0.12);
+      box-shadow: 0 20px 50px rgba(255, 153, 0, 0.12);
     }
 
     .bonus-bento-inner {
@@ -723,17 +1106,17 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #6d28d9;
-      background: rgba(139, 92, 246, 0.1);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      color: #d4a017;
+      background: rgba(245, 166, 35, 0.1);
+      border: 1px solid rgba(245, 166, 35, 0.2);
     }
 
     .bonus-card {
-      background: linear-gradient(145deg, #0c0c0f 0%, #12101f 55%, #0a0e18 100%);
+      background: linear-gradient(145deg, #0c0c0f 0%, #16120e 55%, #0a0e18 100%);
       border-radius: 14px;
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(245, 166, 35, 0.2);
     }
 
     .bonus-card-glow {
@@ -742,7 +1125,7 @@
       bottom: -25%;
       width: 65%;
       height: 50%;
-      background: radial-gradient(ellipse at 60% 60%, rgba(59, 130, 246, 0.5) 0%, rgba(139, 92, 246, 0.3) 40%, transparent 70%);
+      background: radial-gradient(ellipse at 60% 60%, rgba(255, 153, 0, 0.5) 0%, rgba(245, 166, 35, 0.3) 40%, transparent 70%);
       pointer-events: none;
     }
 
@@ -758,33 +1141,33 @@
       font-weight: 800;
       line-height: 1;
       color: white;
-      background: linear-gradient(135deg, #a855f7, #3b82f6);
+      background: linear-gradient(135deg, #F5A623, #ffb84d);
     }
 
     .bonus-perk {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.07) 0%, rgba(59, 130, 246, 0.05) 100%);
-      border: 1px solid rgba(139, 92, 246, 0.14);
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.07) 0%, rgba(255, 153, 0, 0.05) 100%);
+      border: 1px solid rgba(245, 166, 35, 0.14);
       border-radius: 12px;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .bonus-perk:hover {
-      border-color: rgba(139, 92, 246, 0.28);
-      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.08);
+      border-color: rgba(245, 166, 35, 0.28);
+      box-shadow: 0 6px 20px rgba(255, 153, 0, 0.08);
     }
 
     .bonus-perk-title {
-      background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+      background: linear-gradient(90deg, #F5A623 0%, #ff9900 50%, #ff9900 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .goal-section {
-      background-color: #030304;
+      background-color: #0B0F1A;
       background-image:
-        radial-gradient(ellipse 55% 45% at 0% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 35% at 100% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+        radial-gradient(ellipse 55% 45% at 0% 20%, rgba(255, 153, 0, 0.1) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 100% 80%, rgba(245, 166, 35, 0.08) 0%, transparent 50%);
     }
 
     .goal-block {
@@ -829,7 +1212,7 @@
       font-size: 1rem;
       line-height: 1.7;
       color: #d1d5db;
-      text-align: left;
+      text-align: justify;
       text-wrap: pretty;
     }
 
@@ -845,7 +1228,7 @@
 
     .goal-hl {
       font-weight: 700;
-      color: #c4b5fd;
+      color: #f0c14b;
     }
 
     @media (min-width: 640px) {
@@ -866,9 +1249,9 @@
       flex-shrink: 0;
       border-radius: 14px;
       background: linear-gradient(145deg, #12121a 0%, #0a0a10 100%);
-      border: 1px solid rgba(139, 92, 246, 0.22);
+      border: 1px solid rgba(245, 166, 35, 0.22);
       box-shadow:
-        0 0 28px rgba(99, 102, 241, 0.18),
+        0 0 28px rgba(255, 153, 0, 0.18),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
       display: flex;
       align-items: center;
@@ -876,34 +1259,34 @@
     }
 
     .goal-icon-tile svg {
-      filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.55));
+      filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.55));
     }
 
     .goal-block-title {
-      background: linear-gradient(90deg, #c084fc 0%, #818cf8 45%, #60a5fa 100%);
+      background: linear-gradient(90deg, #f0c14b 0%, #ff9900 45%, #f0c14b 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .inside-section {
-      background: linear-gradient(180deg, #e6e0f8 0%, #f9f7ff 55%, #ffffff 100%);
+      background: linear-gradient(180deg, #fef3e2 0%, #fffbf5 55%, #ffffff 100%);
     }
 
     .inside-video-card {
-      background: linear-gradient(135deg, #ffffff 0%, #f6f4fb 55%, #f3f1f8 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #fff9f0 55%, #fff5e8 100%);
       border-radius: 12px;
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(139, 92, 246, 0.1);
-      box-shadow: 0 2px 12px rgba(99, 102, 241, 0.05);
+      border: 1px solid rgba(245, 166, 35, 0.1);
+      box-shadow: 0 2px 12px rgba(255, 153, 0, 0.05);
     }
 
     .inside-step-num {
       width: 34px;
       height: 34px;
       flex-shrink: 0;
-      align-self: center;
+      align-self: flex-start;
       border-radius: 9px;
       display: flex;
       align-items: center;
@@ -912,8 +1295,8 @@
       font-weight: 800;
       line-height: 1;
       color: white;
-      background: linear-gradient(135deg, #a855f7, #3b82f6);
-      box-shadow: 0 3px 10px rgba(139, 92, 246, 0.22);
+      background: linear-gradient(135deg, #F5A623, #ffb84d);
+      box-shadow: 0 3px 10px rgba(245, 166, 35, 0.22);
     }
 
     .inside-video-title {
@@ -938,11 +1321,23 @@
       color: #4b5563;
     }
 
+    .program-result {
+      margin-top: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: rgba(255, 153, 0, 0.1);
+      border: 1px solid rgba(255, 153, 0, 0.2);
+      border-left: 3px solid #FF9900;
+      border-radius: 14px;
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.55;
+    }
+
     .includes-section {
-      background-color: #030304;
+      background-color: #0B0F1A;
       background-image:
-        radial-gradient(ellipse 70% 55% at 15% 0%, rgba(124, 58, 237, 0.22) 0%, transparent 58%),
-        radial-gradient(ellipse 55% 45% at 90% 100%, rgba(59, 130, 246, 0.14) 0%, transparent 55%);
+        radial-gradient(ellipse 70% 55% at 15% 0%, rgba(245, 166, 35, 0.22) 0%, transparent 58%),
+        radial-gradient(ellipse 55% 45% at 90% 100%, rgba(255, 153, 0, 0.14) 0%, transparent 55%);
     }
 
     .includes-title {
@@ -983,7 +1378,7 @@
       position: relative;
       border-radius: 16px;
       padding: 1px;
-      background: linear-gradient(145deg, rgba(168, 85, 247, 0.42), rgba(59, 130, 246, 0.28), rgba(99, 102, 241, 0.22));
+      background: linear-gradient(145deg, rgba(255, 153, 0, 0.45), rgba(245, 166, 35, 0.32), rgba(240, 193, 75, 0.22));
       box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
@@ -992,7 +1387,7 @@
       transform: translateY(-3px);
       box-shadow:
         0 16px 40px rgba(0, 0, 0, 0.35),
-        0 0 28px rgba(124, 58, 237, 0.18);
+        0 0 28px rgba(245, 166, 35, 0.18);
     }
 
     .includes-card-inner {
@@ -1016,7 +1411,7 @@
       top: -30%;
       width: 70%;
       height: 65%;
-      background: radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.16) 0%, transparent 68%);
+      background: radial-gradient(ellipse at 50% 50%, rgba(245, 166, 35, 0.16) 0%, transparent 68%);
       pointer-events: none;
     }
 
@@ -1035,8 +1430,8 @@
       font-weight: 800;
       letter-spacing: 0.06em;
       color: #fff;
-      background: linear-gradient(135deg, #a855f7, #6366f1 55%, #3b82f6);
-      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+      background: linear-gradient(135deg, #F5A623, #E8892B 55%, #ffb84d);
+      box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
     }
 
     .includes-card-title {
@@ -1069,10 +1464,10 @@
     }
 
     .reviews-section {
-      background-color: #f4f2fa;
+      background-color: #faf6ee;
       background-image:
-        radial-gradient(ellipse 60% 50% at 90% 0%, rgba(168, 85, 247, 0.1) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 0% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+        radial-gradient(ellipse 60% 50% at 90% 0%, rgba(245, 166, 35, 0.1) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 100%, rgba(255, 153, 0, 0.08) 0%, transparent 50%);
     }
 
     .results-hero {
@@ -1094,9 +1489,9 @@
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #6d28d9;
-      background: rgba(139, 92, 246, 0.12);
-      border: 1px solid rgba(139, 92, 246, 0.22);
+      color: #d4a017;
+      background: rgba(245, 166, 35, 0.12);
+      border: 1px solid rgba(245, 166, 35, 0.22);
     }
 
     @media (min-width: 640px) {
@@ -1129,10 +1524,10 @@
 
     .video-card {
       background: #fff;
-      border: 1px solid rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(245, 166, 35, 0.12);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.07);
+      box-shadow: 0 8px 30px rgba(255, 153, 0, 0.07);
     }
 
     .video-embed {
@@ -1162,17 +1557,45 @@
       line-height: 1.2;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #111827;
+      color: var(--text, #f9fafb);
+      -webkit-text-fill-color: var(--text, #f9fafb);
+    }
+
+    .video-embed-name {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      z-index: 2;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      pointer-events: none;
+    }
+
+    @media (min-width: 640px) {
+      .video-embed-name {
+        left: 14px;
+        bottom: 14px;
+        font-size: 0.8125rem;
+        padding: 6px 14px;
+      }
     }
 
     .video-case-stat {
       margin: 0;
-      font-size: 0.6875rem;
+      font-size: 0.75rem;
       font-weight: 700;
       line-height: 1.4;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+      background: linear-gradient(90deg, #F5A623 0%, #ff9900 50%, #ff9900 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1184,19 +1607,151 @@
       }
 
       .video-case-stat {
-        font-size: 0.75rem;
+        font-size: 0.8125rem;
       }
     }
 
+    .proof-carousel-wrap {
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (min-width: 640px) {
+      .proof-carousel-wrap {
+        margin-top: 3rem;
+        padding-top: 3rem;
+      }
+    }
+
+    .proof-carousel-title {
+      margin: 0 auto 1.5rem;
+      text-align: center;
+    }
+
+    .proof-carousel {
+      position: relative;
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+
+    @media (min-width: 640px) {
+      .proof-carousel {
+        max-width: 460px;
+      }
+    }
+
+    .proof-carousel-viewport {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      background:
+        linear-gradient(rgba(8, 11, 16, 0.92), rgba(8, 11, 16, 0.92)) padding-box,
+        var(--gradient-border) border-box;
+      box-shadow: var(--shadow), 0 0 48px rgba(255, 153, 0, 0.06);
+    }
+
+    .proof-carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+
+    .proof-carousel-slide {
+      flex: 0 0 100%;
+      min-width: 100%;
+    }
+
+    .proof-carousel-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .proof-carousel-btn {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      padding: 0;
+      border: 1px solid rgba(255, 153, 0, 0.28);
+      border-radius: 50%;
+      background: rgba(8, 11, 16, 0.88);
+      color: var(--accent-light);
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .proof-carousel-btn:hover {
+      background: rgba(255, 153, 0, 0.12);
+      border-color: rgba(255, 153, 0, 0.45);
+      transform: scale(1.05);
+    }
+
+    .proof-carousel-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .proof-carousel-btn--prev { left: -14px; }
+    .proof-carousel-btn--next { right: -14px; }
+
+    @media (min-width: 640px) {
+      .proof-carousel-btn--prev { left: -22px; }
+      .proof-carousel-btn--next { right: -22px; }
+    }
+
+    .proof-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.25rem;
+    }
+
+    .proof-carousel-dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .proof-carousel-dot.is-active {
+      background: var(--accent);
+      transform: scale(1.15);
+    }
+
+    .benefits-closing-title {
+      margin-bottom: 0 !important;
+      text-align: center;
+    }
+
+    .benefits-closing-title .headline-glow-line:last-child {
+      font-size: 0.92em;
+      line-height: 1.18;
+      margin-top: 0.35rem;
+    }
+
     .speakers-section {
-      background-color: #030304;
+      background-color: #0B0F1A;
       background-image:
-        radial-gradient(ellipse 50% 40% at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 35% at 100% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+        radial-gradient(ellipse 50% 40% at 50% 0%, rgba(255, 153, 0, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 100% 50%, rgba(245, 166, 35, 0.08) 0%, transparent 50%);
     }
 
     .speaker-name {
-      background: linear-gradient(180deg, #38bdf8 0%, #6366f1 45%, #a855f7 100%);
+      background: linear-gradient(180deg, #ffb84d 0%, #E8892B 45%, #F5A623 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1205,7 +1760,7 @@
     .speaker-card {
       position: relative;
       border-radius: 16px;
-      border: 1px solid rgba(59, 130, 246, 0.18);
+      border: 1px solid rgba(255, 153, 0, 0.18);
       background: linear-gradient(145deg, rgba(12, 12, 18, 0.95) 0%, rgba(8, 10, 16, 0.98) 100%);
       overflow: hidden;
       display: flex;
@@ -1219,7 +1774,7 @@
       transform: translateX(-50%);
       width: 80%;
       height: 55%;
-      background: radial-gradient(ellipse at 50% 90%, rgba(59, 130, 246, 0.3) 0%, rgba(99, 102, 241, 0.12) 45%, transparent 70%);
+      background: radial-gradient(ellipse at 50% 90%, rgba(255, 153, 0, 0.3) 0%, rgba(255, 153, 0, 0.12) 45%, transparent 70%);
       pointer-events: none;
     }
 
@@ -1233,7 +1788,7 @@
       border-radius: 12px;
       background:
         radial-gradient(ellipse 95% 55% at 50% 0%, rgba(0, 0, 0, 0.5) 0%, transparent 58%),
-        radial-gradient(ellipse 70% 65% at 50% 88%, rgba(59, 130, 246, 0.22) 0%, transparent 62%);
+        radial-gradient(ellipse 70% 65% at 50% 88%, rgba(255, 153, 0, 0.22) 0%, transparent 62%);
     }
 
     /* Підсвітка за спікером */
@@ -1245,7 +1800,7 @@
       transform: translateX(-50%);
       width: 72%;
       height: 70%;
-      background: radial-gradient(ellipse at 50% 65%, rgba(59, 130, 246, 0.5) 0%, rgba(99, 102, 241, 0.22) 38%, transparent 72%);
+      background: radial-gradient(ellipse at 50% 65%, rgba(255, 153, 0, 0.5) 0%, rgba(255, 153, 0, 0.22) 38%, transparent 72%);
       pointer-events: none;
       z-index: 0;
     }
@@ -1279,7 +1834,7 @@
       filter:
         drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55))
         drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35))
-        drop-shadow(0 0 40px rgba(59, 130, 246, 0.12));
+        drop-shadow(0 0 40px rgba(255, 153, 0, 0.12));
     }
 
     .speaker-stat-value {
@@ -1337,9 +1892,9 @@
 
     .pricing-text-card {
       background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(139, 92, 246, 0.14);
+      border: 1px solid rgba(245, 166, 35, 0.14);
       border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+      box-shadow: 0 8px 32px rgba(255, 153, 0, 0.08);
       padding: 1.25rem 1.35rem;
     }
 
@@ -1349,7 +1904,7 @@
 
     .pricing-hl {
       font-weight: 700;
-      color: #5b21b6;
+      color: #b45309;
     }
 
     .faq-section {
@@ -1453,24 +2008,25 @@
 
     .faq-footer-card {
       position: relative;
-      border-radius: 20px;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(59, 130, 246, 0.35), rgba(34, 158, 217, 0.4));
-      box-shadow:
-        0 20px 50px rgba(99, 102, 241, 0.1),
-        0 4px 16px rgba(15, 23, 42, 0.04);
+      border-radius: var(--radius);
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
     }
 
     .faq-footer-card-inner {
       position: relative;
       overflow: hidden;
-      border-radius: 19px;
+      border-radius: var(--radius);
       padding: 1.75rem 1.25rem 1.5rem;
       text-align: center;
+      border: 1px solid transparent;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(168, 85, 247, 0.08) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 40% at 100% 100%, rgba(34, 158, 217, 0.06) 0%, transparent 55%),
-        #fafbff;
+        linear-gradient(rgba(12, 16, 22, 0.82), rgba(12, 16, 22, 0.82)) padding-box,
+        var(--gradient-border) border-box;
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px) saturate(1.15);
+      -webkit-backdrop-filter: blur(16px) saturate(1.15);
     }
 
     @media (min-width: 640px) {
@@ -1487,19 +2043,19 @@
       height: 44px;
       margin-bottom: 1rem;
       border-radius: 14px;
-      color: #7c3aed;
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.14) 0%, rgba(59, 130, 246, 0.1) 100%);
-      border: 1px solid rgba(139, 92, 246, 0.18);
-      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+      color: var(--accent-light);
+      background: var(--accent-soft);
+      border: 1px solid rgba(255, 153, 0, 0.22);
+      box-shadow: 0 8px 24px rgba(255, 153, 0, 0.1);
     }
 
     .faq-footer-title {
       margin: 0 0 0.5rem;
       font-size: 1.0625rem;
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.35;
       letter-spacing: -0.02em;
-      color: #0a0a0a;
+      color: var(--text);
     }
 
     @media (min-width: 640px) {
@@ -1511,7 +2067,7 @@
       max-width: 28rem;
       font-size: 0.9375rem;
       line-height: 1.65;
-      color: #4b5563;
+      color: var(--text-muted);
     }
 
     @media (min-width: 640px) {
@@ -1527,57 +2083,59 @@
       justify-content: center;
       gap: 0.55rem;
       padding: 0.85rem 1.5rem;
-      border-radius: 14px;
-      font-size: 0.8125rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #fff;
-      background: linear-gradient(135deg, #2aabee 0%, #229ed9 55%, #1a8fc7 100%);
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: var(--btn-cta-text);
+      background: var(--btn-cta-gradient);
+      border: none;
       box-shadow:
-        0 10px 28px rgba(34, 158, 217, 0.35),
-        0 2px 8px rgba(34, 158, 217, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        0 4px 24px var(--btn-cta-shadow),
+        0 0 40px rgba(255, 183, 77, 0.18);
       transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      text-decoration: none;
     }
 
     @media (min-width: 640px) {
       .faq-telegram-btn {
         padding: 0.95rem 1.75rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
     }
 
     .faq-telegram-btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-1px);
+      background: var(--btn-cta-gradient-hover);
       box-shadow:
-        0 14px 36px rgba(34, 158, 217, 0.42),
-        0 4px 12px rgba(34, 158, 217, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
-      opacity: 0.98;
+        0 6px 28px rgba(255, 153, 0, 0.45),
+        0 0 48px rgba(255, 183, 77, 0.24);
+      opacity: 1;
     }
 
     .faq-telegram-btn svg {
       flex-shrink: 0;
       width: 1.15rem;
       height: 1.15rem;
+      color: #0a0a0a;
     }
 
     .final-cta {
       position: relative;
       overflow: hidden;
-      background-color: #05070a;
+      background-color: #0B0F1A;
       background-image:
-        radial-gradient(ellipse 90% 80% at 50% 45%, rgba(124, 58, 237, 0.42) 0%, transparent 58%),
-        radial-gradient(ellipse 55% 45% at 15% 85%, rgba(59, 130, 246, 0.28) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 88% 15%, rgba(168, 85, 247, 0.22) 0%, transparent 50%);
+        radial-gradient(ellipse 90% 80% at 50% 45%, rgba(245, 166, 35, 0.42) 0%, transparent 58%),
+        radial-gradient(ellipse 55% 45% at 15% 85%, rgba(255, 153, 0, 0.28) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 88% 15%, rgba(255, 153, 0, 0.18) 0%, transparent 50%);
     }
 
     .final-cta::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(5, 7, 10, 0.4) 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(11, 15, 26, 0.4) 100%);
       pointer-events: none;
     }
 
@@ -1586,17 +2144,16 @@
       align-items: center;
       justify-content: center;
       padding: 1rem 1.75rem;
-      border-radius: 14px;
+      border-radius: 9999px;
       font-size: 0.8125rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #fff;
-      background: linear-gradient(90deg, #9333ea 0%, #6366f1 45%, #2563eb 100%);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: var(--btn-cta-text);
+      background: var(--btn-cta-gradient);
       box-shadow:
-        0 0 48px rgba(147, 51, 234, 0.55),
-        0 12px 32px rgba(37, 99, 235, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 4px 24px var(--btn-cta-shadow),
+        0 0 40px rgba(255, 183, 77, 0.18);
       transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
     }
 
@@ -1609,11 +2166,11 @@
 
     .final-cta-btn:hover {
       transform: translateY(-2px);
+      background: var(--btn-cta-gradient-hover);
       box-shadow:
-        0 0 56px rgba(147, 51, 234, 0.65),
-        0 16px 40px rgba(37, 99, 235, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
-      opacity: 0.96;
+        0 6px 28px rgba(255, 153, 0, 0.45),
+        0 0 48px rgba(255, 183, 77, 0.24);
+      opacity: 1;
     }
 
     .final-cta-note {
@@ -1718,168 +2275,2236 @@
     .site-footer-policy a:hover {
       color: #fff;
     }
+
+    /* ── 2026 design system · Amazon KDP palette ── */
+    :root {
+      --amazon-orange: #FF9900;
+      --amazon-orange-light: #FFB84D;
+      --amazon-orange-dark: #E47911;
+      --amazon-navy: #131921;
+      --amazon-ink: #232F3E;
+      --bg: #080b10;
+      --bg-elevated: #0f1419;
+      --surface: rgba(255, 255, 255, 0.045);
+      --surface-hover: rgba(255, 255, 255, 0.08);
+      --glass: rgba(12, 16, 22, 0.72);
+      --text: #fafafa;
+      --text-muted: #9ca3af;
+      --accent: #FF9900;
+      --accent-light: #FFB84D;
+      --accent-dark: #E47911;
+      --accent-glow: rgba(255, 153, 0, 0.42);
+      --accent-soft: rgba(255, 153, 0, 0.1);
+      --border: rgba(255, 255, 255, 0.07);
+      --border-strong: rgba(255, 255, 255, 0.12);
+      --content-max: 1080px;
+      --radius: 22px;
+      --radius-sm: 16px;
+      --radius-pill: 999px;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 16px 48px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 0 1px rgba(255, 153, 0, 0.2), 0 12px 40px rgba(255, 153, 0, 0.18);
+      --gradient-border: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 153, 0, 0.35));
+      /* Typography scale */
+      --fs-caption: 14px;
+      --fs-body: 17px;
+      --fs-lead: 18px;
+      --fs-card-title: 18px;
+      --fs-section: clamp(26px, 3.2vw, 32px);
+      --fs-hero: clamp(18px, 5.5vw, 36px);
+      --fs-speaker: clamp(20px, 2.4vw, 22px);
+      --fs-chip: 15px;
+      --fs-btn: 16px;
+      --fs-nav: 15px;
+      --fs-timer: clamp(28px, 5vw, 36px);
+      --lh: 1.65;
+      --lh-tight: 1.2;
+      --btn-cta-gradient: linear-gradient(90deg, #F5D78E 0%, #FFC04D 42%, #FF9900 100%);
+      --btn-cta-gradient-hover: linear-gradient(90deg, #FFE49A 0%, #FFCC66 42%, #FFA726 100%);
+      --btn-cta-text: #0a0a0a;
+      --btn-cta-shadow: rgba(255, 153, 0, 0.38);
+      --headline-glow: linear-gradient(
+        90deg,
+        #3D1505 0%,
+        #6B2808 10%,
+        #B85A0C 22%,
+        #FFD8B0 36%,
+        #FFFFFF 48%,
+        #FFFFFF 56%,
+        #FFD8B0 68%,
+        #FF9900 86%,
+        #E8832A 100%
+      );
+    }
+
+    ::selection {
+      background: rgba(255, 153, 0, 0.35);
+      color: #fff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      font-family: Inter, system-ui, sans-serif !important;
+    }
+
+    body {
+      background: var(--bg) !important;
+      color: var(--text) !important;
+      font-size: var(--fs-body) !important;
+      line-height: var(--lh) !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+    section, header, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    section > div:not(.hero-main),
+    .header-inner {
+      max-width: var(--content-max) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      width: 100% !important;
+    }
+
+    .speakers-section,
+    .how-section-bg,
+    .reviews-section,
+    .inside-section,
+    .bonus-section,
+    .faq-section,
+    .includes-section,
+    .goal-section,
+    #intro-video,
+    #why-now,
+    .final-cta,
+    #for-whom {
+      padding: 52px 24px !important;
+      background: transparent !important;
+      background-image: none !important;
+    }
+
+    #why-now {
+      padding-bottom: 24px !important;
+    }
+
+    #why-now + .faq-section {
+      padding-top: 32px !important;
+    }
+
+    #for-whom.bg-white {
+      background: transparent !important;
+    }
+
+    .hero-bg {
+      background-color: var(--bg) !important;
+      background-image:
+        radial-gradient(ellipse 100% 80% at 50% -20%, rgba(255, 153, 0, 0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 100% 20%, rgba(255, 184, 77, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 0% 70%, rgba(255, 153, 0, 0.07) 0%, transparent 50%) !important;
+      padding: 0 !important;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      width: min(720px, 90vw);
+      height: min(720px, 90vw);
+      top: -28%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(255, 153, 0, 0.14) 0%, transparent 68%);
+      filter: blur(48px);
+      pointer-events: none;
+      z-index: 0;
+      animation: hero-aurora 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes hero-aurora {
+      0% { transform: translateX(-50%) scale(1); opacity: 0.85; }
+      100% { transform: translateX(-48%) scale(1.08); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg::before { animation: none; }
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 10%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 10%, transparent 75%);
+    }
+
+    .hero-bg .hero-main {
+      max-width: 800px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 1.75rem 20px 3.5rem !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 9px !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .hero-inner {
+      text-align: center !important;
+      max-width: 750px !important;
+      margin: 0 auto !important;
+    }
+
+    .hero-section-wave {
+      display: none !important;
+    }
+
+    p, li, .speaker-bio, .goal-text, .access-list li,
+    .hero-note, .hero-timer-wrap > p, .final-cta p, .final-cta-note,
+    .text-gray-500, .text-gray-600, .text-gray-300, .text-gray-700,
+    .manifest-text, .case-desc, .inside-video-desc, .faq-answer-inner {
+      color: var(--text-muted) !important;
+      font-size: var(--fs-body) !important;
+      line-height: var(--lh) !important;
+      font-style: normal !important;
+    }
+
+    .text-gray-900 {
+      color: var(--text) !important;
+    }
+
+    h1, .hero-headline {
+      font-size: var(--fs-hero) !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+      text-align: center !important;
+      max-width: 750px !important;
+      margin: 0 auto 16px !important;
+      line-height: 1.15 !important;
+      letter-spacing: -0.03em !important;
+      font-style: normal !important;
+    }
+
+    .hero-headline-line {
+      display: block !important;
+    }
+
+    @media (min-width: 768px) {
+      .hero-headline-line {
+        white-space: nowrap !important;
+      }
+    }
+
+    .hero-headline .text-white {
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+      background: none !important;
+    }
+
+    .hero-headline .gradient-text,
+    h2 .gradient-text,
+    h3 .gradient-text,
+    .goal-headline-line.gradient-text,
+    .faq-title .gradient-text,
+    .includes-title .gradient-text {
+      background: linear-gradient(135deg, #FFB84D 0%, #FF9900 48%, #E47911 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFB84D 0%, #FF9900 48%, #E47911 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    h2 span:not(.gradient-text):not(.headline-glow-line),
+    h3 span:not(.gradient-text),
+    .goal-headline-line:not(.gradient-text):not(.headline-glow-line),
+    .faq-title span:not(.gradient-text) {
+      color: var(--text) !important;
+      -webkit-text-fill-color: var(--text) !important;
+      background: none !important;
+    }
+
+    h2:not(.headline-glow), .faq-title:not(.headline-glow), .goal-headline:not(.headline-glow),
+    .includes-title {
+      font-family: Inter, system-ui, sans-serif !important;
+      color: var(--text) !important;
+      -webkit-text-fill-color: var(--text) !important;
+      background: none !important;
+      font-size: var(--fs-section) !important;
+      font-weight: 700 !important;
+      line-height: 1.15 !important;
+      text-transform: none !important;
+      letter-spacing: -0.03em !important;
+      font-style: normal !important;
+    }
+
+    .goal-headline-line {
+      display: block;
+    }
+
+    h2.gradient-text {
+      background: linear-gradient(135deg, #FFB84D 0%, #FF9900 48%, #E47911 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .speaker-name {
+      font-family: Inter, system-ui, sans-serif !important;
+      background: linear-gradient(135deg, #FFB84D 0%, #FF9900 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+      font-size: var(--fs-speaker) !important;
+      font-weight: 700 !important;
+      text-transform: none !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .section-eyebrow {
+      display: inline-block !important;
+      color: var(--accent-light) !important;
+      font-size: var(--fs-caption) !important;
+      font-weight: 600 !important;
+      text-transform: none !important;
+      letter-spacing: 0.01em !important;
+      margin-bottom: 12px !important;
+      padding: 6px 14px !important;
+      border-radius: var(--radius-pill) !important;
+      background: var(--accent-soft) !important;
+      border: 1px solid rgba(255, 153, 0, 0.22) !important;
+    }
+
+    .hero-headline-accent,
+    .goal-hl, .bonus-accent, .case-result,
+    .inside-step-num,
+    .access-list li::before,
+    .faq-plus, .speaker-stat-value {
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+      background: none !important;
+      font-style: normal !important;
+    }
+
+    .benefit-chip::before {
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+      background: none !important;
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .eyebrow-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent-glow);
+      flex-shrink: 0;
+    }
+
+    .hero-lead {
+      font-size: 17px !important;
+      font-weight: 400 !important;
+      color: var(--text-muted) !important;
+      text-align: center !important;
+      max-width: 34rem !important;
+      margin: 0 auto 32px !important;
+      line-height: 1.65 !important;
+    }
+
+    .hero-tagline-pill {
+      display: none !important;
+    }
+
+    .benefit-chip {
+      background: var(--surface) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-pill) !important;
+      box-shadow: none !important;
+      padding: 9px 16px !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: var(--text) !important;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .benefit-chip:hover {
+      border-color: rgba(255, 153, 0, 0.3) !important;
+      background: var(--surface-hover) !important;
+    }
+
+    .hero-benefits {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin: 0 auto 28px !important;
+      max-width: 640px !important;
+      gap: 6px 8px !important;
+      padding: 0 !important;
+      list-style: none !important;
+    }
+
+    .hero-benefits .benefit-chip {
+      display: inline-flex !important;
+      width: auto !important;
+      justify-content: center !important;
+      padding: 5px 11px !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      line-height: 1.3 !important;
+      white-space: nowrap !important;
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+    }
+
+    .hero-benefits .benefit-chip::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    .hero-benefits .benefit-chip:hover {
+      background: rgba(255, 255, 255, 0.04) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+      transform: none !important;
+    }
+
+    @media (min-width: 640px) {
+      .hero-benefits .benefit-chip {
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+      }
+    }
+
+    .hero-action .gradient-btn {
+      background: var(--btn-cta-gradient) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      font-weight: 700 !important;
+      box-shadow:
+        0 4px 24px var(--btn-cta-shadow),
+        0 0 40px rgba(255, 183, 77, 0.18) !important;
+    }
+
+    .hero-action .gradient-btn:hover {
+      background: var(--btn-cta-gradient-hover) !important;
+      box-shadow:
+        0 6px 28px rgba(255, 153, 0, 0.45),
+        0 0 48px rgba(255, 183, 77, 0.24) !important;
+    }
+
+    .gradient-btn,
+    .final-cta-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      max-width: 26rem !important;
+      padding: 17px 28px !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      border-radius: var(--radius-pill) !important;
+      background: var(--btn-cta-gradient) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      border: none !important;
+      box-shadow:
+        0 4px 24px var(--btn-cta-shadow),
+        0 0 40px rgba(255, 183, 77, 0.18) !important;
+      text-decoration: none !important;
+      font-style: normal !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease !important;
+    }
+
+    .hero-action {
+      max-width: 26rem !important;
+      margin: 0 auto !important;
+    }
+
+    .gradient-btn:hover,
+    .final-cta-btn:hover {
+      transform: translateY(-1px) !important;
+      background: var(--btn-cta-gradient-hover) !important;
+      box-shadow:
+        0 6px 28px rgba(255, 153, 0, 0.45),
+        0 0 48px rgba(255, 183, 77, 0.24) !important;
+      opacity: 1 !important;
+    }
+
+    .site-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 50 !important;
+      background: rgba(6, 6, 8, 0.75) !important;
+      backdrop-filter: blur(20px) saturate(1.4) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(1.4) !important;
+      border-bottom: 1px solid var(--border) !important;
+      padding: 14px 24px !important;
+    }
+
+    .header-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 16px !important;
+      padding: 0 !important;
+    }
+
+    .site-logo span {
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+    }
+
+    .header-nav {
+      flex: 1 !important;
+      display: flex !important;
+      justify-content: center !important;
+    }
+
+    .header-nav ul {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 8px 4px !important;
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .nav-link {
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      color: var(--text-muted) !important;
+      text-decoration: none !important;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      padding: 8px 14px !important;
+      border-radius: var(--radius-pill) !important;
+      transition: color 0.2s ease, background 0.2s ease !important;
+    }
+
+    .nav-link:hover {
+      color: #fff !important;
+      background: var(--surface) !important;
+    }
+
+    .header-btn-border {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      padding: 9px 18px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      border-radius: var(--radius-pill) !important;
+      background: var(--btn-cta-gradient) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      border: none !important;
+      box-shadow: 0 4px 20px var(--btn-cta-shadow) !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      width: auto !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .header-btn-border:hover {
+      transform: translateY(-1px) !important;
+      background: var(--btn-cta-gradient-hover) !important;
+      box-shadow: 0 6px 24px rgba(255, 153, 0, 0.42) !important;
+    }
+
+    @media (max-width: 767px) {
+      .header-nav { display: none !important; }
+      .header-menu-btn { display: inline-flex !important; }
+    }
+
+    .header-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .header-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      color: #fff;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .header-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 153, 0, 0.35);
+    }
+
+    .header-menu-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .header-nav-mobile {
+      display: none;
+      border-top: 1px solid var(--border);
+      background: rgba(6, 6, 8, 0.95);
+      padding: 12px 24px 16px;
+    }
+
+    .header-nav-mobile.is-open {
+      display: block;
+    }
+
+    .header-nav-mobile ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .header-nav-mobile .nav-link {
+      display: block;
+      width: 100%;
+    }
+
+    #why-now .manifest-text {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .header-nav-mobile {
+        display: none !important;
+      }
+    }
+
+    .hero-timer-wrap {
+      margin-top: 2rem !important;
+      text-align: center !important;
+    }
+
+    .hero-timer-wrap > p {
+      font-size: 13px !important;
+      text-align: center !important;
+      color: var(--text-muted) !important;
+      font-weight: 500 !important;
+      margin-bottom: 0.85rem !important;
+      letter-spacing: 0.02em !important;
+    }
+
+    .hero-timer-wrap #countdown {
+      justify-content: center !important;
+      gap: 0.5rem !important;
+    }
+
+    .timer-digit {
+      background: var(--surface) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-sm) !important;
+      box-shadow: var(--shadow) !important;
+      padding: 14px 12px !important;
+      min-width: 68px !important;
+      backdrop-filter: blur(12px);
+    }
+
+    .timer-digit .timer-num {
+      font-size: 32px !important;
+      font-weight: 700 !important;
+      line-height: 1 !important;
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+      letter-spacing: -0.03em !important;
+    }
+
+    .timer-digit .timer-label {
+      font-size: 10px !important;
+      color: var(--text-muted) !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      margin-top: 6px !important;
+      font-weight: 500 !important;
+    }
+
+    .reason-card,
+    .audience-card,
+    .video-card,
+    .inside-video-card,
+    .speaker-card {
+      background: var(--glass) !important;
+      border-radius: var(--radius) !important;
+      padding: 28px !important;
+      box-shadow: var(--shadow) !important;
+      border: 1px solid var(--border) !important;
+      backdrop-filter: blur(16px) saturate(1.2) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(1.2) !important;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+
+    .reason-card:hover,
+    .audience-card:hover,
+    .video-card:hover,
+    .inside-video-card:hover,
+    .speaker-card:hover {
+      border-color: rgba(255, 153, 0, 0.25) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255, 153, 0, 0.08) !important;
+    }
+
+    .reason-card h3,
+    .audience-card-title,
+    .case-name,
+    .inside-video-title {
+      font-size: 17px !important;
+      font-weight: 600 !important;
+      color: var(--text) !important;
+      text-transform: none !important;
+      margin-bottom: 10px !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .reason-card p,
+    .audience-card-text {
+      font-size: 15px !important;
+      color: var(--text-muted) !important;
+      line-height: 1.65 !important;
+    }
+
+    #benefits .grid,
+    #for-whom .grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+    }
+
+    @media (min-width: 768px) {
+      #benefits .grid,
+      #for-whom .grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+      }
+    }
+
+    .audience-emoji {
+      font-size: 28px !important;
+      line-height: 1 !important;
+      display: block !important;
+      margin-bottom: 12px !important;
+    }
+
+    .case-result {
+      font-size: 1.75rem !important;
+      font-weight: 700 !important;
+      color: var(--accent) !important;
+      margin: 0 0 8px !important;
+      line-height: 1.1 !important;
+      letter-spacing: -0.03em !important;
+    }
+
+    .inside-step-num {
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      color: var(--accent) !important;
+      background: none !important;
+      box-shadow: none !important;
+      width: auto !important;
+      height: auto !important;
+      min-width: 0 !important;
+      padding: 0 !important;
+      line-height: 1 !important;
+      letter-spacing: -0.04em !important;
+      opacity: 0.9;
+    }
+
+    .program-result {
+      background: var(--accent-soft) !important;
+      border: 1px solid rgba(255, 153, 0, 0.2) !important;
+      border-left: 3px solid var(--accent) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 14px 16px !important;
+      font-size: 14px !important;
+      color: var(--text) !important;
+      margin-top: 14px !important;
+      box-shadow: none !important;
+      line-height: 1.55 !important;
+    }
+
+    .program-result strong,
+    .program-result::first-line {
+      color: var(--accent-light);
+    }
+
+    .bonus-bento,
+    #bonus .bonus-block {
+      background: var(--glass) !important;
+      border: 1px solid rgba(255, 153, 0, 0.2) !important;
+      border-radius: var(--radius) !important;
+      padding: 40px !important;
+      box-shadow: var(--shadow) !important;
+      backdrop-filter: blur(16px) !important;
+    }
+
+    .bonus-bento-inner {
+      background: transparent !important;
+      border-radius: calc(var(--radius) - 4px) !important;
+    }
+
+    .bonus-pill {
+      background: var(--accent-soft) !important;
+      color: var(--accent-light) !important;
+      border: 1px solid rgba(255, 153, 0, 0.25) !important;
+      text-transform: none !important;
+    }
+
+    .faq-section { background: transparent !important; }
+
+    .faq-title {
+      text-transform: none !important;
+      margin-bottom: 28px !important;
+    }
+
+    .faq-list { border-top: none !important; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border) !important;
+    }
+
+    .faq-question {
+      padding: 22px 0 !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      color: var(--text) !important;
+      text-transform: none !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .faq-caret { display: none !important; }
+
+    .faq-plus {
+      flex-shrink: 0;
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--accent);
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.is-open .faq-plus { transform: rotate(45deg); }
+
+    .faq-answer-inner {
+      font-size: 15px !important;
+      padding-bottom: 22px !important;
+    }
+
+    .final-cta {
+      background: transparent !important;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255, 153, 0, 0.12) 0%, transparent 60%) !important;
+    }
+
+    .final-cta::before {
+      display: none !important;
+    }
+
+    .site-footer {
+      background: var(--bg-elevated) !important;
+      text-align: center !important;
+      padding: 48px 24px !important;
+      border-top: 1px solid var(--border) !important;
+    }
+
+    .site-footer-copy,
+    .site-footer-legal p,
+    .site-footer-legal a,
+    .site-footer-policy a {
+      font-size: 13px !important;
+      color: #71717a !important;
+    }
+
+    .site-footer-legal a:hover,
+    .site-footer-policy a:hover { color: var(--text) !important; }
+
+    .hero-photo-col,
+    .hero-photo-stage::before,
+    .hero-photo-stage::after,
+    .hero-photo-col::after,
+    .hero-bg .speaker-glow {
+      display: none !important;
+    }
+
+    .speaker-card-glow {
+      display: none !important;
+    }
+
+    #why-now.border-t {
+      border-color: var(--border) !important;
+    }
+
+    .includes-card {
+      background: var(--glass) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius) !important;
+      padding: 1px !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    .includes-card-inner {
+      background: transparent !important;
+      border-radius: calc(var(--radius) - 2px) !important;
+    }
+
+    .includes-card-title {
+      text-transform: none !important;
+      color: var(--text) !important;
+      font-weight: 600 !important;
+    }
+
+    .includes-card-desc {
+      color: var(--text-muted) !important;
+    }
+
+    .includes-card-num {
+      background: var(--accent) !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 12px var(--accent-glow) !important;
+    }
+
+    .goal-block-title,
+    .goal-text,
+    .goal-headline {
+      color: var(--text) !important;
+    }
+
+    .hero-note {
+      font-size: 13px !important;
+      color: #71717a !important;
+      margin-top: 1rem !important;
+    }
+
+    em, i, .italic { font-style: normal !important; }
+
+    .text-center.mt-8 a,
+    .text-center.mt-8.sm\:mt-10 a,
+    .text-center.mt-6 a,
+    .text-center.mt-10 a {
+      max-width: 100% !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    #get .section-eyebrow {
+      display: block !important;
+      text-align: center !important;
+      margin: 0 auto 2rem !important;
+      width: fit-content !important;
+    }
+
+    #get .access-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      max-width: 880px;
+    }
+
+    @media (min-width: 640px) {
+      #get .access-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+    }
+
+    #get .access-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 20px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    #get .access-item:hover {
+      border-color: rgba(255, 153, 0, 0.28);
+      background: var(--surface-hover);
+    }
+
+    #get .access-item--gift {
+      grid-column: 1 / -1;
+      border-color: rgba(255, 153, 0, 0.28);
+      background: var(--accent-soft);
+    }
+
+    @media (min-width: 640px) {
+      #get .access-item--gift {
+        grid-column: span 2;
+      }
+    }
+
+    #get .access-check {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 153, 0, 0.15);
+      border: 1px solid rgba(255, 153, 0, 0.35);
+      color: var(--accent-light);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    #get .access-text {
+      font-size: 15px !important;
+      line-height: 1.55 !important;
+      color: var(--text) !important;
+      padding-top: 2px;
+    }
+
+    #get .access-item--gift .access-text {
+      color: var(--text) !important;
+    }
+
+    #get .access-text strong {
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    /* Hero: рівно 4 рядки заголовка */
+    .hero-bg .hero-headline {
+      font-size: var(--fs-hero) !important;
+      max-width: 750px !important;
+      margin: 0 auto 16px !important;
+      line-height: 1.15 !important;
+    }
+
+    .hero-bg .hero-headline .hero-headline-line {
+      display: block !important;
+      white-space: nowrap !important;
+    }
+
+    /* ── 2026 refresh: трендовий UI ── */
+    @media (min-width: 768px) {
+      .site-header {
+        top: 14px !important;
+        margin: 0 auto !important;
+        width: calc(100% - 40px) !important;
+        max-width: 1120px !important;
+        border-radius: 18px !important;
+        border: 1px solid rgba(255, 255, 255, 0.09) !important;
+        box-shadow:
+          0 12px 40px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+        background: rgba(8, 11, 16, 0.82) !important;
+      }
+    }
+
+    .eyebrow-pill {
+      border: 1px solid rgba(255, 153, 0, 0.22) !important;
+      background: rgba(255, 153, 0, 0.06) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+    }
+
+    .section-eyebrow {
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.14), rgba(255, 153, 0, 0.06)) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(12px) !important;
+    }
+
+    section h2.uppercase,
+    h2.uppercase.gradient-text {
+      text-transform: none !important;
+      letter-spacing: -0.035em !important;
+      font-weight: 700 !important;
+      line-height: 1.12 !important;
+    }
+
+    .benefit-chip {
+      background: rgba(255, 255, 255, 0.035) !important;
+      border: 1px solid rgba(255, 255, 255, 0.09) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+      backdrop-filter: blur(10px) !important;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease !important;
+    }
+
+    .benefit-chip:hover {
+      border-color: rgba(255, 153, 0, 0.35) !important;
+      background: rgba(255, 153, 0, 0.08) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .hero-benefits .benefit-chip {
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+    }
+
+    .hero-benefits .benefit-chip:hover {
+      background: rgba(255, 255, 255, 0.04) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+      transform: none !important;
+    }
+
+    .hero-action .gradient-btn {
+      position: relative !important;
+      overflow: hidden !important;
+      box-shadow:
+        0 8px 28px rgba(232, 131, 42, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+    }
+
+    .hero-action .gradient-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.22) 50%, transparent 62%);
+      transform: translateX(-120%);
+      transition: transform 0.55s ease;
+      pointer-events: none;
+    }
+
+    .hero-action .gradient-btn:hover::after {
+      transform: translateX(120%);
+    }
+
+    .timer-digit {
+      background: rgba(255, 255, 255, 0.04) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.35) !important;
+    }
+
+    .timer-digit .timer-num {
+      text-shadow: 0 0 24px rgba(255, 153, 0, 0.25) !important;
+    }
+
+    .reason-card,
+    .audience-card,
+    .video-card,
+    .inside-video-card,
+    .speaker-card,
+    #get .access-item {
+      position: relative !important;
+      border: 1px solid transparent !important;
+      background:
+        linear-gradient(var(--glass), var(--glass)) padding-box,
+        var(--gradient-border) border-box !important;
+      box-shadow:
+        var(--shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .reason-card::before,
+    .audience-card::before,
+    .speaker-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 153, 0, 0.45), transparent);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .reason-card:hover::before,
+    .audience-card:hover::before,
+    .speaker-card:hover::before {
+      opacity: 1;
+    }
+
+    .reason-card:hover,
+    .audience-card:hover,
+    .video-card:hover,
+    .inside-video-card:hover,
+    .speaker-card:hover,
+    #get .access-item:hover {
+      transform: translateY(-3px) !important;
+      box-shadow:
+        var(--shadow),
+        0 0 0 1px rgba(255, 153, 0, 0.12),
+        0 20px 48px rgba(255, 153, 0, 0.08) !important;
+    }
+
+    @media (min-width: 1024px) {
+      #benefits .grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 18px !important;
+      }
+    }
+
+    #authors,
+    #cases,
+    #program,
+    #bonus {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 153, 0, 0.05) 0%, transparent 70%) !important;
+    }
+
+    #benefits.how-section-bg,
+    #for-whom.bg-white {
+      background: transparent !important;
+      color: var(--text) !important;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-sm) !important;
+      margin-bottom: 8px !important;
+      background: var(--surface) !important;
+      border: 1px solid var(--border) !important;
+      border-bottom: 1px solid var(--border) !important;
+      overflow: hidden !important;
+      transition: border-color 0.2s ease, background 0.2s ease !important;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(255, 153, 0, 0.2) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .faq-question {
+      padding: 18px 20px !important;
+    }
+
+    .faq-answer-inner {
+      padding: 0 20px 18px !important;
+    }
+
+    .final-cta {
+      background:
+        radial-gradient(ellipse 90% 70% at 50% 100%, rgba(255, 153, 0, 0.16) 0%, transparent 65%),
+        linear-gradient(180deg, transparent 0%, rgba(255, 153, 0, 0.04) 100%) !important;
+      border-top: 1px solid rgba(255, 153, 0, 0.12) !important;
+    }
+
+    .bonus-bento,
+    #bonus .bonus-block {
+      border: 1px solid transparent !important;
+      background:
+        linear-gradient(rgba(12, 16, 22, 0.85), rgba(12, 16, 22, 0.85)) padding-box,
+        linear-gradient(135deg, rgba(255, 153, 0, 0.4), rgba(255, 184, 77, 0.15)) border-box !important;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45), 0 0 80px rgba(255, 153, 0, 0.06) !important;
+    }
+
+    #bonus.bonus-section {
+      background: transparent !important;
+      color: var(--text) !important;
+    }
+
+    .bonus-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .bonus-split {
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+    }
+
+    .bonus-panel {
+      position: relative;
+      border-radius: var(--radius);
+      padding: 22px 22px 20px;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(rgba(12, 16, 22, 0.78), rgba(12, 16, 22, 0.78)) padding-box,
+        var(--gradient-border) border-box;
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px) saturate(1.15);
+      -webkit-backdrop-filter: blur(16px) saturate(1.15);
+    }
+
+    .bonus-panel--value {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .bonus-panel-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin: 0;
+    }
+
+    .bonus-panel-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .bonus-value-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.14), rgba(255, 153, 0, 0.05));
+      border: 1px solid rgba(255, 153, 0, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .bonus-value-amount {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+    }
+
+    .bonus-value-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .bonus-value-free {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(180deg, #FFB84D 0%, #E8832A 100%);
+      box-shadow: 0 4px 16px rgba(255, 153, 0, 0.3);
+    }
+
+    .bonus-panel-title {
+      margin: 0 0 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .bonus-topics {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (min-width: 560px) {
+      .bonus-topics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .bonus-topic {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .bonus-topic::before {
+      content: '✓';
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.6;
+      color: var(--accent);
+    }
+
+    .bonus-topic:hover {
+      border-color: rgba(255, 153, 0, 0.28);
+      background: rgba(255, 153, 0, 0.07);
+    }
+
+    .program-result {
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.12), rgba(255, 153, 0, 0.05)) !important;
+      border: 1px solid rgba(255, 153, 0, 0.22) !important;
+      border-left: 3px solid var(--accent) !important;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-light) !important;
+    }
+
+    .header-btn-border {
+      background: var(--btn-cta-gradient) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      box-shadow: 0 4px 20px var(--btn-cta-shadow) !important;
+    }
+
+    /* ── Unified typography (site-wide) ── */
+    section h2,
+    h2.goal-headline,
+    h2.faq-title,
+    .includes-title {
+      font-size: var(--fs-section) !important;
+      line-height: var(--lh-tight) !important;
+    }
+
+    .hero-bg .hero-headline,
+    h1.hero-headline {
+      font-size: var(--fs-hero) !important;
+      text-transform: uppercase !important;
+    }
+
+    .hero-headline .hero-headline-line,
+    .hero-headline span {
+      text-transform: uppercase !important;
+    }
+
+    .text-xs { font-size: var(--fs-caption) !important; line-height: var(--lh) !important; }
+    .text-sm { font-size: var(--fs-body) !important; line-height: var(--lh) !important; }
+    .text-base { font-size: var(--fs-body) !important; line-height: var(--lh) !important; }
+    .text-lg { font-size: var(--fs-lead) !important; line-height: var(--lh) !important; }
+    .text-xl { font-size: var(--fs-card-title) !important; line-height: var(--lh-tight) !important; }
+    .text-2xl,
+    .text-3xl,
+    .text-4xl,
+    [class*="text-2xl"],
+    [class*="text-3xl"],
+    [class*="text-4xl"] {
+      font-size: var(--fs-section) !important;
+      line-height: var(--lh-tight) !important;
+    }
+
+    h3:not(.speaker-name) {
+      font-size: var(--fs-card-title) !important;
+      line-height: var(--lh-tight) !important;
+    }
+
+    .eyebrow-pill,
+    .hero-eyebrow .eyebrow-pill {
+      font-size: var(--fs-caption) !important;
+    }
+
+    .hero-lead {
+      font-size: var(--fs-lead) !important;
+      line-height: var(--lh) !important;
+    }
+
+    .benefit-chip {
+      font-size: var(--fs-chip) !important;
+      line-height: 1.45 !important;
+    }
+
+    .hero-benefits .benefit-chip {
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    @media (min-width: 640px) {
+      .hero-benefits .benefit-chip {
+        font-size: 12px !important;
+      }
+    }
+
+    .bonus-topic {
+      font-size: var(--fs-chip) !important;
+      line-height: 1.45 !important;
+    }
+
+    .bonus-topic::before {
+      font-size: var(--fs-caption) !important;
+    }
+
+    .timer-digit .timer-label {
+      font-size: var(--fs-caption) !important;
+    }
+
+    .timer-digit .timer-num {
+      font-size: var(--fs-timer) !important;
+    }
+
+    .nav-link {
+      font-size: var(--fs-nav) !important;
+    }
+
+    .gradient-btn,
+    .final-cta-btn,
+    .faq-telegram-btn,
+    .header-btn-border {
+      font-size: var(--fs-btn) !important;
+    }
+
+    .reason-card h3,
+    .audience-card-title,
+    .case-name,
+    .video-case-name,
+    .inside-video-title,
+    .bonus-panel-title {
+      font-size: var(--fs-card-title) !important;
+    }
+
+    .video-case-name {
+      color: var(--text) !important;
+      -webkit-text-fill-color: var(--text) !important;
+      background: none !important;
+    }
+
+    .reason-card p,
+    .audience-card-text,
+    .bonus-panel-text,
+    .program-result,
+    .speaker-bio,
+    .faq-question {
+      font-size: var(--fs-body) !important;
+      line-height: var(--lh) !important;
+    }
+
+    .site-logo {
+      font-size: 16px !important;
+    }
+
+    .site-footer-copy,
+    .site-footer-legal p,
+    .site-footer-policy a,
+    .bonus-panel-eyebrow,
+    .bonus-value-label,
+    .bonus-value-free {
+      font-size: var(--fs-caption) !important;
+      line-height: var(--lh) !important;
+    }
+
+    #get .access-text {
+      font-size: var(--fs-body) !important;
+      line-height: var(--lh) !important;
+    }
+
+    .speaker-stat-label {
+      font-size: var(--fs-caption) !important;
+    }
+
+    .speaker-stat-value {
+      font-size: var(--fs-card-title) !important;
+    }
+
+    .speaker-name {
+      font-size: var(--fs-speaker) !important;
+    }
+
+    .hero-note,
+    .hero-timer-wrap > p {
+      font-size: var(--fs-caption) !important;
+      line-height: var(--lh) !important;
+    }
+
+    .final-cta-note {
+      font-size: var(--fs-caption) !important;
+    }
+
+    /* Glow headlines — як на референсі, у кольорах Amazon */
+    .headline-glow,
+    h2.headline-glow,
+    .faq-title.headline-glow,
+    .goal-headline.headline-glow {
+      font-family: Inter, system-ui, sans-serif !important;
+      font-weight: 900 !important;
+      font-size: clamp(28px, 4.2vw, 40px) !important;
+      line-height: 1.06 !important;
+      letter-spacing: -0.02em !important;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      background-image: var(--headline-glow) !important;
+      background-size: 100% 100% !important;
+      background-repeat: no-repeat !important;
+      background-color: transparent !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    h2.headline-glow .headline-glow-line,
+    h2.headline-glow span,
+    .headline-glow .headline-glow-line,
+    .headline-glow span {
+      display: block;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      background: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .headline-glow-line {
+      display: block;
+    }
+
+    .headline-glow--sm,
+    h2.headline-glow.headline-glow--sm {
+      font-size: clamp(18px, 2.4vw, 24px) !important;
+      line-height: 1.12 !important;
+      font-weight: 800 !important;
+      margin-bottom: 1.75rem !important;
+    }
+
+    @media (min-width: 640px) {
+      h2.headline-glow.headline-glow--sm {
+        margin-bottom: 2rem !important;
+      }
+    }
+
+    #intro-video .intro-video-wrap {
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    #intro-video .intro-video-embed {
+      background: #0a0a0f;
+    }
+
+    #intro-video .intro-video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255, 153, 0, 0.12) 0%, transparent 70%),
+        #0a0a0f;
+    }
+
+    #intro-video .intro-video-placeholder-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 153, 0, 0.16);
+      border: 1px solid rgba(255, 153, 0, 0.35);
+      color: var(--accent-light);
+      font-size: 1.35rem;
+      padding-left: 4px;
+      box-shadow: 0 8px 28px rgba(255, 153, 0, 0.2);
+    }
+
+    #intro-video .intro-video-caption {
+      max-width: 36rem;
+      margin: 0 auto;
+      text-align: center;
+      font-size: var(--fs-body);
+      line-height: var(--lh);
+      color: var(--text-muted);
+    }
+
+    /* ── CTA buttons: золотий градієнт, чорний текст (як на референсі) ── */
+    .gradient-btn,
+    .final-cta-btn,
+    .header-btn-border,
+    .hero-action .gradient-btn,
+    a.gradient-btn,
+    a.final-cta-btn,
+    a.header-btn-border {
+      background: var(--btn-cta-gradient) !important;
+      background-image: var(--btn-cta-gradient) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      font-weight: 700 !important;
+      text-transform: none !important;
+      letter-spacing: -0.01em !important;
+      border: none !important;
+      border-radius: 9999px !important;
+      box-shadow:
+        0 4px 24px var(--btn-cta-shadow),
+        0 0 40px rgba(255, 183, 77, 0.18) !important;
+    }
+
+    .gradient-btn:hover,
+    .final-cta-btn:hover,
+    .header-btn-border:hover,
+    .hero-action .gradient-btn:hover {
+      background: var(--btn-cta-gradient-hover) !important;
+      background-image: var(--btn-cta-gradient-hover) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      transform: translateY(-1px) !important;
+      box-shadow:
+        0 6px 28px rgba(255, 153, 0, 0.45),
+        0 0 48px rgba(255, 183, 77, 0.24) !important;
+      opacity: 1 !important;
+    }
+
+    /* FAQ contact block — темна картка в стилі сайту */
+    .faq-footer-card,
+    .faq-footer-card-inner {
+      border-radius: var(--radius) !important;
+    }
+
+    .faq-footer-card {
+      background: transparent !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    .faq-footer-card-inner {
+      background:
+        linear-gradient(rgba(12, 16, 22, 0.82), rgba(12, 16, 22, 0.82)) padding-box,
+        var(--gradient-border) border-box !important;
+      border: 1px solid transparent !important;
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .faq-footer-title {
+      color: var(--text) !important;
+      font-weight: 700 !important;
+    }
+
+    .faq-footer-text {
+      color: var(--text-muted) !important;
+    }
+
+    .faq-footer-icon {
+      color: var(--accent-light) !important;
+      background: var(--accent-soft) !important;
+      border-color: rgba(255, 153, 0, 0.22) !important;
+    }
+
+    .faq-telegram-btn,
+    a.faq-telegram-btn {
+      background: var(--btn-cta-gradient) !important;
+      background-image: var(--btn-cta-gradient) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      border: none !important;
+      border-radius: 9999px !important;
+      font-weight: 700 !important;
+      text-transform: none !important;
+      letter-spacing: -0.01em !important;
+      box-shadow:
+        0 4px 24px var(--btn-cta-shadow),
+        0 0 40px rgba(255, 183, 77, 0.18) !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+
+    .faq-telegram-btn:hover,
+    a.faq-telegram-btn:hover {
+      background: var(--btn-cta-gradient-hover) !important;
+      background-image: var(--btn-cta-gradient-hover) !important;
+      color: var(--btn-cta-text) !important;
+      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      transform: translateY(-1px) !important;
+      box-shadow:
+        0 6px 28px rgba(255, 153, 0, 0.45),
+        0 0 48px rgba(255, 183, 77, 0.24) !important;
+    }
+
+    .faq-telegram-btn svg {
+      color: var(--btn-cta-text) !important;
+    }
+
+    /* ── Mobile readability ── */
+    @media (max-width: 767px) {
+      html,
+      body {
+        overflow-x: clip;
+      }
+
+      .site-header {
+        padding: 10px 14px !important;
+      }
+
+      .header-inner {
+        gap: 10px !important;
+      }
+
+      .site-logo {
+        font-size: 13px !important;
+      }
+
+      .header-btn-border {
+        padding: 8px 11px !important;
+        font-size: 11px !important;
+      }
+
+      .hero-main {
+        padding: 0.75rem 0 1.5rem !important;
+      }
+
+      .hero-inner {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      h1,
+      .hero-headline {
+        font-size: clamp(22px, 6.2vw, 30px) !important;
+        line-height: 1.14 !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      .hero-lead {
+        font-size: 16px !important;
+        line-height: 1.62 !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+      }
+
+      .headline-glow,
+      h2.headline-glow,
+      .faq-title.headline-glow,
+      .goal-headline.headline-glow {
+        font-size: clamp(21px, 6vw, 28px) !important;
+        line-height: 1.14 !important;
+      }
+
+      .headline-glow--sm,
+      h2.headline-glow.headline-glow--sm {
+        font-size: clamp(17px, 4.8vw, 22px) !important;
+        line-height: 1.2 !important;
+      }
+
+      .speakers-section,
+      .how-section-bg,
+      .reviews-section,
+      .inside-section,
+      .bonus-section,
+      .faq-section,
+      .includes-section,
+      .goal-section,
+      #intro-video,
+      #why-now,
+      .final-cta,
+      #for-whom {
+        padding: 36px 16px !important;
+      }
+
+      .reason-card,
+      .audience-card,
+      .video-card,
+      .inside-video-card,
+      .speaker-card,
+      #get .access-item {
+        padding: 18px 16px !important;
+      }
+
+      .reason-card h3,
+      .audience-card-title,
+      .inside-video-title,
+      .video-case-name {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+      }
+
+      .reason-card p,
+      .audience-card-text,
+      .case-desc,
+      .inside-video-desc,
+      .manifest-text,
+      .program-result,
+      .faq-answer-inner,
+      .intro-video-caption,
+      .final-cta p,
+      .text-sm.sm\:text-base {
+        font-size: 16px !important;
+        line-height: 1.62 !important;
+      }
+
+      .inside-video-card > div {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+      }
+
+      .inside-step-num {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+      }
+
+      .program-result {
+        padding: 0.8rem 0.9rem !important;
+        margin-top: 0.65rem !important;
+      }
+
+      .video-case-stat {
+        font-size: 0.8125rem !important;
+        line-height: 1.45 !important;
+      }
+
+      .video-case-head {
+        padding: 0.85rem 0.85rem 0.7rem !important;
+      }
+
+      .case-desc {
+        padding: 0 0.85rem 0.9rem !important;
+      }
+
+      .faq-question {
+        font-size: 16px !important;
+        line-height: 1.45 !important;
+        padding: 14px 14px !important;
+      }
+
+      .gradient-btn,
+      .final-cta-btn,
+      .hero-action .gradient-btn {
+        max-width: 100% !important;
+        padding: 15px 18px !important;
+        font-size: 15px !important;
+      }
+
+      .hero-benefits {
+        gap: 6px 7px !important;
+        margin-bottom: 24px !important;
+      }
+
+      .hero-benefits .benefit-chip {
+        font-size: 11px !important;
+        padding: 5px 10px !important;
+      }
+
+      .benefits-closing-title .headline-glow-line:last-child {
+        font-size: clamp(15px, 4.2vw, 18px) !important;
+        line-height: 1.45 !important;
+      }
+
+      #get .access-text {
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+      }
+
+      .site-footer-inner {
+        gap: 1rem !important;
+      }
+    }
   </style>
 </head>
-<body class="font-sans antialiased text-white bg-navy">
+<body class="font-sans antialiased text-white bg-surface">
 
   <!-- Hero Section -->
   <section class="hero-bg flex flex-col">
 
-    <!-- Header -->
-    <header class="w-full px-4 sm:px-6 lg:px-10 pt-4 pb-2.5 relative z-20">
-      <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-6">
-
-        <!-- Navigation -->
-        <nav class="order-2 lg:order-none lg:col-start-2 justify-self-center w-full lg:w-auto">
-          <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2 sm:gap-x-7 text-[11px] sm:text-xs font-medium tracking-wide text-gray-300 uppercase">
-            <li><a href="#for-whom" class="hover:text-white transition-colors">Для кого</a></li>
-            <li><a href="#inside" class="hover:text-white transition-colors">Програма</a></li>
-            <li><a href="#authors" class="hover:text-white transition-colors">Про авторів</a></li>
-            <li><a href="#results" class="hover:text-white transition-colors">Результати</a></li>
-            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#join" class="site-logo">
+          KDP <span>Fast-Track</span>
+        </a>
+        <nav class="header-nav" aria-label="Головна навігація">
+          <ul>
+            <li><a href="#for-whom" class="nav-link">Для кого</a></li>
+            <li><a href="#program" class="nav-link">Програма</a></li>
+            <li><a href="#authors" class="nav-link">Автори</a></li>
+            <li><a href="#cases" class="nav-link">Кейси</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
           </ul>
         </nav>
-
-        <!-- Header CTA -->
-        <a href="#join"
-           class="order-1 lg:order-none lg:col-start-3 justify-self-end shrink-0 header-btn-border rounded px-4 py-2.5 text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-white hover:bg-white/5 transition-colors whitespace-nowrap">
-          ОТРИМАТИ ДОСТУП
-        </a>
+        <div class="header-actions">
+          <a href="#join" class="header-btn-border">Отримати доступ</a>
+          <button type="button" class="header-menu-btn" id="header-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Відкрити меню">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+          </button>
+        </div>
       </div>
+      <nav id="mobile-nav" class="header-nav-mobile" aria-label="Мобільна навігація">
+        <ul>
+          <li><a href="#for-whom" class="nav-link">Для кого</a></li>
+          <li><a href="#program" class="nav-link">Програма</a></li>
+          <li><a href="#authors" class="nav-link">Автори</a></li>
+          <li><a href="#cases" class="nav-link">Кейси</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Main Hero Content -->
-    <div class="hero-main w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-      <div class="hero-grid grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 xl:gap-5">
+    <div class="hero-main w-full mx-auto">
+      <div class="hero-inner">
 
-        <!-- Left Column -->
-        <div class="hero-left lg:col-span-4 order-1 lg:order-none lg:pr-3 xl:pr-5">
+        <p class="hero-eyebrow"><span class="eyebrow-pill">Онлайн-інтенсив · Старт одразу після оплати</span></p>
 
-          <p class="text-[11px] sm:text-xs font-medium tracking-wide text-purple-300/90 mb-3 sm:mb-4">
-            Онлайн-інтенсив для емігрантів • Старт одразу після оплати
+        <h1 class="hero-headline">
+          <span class="hero-headline-line"><span class="gradient-text">Опануйте AI</span><span class="text-white"> та почніть заробляти</span></span>
+          <span class="hero-headline-line"><span class="text-white">на продажі книг на Amazon</span></span>
+          <span class="hero-headline-line"><span class="gradient-text">від $3000/місяць</span></span>
+          <span class="hero-headline-line"><span class="text-white">без досвіду та знання мови</span></span>
+        </h1>
+
+        <p class="hero-lead">
+          За один вечір зрозумійте, як працює Amazon KDP бізнес, як знаходити прибуткові теми для книг і як почати шлях до доходу у $, € та £, приділяючи 2–3 години на день.
+        </p>
+
+        <ul class="hero-benefits" aria-label="Переваги інтенсиву">
+          <li class="benefit-chip">Старт без досвіду</li>
+          <li class="benefit-chip">Без знання мови</li>
+          <li class="benefit-chip">Без звільнення з роботи</li>
+          <li class="benefit-chip">Без спілкування з клієнтами</li>
+          <li class="benefit-chip">З будь-якої точки світу</li>
+          <li class="benefit-chip">За допомогою AI</li>
+        </ul>
+
+        <div class="hero-action">
+          <p class="hero-price" aria-label="Ціна інтенсиву">
+            <span class="hero-price-amount">499 грн</span>
           </p>
 
-          <h1 class="text-[1.65rem] sm:text-3xl md:text-[2.1rem] xl:text-[2.65rem] font-extrabold leading-[1.08] tracking-tight mb-4 sm:mb-5">
-            <span class="gradient-text">Fast-Track:</span>
-            <span class="text-white"> Як підкорити Amazon KDP за кордоном за допомогою ШІ</span>
-          </h1>
-
-          <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed mb-5 sm:mb-6 max-w-md">
-            Живете в новій країні і шукаєте стабільний дохід у $, €, £? Без складів, письменницького таланту та вільної англійської — отримайте покроковий план всього за один вечір!
-          </p>
-
-          <a href="#join"
-             id="join"
-             class="gradient-btn inline-flex flex-row items-center justify-center gap-2 w-full max-w-md px-4 sm:px-6 py-3.5 sm:py-4 rounded-lg text-xs sm:text-sm font-bold text-white shadow-lg shadow-purple-900/30 hover:opacity-90 transition-opacity">
-            <span>Отримати доступ за 499 грн</span>
-            <span class="text-white/70 font-medium text-[10px] sm:text-xs shrink-0">(замість <s class="opacity-80">3 000 грн</s>)</span>
+          <a href="#join" id="join" class="gradient-btn">
+            Отримати доступ за 499 грн →
           </a>
 
-          <!-- Countdown Timer -->
-          <div class="mt-7 sm:mt-8">
-            <p class="text-sm font-semibold text-gray-300 mb-3 sm:mb-4">
-              Спеціальна ціна діє до:
-            </p>
-            <div id="countdown" class="flex flex-wrap gap-2.5 sm:gap-3" aria-live="polite">
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
-                <span id="cd-days" class="block text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none">00</span>
-                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">днів</span>
+          <div class="hero-timer-wrap">
+            <p>Спеціальна ціна 499 грн діє до:</p>
+            <div id="countdown" class="flex flex-wrap gap-2.5" aria-live="polite">
+              <div class="timer-digit text-center">
+                <span id="cd-days" class="timer-num tabular-nums">00</span>
+                <span class="timer-label block">днів</span>
               </div>
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
-                <span id="cd-hours" class="block text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none">00</span>
-                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">год</span>
+              <div class="timer-digit text-center">
+                <span id="cd-hours" class="timer-num tabular-nums">00</span>
+                <span class="timer-label block">год</span>
               </div>
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
-                <span id="cd-mins" class="block text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none">00</span>
-                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">хв</span>
+              <div class="timer-digit text-center">
+                <span id="cd-mins" class="timer-num tabular-nums">00</span>
+                <span class="timer-label block">хв</span>
               </div>
-              <div class="timer-digit rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-center min-w-[60px] sm:min-w-[72px]">
-                <span id="cd-secs" class="block text-xl sm:text-3xl font-extrabold gradient-text tabular-nums leading-none">00</span>
-                <span class="block text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1.5">сек</span>
+              <div class="timer-digit text-center">
+                <span id="cd-secs" class="timer-num tabular-nums">00</span>
+                <span class="timer-label block">сек</span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Center Column — Speakers Photo -->
-        <div class="hero-photo-col lg:col-span-5 order-2 lg:order-none relative">
-          <div class="speaker-glow absolute inset-0 pointer-events-none"></div>
-          <div class="hero-photo-stage">
-            <img
-              src="images/speakers.png?v=10"
-              width="918"
-              height="744"
-              alt="Олег Бєлоцерковець та Микола Матушевський — спікери інтенсиву"
-              class="speaker-photo"
-              decoding="async"
-              fetchpriority="high"
-            />
-            <div class="hero-speaker-badges">
-              <div class="hero-speaker-badge hero-speaker-badge--left">
-                <p class="hero-speaker-badge-highlight">$100 000+</p>
-                <p class="hero-speaker-badge-caption">на рік</p>
-              </div>
-              <div class="hero-speaker-badge hero-speaker-badge--right">
-                <p class="hero-speaker-badge-label">Автор методики</p>
-                <p class="hero-speaker-badge-highlight">«Формула запуску»</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column -->
-        <div class="hero-right lg:col-span-3 order-3 lg:order-none lg:pl-2 xl:pl-4">
-
-          <div class="w-full min-w-0">
-            <p class="hero-names">
-              Олег Бєлоцерковець &amp; Микола Матушевський
-            </p>
-          </div>
-
-          <div class="neon-border rounded-lg bg-white/[0.02] px-4 sm:px-5 py-4 sm:py-5">
-            <p class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-purple-400 mb-2.5 sm:mb-3">
-              🎁 ГАРАНТОВАНИЙ БОНУС
-            </p>
-            <p class="text-[13px] sm:text-sm text-gray-200 leading-relaxed">
-              Після оплати ви отримуєте
-              <span class="bonus-accent">стратегічну сесію у подарунок</span>
-              з експертом для розбору вашого індивідуального плану.
-            </p>
-          </div>
+          <p class="hero-note">Доступ одразу після оплати · Пройти можна за один вечір</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Перехід hero → білий блок (поза hero, не перекриває контент) -->
-  <div class="hero-section-wave" aria-hidden="true">
-    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="heroWaveLine" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
-          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.95"/>
-          <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.45"/>
-        </linearGradient>
-      </defs>
-      <path d="M0,30 C280,10 520,38 760,22 C1000,6 1240,34 1440,18 L1440,56 L0,56 Z" fill="#ffffff"/>
-      <path d="M0,26 C280,8 520,34 760,18 C1000,2 1240,30 1440,14" fill="none" stroke="url(#heroWaveLine)" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
-    </svg>
-  </div>
+  <!-- Intro video -->
+  <section id="intro-video" class="intro-video-section">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6 text-center">
 
-  <!-- Benefits -->
-  <section class="benefits-strip bg-white pt-7 pb-6 sm:pt-8 sm:pb-7" aria-label="Переваги інтенсиву">
+      <h2 class="headline-glow headline-glow--sm max-w-3xl">
+        <span class="headline-glow-line">Подивіться коротке відео і зрозумійте,</span>
+        <span class="headline-glow-line">чому Amazon KDP один із найпростіших способів</span>
+        <span class="headline-glow-line">стартувати в онлайн-бізнесі у 2026 році</span>
+      </h2>
+
+      <div class="intro-video-wrap">
+        <div class="video-embed intro-video-embed" id="intro-video-player">
+          <!-- Вставити iframe з YouTube, коли буде посилання -->
+          <div class="intro-video-placeholder" aria-label="Відео">
+            <span class="intro-video-placeholder-icon" aria-hidden="true">▶</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="intro-video-caption">
+        Більшість думає, що для Amazon KDP потрібна іноземна мова, команда і роки досвіду. У цьому відео розкажемо, чому це не так, і як AI змінив правила гри для тих, хто тільки починає.
+      </p>
+
+      <div class="text-center mt-8 sm:mt-10">
+        <a href="#join" class="gradient-btn">
+          Отримати доступ до інтенсиву
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Authors -->
+  <section id="authors" class="speakers-section py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[960px] mx-auto px-4 sm:px-6">
+
+      <h2 class="headline-glow headline-glow--sm max-w-3xl">
+        <span class="headline-glow-line">Два практики, які створюють, запускають</span>
+        <span class="headline-glow-line">і продають книги на Amazon</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <article class="speaker-card p-4 sm:p-5">
+          <div class="speaker-card-glow" aria-hidden="true"></div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="speaker-photo-slot mb-3">
+              <img src="images/speaker-oleg.png" alt="Олег Бєлоцерковець" width="400" height="500" loading="lazy" />
+            </div>
+            <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">Олег Бєлоцерковець</h3>
+            <p class="text-center text-xs sm:text-sm text-gray-500 mb-3">15+ років в eCommerce · 10 років в Amazon KDP · 300+ книг у 2025</p>
+            <p class="speaker-bio mt-auto text-center">Автор методики «Формула запуску» — системи виходу на перші продажі без знання англійської.</p>
+          </div>
+        </article>
+
+        <article class="speaker-card p-4 sm:p-5">
+          <div class="speaker-card-glow" aria-hidden="true"></div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="speaker-photo-slot mb-3">
+              <img src="images/speaker-mykola.png?v=1" alt="Микола Матушевський" width="408" height="612" loading="lazy" />
+            </div>
+            <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">Микола Матушевський</h3>
+            <p class="text-center text-xs sm:text-sm text-gray-500 mb-3">17+ років в eCommerce · 10 років в Amazon KDP · $100 000+ на рік</p>
+            <p class="speaker-bio mt-auto text-center">Будує системи через правильну стратегію ніш та AI-автоматизацію контенту.</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Six Reasons -->
+  <section id="benefits" class="how-section-bg text-gray-900 py-14 sm:py-16 lg:py-20">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
-      <ul class="benefits-grid">
-        <li class="benefit-chip">без досвіду</li>
-        <li class="benefit-chip">без знання іноземних мов</li>
-        <li class="benefit-chip">заробляйте у $, €, £</li>
-        <li class="benefit-chip">не потрібно звільнятись з роботи</li>
-        <li class="benefit-chip">не потрібно спілкуватись з клієнтами</li>
-        <li class="benefit-chip">працюйте з будь-якої точки світу</li>
-        <li class="benefit-chip">приділяйте 2–3 години на день</li>
-        <li class="benefit-chip">вийдіть на дохід $10 000 через рік</li>
-      </ul>
+
+      <h2 class="headline-glow mb-10 sm:mb-12 max-w-4xl">
+        Шість причин, чому зараз потрібно обирати Amazon KDP
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <article class="reason-card">
+          <h3>Почніть без досвіду в Amazon, книгах або онлайн-бізнесі</h3>
+          <p>Вам не потрібно бути письменником, дизайнером чи маркетологом. На інтенсиві ви побачите просту модель: як знаходити тему, створювати книгу за допомогою AI та запускати її на Amazon KDP.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Не знаєте іноземної мови? У 2026 це вже не проблема</h3>
+          <p>ChatGPT, Claude та інші AI-інструменти допомагають створювати тексти, перекладати, адаптувати контент і готувати SEO для Amazon. Ви задаєте напрям — AI виконує технічну частину.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Заробляйте у $, € та £ з будь-якої точки світу</h3>
+          <p>Amazon продає книги на міжнародних ринках, а ви можете вести цей бізнес з України, Польщі, Німеччини, Канади чи будь-якої іншої країни.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Не потрібно звільнятися з роботи або сидіти за ноутбуком цілий день</h3>
+          <p>Amazon KDP можна розвивати паралельно з основною роботою. На старті достатньо 2–3 години на день, щоб навчатися, шукати ніші та поступово будувати систему.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Без складу, доставки, закупівлі товару і спілкування з клієнтами</h3>
+          <p>Amazon друкує книгу після покупки, доставляє її клієнту і обробляє більшість процесів. Вам не потрібно тримати склад чи відповідати покупцям у месенджерах.</p>
+        </article>
+        <article class="reason-card">
+          <h3>Знайдіть теми, які можуть приносити від $2000 на місяць</h3>
+          <p>На інтенсиві ви дізнаєтесь, як аналізувати ніші та знаходити книжкові теми з попитом, де можна зробити перші продажі без хаотичних спроб.</p>
+        </article>
+      </div>
+
+      <h2 class="benefits-closing-title headline-glow headline-glow--sm max-w-3xl mx-auto mt-10 sm:mt-12">
+        <span class="headline-glow-line">Хочете зрозуміти, чи підходить вам Amazon KDP?</span>
+        <span class="headline-glow-line">Пройдіть інтенсив за один вечір і побачите, як виглядає цей бізнес зсередини: ніші, книги, реальні акаунти, помилки новачків і перші кроки.</span>
+      </h2>
+
+      <div class="text-center mt-8 sm:mt-10">
+        <a href="#join" class="gradient-btn">
+          Отримати доступ зараз
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -1887,255 +4512,46 @@
   <section id="for-whom" class="bg-white text-gray-900 pt-4 pb-14 sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-10 sm:mb-12 lg:mb-14 max-w-4xl gradient-text">
-        Кому варто приєднатися?
+      <h2 class="headline-glow mb-10 sm:mb-12 lg:mb-14 max-w-4xl">
+        Для кого цей інтенсив?
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
 
         <article class="audience-card rounded-xl audience-card-text-only">
-          <span class="audience-emoji" aria-hidden="true">✈️</span>
-          <h3 class="audience-card-title mb-2">Нещодавно переїхали за кордон</h3>
-          <p class="audience-card-text">
-            Ви нещодавно переїхали за кордон або часто змінюєте країни та міста — мовний бар'єр заважає знайти хорошу роботу, а нова країна ще здається чужою. За допомогою ШІ ви можете створювати книги навіть без вільного знання мови.
-          </p>
+          <span class="audience-emoji" aria-hidden="true">🛒</span>
+          <h3 class="audience-card-title mb-2">Ніколи нічого не продавали онлайн?</h3>
+          <p class="audience-card-text">Розберете модель з нуля — простою мовою, покроково, без лишніх нюансів.</p>
         </article>
 
         <article class="audience-card rounded-xl audience-card-text-only">
           <span class="audience-emoji" aria-hidden="true">💼</span>
-          <h3 class="audience-card-title mb-2">Влаштувались на роботу, але хочете більше</h3>
-          <p class="audience-card-text">
-            Ви влаштувались на фізичну роботу, але шукаєте можливості онлайн, або у вас вже є робота, але хочеться додаткового доходу в € або $, без звільнення. Двох-трьох вільних годин ввечері достатньо, щоб поступово будувати актив, який приносить гроші паралельно з основною роботою.
-          </p>
-        </article>
-
-        <article class="audience-card rounded-xl audience-card-text-only">
-          <span class="audience-emoji" aria-hidden="true">💻</span>
-          <h3 class="audience-card-title mb-2">ІТ-спеціаліст або фрілансер за кордоном</h3>
-          <p class="audience-card-text">
-            Якщо ви є ІТ-спеціаліст або фрілансер і мешкаєте за кордоном та маєте бажання заробляти більше, або вам набридли нескінченні правки, клієнти та робота по ночах — час створити дохід, що поступово росте і не залежить від настрою замовника.
-          </p>
-        </article>
-
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-stretch max-w-4xl mx-auto mt-5 sm:mt-6">
-
-        <article class="audience-card rounded-xl audience-card-text-only">
-          <span class="audience-emoji" aria-hidden="true">📦</span>
-          <h3 class="audience-card-title mb-2">Вже купуєте на Amazon — час заробляти на ньому</h3>
-          <p class="audience-card-text">
-            Ви мешкаєте в Америці чи Європі і вже маєте позитивний досвід — регулярно щось купуєте на Amazon. Зараз якраз є нагода заробляти на цій же платформі. Створюйте, публікуйте та продавайте книги, створені за допомогою ШІ, та отримуйте дохід з кожного продажу.
-          </p>
+          <h3 class="audience-card-title mb-2">Працюєте фул-тайм і відчуваєте, що час іде, а дохід не росте?</h3>
+          <p class="audience-card-text">Ви зможете розвивати Amazon KDP у вільний час, не звільняючись і не ризикуючи основним доходом. Двох-трьох годин ввечері достатньо.</p>
         </article>
 
         <article class="audience-card rounded-xl audience-card-text-only">
           <span class="audience-emoji" aria-hidden="true">🌍</span>
-          <h3 class="audience-card-title mb-2">Хочете дохід, не прив'язаний до країни</h3>
-          <p class="audience-card-text">
-            Польща, Німеччина, Чехія, США, Канада чи Таїланд — байдуже, де ви живете: ви створюєте книги за допомогою ШІ та поступово виходите на глобальний ринок, продаючи свій цифровий продукт майже по усьому світу на різних мовах.
-          </p>
+          <h3 class="audience-card-title mb-2">Живете за кордоном і шукаєте дохід у валюті?</h3>
+          <p class="audience-card-text">Польща, Німеччина, Канада, Чехія чи інша країна — бізнес не прив'язаний до місця проживання. Amazon платить у $, € та £ на рахунок у вашій країні.</p>
         </article>
 
-      </div>
-
-      <div class="text-center mt-10 sm:mt-12">
-        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-8 py-3.5 rounded-xl text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/25">
-          Приєднатися до інтенсиву
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Manifest -->
-  <section id="manifest" class="bg-[#05070a] text-white py-14 sm:py-16 lg:py-20 border-t border-white/5">
-    <div class="max-w-[880px] mx-auto px-4 sm:px-6 lg:px-10">
-
-      <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold uppercase leading-[1.15] tracking-tight mb-6 sm:mb-8 text-center lg:text-left">
-        <span class="gradient-text">Настав час будувати</span>
-        <span class="text-white"> свій дохід у новій країні</span>
-      </h2>
-
-      <p class="manifest-text text-base sm:text-lg lg:text-xl text-gray-200 leading-[1.65] mb-8 sm:mb-10 max-w-3xl">
-        Переїзд за кордон — вже великий крок. Але мовний бар'єр, чужа система і робота не за фахом нікуди не діваються. Більшість просто чекають, поки «все налагодиться». А час іде.
-      </p>
-      <p class="manifest-text text-base sm:text-lg lg:text-xl text-gray-200 leading-[1.65] mb-8 sm:mb-10 max-w-3xl">
-        Раніше вийти на глобальний ринок вимагало знання мови, досвіду і великого капіталу. Зараз частину цієї роботи бере на себе штучний інтелект. Ви створюєте книги за його участю, Amazon друкує й доставляє — а дохід у $, €, £ надходить незалежно від країни проживання.
-      </p>
-      <p class="manifest-text text-base sm:text-lg lg:text-xl text-gray-200 leading-[1.65] mb-8 sm:mb-10 max-w-3xl">
-        Саме це ми розбираємо на інтенсиві — за один вечір, крок за кроком, з конкретним планом під вашу ситуацію.
-      </p>
-
-      <div class="text-center lg:text-left">
-        <a href="#join"
-           class="gradient-btn shrink-0 inline-flex items-center justify-center px-8 sm:px-10 py-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all text-center whitespace-nowrap">
-          Приєднатися до інтенсиву
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section id="how-it-works" class="how-section-bg text-gray-900 py-14 sm:py-16 lg:py-20">
-    <div class="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-10">
-
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10 text-center gradient-text">
-        Як це працює?
-      </h2>
-
-      <div class="space-y-3 sm:space-y-4">
-
-        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
-          <span class="how-step-num">1</span>
-          <div class="flex-1 min-w-0 flex flex-col gap-1">
-            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
-              Як влаштований бізнес на Amazon KDP
-            </h3>
-            <p class="text-sm text-gray-600 leading-snug">
-              Крок за кроком ви розбираєте, як працює Amazon KDP у 2026 році та чому цей ринок приносить $33 млрд на рік.
-            </p>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">🛡️</span>
+          <h3 class="audience-card-title mb-2">Хочете дохід, який не залежить від одного роботодавця?</h3>
+          <p class="audience-card-text">Amazon KDP дає можливість працювати з міжнародними ринками та отримувати дохід у кількох валютах одночасно.</p>
         </article>
 
-        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
-          <span class="how-step-num">2</span>
-          <div class="flex-1 min-w-0 flex flex-col gap-1">
-            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
-              Алгоритм вибору прибуткової ніші
-            </h3>
-            <p class="text-sm text-gray-600 leading-snug">
-              Ви вчитеся знаходити теми книг, які приносять від $2 000 на місяць, і не витрачати свій час задарма.
-            </p>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">📈</span>
+          <h3 class="audience-card-title mb-2">Вже маєте досвід у продажах або eCommerce?</h3>
+          <p class="audience-card-text">Якщо ви вже маєте досвід у продажах чи товарному бізнесі — KDP може стати додатковим напрямком з меншою операційкою і глобальним ринком збуту.</p>
         </article>
 
-        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
-          <span class="how-step-num">3</span>
-          <div class="flex-1 min-w-0 flex flex-col gap-1">
-            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
-              Реальні цифри та кейси
-            </h3>
-            <p class="text-sm text-gray-600 leading-snug">
-              На прикладі наших особистих кабінетів та кабінетів учнів ви бачите, скільки заробляють книги.
-            </p>
-          </div>
-        </article>
-
-        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
-          <span class="how-step-num">4</span>
-          <div class="flex-1 min-w-0 flex flex-col gap-1">
-            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
-              Покроковий план запуску
-            </h3>
-            <p class="text-sm text-gray-600 leading-snug">
-              Ви отримуєте чіткий алгоритм дій: від швидкого аналізу ринку до публікації першої книги.
-            </p>
-          </div>
-        </article>
-
-        <article class="how-step flex items-start gap-4 rounded-xl p-4 sm:p-5">
-          <span class="how-step-num">5</span>
-          <div class="flex-1 min-w-0 flex flex-col gap-1">
-            <h3 class="text-sm sm:text-base font-extrabold uppercase leading-tight tracking-tight">
-              Розбір страхів та бар'єрів
-            </h3>
-            <p class="text-sm text-gray-600 leading-snug">
-              Ви переконуєтеся, що відсутність англійської чи навичок письменника більше не є перешкодою завдяки ШІ.
-            </p>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="text-center mt-8 sm:mt-10">
-        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-8 py-3.5 rounded-xl text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/25">
-          Приєднатися до інтенсиву
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- What's Inside / Program -->
-  <section id="inside" class="inside-section text-gray-900 py-10 sm:py-12 lg:py-14">
-    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
-
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10 max-w-3xl gradient-text">
-        На вас чекає 5 відео:
-      </h2>
-
-      <div class="space-y-2.5 sm:space-y-3">
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">1</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 1: <span class="gradient-text">Amazon KDP у 2026 році</span>
-              </h3>
-              <p class="inside-video-desc">
-                Як працює модель друку за запитом (Print on Demand) і де ховаються гроші?
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">2</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 2: <span class="gradient-text">Секрети вибору ніші</span>
-              </h3>
-              <p class="inside-video-desc">
-                Як знайти тему книги за допомогою ШІ, яка гарантовано приносить від $2 000/місяць — без знання англійської?
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">3</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 3: <span class="gradient-text">Анатомія успішної книги</span>
-              </h3>
-              <p class="inside-video-desc">
-                Розбір ТОП-3 бестселерів із різних ніш, які заробляють від $3 000 кожна.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">4</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 4: <span class="gradient-text">Економіка та реальні цифри</span>
-              </h3>
-              <p class="inside-video-desc">
-                Скільки заробляємо ми та наші студенти — на прикладі реальних кабінетів?
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="inside-video-card p-3 sm:p-3.5">
-          <div class="flex gap-3 sm:gap-3.5 items-center">
-            <span class="inside-step-num shrink-0">5</span>
-            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
-              <h3 class="inside-video-title">
-                Відео 5: <span class="gradient-text">Покроковий план дій</span>
-              </h3>
-              <p class="inside-video-desc">
-                Після інтенсиву ви знаєте, що робити далі — без здогадок і зупинок на старті.
-              </p>
-            </div>
-          </div>
+        <article class="audience-card rounded-xl audience-card-text-only">
+          <span class="audience-emoji" aria-hidden="true">🤖</span>
+          <h3 class="audience-card-title mb-2">Хочете нарешті застосувати AI для реального заробітку?</h3>
+          <p class="audience-card-text">Ви побачите, як AI-інструменти можна використовувати для створення реального цифрового активу — книги, що продається роками без вашої участі.</p>
         </article>
 
       </div>
@@ -2143,389 +4559,336 @@
     </div>
   </section>
 
-  <!-- What You Get in the Intensive -->
-  <section id="includes" class="includes-section text-white py-12 sm:py-14 lg:py-16">
-    <div class="max-w-[1040px] mx-auto px-4 sm:px-6">
-
-      <h2 class="includes-title">
-        <span class="gradient-text">Що ви отримуєте</span>
-        <span class="text-white"> в інтенсиві</span>
-      </h2>
-
-      <div class="includes-grid">
-
-        <article class="includes-card">
-          <div class="includes-card-inner">
-            <div class="includes-card-glow" aria-hidden="true"></div>
-            <span class="includes-card-num">01</span>
-            <h3 class="includes-card-title">5 відеолекцій без зайвого</h3>
-            <p class="includes-card-desc">
-              Вся програма в особистому кабінеті — доступна 24/7 з будь-якого пристрою. Заходите у зручний час і проходите у своєму темпі. Один вечір — і ви розумієте, як запустити бізнес на Amazon з країни, де живете зараз.
-            </p>
-          </div>
-        </article>
-
-        <article class="includes-card">
-          <div class="includes-card-inner">
-            <div class="includes-card-glow" aria-hidden="true"></div>
-            <span class="includes-card-num">02</span>
-            <h3 class="includes-card-title">Алгоритм вибору ніші за допомогою ШІ</h3>
-            <p class="includes-card-desc">
-              Конкретні інструменти та підходи — без здогадок і без знання англійської. Ви знаєте, з чого починати одразу після інтенсиву.
-            </p>
-          </div>
-        </article>
-
-        <article class="includes-card">
-          <div class="includes-card-inner">
-            <div class="includes-card-glow" aria-hidden="true"></div>
-            <span class="includes-card-num">03</span>
-            <h3 class="includes-card-title">Реальні цифри, не теорія</h3>
-            <p class="includes-card-desc">
-              Ви бачите реальні кабінети, реальні продажі та реальні суми наших студентів з різних країн — без прикрас і маркетингових обіцянок.
-            </p>
-          </div>
-        </article>
-
-        <article class="includes-card">
-          <div class="includes-card-inner">
-            <div class="includes-card-glow" aria-hidden="true"></div>
-            <span class="includes-card-num">04</span>
-            <h3 class="includes-card-title">Персональна стратегічна сесія з експертом</h3>
-            <p class="includes-card-desc">
-              У будь-який зручний час ви зустрічаєтеся з Олегом або Миколою особисто. Вони розберуть вашу конкретну ситуацію — країну проживання, час, бюджет — і складуть план саме під вас.
-            </p>
-          </div>
-        </article>
-
-        <article class="includes-card">
-          <div class="includes-card-inner">
-            <div class="includes-card-glow" aria-hidden="true"></div>
-            <span class="includes-card-num">05</span>
-            <h3 class="includes-card-title">Підтримка з технічних питань</h3>
-            <p class="includes-card-desc">
-              Якщо під час перегляду виникнуть запитання — команда на зв'язку в особистому кабінеті.
-            </p>
-          </div>
-        </article>
-
-        <article class="includes-card">
-          <div class="includes-card-inner">
-            <div class="includes-card-glow" aria-hidden="true"></div>
-            <span class="includes-card-num">06</span>
-            <h3 class="includes-card-title">Розбір реальних бестселерів</h3>
-            <p class="includes-card-desc">
-              Ви бачите зсередини, як влаштовані книги, які вже продаються на глобальному ринку — і розумієте, що саме робить їх успішними.
-            </p>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Main Bonus -->
-  <section id="bonus" class="bonus-section text-gray-900 py-10 sm:py-12 lg:py-14">
-    <div class="max-w-[920px] mx-auto px-4 sm:px-6">
-
-      <div class="text-center mb-6 sm:mb-7">
-        <span class="bonus-pill mb-3 mx-auto">🎁 Головний бонус</span>
-        <h2 class="text-xl sm:text-2xl lg:text-[1.75rem] font-extrabold uppercase leading-tight tracking-tight">
-          <span class="gradient-text">Персональна стратегічна сесія</span>
-        </h2>
-      </div>
-
-      <div class="bonus-bento">
-        <div class="bonus-bento-inner p-4 sm:p-5">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-
-            <!-- How to get -->
-            <div class="bonus-card p-4 sm:p-5 flex flex-col">
-              <div class="bonus-card-glow" aria-hidden="true"></div>
-              <div class="relative z-10 flex flex-col h-full">
-                <h3 class="text-xs font-extrabold uppercase tracking-wider text-purple-300/90 mb-3">
-                  Як отримати
-                </h3>
-                <ol class="space-y-2.5 flex-1">
-                  <li class="flex items-start gap-2.5 text-[13px] sm:text-sm text-gray-200 leading-snug">
-                    <span class="bonus-step-num">1</span>
-                    <span>Переглянути 5 відеолекцій в особистому кабінеті.</span>
-                  </li>
-                  <li class="flex items-start gap-2.5 text-[13px] sm:text-sm text-gray-200 leading-snug">
-                    <span class="bonus-step-num">2</span>
-                    <span>Заповнити коротку анкету діагностики в особистому кабінеті.</span>
-                  </li>
-                  <li class="flex items-start gap-2.5 text-[13px] sm:text-sm text-gray-200 leading-snug">
-                    <span class="bonus-step-num">3</span>
-                    <span>Зв'язатися з менеджером та узгодити час сесії.</span>
-                  </li>
-                </ol>
-                <p class="mt-3 pt-3 border-t border-white/10 text-[12px] text-gray-400 leading-snug">
-                  <strong class="text-gray-300 font-semibold">Важливо:</strong> бонус доступний 30 днів з моменту оплати.
-                </p>
-              </div>
-            </div>
-
-            <!-- What you get -->
-            <div class="flex flex-col min-w-0">
-              <h3 class="text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-3">
-                Що ви отримаєте
-              </h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 flex-1">
-                <article class="bonus-perk p-3">
-                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
-                    Зустріч з експертами
-                  </p>
-                  <p class="text-[12px] text-gray-600 leading-snug">
-                    Зустрінетеся з Олегом Бєлоцерковцем та Миколою Матушевським.
-                  </p>
-                </article>
-                <article class="bonus-perk p-3">
-                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
-                    Ваша ситуація
-                  </p>
-                  <p class="text-[12px] text-gray-600 leading-snug">
-                    Заглибитеся у ваші стартові можливості: бюджет, час, країна проживання, навички.
-                  </p>
-                </article>
-                <article class="bonus-perk p-3">
-                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
-                    Сліпі зони
-                  </p>
-                  <p class="text-[12px] text-gray-600 leading-snug">
-                    Побачите, що заважає вам запустити онлайн-бізнес з-за кордону.
-                  </p>
-                </article>
-                <article class="bonus-perk p-3">
-                  <p class="bonus-perk-title text-[11px] font-extrabold uppercase tracking-tight leading-tight mb-1">
-                    $2000+ / місяць
-                  </p>
-                  <p class="text-[12px] text-gray-600 leading-snug">
-                    Отримаєте персональну стратегію виходу на $2 000+ на місяць.
-                  </p>
-                </article>
-              </div>
-              <p class="mt-3 text-[11px] sm:text-[12px] text-gray-500 leading-snug">
-                Якщо попросите — спеціаліст розповість про формат і спецумови системного менторства.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-6">
-        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-7 py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/20">
-          Отримати бонус
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Our Goal -->
-  <section id="goal" class="goal-section py-12 sm:py-14 lg:py-16">
-    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
-
-      <div class="goal-block">
-        <h2 class="goal-headline">
-          <span class="goal-headline-line gradient-text">Настав час будувати</span>
-          <span class="goal-headline-line text-white">свій дохід у новій країні</span>
-        </h2>
-
-        <p class="goal-text">
-          Більшість емігрантів думають, що нова країна ускладнює старт у бізнесі. <span class="goal-hl">Насправді — навпаки.</span> Ви вже живете там, де Amazon платить у <span class="goal-hl">$, €, £</span>, де інфраструктура працює і де мільйони людей щодня купують книги на цій платформі.
-        </p>
-        <p class="goal-text">
-          <span class="goal-hl">За один вечір</span> ви розберете бізнес-модель <span class="goal-hl">Amazon KDP</span>, побачите реальні цифри і отримаєте план — як за участю <span class="goal-hl">ШІ</span> будувати <span class="goal-hl">власний дохід</span> з країни, де живете зараз.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Результати студентів -->
-  <section id="results" class="reviews-section text-gray-900 py-10 sm:py-12 lg:py-14">
+  <!-- Cases -->
+  <section id="cases" class="reviews-section text-gray-900 py-10 sm:py-12 lg:py-14">
     <div class="max-w-[960px] mx-auto px-4 sm:px-6">
 
-      <div class="results-hero">
-        <span class="results-hero-badge">Реальні кейси студентів</span>
-        <h2 class="results-hero-heading">
-          <span class="results-hero-line gradient-text">Вони вже зробили вибір</span>
-          <span class="results-hero-line gradient-text">Тепер черга за вами</span>
-        </h2>
+      <div class="text-center">
+        <p class="section-eyebrow">Кейси студентів</p>
       </div>
+      <h2 class="headline-glow mb-4 sm:mb-5 max-w-3xl mx-auto">
+        Реальні результати без прикрас
+      </h2>
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto text-center">
+        Подивіться на результати тих, хто вже пройшов цей шлях.
+      </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
 
         <article class="video-card">
           <div class="video-case-head">
             <h3 class="video-case-name">Вікторія</h3>
-            <p class="video-case-stat">1300+ ПРОДАЖІВ ТА $7,409.39 ДОХОДУ</p>
+            <p class="video-case-stat">1300+ продажів та $7,409.39 доходу</p>
           </div>
           <div class="video-embed">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/Ri_ic8ZB5x0?rel=0"
-              title="Вікторія — 1300+ продажів та $7,409.39 доходу"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+            <span class="video-embed-name">Вікторія</span>
+            <iframe src="https://www.youtube-nocookie.com/embed/Ri_ic8ZB5x0?rel=0" title="Вікторія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
+          <p class="case-desc">Не знала англійської, боялась почати. Після інтенсиву запустила перші книги — і отримала перші продажі.</p>
         </article>
 
         <article class="video-card">
           <div class="video-case-head">
             <h3 class="video-case-name">Наталія</h3>
-            <p class="video-case-stat">$23,178.85 З НУЛЯ НА 3 КНИГАХ</p>
+            <p class="video-case-stat">$23,178.85 з нуля на 3 книгах</p>
           </div>
           <div class="video-embed">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/1qUj8TUGZBA?rel=0"
-              title="Наталія — $23,178.85 з нуля на 3 книгах"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+            <span class="video-embed-name">Наталія</span>
+            <iframe src="https://www.youtube-nocookie.com/embed/1qUj8TUGZBA?rel=0" title="Наталія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
+          <p class="case-desc">Три книги. Нуль досвіду на старті. Без знання англійської. Результат, який більшість вважає нереальним — поки не бачить акаунт.</p>
         </article>
 
         <article class="video-card">
           <div class="video-case-head">
             <h3 class="video-case-name">Євгенія</h3>
-            <p class="video-case-stat">1770+ ПРОДАЖІВ ТА $7,592.97 ДОХОДУ</p>
+            <p class="video-case-stat">1770+ продажів та $7,592.97 доходу</p>
           </div>
           <div class="video-embed">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/UzycLXKTfok?rel=0"
-              title="Євгенія — 1770+ продажів та $7,592.97 доходу"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+            <span class="video-embed-name">Євгенія</span>
+            <iframe src="https://www.youtube-nocookie.com/embed/UzycLXKTfok?rel=0" title="Євгенія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
+          <p class="case-desc">Завдяки нашій методиці і AI змогла масштабуватись. Тепер портфоліо книг, що стабільно приносять дохід.</p>
         </article>
 
         <article class="video-card">
           <div class="video-case-head">
             <h3 class="video-case-name">Денис</h3>
-            <p class="video-case-stat">$197,667.95 З ОДНОГО АКАУНТУ</p>
+            <p class="video-case-stat">$197,667.95 з одного акаунту</p>
           </div>
           <div class="video-embed">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/KVjiYVacIV8?rel=0"
-              title="Денис — $197,667.95 З ОДНОГО АКАУНТУ"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+            <span class="video-embed-name">Денис</span>
+            <iframe src="https://www.youtube-nocookie.com/embed/KVjiYVacIV8?rel=0" title="Денис — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
+          <p class="case-desc">Правильна стратегія ніш та AI-автоматизація контенту. Одна система — результат, який говорить сам за себе.</p>
         </article>
 
+      </div>
+
+      <div class="proof-carousel-wrap">
+        <h2 class="proof-carousel-title headline-glow headline-glow--sm max-w-3xl">
+          Реальні доходи з кабінетів Amazon KDP
+        </h2>
+
+        <div class="proof-carousel" id="proof-carousel" aria-roledescription="carousel">
+          <button type="button" class="proof-carousel-btn proof-carousel-btn--prev" aria-label="Попередній відгук" data-proof-prev>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <div class="proof-carousel-viewport" tabindex="0" data-proof-viewport>
+            <div class="proof-carousel-track" data-proof-track>
+              <div class="proof-carousel-slide">
+                <img src="images/reviews/review-1.png" alt="5900+ продажів та $7,000 доходу — скріншот з кабінету Amazon KDP" width="460" height="460" loading="lazy" decoding="async">
+              </div>
+              <div class="proof-carousel-slide">
+                <img src="images/reviews/review-2.png" alt="603 продажі та $2,912 доходу — скріншот з кабінету Amazon KDP" width="460" height="460" loading="lazy" decoding="async">
+              </div>
+              <div class="proof-carousel-slide">
+                <img src="images/reviews/review-3.png" alt="£2,525.98 за перші три місяці — скріншот з кабінету Amazon KDP" width="460" height="460" loading="lazy" decoding="async">
+              </div>
+              <div class="proof-carousel-slide">
+                <img src="images/reviews/review-4.png" alt="$7,659 за 1 місяць — скріншот з кабінету Amazon KDP" width="460" height="460" loading="lazy" decoding="async">
+              </div>
+              <div class="proof-carousel-slide">
+                <img src="images/reviews/review-5.png" alt="Колаж скріншотів доходів студентів з Amazon KDP" width="460" height="460" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="proof-carousel-btn proof-carousel-btn--next" aria-label="Наступний відгук" data-proof-next>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <div class="proof-carousel-dots" data-proof-dots role="tablist" aria-label="Відгуки студентів"></div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8 sm:mt-10">
+        <a href="#join" class="gradient-btn">
+          Хочу теж зрозуміти, з чого почати
+        </a>
       </div>
 
     </div>
   </section>
 
-  <!-- Speakers -->
-  <section id="authors" class="speakers-section py-10 sm:py-12 lg:py-14">
+  <!-- Program -->
+  <section id="program" class="inside-section text-gray-900 py-10 sm:py-12 lg:py-14">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
+
+      <div class="text-center">
+        <p class="section-eyebrow">Програма</p>
+      </div>
+      <h2 class="headline-glow mb-3 sm:mb-4 max-w-3xl mx-auto">
+        <span class="headline-glow-line">Що ви дізнаєтесь</span>
+        <span class="headline-glow-line">на інтенсиві?</span>
+      </h2>
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto text-center">
+        Ніякої води, складної теорії та зайвих термінів. Тільки те, що потрібно, щоб зрозуміти Amazon KDP і побачити перші практичні кроки.
+      </p>
+
+      <div class="space-y-2.5 sm:space-y-3">
+
+        <article class="inside-video-card p-3 sm:p-4">
+          <div class="flex gap-3 sm:gap-3.5 items-start">
+            <span class="inside-step-num shrink-0">01</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">ВІДЕО 1: AMAZON KDP У 2026 РОЦІ</h3>
+              <p class="inside-video-desc">Як влаштована модель друку за запитом і де ховаються гроші?</p>
+              <p class="program-result"><strong>РЕЗУЛЬТАТ:</strong> Ви зрозумієте, як влаштований бізнес на Amazon у 2026 році — і в яких нішах новачок отримує перші продажі швидше.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-4">
+          <div class="flex gap-3 sm:gap-3.5 items-start">
+            <span class="inside-step-num shrink-0">02</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">ВІДЕО 2: СЕКРЕТИ ВИБОРУ НІШІ</h3>
+              <p class="inside-video-desc">Як знайти тему книги без знання іноземної мови?</p>
+              <p class="program-result"><strong>РЕЗУЛЬТАТ:</strong> Ви отримаєте конкретний метод пошуку прибуткової теми і зрозумієте, які теми обирати, щоб книга продавалась — ще до того, як написана перша сторінка.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-4">
+          <div class="flex gap-3 sm:gap-3.5 items-start">
+            <span class="inside-step-num shrink-0">03</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">ВІДЕО 3: АНАТОМІЯ УСПІШНОЇ КНИГИ</h3>
+              <p class="inside-video-desc">Розбір ТОП-3 бестселерів, які заробляють від $3 000 кожен</p>
+              <p class="program-result"><strong>РЕЗУЛЬТАТ:</strong> Ви побачите зсередини, як влаштовані книги, що реально продаються — і зрозумієте, за яким принципом будувати свою першу книгу.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-4">
+          <div class="flex gap-3 sm:gap-3.5 items-start">
+            <span class="inside-step-num shrink-0">04</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">ВІДЕО 4: РЕАЛЬНІ ЦИФРИ ТА РЕЗУЛЬТАТИ</h3>
+              <p class="inside-video-desc">Скільки отримуємо ми та наші студенти — на прикладі реальних кабінетів</p>
+              <p class="program-result"><strong>РЕЗУЛЬТАТ:</strong> Ви побачите розбір реальних кабінетів і зрозумієте, що потрібно, щоб вийти на передбачуваний результат.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="inside-video-card p-3 sm:p-4">
+          <div class="flex gap-3 sm:gap-3.5 items-start">
+            <span class="inside-step-num shrink-0">05</span>
+            <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
+              <h3 class="inside-video-title">ВІДЕО 5: ПОКРОКОВИЙ ПЛАН ДІЙ</h3>
+              <p class="inside-video-desc">Що робити після інтенсиву — без здогадок і зупинок на старті</p>
+              <p class="program-result"><strong>РЕЗУЛЬТАТ:</strong> Ви підете з чітким планом і будете знати, що робити одразу після старту, щоб отримати перші результати.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-10 sm:mt-12">
+        <a href="#join" class="gradient-btn">
+          Отримати доступ до інтенсиву
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section id="get" class="includes-section text-gray-900 py-12 sm:py-14 lg:py-16">
+    <div class="max-w-[1040px] mx-auto px-4 sm:px-6">
+
+      <p class="section-eyebrow">Що входить у доступ</p>
+
+      <ul class="access-grid">
+        <li class="access-item">
+          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="access-text">Доступ до інтенсиву одразу після оплати</span>
+        </li>
+        <li class="access-item">
+          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="access-text">Короткі відеоуроки без зайвої теорії</span>
+        </li>
+        <li class="access-item">
+          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="access-text">Практичний розбір Amazon KDP бізнесу</span>
+        </li>
+        <li class="access-item">
+          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="access-text">Живий розбір пошуку прибуткових ніш на екрані</span>
+        </li>
+        <li class="access-item">
+          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="access-text">Демонстрація реальних акаунтів авторів з цифрами</span>
+        </li>
+        <li class="access-item">
+          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="access-text">Розбір помилок, які зупиняють новачків</span>
+        </li>
+        <li class="access-item">
+          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="access-text">Технічна підтримка в особистому кабінеті</span>
+        </li>
+        <li class="access-item access-item--gift">
+          <span class="access-check" aria-hidden="true">🎁</span>
+          <span class="access-text">30 днів на персональну стратегічну сесію з експертом — <strong>у подарунок</strong></span>
+        </li>
+      </ul>
+
+      <div class="text-center mt-10">
+        <a href="#join" class="gradient-btn">
+          Отримати доступ до інтенсиву
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bonus -->
+  <section id="bonus" class="bonus-section py-10 sm:py-12 lg:py-14">
     <div class="max-w-[960px] mx-auto px-4 sm:px-6">
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight tracking-tight mb-8 sm:mb-10 text-center gradient-text">
-        Ваші провідники в світ Amazon KDP
-      </h2>
+      <div class="text-center mb-8 sm:mb-10">
+        <span class="bonus-pill mb-3 mx-auto">🎁 Бонус</span>
+        <h2 class="headline-glow">
+          Персональна стратегічна сесія у подарунок
+        </h2>
+        <p class="bonus-panel-text max-w-2xl mx-auto mt-4 sm:mt-5">
+          Інтенсив дасть вам розуміння системи, а стратегічна сесія допоможе визначити, як саме вам рухатися далі: з чого почати, які ніші розглядати і як не витратити час на неправильні кроки.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <article class="bonus-panel bonus-panel--topics">
+        <h3 class="bonus-panel-title">Що можна розібрати на сесії</h3>
+        <ul class="bonus-topics">
+          <li class="bonus-topic">Чи підходить вам Amazon KDP як бізнес-модель</li>
+          <li class="bonus-topic">З якої ніші краще почати</li>
+          <li class="bonus-topic">Який бюджет потрібен саме для вашого старту</li>
+          <li class="bonus-topic">Як поєднувати KDP з роботою або іншим бізнесом</li>
+          <li class="bonus-topic">Як використовувати AI для створення книг</li>
+          <li class="bonus-topic">Яких помилок уникнути на першому етапі</li>
+        </ul>
+      </article>
 
-        <!-- Олег -->
-        <article class="speaker-card p-4 sm:p-5">
-          <div class="speaker-card-glow" aria-hidden="true"></div>
-          <div class="relative z-10 flex flex-col h-full">
-            <div class="speaker-photo-slot mb-3">
-              <img src="images/speaker-oleg.png" alt="Олег Бєлоцерковець" width="400" height="500" loading="lazy" />
-            </div>
-            <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">
-              Олег Бєлоцерковець
-            </h3>
-            <div class="speaker-stats grid grid-cols-3 gap-2 sm:gap-3">
-              <div class="text-center">
-                <p class="speaker-stat-value">15+</p>
-                <p class="speaker-stat-label">Років<br>eCommerce</p>
-              </div>
-              <div class="text-center">
-                <p class="speaker-stat-value">10</p>
-                <p class="speaker-stat-label">Років<br>Amazon KDP</p>
-              </div>
-              <div class="text-center">
-                <p class="speaker-stat-value">300+</p>
-                <p class="speaker-stat-label">Книг<br>у 2025</p>
-              </div>
-            </div>
-            <p class="speaker-bio mt-auto">
-              Автор методики «Формула запуску» — системи виходу на перші продажі без знання англійської.
-            </p>
-          </div>
-        </article>
-
-        <!-- Микола -->
-        <article class="speaker-card p-4 sm:p-5">
-          <div class="speaker-card-glow" aria-hidden="true"></div>
-          <div class="relative z-10 flex flex-col h-full">
-            <div class="speaker-photo-slot mb-3">
-              <img src="images/speaker-mykola.png?v=1" alt="Микола Матушевський" width="408" height="612" loading="lazy" />
-            </div>
-            <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">
-              Микола Матушевський
-            </h3>
-            <div class="speaker-stats grid grid-cols-3 gap-2 sm:gap-3">
-              <div class="text-center">
-                <p class="speaker-stat-value">17+</p>
-                <p class="speaker-stat-label">Років<br>eCommerce</p>
-              </div>
-              <div class="text-center">
-                <p class="speaker-stat-value">10</p>
-                <p class="speaker-stat-label">Років<br>Amazon KDP</p>
-              </div>
-              <div class="text-center">
-                <p class="speaker-stat-value">300+</p>
-                <p class="speaker-stat-label">Книг<br>у 2025</p>
-              </div>
-            </div>
-            <p class="speaker-bio mt-auto">
-              Вихід на $100 000+ на рік через правильну стратегію ніш та ШІ-автоматизацію контенту.
-            </p>
-          </div>
-        </article>
-
+      <div class="text-center mt-8">
+        <a href="#join" class="gradient-btn">
+          Забрати інтенсив і стратегічну сесію
+        </a>
       </div>
 
     </div>
   </section>
 
-  <!-- Why 499 -->
-  <section id="pricing" class="inside-section text-gray-900 py-10 sm:py-12 lg:py-14">
-    <div class="max-w-[720px] mx-auto px-4 sm:px-6">
+  <!-- Potential Result -->
+  <section id="result" class="goal-section py-12 sm:py-14 lg:py-16">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
 
-      <h2 class="goal-headline text-gray-900 mb-5 sm:mb-6 text-center max-w-none">
-        Чому це коштує <span class="gradient-text">499 грн?</span>
-      </h2>
+      <div class="goal-block">
+        <h2 class="goal-headline headline-glow headline-glow--sm">
+          <span class="headline-glow-line">Amazon KDP — це не швидкі гроші,</span>
+          <span class="headline-glow-line">а система, яку можна масштабувати</span>
+        </h2>
 
-      <div class="pricing-text-card">
-        <p class="why-text text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
-          Ми працюємо в Amazon KDP 10 років і за цей час перевірили на практиці все — що працює, що ні, і де насправді ховаються гроші. Цей інтенсив — концентрат того, що реально дає результат.
+        <p class="goal-text">
+          Наша мета — показати вам не випадковий спосіб заробітку, а бізнес-модель, де книги стають цифровими активами. Якщо системно створювати книги, правильно обирати ніші, працювати з обкладинками, SEO та рекламою, Amazon KDP може вирости в стабільний напрямок доходу.
         </p>
-        <p class="why-text mt-4 text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
-          499 грн — не символічна ціна «аби продати». Це фільтр. Нам важливо працювати з людьми, які готові діяти, а не просто цікавляться темою.
-        </p>
-        <p class="why-text mt-4 text-[13px] sm:text-sm text-gray-700 leading-[1.75]">
-          За один вечір ви побачите реальні цифри, зрозумієте, як влаштована модель, і отримаєте персональну стратегічну сесію — щоб скласти план конкретно під вашу ситуацію.
+        <p class="goal-text">
+          При правильній стратегії та системній роботі ціль <span class="goal-hl">$10 000 на місяць</span> протягом року може стати реалістичним орієнтиром. Результат залежить від ваших дій, бюджету, ніші та швидкості впровадження.
         </p>
       </div>
 
-      <div class="text-center mt-6 sm:mt-7">
-        <a href="#join" class="gradient-btn inline-flex items-center justify-center px-7 py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:opacity-95 transition-all shadow-lg shadow-purple-900/20">
-          Отримати доступ за 499 грн
+      <div class="text-center mt-8">
+        <a href="#join" class="gradient-btn">
+          Хочу зрозуміти систему Amazon KDP
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Now -->
+  <section id="why-now" class="text-gray-900 py-14 sm:py-16 lg:py-20 border-t border-black/5">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6 lg:px-10">
+
+      <div class="text-center">
+        <p class="section-eyebrow">Чому саме зараз</p>
+      </div>
+      <h2 class="headline-glow mb-6 sm:mb-8 max-w-3xl mx-auto">
+        <span class="headline-glow-line">Раніше потрібна була ціла команда — автори, перекладачі, дизайнери.</span>
+        <span class="headline-glow-line">Сьогодні з цим допомагає AI.</span>
+      </h2>
+
+      <p class="manifest-text text-base sm:text-lg text-gray-600 leading-[1.65] mb-6 sm:mb-8 max-w-3xl mx-auto text-center">
+        Але сам по собі AI не запустить бізнес. Потрібна система — як обрати тему, перевірити попит і створити книгу, яку купуватимуть. Саме це ми розбираємо на інтенсиві.
+      </p>
+      <p class="manifest-text leading-[1.65] max-w-3xl mx-auto text-center">
+        Ті, хто діє зараз — отримують перші результати швидше.
+      </p>
+
+      <div class="text-center mt-8 sm:mt-10">
+        <a href="#join" class="gradient-btn">
+          Отримати доступ за 499 грн →
         </a>
       </div>
 
@@ -2536,20 +4899,20 @@
   <section id="faq" class="faq-section text-gray-900 py-12 sm:py-14 lg:py-16">
     <div class="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-10">
 
-      <h2 class="faq-title">
-        <span class="gradient-text">Часті</span><span> запитання</span>
+      <h2 class="faq-title headline-glow">
+        Часті запитання
       </h2>
 
       <div class="faq-list">
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Я не знаю англійської мови — як я зможу продавати книги?</span>
+            <span>Я не знаю іноземної мови — як я зможу продавати книги?</span>
             <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Саме для цього і існує ШІ. ChatGPT, Claude та інші AI-інструменти повністю беруть на себе написання контенту, переклад і SEO-оптимізацію для Amazon. Ви задаєте напрям — ШІ виконує роботу. Мовний бар'єр більше не існує у 2026 році.
+              Саме для цього і використовуються AI-інструменти. ChatGPT, Claude та інші сервіси допомагають з написанням контенту, перекладом і SEO-оптимізацією для Amazon. Ви задаєте напрям, а AI виконує значну частину технічної роботи. У 2026 році мовний бар'єр вже не є головною перешкодою.
             </div>
           </div>
         </div>
@@ -2561,7 +4924,7 @@
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Один вечір. 5 коротких відеолекцій без зайвого матеріалу — пройдете за 2–3 години. Доступ відкривається одразу після оплати і діє 4 дні, тож ви самі обираєте зручний час.
+              Один вечір. Короткі відеоуроки без зайвого матеріалу — пройдете за 2–3 години. Доступ відкривається одразу після оплати, тож ви самі обираєте зручний час.
             </div>
           </div>
         </div>
@@ -2580,7 +4943,7 @@
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Я живу в Польщі / Німеччині / Канаді. Чи можу я вести такий бізнес?</span>
+            <span>Я живу в Польщі, Німеччині або Канаді. Чи можу я вести такий бізнес?</span>
             <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
           </button>
           <div class="faq-answer" hidden>
@@ -2592,24 +4955,36 @@
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Як Amazon переказує кошти за кордон?</span>
+            <span>Чи буде підтримка, якщо виникнуть питання?</span>
             <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Amazon переказує кошти на ваш банківський рахунок у більшість країн світу — у $, € або £. Жодних складних схем. Ви продаєте на платформі, Amazon переказує вам гроші.
+              Так. Після оплати ви отримуєте доступ до особистого кабінету з технічною підтримкою. Також у вас є 30 днів, щоб скористатися персональною стратегічною сесією з експертом.
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Чи буде підтримка, якщо виникнуть питання?</span>
+            <span>Чи потрібно бути письменником, щоб цим займатися?</span>
             <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
           </button>
           <div class="faq-answer" hidden>
             <div class="faq-answer-inner">
-              Так. Після оплати ви отримуєте доступ до особистого кабінету, де є підтримка з технічних питань. Також у вас є 30 днів, щоб скористатися персональною стратегічною сесією з експертом.
+              Ні. Вам не потрібен письменницький талант чи досвід написання книг. AI допомагає створювати контент, а на інтенсиві ви побачите, як зібрати книгу в систему, яка продається на Amazon.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Чи потрібно спілкуватися з клієнтами?</span>
+            <svg class="faq-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            <div class="faq-answer-inner">
+              Ні. Amazon бере на себе друк, доставку та обслуговування покупців. Ви працюєте з книгами та системою публікації — без щоденного спілкування з клієнтами в месенджерах.
             </div>
           </div>
         </div>
@@ -2646,20 +5021,24 @@
   <section id="final-cta" class="final-cta py-14 sm:py-16 lg:py-20">
     <div class="relative z-10 max-w-[720px] mx-auto px-4 sm:px-6 text-center">
 
-      <h2 class="text-2xl sm:text-3xl lg:text-[2.35rem] font-extrabold uppercase leading-[1.12] tracking-tight mb-4 sm:mb-5 gradient-text">
-        Зробіть перший крок до власного доходу у $, €, £
+      <h2 class="headline-glow mb-4 sm:mb-5">
+        Зробіть перший крок у Amazon KDP бізнесі вже сьогодні
       </h2>
 
-      <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-7 sm:mb-8 max-w-lg mx-auto">
-        Натискайте на кнопку та підключайтеся прямо зараз!
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-5 max-w-xl mx-auto">
+        За один вечір ви можете зрозуміти, як працює книжковий бізнес на Amazon, як знаходити прибуткові теми, як використовувати AI для створення книг і яких помилок уникнути на старті.
+      </p>
+
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-7 sm:mb-8 max-w-xl mx-auto">
+        Не потрібно чекати ідеального моменту, вчити іноземну мову або звільнятися з роботи. Почніть сьогодні — і вже завтра матимете план для своїх перших $3000.
       </p>
 
       <a href="#join" class="final-cta-btn">
-        Приєднатися всього за 499 грн
+        Отримати доступ за 499 грн
       </a>
 
       <p class="final-cta-note">
-        Кількість місць обмежена
+        Доступ відкривається одразу після оплати · Пройти можна за один вечір
       </p>
 
     </div>
@@ -2668,7 +5047,7 @@
   <footer class="site-footer">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
       <div class="site-footer-inner">
-        <p class="site-footer-copy">© 2026 Fast-Track</p>
+        <p class="site-footer-copy">© 2026 Amazon KDP Fast-Track. Усі права захищено.</p>
 
         <div class="site-footer-legal">
           <p>ALFA EDELWEISS LLC</p>
@@ -2677,8 +5056,8 @@
         </div>
 
         <div class="site-footer-policy">
-          <a href="https://kdpfasttrack.vercel.app/policy.html">Політика конфіденційності</a>
-          <a href="https://kdpfasttrack.vercel.app/offer.html">Публічна оферта</a>
+          <a href="policy.html">Політика конфіденційності</a>
+          <a href="offer.html">Публічна оферта</a>
         </div>
       </div>
     </div>
@@ -2721,6 +5100,28 @@
     })();
 
     (function () {
+      var menuBtn = document.getElementById('header-menu-btn');
+      var mobileNav = document.getElementById('mobile-nav');
+      if (!menuBtn || !mobileNav) return;
+
+      function setMenuOpen(isOpen) {
+        mobileNav.classList.toggle('is-open', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuBtn.setAttribute('aria-label', isOpen ? 'Закрити меню' : 'Відкрити меню');
+      }
+
+      menuBtn.addEventListener('click', function () {
+        setMenuOpen(!mobileNav.classList.contains('is-open'));
+      });
+
+      mobileNav.querySelectorAll('.nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setMenuOpen(false);
+        });
+      });
+    })();
+
+    (function () {
       document.querySelectorAll('.faq-item').forEach(function (item) {
         var btn = item.querySelector('.faq-question');
         var panel = item.querySelector('.faq-answer');
@@ -2754,6 +5155,64 @@
           }
         });
       });
+    })();
+
+    (function () {
+      var carousel = document.getElementById('proof-carousel');
+      if (!carousel) return;
+
+      var track = carousel.querySelector('[data-proof-track]');
+      var prevBtn = carousel.querySelector('[data-proof-prev]');
+      var nextBtn = carousel.querySelector('[data-proof-next]');
+      var dotsWrap = carousel.querySelector('[data-proof-dots]');
+      var slides = carousel.querySelectorAll('.proof-carousel-slide');
+      var index = 0;
+      var total = slides.length;
+
+      slides.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'proof-carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Відгук ' + (i + 1));
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        dot.addEventListener('click', function () { goTo(i); });
+        dotsWrap.appendChild(dot);
+      });
+
+      var dots = dotsWrap.querySelectorAll('.proof-carousel-dot');
+
+      function goTo(i) {
+        index = (i + total) % total;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function (dot, dotIndex) {
+          var active = dotIndex === index;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        if (prevBtn) prevBtn.disabled = index === 0;
+        if (nextBtn) nextBtn.disabled = index === total - 1;
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () { goTo(index - 1); });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () { goTo(index + 1); });
+      }
+
+      var touchStartX = 0;
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function (e) {
+        var diff = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(diff) < 40) return;
+        goTo(diff < 0 ? index + 1 : index - 1);
+      }, { passive: true });
+
+      goTo(0);
     })();
   </script>
 
