@@ -2416,7 +2416,8 @@
         radial-gradient(ellipse 60% 50% at 100% 20%, rgba(255, 184, 77, 0.08) 0%, transparent 50%),
         radial-gradient(ellipse 50% 40% at 0% 70%, rgba(255, 153, 0, 0.07) 0%, transparent 50%) !important;
       padding: 0 !important;
-      overflow: hidden;
+      overflow-x: clip;
+      overflow-y: visible;
     }
 
     .hero-bg::before {
@@ -3366,7 +3367,12 @@
 
     .hero-bg .hero-headline .hero-headline-line {
       display: block !important;
-      white-space: nowrap !important;
+    }
+
+    @media (min-width: 768px) {
+      .hero-bg .hero-headline .hero-headline-line {
+        white-space: nowrap !important;
+      }
     }
 
     /* ── 2026 refresh: трендовий UI ── */
@@ -4136,16 +4142,35 @@
         padding: 0.75rem 0 1.5rem !important;
       }
 
-      .hero-inner {
+      .hero-bg .hero-main {
         padding-left: 16px !important;
         padding-right: 16px !important;
       }
 
+      .hero-inner {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+      }
+
       h1,
-      .hero-headline {
-        font-size: clamp(22px, 6.2vw, 30px) !important;
-        line-height: 1.14 !important;
+      .hero-headline,
+      .hero-bg .hero-headline {
+        font-size: clamp(20px, 5.6vw, 28px) !important;
+        line-height: 1.16 !important;
         letter-spacing: -0.02em !important;
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+      }
+
+      .hero-bg .hero-headline .hero-headline-line,
+      .hero-bg .hero-headline .hero-headline-line span,
+      .hero-headline .hero-headline-line,
+      .hero-headline .hero-headline-line span {
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        max-width: 100% !important;
       }
 
       .hero-lead {
@@ -4350,10 +4375,6 @@
         </ul>
 
         <div class="hero-action">
-          <p class="hero-price" aria-label="Ціна інтенсиву">
-            <span class="hero-price-amount">499 грн</span>
-          </p>
-
           <a href="#join" id="join" class="gradient-btn">
             Отримати доступ за 499 грн →
           </a>
@@ -4581,7 +4602,6 @@
             <p class="video-case-stat">1300+ продажів та $7,409.39 доходу</p>
           </div>
           <div class="video-embed">
-            <span class="video-embed-name">Вікторія</span>
             <iframe src="https://www.youtube-nocookie.com/embed/Ri_ic8ZB5x0?rel=0" title="Вікторія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p class="case-desc">Не знала англійської, боялась почати. Після інтенсиву запустила перші книги — і отримала перші продажі.</p>
@@ -4593,7 +4613,6 @@
             <p class="video-case-stat">$23,178.85 з нуля на 3 книгах</p>
           </div>
           <div class="video-embed">
-            <span class="video-embed-name">Наталія</span>
             <iframe src="https://www.youtube-nocookie.com/embed/1qUj8TUGZBA?rel=0" title="Наталія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p class="case-desc">Три книги. Нуль досвіду на старті. Без знання англійської. Результат, який більшість вважає нереальним — поки не бачить акаунт.</p>
@@ -4605,7 +4624,6 @@
             <p class="video-case-stat">1770+ продажів та $7,592.97 доходу</p>
           </div>
           <div class="video-embed">
-            <span class="video-embed-name">Євгенія</span>
             <iframe src="https://www.youtube-nocookie.com/embed/UzycLXKTfok?rel=0" title="Євгенія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p class="case-desc">Завдяки нашій методиці і AI змогла масштабуватись. Тепер портфоліо книг, що стабільно приносять дохід.</p>
@@ -4617,7 +4635,6 @@
             <p class="video-case-stat">$197,667.95 з одного акаунту</p>
           </div>
           <div class="video-embed">
-            <span class="video-embed-name">Денис</span>
             <iframe src="https://www.youtube-nocookie.com/embed/KVjiYVacIV8?rel=0" title="Денис — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p class="case-desc">Правильна стратегія ніш та AI-автоматизація контенту. Одна система — результат, який говорить сам за себе.</p>
