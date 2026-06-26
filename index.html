@@ -203,6 +203,25 @@
       margin-top: 0.2rem;
     }
 
+    .hero-lead-mobile {
+      display: none;
+    }
+
+    @media (max-width: 639px) {
+      .hero-lead-desktop {
+        display: none;
+      }
+
+      .hero-lead-mobile {
+        display: block;
+      }
+
+      .hero-lead {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+      }
+    }
+
     .hero-value-line {
       font-size: clamp(17px, 2.2vw, 20px);
       font-weight: 500;
@@ -4696,9 +4715,17 @@
         </h1>
 
         <p class="hero-lead">
-          <span class="hero-lead-line">За один вечір зрозумійте, як створювати цифрові книги</span>
-          <span class="hero-lead-line">5 мовами, продавати в 10+ країн</span>
-          <span class="hero-lead-line">і виходити на дохід від $3000 на місяць.</span>
+          <span class="hero-lead-desktop">
+            <span class="hero-lead-line">За один вечір зрозумійте, як створювати цифрові книги</span>
+            <span class="hero-lead-line">5 мовами, продавати в 10+ країн</span>
+            <span class="hero-lead-line">і виходити на дохід від $3000 на місяць.</span>
+          </span>
+          <span class="hero-lead-mobile">
+            <span class="hero-lead-line">За один вечір зрозумійте,</span>
+            <span class="hero-lead-line">як створювати цифрові книги 5 мовами,</span>
+            <span class="hero-lead-line">продавати в 10+ країн</span>
+            <span class="hero-lead-line">і виходити на дохід від $3000 на місяць.</span>
+          </span>
         </p>
 
         <ul class="hero-benefits" aria-label="Переваги інтенсиву">
@@ -4830,8 +4857,7 @@
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
 
       <h2 class="headline-glow mb-8 sm:mb-10 max-w-4xl mx-auto text-center">
-        <span class="headline-glow-line">Шість причин, чому зараз</span>
-        <span class="headline-glow-line">варто починати книжковий бізнес на Amazon</span>
+        <span class="headline-glow-line">Чому варто обирати книжковий бізнес на Amazon?</span>
       </h2>
 
       <div class="reasons-grid">
@@ -4868,7 +4894,7 @@
       </div>
 
       <h2 class="benefits-closing-title headline-glow headline-glow--sm max-w-3xl mx-auto mt-6 sm:mt-8">
-        <span class="headline-glow-line">Один вечір на інтенсиві — і зрозумієте, чи підходить вам книжковий бізнес на Amazon.</span>
+        <span class="headline-glow-line">Один вечір і ви зрозумієте, чи підходить вам книжковий бізнес на Amazon</span>
       </h2>
 
       <div class="text-center mt-5 sm:mt-6">
@@ -5326,8 +5352,8 @@
     <div class="relative z-10 max-w-[720px] mx-auto px-4 sm:px-6 text-center">
 
       <h2 class="headline-glow mb-4 sm:mb-5">
-        <span class="headline-glow-line">499 грн — і завтра у вас буде</span>
-        <span class="headline-glow-line">план на $3000 на місяць</span>
+        <span class="headline-glow-line">499 грн і у вас буде</span>
+        <span class="headline-glow-line">план на $3000/місяць</span>
       </h2>
 
       <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-5 max-w-xl mx-auto">
