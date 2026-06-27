@@ -13,7 +13,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
       theme: {
@@ -94,57 +94,148 @@
       overflow: visible;
       background-color: #0B0F1A;
       background-image:
+        radial-gradient(ellipse 50% 90% at 82% 72%, rgba(255, 153, 0, 0.14) 0%, rgba(245, 166, 35, 0.05) 38%, transparent 68%),
         radial-gradient(ellipse 80% 60% at 15% 50%, rgba(255, 153, 0, 0.06) 0%, transparent 60%),
         radial-gradient(ellipse 60% 70% at 75% 80%, rgba(245, 166, 35, 0.08) 0%, transparent 55%),
         radial-gradient(ellipse 50% 50% at 85% 30%, rgba(240, 193, 75, 0.05) 0%, transparent 50%);
     }
 
     .speaker-glow {
-      background: radial-gradient(ellipse 55% 45% at 50% 92%, rgba(255, 153, 0, 0.15) 0%, rgba(245, 166, 35, 0.06) 50%, transparent 72%);
+      background:
+        radial-gradient(ellipse 35% 70% at 50% 45%, rgba(255, 153, 0, 0.22) 0%, rgba(245, 166, 35, 0.08) 42%, transparent 68%),
+        radial-gradient(ellipse 55% 45% at 50% 92%, rgba(255, 153, 0, 0.15) 0%, rgba(245, 166, 35, 0.06) 50%, transparent 72%);
     }
 
-    .hero-main {
+    .hero-section {
+      width: 100%;
+      overflow-x: clip;
+      overflow-y: visible;
+      position: relative;
+    }
+
+    .hero-container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 24px;
+      max-width: 1200px !important;
+      width: 100%;
+      margin: 0 auto !important;
+      padding: 20px 20px 20px !important;
+      height: auto !important;
       position: relative;
       z-index: 1;
+      overflow: visible;
+    }
+
+    .hero-text-content {
+      flex: 1;
+      max-width: 600px;
+      min-width: 0;
+      position: relative;
+      z-index: 6;
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-text-content {
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hero-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 32px !important;
+        padding-bottom: 24px !important;
+      }
+
+      .hero-text-content {
+        max-width: 100%;
+        align-items: center;
+      }
+    }
+
+    .hero-social-proof {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      padding: 0.75rem 0 1.5rem;
+      gap: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      padding: 0;
+      list-style: none;
     }
 
     @media (min-width: 1024px) {
-      .hero-main { padding: 1rem 0 1.75rem; }
+      .hero-social-proof {
+        justify-content: flex-start;
+      }
+    }
+
+    .hero-social-metric {
+      margin: 0;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .hero-social-metric strong {
+      color: #F5A623;
+      font-weight: 800;
+    }
+
+    .hero-social-sep {
+      display: none;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 480px) {
+      .hero-social-sep { display: block; }
     }
 
     .hero-inner {
       width: 100%;
-      max-width: 750px;
       margin: 0 auto;
-      text-align: center;
     }
 
     .hero-headline {
-      max-width: 750px;
       width: 100%;
-      margin: 0 auto 16px;
+      margin: 0 auto 20px;
       padding: 0;
       font-size: var(--fs-hero);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
       color: #fff;
       text-align: center;
-      text-transform: uppercase;
+      text-transform: none;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-headline {
+        font-size: var(--fs-hero-desktop);
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none;
+      }
     }
 
     .hero-headline-line {
       display: block;
-    }
-
-    @media (min-width: 768px) {
-      .hero-headline-line {
-        white-space: nowrap;
-      }
     }
 
     .hero-headline-line--single {
@@ -184,41 +275,24 @@
     }
 
     .hero-lead {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 1.55;
-      color: var(--text-muted);
-      max-width: 42rem;
-      margin: 0 auto 32px;
+      font-size: clamp(18px, 1.25vw, 22px);
+      font-weight: 500;
+      line-height: 1.65;
+      color: #cccccc;
+      max-width: 100%;
+      margin: 0 auto 20px;
       text-align: center;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
     }
 
-    .hero-lead-line {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-
-    .hero-lead-line + .hero-lead-line {
-      margin-top: 0.2rem;
-    }
-
-    .hero-lead-mobile {
-      display: none;
-    }
-
-    @media (max-width: 639px) {
-      .hero-lead-desktop {
-        display: none;
-      }
-
-      .hero-lead-mobile {
-        display: block;
-      }
-
+    @media (min-width: 1024px) {
       .hero-lead {
-        font-size: 15px !important;
-        line-height: 1.5 !important;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
       }
     }
 
@@ -244,25 +318,35 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 6px 8px;
+      gap: 6px;
       list-style: none;
-      margin: 0 auto 28px;
+      margin: 0 auto 20px;
       padding: 0;
-      max-width: 640px;
+      max-width: 32rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-benefits {
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 30rem;
+      }
     }
 
     .hero-benefits .benefit-chip {
       display: inline-flex;
       width: auto;
       justify-content: center;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 500;
-      line-height: 1.3;
-      padding: 5px 11px;
+      line-height: 1.25;
+      padding: 6px 10px;
       white-space: nowrap;
       text-align: center;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
       box-shadow: none;
     }
 
@@ -457,6 +541,14 @@
     .hero-action {
       max-width: 420px;
       margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-action {
+        margin: 0;
+        max-width: 26rem;
+      }
     }
 
     .hero-price {
@@ -492,19 +584,10 @@
       justify-content: center;
     }
 
-    .hero-grid {
-      width: 100%;
-    }
-
     @media (min-width: 1024px) {
-      .hero-grid {
-        align-items: start;
+      .hero-timer-wrap #countdown {
+        justify-content: flex-start;
       }
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
     }
 
     .hero-right {
@@ -520,93 +603,219 @@
       }
     }
 
-    .hero-photo-col {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
+    /* Hero speaker collage — glow stage + bottom fade */
+    .hero-collage-wrapper {
+      position: relative !important;
+      width: 440px !important;
+      height: 500px !important;
+      flex-shrink: 0 !important;
+      margin-left: auto !important;
+      margin-right: 10px !important;
+      margin-bottom: -20px !important;
+      align-self: flex-end !important;
+      overflow: visible !important;
+      background: transparent !important;
+      border: none !important;
+      isolation: auto !important;
+    }
+
+    .collage-stage {
+      position: absolute;
+      inset: -48px -28px -8px -28px;
+      pointer-events: none;
+      z-index: 0;
       overflow: visible;
+      clip-path: inset(46% 0 0 0);
     }
 
-    @media (min-width: 1024px) {
-      .hero-photo-col {
-        padding-top: 0;
-        align-self: center;
-      }
-    }
-
-    .hero-photo-stage {
-      position: relative;
-      width: 100%;
-      max-width: 640px;
-      margin: 0 auto;
-      display: block;
+    .speakers-photo-wrap {
+      position: absolute !important;
+      bottom: -20px !important;
+      left: 50% !important;
+      right: auto !important;
+      height: 100% !important;
+      transform: translateX(-52%) translateZ(0) !important;
+      transform-origin: center bottom !important;
+      z-index: 2 !important;
       line-height: 0;
       overflow: visible;
-      padding: 0 0.5rem;
     }
 
-    .speaker-photo {
-      position: relative;
+    .speakers-photo-fade {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 54%;
       z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        #080b10 0%,
+        #080b10 7%,
+        rgba(8, 11, 16, 0.9) 18%,
+        rgba(8, 11, 16, 0.65) 32%,
+        rgba(8, 11, 16, 0.34) 48%,
+        transparent 68%
+      );
+    }
+
+    .collage-glow {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .collage-glow--ambient {
+      left: 50%;
+      top: 68%;
+      transform: translate(-50%, -50%);
+      width: 88%;
+      height: 55%;
+      background:
+        radial-gradient(ellipse 55% 65% at 50% 50%, rgba(255, 153, 0, 0.16) 0%, rgba(255, 120, 0, 0.06) 42%, transparent 72%);
+      filter: blur(28px);
+    }
+
+    .collage-glow--floor {
+      display: none;
+    }
+
+    .collage-glow--dots {
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 153, 0, 0.45) 1px, transparent 1px);
+      background-size: 16px 16px;
+      mask-image: radial-gradient(ellipse 70% 55% at 54% 72%, black 0%, transparent 78%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 55% at 54% 72%, black 0%, transparent 78%);
+      opacity: 0.22;
+    }
+
+    .hero-collage-wrapper::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .collage-img {
+      position: absolute !important;
+      bottom: 0 !important;
+      height: 100% !important;
+      width: auto !important;
+      max-height: none;
+      object-fit: contain !important;
       display: block;
-      width: 100%;
-      height: auto;
-      max-width: 100%;
-      margin: 0 auto;
-      object-fit: contain;
-      object-position: center bottom;
-      -webkit-mask-image: none;
-      mask-image: none;
-      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.1));
+      background: transparent !important;
+      pointer-events: none;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      -webkit-appearance: none;
+      appearance: none;
+      vertical-align: top;
+      image-rendering: auto !important;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       transform: translateZ(0);
     }
 
-    .hero-photo-stage::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      width: 70%;
-      height: 28%;
-      background: radial-gradient(ellipse at 50% 80%, rgba(255, 153, 0, 0.14) 0%, rgba(245, 166, 35, 0.05) 45%, transparent 72%);
-      pointer-events: none;
-      z-index: 0;
+    .speakers-combo {
+      position: relative !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      transform: none !important;
+      height: 100% !important;
+      width: auto !important;
+      max-width: none !important;
+      z-index: 0 !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+      display: block;
     }
 
-    .hero-photo-stage::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 34%;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(11, 15, 26, 0.18) 48%,
-        rgba(11, 15, 26, 0.72) 82%,
-        #0B0F1A 100%
-      );
+    .collage-badge {
+      position: absolute !important;
+      background: rgba(255, 255, 255, 0.92) !important;
+      backdrop-filter: blur(14px) saturate(1.2) !important;
+      -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
+      border: 1px solid rgba(255, 255, 255, 0.72) !important;
+      border-radius: 16px !important;
+      padding: 10px 16px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(255, 153, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
+      font-family: inherit;
+      min-width: 180px !important;
       pointer-events: none;
-      z-index: 2;
+      z-index: 5 !important;
     }
 
-    .hero-photo-col::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255, 153, 0, 0.4) 12%, rgba(245, 166, 35, 0.85) 50%, rgba(255, 153, 0, 0.4) 88%, transparent 100%);
-      box-shadow: 0 0 12px rgba(245, 166, 35, 0.3);
-      pointer-events: none;
-      z-index: 3;
+    .badge-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, rgba(255, 153, 0, 0.18) 0%, rgba(255, 120, 0, 0.08) 100%);
+      border: 1px solid rgba(255, 153, 0, 0.22);
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .badge-title {
+      font-weight: 700;
+      color: #111;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .badge-desc {
+      color: #666;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .badge-income {
+      bottom: 157px !important;
+      right: 248px !important;
+      z-index: 4 !important;
+    }
+
+    .badge-experience {
+      bottom: 91px !important;
+      right: 53px !important;
+      z-index: 5 !important;
+    }
+
+    @media (max-width: 991px) {
+      .hero-collage-wrapper {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 300px !important;
+        margin: 16px auto 0 auto !important;
+      }
+
+      .speakers-photo-wrap {
+        bottom: -16px !important;
+      }
+
+      .badge-income {
+        bottom: 150px !important;
+        right: 226px !important;
+      }
+
+      .badge-experience {
+        bottom: 91px !important;
+        right: 52px !important;
+      }
     }
 
     .hero-section-wave {
@@ -628,48 +837,49 @@
       }
     }
 
-    .hero-speaker-badges {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 10%;
-      z-index: 4;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 0.5rem;
-      padding: 0 5% 0;
-      pointer-events: none;
-    }
-
     .hero-speaker-badge {
-      flex: 0 1 38%;
-      max-width: 38%;
-      min-width: 0;
-      padding: 0.5rem 0.6rem 0.55rem;
+      padding: 0.55rem 0.65rem 0.6rem;
       border-radius: 14px;
-      text-align: center;
+      text-align: left;
       background: linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0.94) 0%,
-        rgba(255, 255, 255, 0.82) 100%
+        rgba(255, 255, 255, 0.97) 0%,
+        rgba(255, 255, 255, 0.9) 100%
       );
-      border: 1px solid rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.95);
       box-shadow:
-        0 0 0 1px rgba(245, 166, 35, 0.12),
-        0 0 24px rgba(255, 153, 0, 0.18),
-        0 8px 20px rgba(0, 0, 0, 0.16);
+        0 0 0 1px rgba(245, 166, 35, 0.1),
+        0 0 28px rgba(255, 153, 0, 0.16),
+        0 10px 24px rgba(0, 0, 0, 0.14);
       backdrop-filter: blur(14px) saturate(1.15);
       -webkit-backdrop-filter: blur(14px) saturate(1.15);
     }
 
+    .hero-speaker-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-bottom: 0.35rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FFB84D 0%, #FF9900 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 153, 0, 0.35);
+    }
+
+    .hero-speaker-badge-icon svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
     .hero-speaker-badge-highlight {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -0.02em;
-      color: #d4a017;
+      color: #E47911;
     }
 
     .hero-speaker-badge-label,
@@ -706,26 +916,23 @@
     }
 
     @media (min-width: 1024px) {
-      .hero-speaker-badges {
-        bottom: 12%;
-        padding: 0 6% 0;
-        gap: 0.6rem;
-      }
-
       .hero-speaker-badge {
-        flex-basis: 36%;
-        max-width: 36%;
-        padding: 0.6rem 0.75rem 0.65rem;
+        padding: 0.7rem 0.8rem 0.75rem;
         border-radius: 16px;
       }
 
       .hero-speaker-badge-highlight {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
       }
 
       .hero-speaker-badge-label,
       .hero-speaker-badge-caption {
         font-size: 0.6875rem;
+      }
+
+      .hero-speaker-badge-icon {
+        width: 1.65rem;
+        height: 1.65rem;
       }
     }
 
@@ -1215,6 +1422,7 @@
     .goal-section {
       background-color: #0B0F1A;
       background-image:
+        radial-gradient(ellipse 70% 55% at 50% 50%, rgba(255, 153, 0, 0.12) 0%, transparent 62%),
         radial-gradient(ellipse 55% 45% at 0% 20%, rgba(255, 153, 0, 0.1) 0%, transparent 55%),
         radial-gradient(ellipse 40% 35% at 100% 80%, rgba(245, 166, 35, 0.08) 0%, transparent 50%);
     }
@@ -2289,7 +2497,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem 2rem;
-      padding: 1.75rem 0 2rem;
+      padding: 0;
     }
 
     @media (min-width: 768px) {
@@ -2385,9 +2593,15 @@
       --bg-elevated: #0f1419;
       --surface: rgba(255, 255, 255, 0.045);
       --surface-hover: rgba(255, 255, 255, 0.08);
-      --glass: rgba(12, 16, 22, 0.72);
-      --text: #fafafa;
-      --text-muted: #9ca3af;
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass-strong: rgba(12, 16, 22, 0.55);
+      --glass-blur: 24px;
+      --glass-border: rgba(255, 255, 255, 0.11);
+      --glass-highlight: rgba(255, 255, 255, 0.09);
+      --glow-orange: rgba(255, 153, 0, 0.45);
+      --glow-orange-soft: rgba(255, 153, 0, 0.18);
+      --text: var(--text-heading);
+      --text-muted: #999999;
       --accent: #FF9900;
       --accent-light: #FFB84D;
       --accent-dark: #E47911;
@@ -2403,40 +2617,111 @@
       --shadow-glow: 0 0 0 1px rgba(255, 153, 0, 0.2), 0 12px 40px rgba(255, 153, 0, 0.18);
       --gradient-border: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 153, 0, 0.35));
       /* Typography scale */
+      --text-heading: #ffffff;
+      --text-body: #cccccc;
+      --accent-gold: #F5A623;
       --fs-caption: 14px;
       --fs-body: 17px;
-      --fs-lead: 18px;
+      --fs-lead: 20px;
       --fs-card-title: 18px;
-      --fs-section: clamp(26px, 3.2vw, 32px);
-      --fs-hero: clamp(18px, 5.5vw, 36px);
+      --fs-h1: clamp(36px, 9vw, 40px);
+      --fs-h1-desktop: clamp(64px, 5.2vw, 72px);
+      --fs-h2: clamp(24px, 5.5vw, 28px);
+      --fs-h2-desktop: clamp(42px, 3.6vw, 48px);
+      --fs-section: var(--fs-h2);
+      --fs-hero: var(--fs-h1);
+      --fs-hero-desktop: var(--fs-h1-desktop);
       --fs-speaker: clamp(20px, 2.4vw, 22px);
       --fs-chip: 15px;
       --fs-btn: 16px;
       --fs-nav: 15px;
       --fs-timer: clamp(28px, 5vw, 36px);
-      --lh: 1.65;
-      --lh-tight: 1.2;
+      --lh: 1.6;
+      --lh-heading: 1.4;
+      --lh-tight: 1.4;
       --btn-cta-gradient: linear-gradient(90deg, #F5D78E 0%, #FFC04D 42%, #FF9900 100%);
       --btn-cta-gradient-hover: linear-gradient(90deg, #FFE49A 0%, #FFCC66 42%, #FFA726 100%);
       --btn-cta-text: #0a0a0a;
       --btn-cta-shadow: rgba(255, 153, 0, 0.38);
       --headline-glow: linear-gradient(
         90deg,
-        #3D1505 0%,
-        #6B2808 10%,
-        #B85A0C 22%,
-        #FFD8B0 36%,
-        #FFFFFF 48%,
-        #FFFFFF 56%,
-        #FFD8B0 68%,
-        #FF9900 86%,
-        #E8832A 100%
+        #FFE8D0 0%,
+        #FFF6EE 14%,
+        #FFFFFF 30%,
+        #FFF2E4 46%,
+        #FFE4B8 58%,
+        #FFCC70 72%,
+        #FFB84D 86%,
+        #FFD18A 100%
+      );
+      --headline-glow-on-light: linear-gradient(
+        90deg,
+        #6B3008 0%,
+        #A04E10 18%,
+        #D47818 36%,
+        #F5A623 54%,
+        #FF9900 74%,
+        #FFB84D 100%
       );
     }
 
     ::selection {
       background: rgba(255, 153, 0, 0.35);
       color: #fff;
+    }
+
+    .ui-icon {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 11px;
+      font-size: 1.05rem;
+      line-height: 1;
+      background: linear-gradient(180deg, rgba(255, 236, 200, 0.2) 0%, rgba(255, 200, 110, 0.1) 100%);
+      border: 1px solid rgba(255, 184, 77, 0.34);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .ui-icon--sm {
+      width: 1.625rem;
+      height: 1.625rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+
+    #for-whom .ui-icon,
+    .bg-white .ui-icon {
+      background: linear-gradient(180deg, #fff6e8 0%, #f3dfbb 100%);
+      border-color: rgba(188, 132, 48, 0.28);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+
+    .amazon-mark {
+      display: block;
+      width: 34px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.32));
+    }
+
+    .amazon-mark--sm {
+      width: 26px;
+    }
+
+    .amazon-mark--md {
+      width: 40px;
+    }
+
+    .amazon-mark--lg {
+      width: 54px;
+    }
+
+    .badge-icon .amazon-mark {
+      width: 24px;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.18));
     }
 
     html {
@@ -2449,9 +2734,10 @@
 
     body {
       background: var(--bg) !important;
-      color: var(--text) !important;
+      color: var(--text-body) !important;
       font-size: var(--fs-body) !important;
       line-height: var(--lh) !important;
+      font-weight: 400 !important;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -2470,7 +2756,7 @@
       z-index: 1;
     }
 
-    section > div:not(.hero-main),
+    section > div:not(.hero-container),
     .header-inner {
       max-width: var(--content-max) !important;
       margin-left: auto !important;
@@ -2543,25 +2829,24 @@
     }
 
     .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 10%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 10%, transparent 75%);
+      display: none !important;
+      content: none !important;
     }
 
-    .hero-bg .hero-main {
-      max-width: 800px !important;
+    .hero-bg .hero-container {
+      max-width: 1200px !important;
       margin-left: auto !important;
       margin-right: auto !important;
-      padding: 1.75rem 20px 3.5rem !important;
+      padding: 20px 20px 20px !important;
+      height: auto !important;
       position: relative;
       z-index: 1;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-bg .hero-container {
+        padding: 20px 40px 20px !important;
+      }
     }
 
     .site-logo {
@@ -2578,9 +2863,45 @@
     }
 
     .hero-inner {
-      text-align: center !important;
-      max-width: 750px !important;
-      margin: 0 auto !important;
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-text-content .hero-eyebrow {
+        text-align: left;
+      }
+
+      .hero-text-content .hero-headline,
+      .hero-bg .hero-headline {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: none !important;
+      }
+
+      .hero-text-content .hero-lead,
+      .hero-bg .hero-lead {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .hero-text-content .hero-benefits {
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .hero-text-content .hero-action {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .hero-text-content .hero-timer-wrap #countdown {
+        justify-content: flex-start !important;
+      }
     }
 
     .hero-section-wave {
@@ -2603,26 +2924,36 @@
 
     h1, .hero-headline {
       font-size: var(--fs-hero) !important;
-      font-weight: 700 !important;
-      text-transform: uppercase !important;
+      font-weight: 800 !important;
+      text-transform: none !important;
       color: #fff !important;
       -webkit-text-fill-color: #fff !important;
-      text-align: center !important;
-      max-width: 750px !important;
-      margin: 0 auto 16px !important;
-      line-height: 1.15 !important;
-      letter-spacing: -0.03em !important;
+      line-height: 1.08 !important;
+      letter-spacing: -0.035em !important;
       font-style: normal !important;
+      margin: 0 0 20px !important;
+    }
+
+    @media (min-width: 1024px) {
+      h1.hero-headline,
+      .hero-bg .hero-headline {
+        font-size: var(--fs-hero-desktop) !important;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      h1, .hero-headline {
+        text-align: center !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
     }
 
     .hero-headline-line {
       display: block !important;
-    }
-
-    @media (min-width: 768px) {
-      .hero-headline-line {
-        white-space: nowrap !important;
-      }
+      white-space: nowrap !important;
+      text-wrap: auto !important;
     }
 
     .hero-headline .text-white {
@@ -2734,6 +3065,13 @@
     .hero-eyebrow {
       margin-bottom: 1.25rem;
       line-height: 1.5;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-text-content .hero-eyebrow {
+        text-align: left;
+      }
     }
 
     .eyebrow-pill {
@@ -2761,13 +3099,24 @@
     }
 
     .hero-lead {
-      font-size: 17px !important;
-      font-weight: 400 !important;
-      color: var(--text-muted) !important;
-      text-align: center !important;
-      max-width: 42rem !important;
-      margin: 0 auto 32px !important;
+      font-size: clamp(18px, 1.25vw, 22px) !important;
+      font-weight: 500 !important;
+      color: #cccccc !important;
+      max-width: 100% !important;
+      margin: 0 0 24px !important;
       line-height: 1.65 !important;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    @media (max-width: 1023px) {
+      .hero-lead {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
     }
 
     .hero-value-line {
@@ -2811,13 +3160,20 @@
     .hero-benefits {
       display: flex !important;
       flex-wrap: wrap !important;
-      justify-content: center !important;
       align-items: center !important;
-      margin: 0 auto 28px !important;
-      max-width: 640px !important;
+      margin: 0 0 24px !important;
+      max-width: 100% !important;
       gap: 6px 8px !important;
       padding: 0 !important;
       list-style: none !important;
+    }
+
+    @media (max-width: 1023px) {
+      .hero-benefits {
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
     }
 
     .hero-benefits .benefit-chip {
@@ -2875,9 +3231,9 @@
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      width: 100% !important;
-      max-width: 26rem !important;
-      padding: 17px 28px !important;
+      width: auto !important;
+      max-width: none !important;
+      padding: 14px 28px !important;
       font-size: 16px !important;
       font-weight: 700 !important;
       border-radius: var(--radius-pill) !important;
@@ -2895,7 +3251,14 @@
 
     .hero-action {
       max-width: 26rem !important;
-      margin: 0 auto !important;
+      width: 100% !important;
+    }
+
+    @media (max-width: 1023px) {
+      .hero-action {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
     }
 
     .gradient-btn:hover,
@@ -3067,7 +3430,7 @@
     }
 
     .hero-timer-wrap {
-      margin-top: 2rem !important;
+      margin-top: 8px !important;
       text-align: center !important;
     }
 
@@ -3107,7 +3470,7 @@
     .timer-digit .timer-label {
       font-size: 10px !important;
       color: var(--text-muted) !important;
-      text-transform: uppercase !important;
+      text-transform: none !important;
       letter-spacing: 0.08em !important;
       margin-top: 6px !important;
       font-weight: 500 !important;
@@ -3394,9 +3757,9 @@
     }
 
     .site-footer {
-      background: var(--bg-elevated) !important;
-      text-align: center !important;
-      padding: 48px 24px !important;
+      background: #000 !important;
+      text-align: left !important;
+      padding: 20px 24px 24px !important;
       border-top: 1px solid var(--border) !important;
     }
 
@@ -3410,14 +3773,6 @@
 
     .site-footer-legal a:hover,
     .site-footer-policy a:hover { color: var(--text) !important; }
-
-    .hero-photo-col,
-    .hero-photo-stage::before,
-    .hero-photo-stage::after,
-    .hero-photo-col::after,
-    .hero-bg .speaker-glow {
-      display: none !important;
-    }
 
     .speaker-card-glow {
       display: none !important;
@@ -3557,6 +3912,10 @@
 
     #get .access-check {
       flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    #get .access-check:not(.ui-icon) {
       width: 28px;
       height: 28px;
       display: flex;
@@ -3569,7 +3928,6 @@
       font-size: 13px;
       font-weight: 700;
       line-height: 1;
-      margin-top: 1px;
     }
 
     #get .access-text {
@@ -3607,8 +3965,8 @@
 
     #for-whom .for-whom-item {
       display: flex;
-      align-items: stretch;
-      gap: 16px;
+      align-items: flex-start;
+      gap: 14px;
       padding: 20px 22px;
       margin: 0;
       background: var(--glass);
@@ -3626,12 +3984,7 @@
     }
 
     #for-whom .for-whom-bar {
-      flex-shrink: 0;
-      width: 3px;
-      min-height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #FF9900 0%, #FFB84D 100%);
-      box-shadow: 0 0 10px rgba(255, 153, 0, 0.3);
+      display: none;
     }
 
     #for-whom .for-whom-text {
@@ -3664,22 +4017,31 @@
       }
     }
 
-    /* Hero: рівно 4 рядки заголовка */
+    /* Hero: чистий 2-рядковий заголовок */
     .hero-bg .hero-headline {
       font-size: var(--fs-hero) !important;
-      max-width: 750px !important;
-      margin: 0 auto 16px !important;
-      line-height: 1.15 !important;
+      max-width: none !important;
+      margin: 0 0 20px !important;
+      line-height: 1.08 !important;
+      text-transform: none !important;
+      font-weight: 800 !important;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-bg .hero-headline {
+        font-size: var(--fs-hero-desktop) !important;
+      }
     }
 
     .hero-bg .hero-headline .hero-headline-line {
       display: block !important;
+      white-space: nowrap !important;
+      text-wrap: auto !important;
+      text-transform: none !important;
     }
 
-    @media (min-width: 768px) {
-      .hero-bg .hero-headline .hero-headline-line {
-        white-space: nowrap !important;
-      }
+    .hero-bg .hero-headline .hero-headline-line span:not(.gradient-text) {
+      text-transform: none !important;
     }
 
     /* ── 2026 refresh: трендовий UI ── */
@@ -3992,28 +4354,22 @@
     }
 
     .bonus-topics {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
-    @media (min-width: 560px) {
-      .bonus-topics {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
     .bonus-topic {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      padding: 11px 12px;
+      gap: 10px;
+      padding: 12px 14px;
       border-radius: 12px;
-      font-size: 13px;
-      line-height: 1.45;
+      font-size: 14px;
+      line-height: 1.5;
       color: var(--text);
       background: rgba(255, 255, 255, 0.035);
       border: 1px solid rgba(255, 255, 255, 0.07);
@@ -4021,12 +4377,13 @@
     }
 
     .bonus-topic::before {
-      content: '✓';
-      flex-shrink: 0;
-      font-size: 11px;
-      font-weight: 800;
-      line-height: 1.6;
-      color: var(--accent);
+      display: none;
+      content: none;
+    }
+
+    .bonus-topic-text {
+      flex: 1;
+      min-width: 0;
     }
 
     .bonus-topic:hover {
@@ -4063,12 +4420,19 @@
     .hero-bg .hero-headline,
     h1.hero-headline {
       font-size: var(--fs-hero) !important;
-      text-transform: uppercase !important;
+      text-transform: none !important;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-bg .hero-headline,
+      h1.hero-headline {
+        font-size: var(--fs-hero-desktop) !important;
+      }
     }
 
     .hero-headline .hero-headline-line,
-    .hero-headline span {
-      text-transform: uppercase !important;
+    .hero-headline span:not(.gradient-text) {
+      text-transform: none !important;
     }
 
     .text-xs { font-size: var(--fs-caption) !important; line-height: var(--lh) !important; }
@@ -4120,10 +4484,6 @@
     .bonus-topic {
       font-size: var(--fs-chip) !important;
       line-height: 1.45 !important;
-    }
-
-    .bonus-topic::before {
-      font-size: var(--fs-caption) !important;
     }
 
     .timer-digit .timer-label {
@@ -4282,15 +4642,36 @@
     }
 
     #intro-video .intro-video-wrap {
+      position: relative;
+      isolation: isolate;
       max-width: 720px;
-      margin: 0 auto 1.5rem;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
+      margin: 0 auto 1.75rem;
+      padding: 1px;
+      border-radius: 18px;
+      overflow: visible;
+      border: none;
+      background: linear-gradient(135deg, rgba(255, 184, 77, 0.22) 0%, rgba(255, 153, 0, 0.12) 45%, rgba(255, 120, 0, 0.18) 100%);
+      box-shadow:
+        0 0 0 1px rgba(255, 153, 0, 0.16),
+        0 0 24px rgba(255, 153, 0, 0.14),
+        0 0 48px rgba(255, 153, 0, 0.08),
+        0 0 72px rgba(255, 153, 0, 0.04),
+        0 20px 48px rgba(0, 0, 0, 0.38);
+    }
+
+    #intro-video .intro-video-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -18%;
+      z-index: -1;
+      border-radius: 28px;
+      background: radial-gradient(ellipse at 50% 52%, rgba(255, 153, 0, 0.16) 0%, rgba(255, 153, 0, 0.05) 38%, transparent 72%);
+      pointer-events: none;
     }
 
     #intro-video .intro-video-embed {
+      border-radius: 17px;
+      overflow: hidden;
       background: #0a0a0f;
     }
 
@@ -4321,26 +4702,29 @@
     }
 
     #intro-video .intro-video-caption {
-      max-width: 42rem;
+      max-width: 52rem;
       width: 100%;
       margin: 0 auto;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.25rem;
     }
 
     #intro-video .intro-video-caption-line {
       display: block;
       width: 100%;
+      max-width: 52rem;
       margin: 0;
       padding: 0;
       text-align: center;
-      font-size: clamp(15px, 1.7vw, 17px);
-      line-height: 1.55;
-      letter-spacing: -0.01em;
-      color: var(--text-muted);
+      font-size: clamp(17px, 1.65vw, 20px) !important;
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      letter-spacing: -0.01em !important;
+      color: #cccccc !important;
+      text-wrap: pretty;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
     }
 
     /* ── CTA buttons: золотий градієнт, чорний текст (як на референсі) ── */
@@ -4473,45 +4857,46 @@
         font-size: 11px !important;
       }
 
-      .hero-main {
-        padding: 0.75rem 0 1.5rem !important;
+      .hero-container {
+        padding: 32px 16px 24px !important;
       }
 
-      .hero-bg .hero-main {
+      .hero-bg .hero-container {
         padding-left: 16px !important;
         padding-right: 16px !important;
+        padding-bottom: 24px !important;
       }
 
-      .hero-inner {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        max-width: 100% !important;
+      .hero-collage-wrapper {
+        margin-left: 0 !important;
+        margin-right: auto !important;
       }
 
       h1,
       .hero-headline,
       .hero-bg .hero-headline {
-        font-size: clamp(20px, 5.6vw, 28px) !important;
-        line-height: 1.16 !important;
-        letter-spacing: -0.02em !important;
+        font-size: clamp(28px, 6.5vw, 38px) !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.03em !important;
         max-width: 100% !important;
-        overflow-wrap: break-word !important;
+        overflow-wrap: normal !important;
+        text-transform: none !important;
       }
 
       .hero-bg .hero-headline .hero-headline-line,
       .hero-bg .hero-headline .hero-headline-line span,
       .hero-headline .hero-headline-line,
       .hero-headline .hero-headline-line span {
-        white-space: normal !important;
-        overflow-wrap: break-word !important;
-        word-break: normal !important;
-        max-width: 100% !important;
+        white-space: nowrap !important;
+        overflow-wrap: normal !important;
+        word-break: keep-all !important;
+        max-width: none !important;
       }
 
       .hero-lead,
       .hero-value-line {
-        font-size: 16px !important;
-        line-height: 1.62 !important;
+        font-size: clamp(18px, 4.2vw, 20px) !important;
+        line-height: 1.65 !important;
       }
 
       .hero-value-line {
@@ -4520,25 +4905,29 @@
       }
 
       .hero-lead {
-        font-size: 16px !important;
-        line-height: 1.55 !important;
+        font-size: clamp(18px, 4.2vw, 20px) !important;
+        line-height: 1.65 !important;
         max-width: 100% !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        hyphens: none !important;
+        -webkit-hyphens: none !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
       }
 
       .headline-glow,
       h2.headline-glow,
       .faq-title.headline-glow,
       .goal-headline.headline-glow {
-        font-size: clamp(21px, 6vw, 28px) !important;
-        line-height: 1.14 !important;
+        font-size: clamp(26px, 5.5vw, 40px) !important;
+        line-height: 1.08 !important;
       }
 
       .headline-glow--sm,
       h2.headline-glow.headline-glow--sm {
-        font-size: clamp(17px, 4.8vw, 22px) !important;
-        line-height: 1.2 !important;
+        font-size: clamp(26px, 5.5vw, 40px) !important;
+        line-height: 1.08 !important;
       }
 
       .speakers-section,
@@ -4590,8 +4979,8 @@
       }
 
       #intro-video .intro-video-caption-line {
-        font-size: 16px !important;
-        line-height: 1.55 !important;
+        font-size: clamp(17px, 4vw, 19px) !important;
+        line-height: 1.65 !important;
         letter-spacing: -0.01em !important;
       }
 
@@ -4631,11 +5020,11 @@
         padding: 14px 14px !important;
       }
 
-      .gradient-btn,
-      .final-cta-btn,
-      .hero-action .gradient-btn {
-        max-width: 100% !important;
-        padding: 15px 18px !important;
+      section:not(.hero-section) .gradient-btn,
+      .final-cta-btn {
+        width: auto !important;
+        max-width: calc(100% - 2rem) !important;
+        padding: 14px 22px !important;
         font-size: 15px !important;
       }
 
@@ -4663,12 +5052,1055 @@
         gap: 1rem !important;
       }
     }
+
+    /* КОМПАКТНИЙ HERO — фінальні правки */
+    .hero-container {
+      align-items: center !important;
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+
+    .hero-bg .hero-container {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+
+    .hero-text-content {
+      padding-bottom: 0;
+      align-items: stretch !important;
+      text-align: left !important;
+      gap: 0 !important;
+    }
+
+    /* Eyebrow — тихий рядок як на референсі */
+    .hero-eyebrow {
+      margin: 0 0 16px !important;
+      padding: 0 !important;
+      align-self: stretch !important;
+    }
+
+    .hero-eyebrow .eyebrow-pill {
+      display: inline !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: rgba(255, 255, 255, 0.55) !important;
+      letter-spacing: 0.01em !important;
+    }
+
+    .hero-eyebrow .eyebrow-pill::before {
+      display: none !important;
+    }
+
+    /* Заголовок — великий, щільний, одна лінія зліва */
+    .hero-bg .hero-headline,
+    .hero-headline,
+    h1.hero-headline {
+      font-size: clamp(38px, 3.5vw, 52px) !important;
+      line-height: 1.02 !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 24px !important;
+      padding: 0 !important;
+      text-wrap: wrap !important;
+      text-align: left !important;
+      align-self: stretch !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      text-transform: none !important;
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+    }
+
+    .hero-bg .hero-headline .hero-headline-line,
+    .hero-headline .hero-headline-line {
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      white-space: nowrap !important;
+      text-wrap: auto !important;
+      text-align: left !important;
+      width: auto !important;
+      max-width: 100% !important;
+      line-height: 1.02 !important;
+    }
+
+    .hero-headline .hero-headline-line + .hero-headline-line {
+      margin-top: 0.04em !important;
+    }
+
+    .hero-headline .gradient-text {
+      display: inline !important;
+      vertical-align: baseline !important;
+      line-height: inherit !important;
+    }
+
+    @media (max-width: 991px) {
+      .hero-text-content {
+        align-items: stretch !important;
+      }
+
+      .hero-bg .hero-headline,
+      .hero-headline,
+      h1.hero-headline {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hero-text-content {
+        min-width: 540px !important;
+        max-width: 600px !important;
+      }
+    }
+
+    /* Лід — підзаголовок hero */
+    .hero-bg .hero-lead,
+    .hero-lead {
+      font-size: clamp(18px, 1.25vw, 22px) !important;
+      line-height: 1.65 !important;
+      font-weight: 500 !important;
+      color: #cccccc !important;
+      margin: 0 0 24px !important;
+      max-width: 100% !important;
+      text-align: left !important;
+      align-self: stretch !important;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+      text-wrap: wrap !important;
+    }
+
+    .hero-benefits {
+      margin-bottom: 20px !important;
+      margin-top: 0 !important;
+      gap: 6px 8px !important;
+      justify-content: flex-start !important;
+    }
+
+    /* Розмір фото спікерів */
+    .hero-collage-wrapper {
+      width: 440px !important;
+      height: 500px !important;
+    }
+
+    .hero-action {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      flex-wrap: wrap !important;
+      gap: 16px !important;
+      max-width: 100% !important;
+      margin-bottom: 20px !important;
+    }
+
+    .hero-action .gradient-btn {
+      flex-shrink: 0 !important;
+      width: auto !important;
+      min-width: 220px !important;
+      max-width: none !important;
+    }
+
+    .hero-timer-wrap {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      margin-top: 0 !important;
+      margin-left: 10px !important;
+    }
+
+    .hero-timer-wrap p {
+      font-size: 11px !important;
+      margin-bottom: 4px !important;
+      opacity: 0.6 !important;
+    }
+
+    .hero-timer-wrap #countdown {
+      gap: 8px !important;
+    }
+
+    .hero-action .timer-digit {
+      min-width: 36px !important;
+      padding: 8px 6px !important;
+    }
+
+    .hero-action .timer-digit .timer-num,
+    .hero-action .timer-num {
+      font-size: 20px !important;
+    }
+
+    .hero-action .timer-digit .timer-label,
+    .hero-action .timer-label {
+      font-size: 9px !important;
+    }
+
+    /* Прибрати нижній рядок */
+    .hero-note {
+      display: none !important;
+    }
+
+    .hero-collage-wrapper img,
+    .collage-img {
+      border: 0 !important;
+      outline: 0 !important;
+      background: transparent !important;
+    }
+
+    .hero-collage-wrapper .speakers-combo {
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+    }
+
+    /* === TYPOGRAPHY SYSTEM (фінальні правила) === */
+    html, body {
+      font-family: Inter, system-ui, -apple-system, sans-serif !important;
+    }
+
+    p:not(.hero-lead):not(.benefits-closing-lead):not(.intro-video-caption-line):not(.final-cta-copy):not(.bonus-intro-copy):not(.why-now-copy):not(.reason-desc):not(.mission-banner-copy),
+    li,
+    .access-text,
+    .speaker-bio,
+    .speaker-facts li,
+    .case-desc,
+    .faq-answer,
+    .goal-section p,
+    .benefits-closing-text,
+    .final-cta-sub,
+    .site-footer-copy {
+      font-size: clamp(16px, 1.05vw, 18px) !important;
+      line-height: 1.6 !important;
+      font-weight: 400 !important;
+      color: var(--text-body) !important;
+    }
+
+    /* H2 — секції без headline-glow (hero не чіпаємо) */
+    h2:not(.headline-glow),
+    .faq-title:not(.headline-glow),
+    .goal-headline:not(.headline-glow),
+    .includes-title {
+      font-size: var(--fs-h2) !important;
+      font-weight: 700 !important;
+      line-height: var(--lh-heading) !important;
+      letter-spacing: -0.02em !important;
+      text-transform: uppercase !important;
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+      background: none !important;
+      background-image: none !important;
+    }
+
+    @media (min-width: 1024px) {
+      h2:not(.headline-glow),
+      .faq-title:not(.headline-glow),
+      .goal-headline:not(.headline-glow),
+      .includes-title {
+        font-size: var(--fs-h2-desktop) !important;
+      }
+    }
+
+    h2:not(.headline-glow) span:not(.gradient-text):not(.headline-glow-line),
+    .goal-headline-line:not(.gradient-text):not(.headline-glow-line),
+    .faq-title:not(.headline-glow) span:not(.gradient-text) {
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+      background: none !important;
+      background-image: none !important;
+    }
+
+    /* Акцентні слова (не hero) */
+    .gradient-text,
+    h2 .gradient-text,
+    h3 .gradient-text,
+    .goal-headline-line.gradient-text,
+    .faq-title .gradient-text,
+    .includes-title .gradient-text,
+    .headline-glow .gradient-text {
+      background: linear-gradient(90deg, #F5A623 0%, #ff9900 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+      font-weight: inherit !important;
+    }
+
+    .text-gold,
+    .goal-hl,
+    .case-result,
+    .speaker-stat-value {
+      color: var(--accent-gold) !important;
+      -webkit-text-fill-color: var(--accent-gold) !important;
+    }
+
+    .headline-glow--sm,
+    h2.headline-glow.headline-glow--sm {
+      font-size: clamp(26px, 5.5vw, 40px) !important;
+      line-height: 1.08 !important;
+      font-weight: 900 !important;
+    }
+
+    @media (min-width: 1024px) {
+      .headline-glow--sm,
+      h2.headline-glow.headline-glow--sm {
+        font-size: clamp(36px, 3.2vw, 44px) !important;
+      }
+    }
+
+    h3 {
+      font-size: clamp(18px, 2vw, 22px) !important;
+      font-weight: 700 !important;
+      line-height: var(--lh-heading) !important;
+      color: var(--text-heading) !important;
+    }
+
+    /* HERO — без змін типографіки (пріоритет над глобальними правилами) */
+    .hero-section .hero-bg .hero-headline,
+    .hero-section .hero-headline,
+    .hero-section h1.hero-headline {
+      font-size: clamp(38px, 3.5vw, 52px) !important;
+      line-height: 1.02 !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0 0 24px !important;
+      text-transform: none !important;
+      text-align: left !important;
+      background-image: var(--headline-glow) !important;
+      background-size: 100% 100% !important;
+      background-repeat: no-repeat !important;
+      background-color: transparent !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .hero-section .hero-bg .hero-headline .hero-headline-line,
+    .hero-section .hero-headline .hero-headline-line {
+      display: block !important;
+      white-space: nowrap !important;
+      line-height: 1.02 !important;
+      text-transform: none !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .hero-section .hero-headline .gradient-text {
+      display: inline !important;
+      vertical-align: baseline !important;
+      line-height: inherit !important;
+      text-transform: none !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .hero-section .hero-bg .hero-lead,
+    .hero-section .hero-lead {
+      font-size: clamp(18px, 1.25vw, 22px) !important;
+      line-height: 1.65 !important;
+      font-weight: 500 !important;
+      color: #cccccc !important;
+      max-width: 100% !important;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+      text-wrap: wrap !important;
+    }
+
+    @media (max-width: 991px) {
+      .hero-section .hero-bg .hero-lead,
+      .hero-section .hero-lead {
+        font-size: clamp(18px, 4.2vw, 20px) !important;
+        max-width: 100% !important;
+        text-align: center !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hero-section .hero-bg .hero-headline,
+      .hero-section .hero-headline,
+      .hero-section h1.hero-headline {
+        font-size: clamp(28px, 6.5vw, 38px) !important;
+      }
+    }
+
+    /* SECTION HEADLINES — градієнт, один великий розмір, max 2 рядки (hero не чіпаємо) */
+    .headline-glow,
+    h2.headline-glow,
+    .faq-title.headline-glow,
+    #intro-video .intro-video-title.headline-glow {
+      font-family: Inter, system-ui, sans-serif !important;
+      font-weight: 900 !important;
+      font-size: clamp(26px, 5.5vw, 40px) !important;
+      line-height: 1.08 !important;
+      letter-spacing: -0.02em !important;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      text-wrap: balance !important;
+      max-width: 48rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      background-image: var(--headline-glow) !important;
+      background-size: 100% 100% !important;
+      background-repeat: no-repeat !important;
+      background-color: transparent !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    @media (min-width: 1024px) {
+      .headline-glow,
+      h2.headline-glow,
+      .faq-title.headline-glow,
+      #intro-video .intro-video-title.headline-glow {
+        font-size: clamp(36px, 3.2vw, 44px) !important;
+      }
+    }
+
+    .headline-glow--sm,
+    h2.headline-glow.headline-glow--sm {
+      font-size: clamp(26px, 5.5vw, 40px) !important;
+      line-height: 1.08 !important;
+      font-weight: 900 !important;
+    }
+
+    @media (min-width: 1024px) {
+      .headline-glow--sm,
+      h2.headline-glow.headline-glow--sm {
+        font-size: clamp(36px, 3.2vw, 44px) !important;
+      }
+    }
+
+    #intro-video .intro-video-title.headline-glow {
+      margin-bottom: 1.75rem !important;
+      width: 100% !important;
+    }
+
+    .headline-glow .headline-glow-line,
+    h2.headline-glow .headline-glow-line,
+    h2.headline-glow span:not(.gradient-text),
+    .headline-glow span:not(.gradient-text),
+    .faq-title.headline-glow span:not(.gradient-text) {
+      display: block !important;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .headline-glow-line + .headline-glow-line {
+      margin-top: 0.05em !important;
+    }
+
+    /* Світліший градієнт на білому / світлому фоні */
+    .bg-white .headline-glow,
+    #for-whom .headline-glow,
+    #why-now .headline-glow {
+      background-image: var(--headline-glow-on-light) !important;
+    }
+
+    /* Authors — компактніший заголовок, відступ від карток */
+    #authors .headline-glow {
+      font-size: clamp(20px, 3.8vw, 28px) !important;
+      line-height: 1.14 !important;
+      max-width: 36rem !important;
+      margin: 0 auto 2rem !important;
+      padding-bottom: 0 !important;
+    }
+
+    @media (min-width: 640px) {
+      #authors .headline-glow {
+        margin-bottom: 2.25rem !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #authors .headline-glow {
+        font-size: clamp(26px, 2.2vw, 34px) !important;
+        margin-bottom: 2.5rem !important;
+      }
+    }
+
+    #authors .headline-glow + .grid {
+      margin-top: 0 !important;
+    }
+
+    /* Benefits — підзаголовок після карток (градієнт, компактний) */
+    #benefits .benefits-closing-lead {
+      font-size: clamp(17px, 3vw, 20px) !important;
+      font-weight: 600 !important;
+      line-height: 1.6 !important;
+      text-align: center !important;
+      text-transform: uppercase !important;
+      margin: 1.5rem auto 0 !important;
+      max-width: 36rem !important;
+      letter-spacing: -0.01em !important;
+      background-image: var(--headline-glow) !important;
+      background-size: 100% 100% !important;
+      background-repeat: no-repeat !important;
+      background-color: transparent !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    @media (min-width: 1024px) {
+      #benefits .benefits-closing-lead {
+        font-size: clamp(18px, 1.2vw, 21px) !important;
+        margin-top: 2rem !important;
+      }
+    }
+
+    /* CTA секцій — ширина по контенту (hero не чіпаємо) */
+    section:not(.hero-section) .gradient-btn,
+    .final-cta .final-cta-btn {
+      display: inline-flex !important;
+      width: auto !important;
+      max-width: none !important;
+      padding: 14px 28px !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 767px) {
+      section:not(.hero-section) .gradient-btn,
+      .final-cta .final-cta-btn {
+        max-width: calc(100% - 2rem) !important;
+        white-space: normal !important;
+        text-align: center !important;
+      }
+    }
+
+    #final-cta .headline-glow,
+    #final-cta .final-cta-copy,
+    #final-cta .final-cta-note {
+      width: 100%;
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #final-cta .final-cta-copy {
+      text-align: center;
+      font-size: clamp(15px, 1.35vw, 17px) !important;
+      font-weight: 400 !important;
+      line-height: 1.6 !important;
+      color: #cccccc !important;
+      text-wrap: balance;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    #final-cta .headline-glow {
+      max-width: none !important;
+    }
+
+    #bonus .headline-glow,
+    #bonus .bonus-intro-copy {
+      width: 100%;
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #bonus .bonus-intro-copy {
+      text-align: center;
+      font-size: clamp(15px, 1.35vw, 17px) !important;
+      font-weight: 400 !important;
+      line-height: 1.6 !important;
+      color: #cccccc !important;
+      text-wrap: balance;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    #bonus .bonus-intro-copy strong {
+      font-weight: 600;
+      color: #cccccc;
+    }
+
+    #bonus .headline-glow {
+      max-width: none !important;
+    }
+
+    #intro-video .headline-glow,
+    #intro-video .intro-video-caption,
+    #intro-video .intro-video-caption-line {
+      width: 100%;
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #intro-video .intro-video-caption-line {
+      text-align: center;
+      font-size: clamp(15px, 1.35vw, 17px) !important;
+      font-weight: 400 !important;
+      line-height: 1.6 !important;
+      color: #cccccc !important;
+      text-wrap: balance;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+      letter-spacing: normal !important;
+    }
+
+    #intro-video .intro-video-title.headline-glow {
+      max-width: none !important;
+    }
+
+    #result .headline-glow {
+      max-width: none !important;
+    }
+
+    #result .mission-banner {
+      position: relative;
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 22px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 184, 77, 0.55) 0%, rgba(255, 153, 0, 0.22) 42%, rgba(255, 120, 0, 0.45) 100%);
+      box-shadow:
+        0 0 0 1px rgba(255, 153, 0, 0.28),
+        0 0 48px rgba(255, 153, 0, 0.14),
+        0 28px 64px rgba(0, 0, 0, 0.42);
+    }
+
+    #result .mission-banner-glow {
+      position: absolute;
+      left: -8%;
+      bottom: -28%;
+      width: 42%;
+      height: 62%;
+      background: radial-gradient(circle, rgba(255, 153, 0, 0.22) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #result .mission-banner-inner {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 21px;
+      padding: 2.5rem 1.5rem 2.25rem;
+      text-align: center;
+      background:
+        radial-gradient(circle at 12% 88%, rgba(255, 153, 0, 0.1) 0%, transparent 42%),
+        linear-gradient(180deg, rgba(10, 12, 18, 0.98) 0%, rgba(6, 8, 12, 0.99) 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    #result .mission-banner-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 0.6px, transparent 0.6px);
+      background-size: 14px 14px;
+      opacity: 0.22;
+      pointer-events: none;
+    }
+
+    #result .mission-banner-title {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 1.1rem;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: clamp(28px, 4.2vw, 40px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      text-transform: none;
+      text-align: center;
+      background-image: var(--headline-glow);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    #result .mission-banner-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 40rem;
+      margin: 0 auto;
+      text-align: center;
+      font-size: clamp(15px, 1.35vw, 17px) !important;
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      color: #d6d6d6 !important;
+      text-wrap: balance;
+      hyphens: manual !important;
+      -webkit-hyphens: manual !important;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    @media (min-width: 640px) {
+      #result .mission-banner-inner {
+        padding: 3rem 2.5rem 2.75rem;
+      }
+
+      #result .mission-banner-title {
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    #why-now .headline-glow,
+    #why-now .why-now-copy {
+      width: 100%;
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #why-now .why-now-copy {
+      text-align: center;
+      font-size: clamp(15px, 1.35vw, 17px) !important;
+      font-weight: 400 !important;
+      line-height: 1.6 !important;
+      color: #cccccc !important;
+      text-wrap: balance;
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    #why-now .headline-glow {
+      max-width: none !important;
+    }
+
+    #benefits .reasons-grid {
+      align-items: stretch;
+    }
+
+    #benefits .reason-item {
+      height: 100%;
+    }
+
+    #benefits .reason-title,
+    #benefits .reason-desc {
+      hyphens: manual !important;
+      -webkit-hyphens: manual !important;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    #benefits .reason-title {
+      text-wrap: balance;
+      font-size: clamp(15px, 1.2vw, 17px) !important;
+      line-height: 1.45 !important;
+    }
+
+    #benefits .reason-desc {
+      text-wrap: wrap !important;
+      font-size: clamp(14px, 1.1vw, 15px) !important;
+      line-height: 1.6 !important;
+      color: #cccccc !important;
+    }
+
+    @media (min-width: 640px) {
+      #benefits .reason-title {
+        min-height: 2.9em;
+      }
+    }
+
+    #bonus .bonus-topic {
+      hyphens: manual !important;
+      -webkit-hyphens: manual !important;
+      word-break: normal;
+      overflow-wrap: normal;
+      text-wrap: wrap;
+    }
+
+    /* ═══ 2026 TRENDS: grain · glass · glow · variable type · bento ═══ */
+    body {
+      position: relative;
+      font-optical-sizing: auto;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.045;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px 180px;
+    }
+
+    .headline-glow,
+    h2.headline-glow,
+    .faq-title.headline-glow,
+    #intro-video .intro-video-title.headline-glow,
+    .mission-banner-title {
+      font-variation-settings: 'wght' 820, 'opsz' 32;
+    }
+
+    .headline-glow .headline-glow-line:first-child,
+    h2.headline-glow .headline-glow-line:first-child {
+      font-variation-settings: 'wght' 740, 'opsz' 28;
+    }
+
+    .headline-glow .headline-glow-line:last-child,
+    h2.headline-glow .headline-glow-line:last-child {
+      font-variation-settings: 'wght' 900, 'opsz' 36;
+    }
+
+    .headline-glow .headline-glow-line:only-child {
+      font-variation-settings: 'wght' 850, 'opsz' 32;
+    }
+
+    #authors .speaker-card,
+    #for-whom .for-whom-item,
+    .bonus-panel,
+    .bonus-topic,
+    .video-card,
+    .inside-video-card {
+      background: var(--glass) !important;
+      backdrop-filter: blur(var(--glass-blur)) saturate(1.55) !important;
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.55) !important;
+      border: 1px solid var(--glass-border) !important;
+      box-shadow:
+        inset 0 1px 0 var(--glass-highlight),
+        0 8px 32px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.03) !important;
+    }
+
+    #authors .speaker-card {
+      isolation: isolate;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #authors .speaker-card::after {
+      content: '';
+      position: absolute;
+      inset: auto -15% -35% -15%;
+      height: 55%;
+      background: radial-gradient(ellipse at 50% 100%, var(--glow-orange-soft) 0%, transparent 68%);
+      filter: blur(28px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.85;
+    }
+
+    #authors .speaker-card:hover,
+    #for-whom .for-whom-item:hover {
+      border-color: rgba(255, 184, 77, 0.28) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 12px 40px rgba(0, 0, 0, 0.32),
+        0 0 48px var(--glow-orange-soft),
+        0 0 0 1px rgba(255, 153, 0, 0.12) !important;
+    }
+
+    #authors.speakers-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #authors.speakers-section::before {
+      content: '';
+      position: absolute;
+      top: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(720px, 80vw);
+      height: 45%;
+      background: radial-gradient(ellipse at center, var(--glow-orange-soft) 0%, transparent 72%);
+      filter: blur(56px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #authors > div {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 6 причин + Що ви отримаєте — без bento / glass 2026 */
+    @media (min-width: 1024px) {
+      #benefits .reasons-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      #get .access-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        max-width: 880px;
+      }
+    }
+
+    #benefits .reason-item {
+      background:
+        linear-gradient(155deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 48%, rgba(255, 153, 0, 0.04) 100%) !important;
+      border: 1px solid rgba(255, 153, 0, 0.14) !important;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important;
+    }
+
+    #benefits .reason-item::after {
+      content: '' !important;
+      position: absolute !important;
+      top: auto !important;
+      right: -20% !important;
+      bottom: -30% !important;
+      left: auto !important;
+      width: 55% !important;
+      height: 55% !important;
+      background: radial-gradient(circle, rgba(255, 153, 0, 0.12) 0%, transparent 70%) !important;
+      filter: none !important;
+      opacity: 1 !important;
+      pointer-events: none !important;
+      z-index: 0 !important;
+    }
+
+    #benefits .reason-item:hover {
+      border-color: rgba(255, 153, 0, 0.32) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 153, 0, 0.1) !important;
+    }
+
+    #get .access-item {
+      background: rgba(12, 16, 22, 0.72) !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: none !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    #get .access-item::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    #get .access-item:hover {
+      border-color: rgba(255, 153, 0, 0.28) !important;
+      background: var(--surface-hover) !important;
+      box-shadow: none !important;
+    }
+
+    #result .mission-banner {
+      box-shadow:
+        0 0 0 1px rgba(255, 153, 0, 0.22),
+        0 0 64px var(--glow-orange-soft),
+        0 28px 64px rgba(0, 0, 0, 0.42) !important;
+    }
+
+    #intro-video .intro-video-wrap {
+      box-shadow:
+        0 0 0 1px rgba(255, 153, 0, 0.14),
+        0 0 40px var(--glow-orange-soft),
+        0 0 72px rgba(255, 153, 0, 0.06),
+        0 20px 48px rgba(0, 0, 0, 0.38) !important;
+    }
+
+    .gradient-btn,
+    .final-cta-btn {
+      box-shadow:
+        0 4px 24px var(--btn-cta-shadow),
+        0 0 32px rgba(255, 183, 77, 0.22) !important;
+    }
+
+    .gradient-btn:hover,
+    .final-cta-btn:hover {
+      box-shadow:
+        0 6px 28px rgba(255, 153, 0, 0.45),
+        0 0 48px rgba(255, 183, 77, 0.32) !important;
+    }
+
+    /* Hero badges — фінальна позиція (перебиває все вище) */
+    .hero-section .hero-collage-wrapper .collage-badge.badge-income {
+      bottom: 157px !important;
+      right: 248px !important;
+    }
+
+    .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
+      bottom: 91px !important;
+    }
+
+    /* Hero speakers — чорний fade внизу без CSS-mask */
+    .hero-section .hero-collage-wrapper .speakers-photo-wrap {
+      bottom: -20px !important;
+    }
+
+    .hero-section .hero-collage-wrapper .speakers-combo {
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+    }
+
+    .hero-section .hero-collage-wrapper .speakers-photo-wrap {
+      mix-blend-mode: normal !important;
+    }
+
+    .hero-section .hero-collage-wrapper {
+      margin-bottom: -20px !important;
+      background: transparent !important;
+    }
+
+    .hero-section .hero-collage-wrapper::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    @media (max-width: 991px) {
+      .hero-section .hero-collage-wrapper .speakers-photo-wrap {
+        bottom: -16px !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-income {
+        bottom: 150px !important;
+        right: 226px !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
+        bottom: 91px !important;
+      }
+    }
   </style>
 </head>
 <body class="font-sans antialiased text-white bg-surface">
 
   <!-- Hero Section -->
-  <section class="hero-bg flex flex-col">
+  <section class="hero-section hero-bg flex flex-col">
 
     <header class="site-header">
       <div class="header-inner">
@@ -4704,70 +6136,96 @@
       </nav>
     </header>
 
-    <div class="hero-main w-full mx-auto">
-      <div class="hero-inner">
+    <div class="hero-container">
 
-        <p class="hero-eyebrow"><span class="eyebrow-pill">Онлайн-інтенсив · Старт одразу після оплати</span></p>
+        <div class="hero-text-content">
 
-        <h1 class="hero-headline">
-          <span class="hero-headline-line"><span class="text-white">Як підкорити </span><span class="gradient-text">Amazon KDP</span></span>
-          <span class="hero-headline-line"><span class="text-white">за допомогою </span><span class="gradient-text">штучного інтелекту</span><span class="text-white">?</span></span>
-        </h1>
+          <p class="hero-eyebrow"><span class="eyebrow-pill">Онлайн-інтенсив · Старт одразу після оплати</span></p>
 
-        <p class="hero-lead">
-          <span class="hero-lead-desktop">
-            <span class="hero-lead-line">За один вечір зрозумійте, як створювати цифрові книги</span>
-            <span class="hero-lead-line">5 мовами, продавати в 10+ країн</span>
-            <span class="hero-lead-line">і виходити на дохід від $3000 на місяць.</span>
-          </span>
-          <span class="hero-lead-mobile">
-            <span class="hero-lead-line">За один вечір зрозумійте,</span>
-            <span class="hero-lead-line">як створювати цифрові книги 5 мовами,</span>
-            <span class="hero-lead-line">продавати в 10+ країн</span>
-            <span class="hero-lead-line">і виходити на дохід від $3000 на місяць.</span>
-          </span>
-        </p>
+          <h1 class="hero-headline">
+            <span class="hero-headline-line">Опануйте книжковий</span>
+            <span class="hero-headline-line">бізнес на <span class="gradient-text">Amazon</span></span>
+            <span class="hero-headline-line">за допомогою <span class="gradient-text">AI</span></span>
+          </h1>
 
-        <ul class="hero-benefits" aria-label="Переваги інтенсиву">
-          <li class="benefit-chip">Старт без досвіду</li>
-          <li class="benefit-chip">Без знання мови</li>
-          <li class="benefit-chip">Без звільнення з роботи</li>
-          <li class="benefit-chip">Без спілкування з клієнтами</li>
-          <li class="benefit-chip">З будь-якої точки світу</li>
-          <li class="benefit-chip">За допомогою AI</li>
-        </ul>
+          <p class="hero-lead">За один вечір зрозумійте, як створювати цифрові книги 5&nbsp;мовами, продавати в 10+&nbsp;країн і виходити на дохід від $3000&nbsp;на&nbsp;місяць.</p>
 
-        <div class="hero-action">
-          <a href="#join" id="join" class="gradient-btn">
-            Почати за 499 грн →
-          </a>
+          <div class="hero-action">
+            <a href="#join" id="join" class="gradient-btn">
+              Почати за 499 грн →
+            </a>
 
-          <div class="hero-timer-wrap">
-            <p>Спеціальна ціна 499 грн діє до:</p>
-            <div id="countdown" class="flex flex-wrap gap-2.5" aria-live="polite">
-              <div class="timer-digit text-center">
-                <span id="cd-days" class="timer-num tabular-nums">00</span>
-                <span class="timer-label block">днів</span>
-              </div>
-              <div class="timer-digit text-center">
-                <span id="cd-hours" class="timer-num tabular-nums">00</span>
-                <span class="timer-label block">год</span>
-              </div>
-              <div class="timer-digit text-center">
-                <span id="cd-mins" class="timer-num tabular-nums">00</span>
-                <span class="timer-label block">хв</span>
-              </div>
-              <div class="timer-digit text-center">
-                <span id="cd-secs" class="timer-num tabular-nums">00</span>
-                <span class="timer-label block">сек</span>
+            <div class="hero-timer-wrap">
+              <p>Спеціальна ціна діє до:</p>
+              <div id="countdown" class="flex flex-wrap gap-2.5" aria-live="polite">
+                <div class="timer-digit text-center">
+                  <span id="cd-days" class="timer-num tabular-nums">00</span>
+                  <span class="timer-label block">днів</span>
+                </div>
+                <div class="timer-digit text-center">
+                  <span id="cd-hours" class="timer-num tabular-nums">00</span>
+                  <span class="timer-label block">год</span>
+                </div>
+                <div class="timer-digit text-center">
+                  <span id="cd-mins" class="timer-num tabular-nums">00</span>
+                  <span class="timer-label block">хв</span>
+                </div>
+                <div class="timer-digit text-center">
+                  <span id="cd-secs" class="timer-num tabular-nums">00</span>
+                  <span class="timer-label block">сек</span>
+                </div>
               </div>
             </div>
+
+            <p class="hero-note">Доступ одразу після оплати · Пройти можна за один вечір</p>
           </div>
 
-          <p class="hero-note">Доступ одразу після оплати · Пройти можна за один вечір</p>
+          <ul class="hero-benefits" aria-label="Переваги інтенсиву">
+            <li class="benefit-chip">Старт без досвіду</li>
+            <li class="benefit-chip">Без знання мови</li>
+            <li class="benefit-chip">Без звільнення з роботи</li>
+            <li class="benefit-chip">Без спілкування з клієнтами</li>
+            <li class="benefit-chip">З&nbsp;будь&#8209;якої точки світу</li>
+            <li class="benefit-chip">За допомогою AI</li>
+          </ul>
+
         </div>
 
-      </div>
+        <div class="hero-collage-wrapper">
+          <div class="collage-stage" aria-hidden="true">
+            <div class="collage-glow collage-glow--dots"></div>
+            <div class="collage-glow collage-glow--ambient"></div>
+          </div>
+          <div class="speakers-photo-wrap">
+            <img
+              src="images/speakers-hero.png?v=1"
+              class="collage-img speakers-combo"
+              width="1019"
+              height="820"
+              alt="Микола Матушевський та Олег Бєлоцерковець"
+              decoding="async"
+              fetchpriority="high"
+            />
+            <div class="speakers-photo-fade" aria-hidden="true"></div>
+          </div>
+          <div class="collage-badge badge-income">
+            <span class="badge-icon" aria-hidden="true">
+              <img src="images/amazon-icon.png" alt="" class="amazon-mark" width="24" height="36" decoding="async">
+            </span>
+            <div>
+              <div class="badge-title">$100 000+</div>
+              <div class="badge-desc">з Amazon KDP</div>
+            </div>
+          </div>
+          <div class="collage-badge badge-experience">
+            <span class="badge-icon" aria-hidden="true">⏳</span>
+            <div>
+              <div class="badge-title">10+ років</div>
+              <div class="badge-desc">практики на Amazon</div>
+            </div>
+          </div>
+        </div>
+
     </div>
   </section>
 
@@ -4775,10 +6233,9 @@
   <section id="intro-video" class="intro-video-section">
     <div class="max-w-[880px] mx-auto px-2 sm:px-4 text-center">
 
-      <h2 class="headline-glow intro-video-title max-w-4xl mx-auto text-center">
-        <span class="headline-glow-line">Чому варто починати</span>
-        <span class="headline-glow-line">книжковий бізнес на Amazon</span>
-        <span class="headline-glow-line">у 2026 році?</span>
+      <h2 class="headline-glow intro-video-title mx-auto text-center">
+        <span class="headline-glow-line">Чому варто починати книжковий бізнес</span>
+        <span class="headline-glow-line">на Amazon у 2026 році?</span>
       </h2>
 
       <div class="intro-video-wrap">
@@ -4791,8 +6248,7 @@
       </div>
 
       <div class="intro-video-caption">
-        <p class="intro-video-caption-line">Більшість думає, що для Amazon KDP потрібно бути письменником, знати іноземну мову і мати роки досвіду.</p>
-        <p class="intro-video-caption-line">У цьому відео розкажемо, чому це не так, і як AI змінив правила гри.</p>
+        <p class="intro-video-caption-line">Більшість думає, що для Amazon&nbsp;KDP потрібно бути письменником, знати іноземну&nbsp;мову і&nbsp;мати роки&nbsp;досвіду. У&nbsp;цьому відео розкажемо, чому це&nbsp;не&nbsp;так, і&nbsp;як AI змінив правила&nbsp;гри.</p>
       </div>
 
       <div class="text-center mt-8 sm:mt-10">
@@ -4808,7 +6264,7 @@
   <section id="authors" class="speakers-section py-10 sm:py-12 lg:py-14">
     <div class="max-w-[1040px] mx-auto px-4 sm:px-6">
 
-      <h2 class="headline-glow headline-glow--sm max-w-3xl mx-auto">
+      <h2 class="headline-glow authors-headline max-w-3xl mx-auto">
         <span class="headline-glow-line">Два практики, які створюють, запускають</span>
         <span class="headline-glow-line">і продають книги на Amazon</span>
       </h2>
@@ -4857,45 +6313,46 @@
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
 
       <h2 class="headline-glow mb-8 sm:mb-10 max-w-4xl mx-auto text-center">
-        <span class="headline-glow-line">Чому варто обирати книжковий бізнес на Amazon?</span>
+        <span class="headline-glow-line">Чому варто обирати книжковий</span>
+        <span class="headline-glow-line">бізнес на Amazon?</span>
       </h2>
 
       <div class="reasons-grid">
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">01</span>
-          <h3 class="reason-title">Почніть без досвіду в Amazon, книгах або онлайн-бізнесі</h3>
-          <p class="reason-desc">Не потрібно бути письменником, дизайнером чи маркетологом.</p>
+          <h3 class="reason-title">Почніть без досвіду в&nbsp;Amazon, книгах або&nbsp;онлайн&#8209;бізнесі</h3>
+          <p class="reason-desc">Не&nbsp;потрібно бути письменником, дизайнером чи&nbsp;маркетологом.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">02</span>
-          <h3 class="reason-title">Не знаєте іноземної мови? У 2026 це вже не проблема</h3>
-          <p class="reason-desc">AI допомагає писати, перекладати і робити SEO.</p>
+          <h3 class="reason-title">Не&nbsp;знаєте іноземної мови? У&nbsp;2026 це&nbsp;вже не&nbsp;проблема</h3>
+          <p class="reason-desc">AI допомагає писати, перекладати і&nbsp;робити SEO.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">03</span>
-          <h3 class="reason-title">Отримуйте $, € та £ з будь-якої точки світу</h3>
-          <p class="reason-desc">10+ міжнародних ринків. Працює з будь-якої країни.</p>
+          <h3 class="reason-title">Отримуйте $, €&nbsp;та&nbsp;£&nbsp;з&nbsp;будь&#8209;якої&nbsp;точки світу</h3>
+          <p class="reason-desc">10+&nbsp;міжнародних ринків. Працює з&nbsp;будь&#8209;якої країни.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">04</span>
-          <h3 class="reason-title">Розвивайте паралельно з основною роботою</h3>
-          <p class="reason-desc">Приділяйте 2–3 години на день у зручний для вас час.</p>
+          <h3 class="reason-title">Розвивайте паралельно з&nbsp;основною роботою</h3>
+          <p class="reason-desc">Приділяйте 2–3&nbsp;години на&nbsp;день у&nbsp;зручний для&nbsp;вас час.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">05</span>
-          <h3 class="reason-title">Без складу, доставки і спілкування з клієнтами</h3>
-          <p class="reason-desc">Amazon бере на себе друк та доставку, поки ви керуєте бізнесом.</p>
+          <h3 class="reason-title">Без&nbsp;складу, доставки і&nbsp;спілкування з&nbsp;клієнтами</h3>
+          <p class="reason-desc">Amazon бере на&nbsp;себе друк і&nbsp;доставку,<br>поки&nbsp;ви&nbsp;керуєте бізнесом.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">06</span>
-          <h3 class="reason-title">Теми з потенціалом від $3000 на місяць</h3>
-          <p class="reason-desc">Покажемо як знаходити теми де конкуренція низька, а попит вже є.</p>
+          <h3 class="reason-title">Теми з&nbsp;потенціалом від&nbsp;$3000&nbsp;на&nbsp;місяць</h3>
+          <p class="reason-desc">Покажемо, як знаходити теми, де конкуренція низька, а&nbsp;попит вже&nbsp;є.</p>
         </article>
       </div>
 
-      <h2 class="benefits-closing-title headline-glow headline-glow--sm max-w-3xl mx-auto mt-6 sm:mt-8">
-        <span class="headline-glow-line">Один вечір і ви зрозумієте, чи підходить вам книжковий бізнес на Amazon</span>
-      </h2>
+      <p class="benefits-closing-lead max-w-3xl mx-auto mt-6 sm:mt-8">
+        Один вечір — і ви зрозумієте, чи підходить вам книжковий бізнес на Amazon
+      </p>
 
       <div class="text-center mt-5 sm:mt-6">
         <a href="#join" class="gradient-btn">
@@ -4920,35 +6377,35 @@
 
       <ul class="for-whom-grid">
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">🌱</span>
           <p class="for-whom-text"><strong>Новачкам</strong>, які хочуть запустити віддалений бізнес і готові інвестувати від $1000.</p>
         </li>
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">📈</span>
           <p class="for-whom-text"><strong>Підприємцям</strong>, які хочуть запустити новий бізнес і вийти на міжнародні маркетплейси.</p>
         </li>
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">🛒</span>
           <p class="for-whom-text"><strong>Продавцям</strong> на Amazon, Etsy, Ebay, Shopify, що працюють за різними бізнес-моделями.</p>
         </li>
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">💻</span>
           <p class="for-whom-text"><strong>Фрилансерам</strong> та IT-фахівцям, які шукають нові джерела високого віддаленого доходу.</p>
         </li>
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">✈️</span>
           <p class="for-whom-text"><strong>Іммігрантам</strong>, яким необхідний стабільний міжнародний онлайн-бізнес для швидкої адаптації за кордоном.</p>
         </li>
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">🎨</span>
           <p class="for-whom-text"><strong>Спеціалістам</strong> (авторам, ілюстраторам, дизайнерам, маркетологам), які планують вийти на світовий ринок.</p>
         </li>
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">⚡</span>
           <p class="for-whom-text"><strong>Ентузіастам</strong>, які прагнуть монетизувати нові технології, ШІ-інструменти та автоматизацію у видавництві.</p>
         </li>
         <li class="for-whom-item">
-          <span class="for-whom-bar" aria-hidden="true"></span>
+          <span class="ui-icon" aria-hidden="true">📚</span>
           <p class="for-whom-text"><strong>Видавцям</strong> на KDP, які хочуть збільшити дохід і покращити поточні результати.</p>
         </li>
       </ul>
@@ -5109,32 +6566,32 @@
     <div class="max-w-[1040px] mx-auto px-4 sm:px-6">
 
       <h2 class="headline-glow mb-8 sm:mb-10 max-w-3xl mx-auto text-center">
-        <span class="headline-glow-line">Що ви отримаєте</span>
+        <span class="headline-glow-line">Що ви отримаєте?</span>
       </h2>
 
       <ul class="access-grid">
         <li class="access-item">
-          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="ui-icon access-check" aria-hidden="true">🎬</span>
           <span class="access-text"><strong>5 відео за один вечір</strong> — від базової моделі KDP до покрокового алгоритму запуску</span>
         </li>
         <li class="access-item">
-          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="ui-icon access-check" aria-hidden="true">🔍</span>
           <span class="access-text"><strong>Алгоритм оцінки ніші</strong> — перевірка потенціалу й окупності теми до створення книги</span>
         </li>
         <li class="access-item">
-          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="ui-icon access-check" aria-hidden="true">📖</span>
           <span class="access-text"><strong>Анатомія ТОП-3 бестселерів</strong> — розбір структури книг, які заробляють від $3000/місяць</span>
         </li>
         <li class="access-item">
-          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="ui-icon access-check" aria-hidden="true">📊</span>
           <span class="access-text"><strong>Демонстрація живих кабінетів</strong> — розбір результатів авторів і студентів</span>
         </li>
         <li class="access-item">
-          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="ui-icon access-check" aria-hidden="true">🧭</span>
           <span class="access-text"><strong>Покроковий план</strong> — чіткі дії одразу після інтенсиву без зупинок на старті</span>
         </li>
         <li class="access-item">
-          <span class="access-check" aria-hidden="true">✓</span>
+          <span class="ui-icon access-check" aria-hidden="true">🎁</span>
           <span class="access-text"><strong>30-хвилинна сесія у подарунок</strong> — персональний прорахунок бюджету, термінів та цілі</span>
         </li>
       </ul>
@@ -5150,25 +6607,38 @@
 
   <!-- Bonus -->
   <section id="bonus" class="bonus-section py-10 sm:py-12 lg:py-14">
-    <div class="max-w-[960px] mx-auto px-4 sm:px-6">
+    <div class="max-w-[880px] mx-auto px-4 sm:px-6">
 
       <div class="text-center mb-8 sm:mb-10">
-        <span class="bonus-pill mb-3 mx-auto">🎁 Бонус</span>
-        <h2 class="headline-glow">
-          30-хвилинна стратегічна сесія у подарунок
+        <span class="bonus-pill mb-3 mx-auto"><span class="ui-icon ui-icon--sm" aria-hidden="true">🎁</span> Бонус</span>
+        <h2 class="headline-glow max-w-4xl mx-auto">
+          <span class="headline-glow-line">30-хвилинна стратегічна сесія</span>
+          <span class="headline-glow-line">у подарунок</span>
         </h2>
-        <p class="bonus-panel-text max-w-2xl mx-auto mt-4 sm:mt-5">
-          За 30 хвилин експерт складе <strong>покроковий план під вас</strong> за нашою методикою: скільки грошей потрібно для вашої цілі, на що розраховувати і що робити в перші 7 і 30 днів.
+        <p class="bonus-intro-copy mt-4 sm:mt-5">
+          За&nbsp;30&nbsp;хвилин експерт складе <strong>покроковий план під&nbsp;вас</strong> за&nbsp;нашою методикою: скільки грошей потрібно для вашої цілі, на&nbsp;що розраховувати і&nbsp;що робити в&nbsp;перші&nbsp;7&nbsp;і&nbsp;30&nbsp;днів.
         </p>
       </div>
 
       <article class="bonus-panel bonus-panel--topics">
-        <h3 class="bonus-panel-title">Що ви отримаєте на сесії</h3>
+        <h3 class="bonus-panel-title">Що ви отримаєте на сесії?</h3>
         <ul class="bonus-topics">
-          <li class="bonus-topic">Покроковий план запуску під вашу ситуацію</li>
-          <li class="bonus-topic">Бюджет під вашу ціль: скільки потрібно вкласти, щоб вийти на $1000, $3000 або $5000 на місяць</li>
-          <li class="bonus-topic">Реалістичні терміни: коли чекати перші продажі та перший дохід</li>
-          <li class="bonus-topic">План на перші 7 і 30 днів — що робити одразу після старту</li>
+          <li class="bonus-topic">
+            <span class="ui-icon" aria-hidden="true">📋</span>
+            <span class="bonus-topic-text">Покроковий план запуску під&nbsp;вашу ситуацію</span>
+          </li>
+          <li class="bonus-topic">
+            <span class="ui-icon" aria-hidden="true">💰</span>
+            <span class="bonus-topic-text">Бюджет під&nbsp;ціль: скільки вкласти для&nbsp;$1000,&nbsp;$3000&nbsp;або&nbsp;$5000&nbsp;на&nbsp;місяць</span>
+          </li>
+          <li class="bonus-topic">
+            <span class="ui-icon" aria-hidden="true">📅</span>
+            <span class="bonus-topic-text">Реалістичні терміни: коли чекати перші&nbsp;продажі та&nbsp;перший&nbsp;дохід</span>
+          </li>
+          <li class="bonus-topic">
+            <span class="ui-icon" aria-hidden="true">🗓️</span>
+            <span class="bonus-topic-text">План на&nbsp;перші&nbsp;7&nbsp;і&nbsp;30&nbsp;днів — що&nbsp;робити одразу після старту</span>
+          </li>
         </ul>
       </article>
 
@@ -5185,21 +6655,15 @@
   <section id="result" class="goal-section py-12 sm:py-14 lg:py-16">
     <div class="max-w-[880px] mx-auto px-4 sm:px-6">
 
-      <div class="goal-block">
-        <h2 class="headline-glow mb-6 sm:mb-8 max-w-3xl mx-auto">
-          <span class="headline-glow-line">Наша місія</span>
-        </h2>
-
-        <p class="goal-text text-center max-w-3xl mx-auto">
-          Створити найуспішнішу Amazon-спільноту видавців та продавців книг з України, щоб допомогти якомога більшій кількості людей реалізувати свої життєві потреби, продаючи книги по всьому світу.
-        </p>
-      </div>
-
-      <div class="text-center mt-8">
-        <a href="#join" class="gradient-btn">
-          Хочу почати книжковий бізнес на Amazon
-        </a>
-      </div>
+      <article class="mission-banner">
+        <div class="mission-banner-glow" aria-hidden="true"></div>
+        <div class="mission-banner-inner">
+          <h2 class="mission-banner-title">Наша місія</h2>
+          <p class="mission-banner-copy">
+            Створити найуспішнішу Amazon-спільноту видавців та&nbsp;продавців книг з&nbsp;України, щоб допомогти якомога&nbsp;більшій кількості людей реалізувати свої життєві&nbsp;потреби, продаючи книги по&nbsp;всьому&nbsp;світу.
+          </p>
+        </div>
+      </article>
 
     </div>
   </section>
@@ -5208,12 +6672,13 @@
   <section id="why-now" class="text-gray-900 py-14 sm:py-16 lg:py-20 border-t border-black/5">
     <div class="max-w-[880px] mx-auto px-4 sm:px-6 lg:px-10">
 
-      <h2 class="headline-glow mb-6 sm:mb-8 max-w-3xl mx-auto text-center">
-        <span class="headline-glow-line">AI змінив правила гри — і це ваш момент</span>
+      <h2 class="headline-glow mb-6 sm:mb-8 mx-auto text-center">
+        <span class="headline-glow-line">AI змінив правила гри —</span>
+        <span class="headline-glow-line">і це ваш момент</span>
       </h2>
 
-      <p class="manifest-text text-base sm:text-lg text-gray-600 leading-[1.65] max-w-3xl mx-auto text-center">
-        Раніше створення однієї книги з командою коштувало від $1000 і займало 5 тижнів. Сьогодні AI спрощує процес і значно скорочує витрати. 54% книг на Amazon вже створюються з AI. Починайте зараз, поки конкуренція не зросла.
+      <p class="why-now-copy">
+        Раніше створення однієї книги з&nbsp;командою коштувало від&nbsp;$1000 і&nbsp;займало 5&nbsp;тижнів. Сьогодні AI спрощує процес і&nbsp;значно скорочує витрати. 54% книг на&nbsp;Amazon вже створюються з&nbsp;AI. Починайте зараз, поки конкуренція не&nbsp;зросла.
       </p>
 
       <div class="text-center mt-8 sm:mt-10">
@@ -5348,22 +6813,15 @@
   </section>
 
   <!-- Final CTA -->
-  <section id="final-cta" class="final-cta py-14 sm:py-16 lg:py-20">
-    <div class="relative z-10 max-w-[720px] mx-auto px-4 sm:px-6 text-center">
+  <section id="final-cta" class="final-cta pt-14 sm:pt-16 lg:pt-20 pb-10 sm:pb-12 lg:pb-14">
+    <div class="relative z-10 max-w-[880px] mx-auto px-4 sm:px-6 text-center">
 
       <h2 class="headline-glow mb-4 sm:mb-5">
         <span class="headline-glow-line">499 грн і у вас буде</span>
         <span class="headline-glow-line">план на $3000/місяць</span>
       </h2>
 
-      <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-5 max-w-xl mx-auto">
-        <span class="block">Без досвіду, без англійської, без звільнення з роботи. За один вечір ви побачите, як продавати книги в</span>
-        <span class="block">10+ країн, і отримувати $, € та £ на картку.</span>
-      </p>
-
-      <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-7 sm:mb-8 max-w-xl mx-auto">
-        Ви можете закрити сторінку — і нічого не зміниться. Або натиснути кнопку і вже сьогодні почати шлях, який змінив життя сотням наших студентів.
-      </p>
+      <p class="final-cta-copy mb-6 sm:mb-7">Без досвіду, без англійської, без звільнення з роботи. За один вечір ви побачите, як продавати&nbsp;книги в 10+&nbsp;країн, і отримувати $, € та £ на картку. Ви можете закрити сторінку — і нічого&nbsp;не&nbsp;зміниться. Або натиснути кнопку і вже сьогодні почати шлях, який змінив життя сотням&nbsp;наших&nbsp;студентів.</p>
 
       <a href="#join" class="final-cta-btn">
         Почати за 499 грн →
