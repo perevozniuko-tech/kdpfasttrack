@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta name="description" content="Як підкорити Amazon KDP за допомогою штучного інтелекту? Онлайн-інтенсив Fast-Track — доступ одразу після оплати." />
-  <meta name="theme-color" content="#080b10" />
+  <meta name="theme-color" content="#F7F7F7" />
   <title>Fast-Track: Amazon KDP × AI 2026</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="favicon.svg" />
@@ -27,7 +27,7 @@
               light: '#FFB84D',
               dark: '#E47911',
             },
-            surface: '#0d1117',
+            surface: '#F7F7F7',
           },
         },
       },
@@ -6352,12 +6352,822 @@
         left: auto !important;
       }
     }
+
+    .hero-section .hero-collage-wrapper {
+      display: none !important;
+    }
+
+    /* HERO — 3 теми (лише кольори): hero-theme-dark | hero-theme-light | hero-theme-kdp */
+    .hero-section {
+      position: relative;
+      z-index: 2;
+      isolation: isolate;
+    }
+
+    .hero-section.hero-theme-dark {
+      --hero-page-bg: #0B0F1A;
+      --hero-surface: rgba(255, 255, 255, 0.06);
+      --hero-surface-hover: rgba(255, 255, 255, 0.1);
+      --hero-text: #FFFFFF;
+      --hero-text-muted: #CCCCCC;
+      --hero-text-soft: rgba(255, 255, 255, 0.55);
+      --hero-orange: #FF9900;
+      --hero-orange-hover: #FFB84D;
+      --hero-orange-rgb: 255, 153, 0;
+      --hero-border: rgba(255, 255, 255, 0.1);
+      --hero-header-bg: rgba(6, 6, 8, 0.75);
+      --hero-nav-hover-bg: rgba(255, 255, 255, 0.06);
+      --hero-cta-bg: linear-gradient(135deg, #FFB84D 0%, #FF9900 48%, #E47911 100%);
+      --hero-cta-text: #1A1207;
+      --hero-cta-border: transparent;
+      --hero-cta-shadow: 0 8px 24px rgba(255, 153, 0, 0.35);
+      --hero-cta-shadow-hover: 0 10px 28px rgba(255, 153, 0, 0.45);
+      --hero-chip-hover-border: rgba(255, 153, 0, 0.35);
+      --hero-timer-shadow: 0 0 12px rgba(255, 153, 0, 0.12);
+      --hero-bg-before: radial-gradient(circle, rgba(255, 153, 0, 0.14) 0%, transparent 68%);
+    }
+
+    .hero-section.hero-theme-light {
+      --hero-page-bg: #F7F7F7;
+      --hero-surface: #FFFFFF;
+      --hero-surface-hover: #FFFFFF;
+      --hero-text: #1A1A1A;
+      --hero-text-muted: #5C5C5C;
+      --hero-text-soft: #888888;
+      --hero-orange: #FF5C00;
+      --hero-orange-hover: #E65300;
+      --hero-orange-rgb: 255, 92, 0;
+      --hero-border: rgba(0, 0, 0, 0.1);
+      --hero-header-bg: rgba(255, 255, 255, 0.92);
+      --hero-nav-hover-bg: rgba(0, 0, 0, 0.04);
+      --hero-cta-bg: #FF5C00;
+      --hero-cta-text: #FFFFFF;
+      --hero-cta-border: #FF5C00;
+      --hero-cta-shadow: 0 8px 22px rgba(255, 92, 0, 0.32);
+      --hero-cta-shadow-hover: 0 10px 26px rgba(255, 92, 0, 0.38);
+      --hero-chip-hover-border: rgba(255, 92, 0, 0.28);
+      --hero-timer-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      --hero-bg-before: radial-gradient(circle, rgba(255, 92, 0, 0.1) 0%, transparent 68%);
+    }
+
+    .hero-section.hero-theme-kdp {
+      --hero-page-bg: #FFFBF5;
+      --hero-surface: #FFFFFF;
+      --hero-surface-hover: #FFFFFF;
+      --hero-text: #232F3E;
+      --hero-text-muted: #4A5568;
+      --hero-text-soft: #718096;
+      --hero-orange: #FF9900;
+      --hero-orange-hover: #E47911;
+      --hero-orange-rgb: 255, 153, 0;
+      --hero-border: rgba(228, 121, 17, 0.16);
+      --hero-header-bg: rgba(255, 251, 245, 0.92);
+      --hero-nav-hover-bg: rgba(255, 153, 0, 0.08);
+      --hero-cta-bg: linear-gradient(135deg, #FFD89B 0%, #FF9900 52%, #E47911 100%);
+      --hero-cta-text: #1A1207;
+      --hero-cta-border: rgba(228, 121, 17, 0.35);
+      --hero-cta-shadow: 0 8px 24px rgba(255, 153, 0, 0.3);
+      --hero-cta-shadow-hover: 0 10px 30px rgba(228, 121, 17, 0.38);
+      --hero-chip-hover-border: rgba(255, 153, 0, 0.38);
+      --hero-timer-shadow: 0 4px 14px rgba(228, 121, 17, 0.1);
+      --hero-bg-before: radial-gradient(circle, rgba(255, 153, 0, 0.12) 0%, transparent 68%);
+    }
+
+    .hero-section.hero-theme-dark.hero-bg {
+      background-color: var(--hero-page-bg) !important;
+      background-image:
+        radial-gradient(ellipse 50% 90% at 82% 72%, rgba(var(--hero-orange-rgb), 0.14) 0%, transparent 68%),
+        radial-gradient(ellipse 80% 60% at 15% 50%, rgba(var(--hero-orange-rgb), 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 80% at 50% -20%, rgba(var(--hero-orange-rgb), 0.2) 0%, transparent 55%) !important;
+    }
+
+    .hero-section.hero-theme-light.hero-bg {
+      background-color: var(--hero-page-bg) !important;
+      background-image:
+        radial-gradient(ellipse 90% 70% at 50% -10%, rgba(var(--hero-orange-rgb), 0.09) 0%, transparent 58%),
+        radial-gradient(ellipse 55% 45% at 100% 85%, rgba(var(--hero-orange-rgb), 0.05) 0%, transparent 52%) !important;
+    }
+
+    .hero-section.hero-theme-kdp.hero-bg {
+      background-color: var(--hero-page-bg) !important;
+      background-image:
+        radial-gradient(ellipse 85% 60% at 50% -8%, rgba(var(--hero-orange-rgb), 0.14) 0%, transparent 58%),
+        radial-gradient(ellipse 42% 38% at 0% 100%, rgba(255, 214, 153, 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 38% 32% at 100% 92%, rgba(var(--hero-orange-rgb), 0.08) 0%, transparent 52%),
+        linear-gradient(180deg, #FFFBF5 0%, #FFF6EC 100%) !important;
+    }
+
+    .hero-section.hero-bg::before {
+      background: var(--hero-bg-before) !important;
+    }
+
+    .hero-section .site-header {
+      background: var(--hero-header-bg) !important;
+      border-bottom-color: var(--hero-border) !important;
+    }
+
+    .hero-section .site-logo {
+      color: var(--hero-text) !important;
+      -webkit-text-fill-color: var(--hero-text) !important;
+    }
+
+    .hero-section .site-logo span {
+      color: var(--hero-orange) !important;
+      -webkit-text-fill-color: var(--hero-orange) !important;
+    }
+
+    .hero-section .nav-link {
+      color: var(--hero-text-muted) !important;
+    }
+
+    .hero-section .nav-link:hover {
+      color: var(--hero-text) !important;
+      background: var(--hero-nav-hover-bg) !important;
+    }
+
+    .hero-section .header-btn-border {
+      background: var(--hero-cta-bg) !important;
+      color: var(--hero-cta-text) !important;
+      -webkit-text-fill-color: var(--hero-cta-text) !important;
+      border: 1px solid var(--hero-cta-border) !important;
+      box-shadow: var(--hero-cta-shadow) !important;
+    }
+
+    .hero-section .header-btn-border:hover {
+      background: var(--hero-orange-hover) !important;
+      border-color: var(--hero-orange-hover) !important;
+      color: var(--hero-cta-text) !important;
+      -webkit-text-fill-color: var(--hero-cta-text) !important;
+      box-shadow: var(--hero-cta-shadow-hover) !important;
+    }
+
+    .hero-section.hero-theme-light .header-btn-border:hover,
+    .hero-section.hero-theme-light .gradient-btn:hover,
+    .hero-section.hero-theme-light .hero-action .gradient-btn:hover {
+      background: var(--hero-orange-hover) !important;
+      background-image: none !important;
+    }
+
+    .hero-section .header-menu-btn {
+      background: var(--hero-surface) !important;
+      border-color: var(--hero-border) !important;
+      color: var(--hero-text) !important;
+    }
+
+    .hero-section .header-menu-btn:hover {
+      background: var(--hero-nav-hover-bg) !important;
+      border-color: var(--hero-border) !important;
+      color: var(--hero-text) !important;
+    }
+
+    .hero-section .header-nav-mobile {
+      background: var(--hero-surface) !important;
+      border-top-color: var(--hero-border) !important;
+    }
+
+    .hero-section .hero-eyebrow .eyebrow-pill {
+      color: var(--hero-text-soft) !important;
+      -webkit-text-fill-color: var(--hero-text-soft) !important;
+    }
+
+    .hero-section .hero-bg .hero-headline,
+    .hero-section .hero-headline,
+    .hero-section h1.hero-headline {
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      -webkit-text-fill-color: var(--hero-text) !important;
+      color: var(--hero-text) !important;
+    }
+
+    .hero-section .hero-bg .hero-headline .hero-headline-line,
+    .hero-section .hero-headline .hero-headline-line {
+      -webkit-text-fill-color: var(--hero-text) !important;
+      color: var(--hero-text) !important;
+      background: none !important;
+      background-image: none !important;
+    }
+
+    .hero-section .hero-headline .gradient-text {
+      -webkit-text-fill-color: var(--hero-orange) !important;
+      color: var(--hero-orange) !important;
+      background: none !important;
+      background-image: none !important;
+    }
+
+    .hero-section .hero-bg .hero-lead,
+    .hero-section .hero-lead {
+      color: var(--hero-text-muted) !important;
+      -webkit-text-fill-color: var(--hero-text-muted) !important;
+    }
+
+    .hero-section .hero-timer-wrap > p {
+      color: var(--hero-text-muted) !important;
+      -webkit-text-fill-color: var(--hero-text-muted) !important;
+    }
+
+    .hero-section .gradient-btn,
+    .hero-section .hero-action .gradient-btn,
+    .hero-section a.gradient-btn {
+      background: var(--hero-cta-bg) !important;
+      color: var(--hero-cta-text) !important;
+      -webkit-text-fill-color: var(--hero-cta-text) !important;
+      border: 1px solid var(--hero-cta-border) !important;
+      box-shadow: var(--hero-cta-shadow) !important;
+    }
+
+    .hero-section .gradient-btn:hover,
+    .hero-section .hero-action .gradient-btn:hover,
+    .hero-section a.gradient-btn:hover {
+      background: var(--hero-orange-hover) !important;
+      color: var(--hero-cta-text) !important;
+      -webkit-text-fill-color: var(--hero-cta-text) !important;
+      box-shadow: var(--hero-cta-shadow-hover) !important;
+    }
+
+    .hero-section.hero-theme-dark .gradient-btn:hover,
+    .hero-section.hero-theme-dark .hero-action .gradient-btn:hover,
+    .hero-section.hero-theme-kdp .gradient-btn:hover,
+    .hero-section.hero-theme-kdp .hero-action .gradient-btn:hover {
+      background: linear-gradient(135deg, #FFE49A 0%, #FFCC66 42%, #FFA726 100%) !important;
+    }
+
+    .hero-section .hero-action .timer-digit,
+    .hero-section .timer-digit {
+      background: var(--hero-surface) !important;
+      border-color: var(--hero-border) !important;
+      box-shadow: var(--hero-timer-shadow) !important;
+    }
+
+    .hero-section .hero-action .timer-digit .timer-num,
+    .hero-section .hero-action .timer-num,
+    .hero-section .timer-digit .timer-num {
+      color: var(--hero-text) !important;
+      -webkit-text-fill-color: var(--hero-text) !important;
+    }
+
+    .hero-section .hero-action .timer-digit .timer-label,
+    .hero-section .hero-action .timer-label,
+    .hero-section .timer-digit .timer-label {
+      color: var(--hero-text-soft) !important;
+      -webkit-text-fill-color: var(--hero-text-soft) !important;
+    }
+
+    .hero-section .hero-benefits .benefit-chip {
+      background: var(--hero-surface) !important;
+      border-color: var(--hero-border) !important;
+      color: var(--hero-text) !important;
+      -webkit-text-fill-color: var(--hero-text) !important;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .hero-section .hero-benefits .benefit-chip:hover {
+      background: var(--hero-surface-hover) !important;
+      border-color: var(--hero-chip-hover-border) !important;
+      color: var(--hero-text) !important;
+    }
+
+    .hero-section .collage-glow--ambient {
+      background:
+        radial-gradient(ellipse 55% 65% at 50% 50%, rgba(var(--hero-orange-rgb), 0.14) 0%, rgba(var(--hero-orange-rgb), 0.05) 42%, transparent 72%) !important;
+    }
+
+    .hero-section .collage-glow--dots {
+      background-image: radial-gradient(rgba(var(--hero-orange-rgb), 0.35) 1px, transparent 1px) !important;
+    }
+
+    .hero-section .speakers-photo-fade {
+      display: none !important;
+    }
+
+    .hero-section .hero-collage-wrapper,
+    .hero-section .speakers-photo-wrap,
+    .hero-section .speakers-combo {
+      mix-blend-mode: normal !important;
+      isolation: isolate;
+    }
+
+    .hero-section .collage-badge .badge-icon {
+      background: linear-gradient(145deg, rgba(var(--hero-orange-rgb), 0.16) 0%, rgba(var(--hero-orange-rgb), 0.08) 100%) !important;
+      border-color: rgba(var(--hero-orange-rgb), 0.22) !important;
+    }
+
+    /* ═══ SITE LIGHT THEME (весь сайт) ═══ */
+    body.site-theme-light {
+      --bg: #F7F7F7;
+      --bg-elevated: #FFFFFF;
+      --surface: #FFFFFF;
+      --surface-hover: #FAFAFA;
+      --glass: #FFFFFF;
+      --glass-strong: #FFFFFF;
+      --glass-border: rgba(0, 0, 0, 0.08);
+      --glass-highlight: rgba(255, 255, 255, 1);
+      --glow-orange: rgba(255, 92, 0, 0.22);
+      --glow-orange-soft: rgba(255, 92, 0, 0.1);
+      --text-heading: #1A1A1A;
+      --text-body: #5C5C5C;
+      --text-muted: #888888;
+      --text: #1A1A1A;
+      --accent: #FF5C00;
+      --accent-light: #FF7A2E;
+      --accent-dark: #E65300;
+      --accent-glow: rgba(255, 92, 0, 0.32);
+      --accent-soft: rgba(255, 92, 0, 0.1);
+      --border: rgba(0, 0, 0, 0.1);
+      --border-strong: rgba(0, 0, 0, 0.14);
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 32px rgba(0, 0, 0, 0.06);
+      --shadow-glow: 0 0 0 1px rgba(255, 92, 0, 0.14), 0 8px 28px rgba(255, 92, 0, 0.12);
+      --btn-cta-gradient: #FF5C00;
+      --btn-cta-gradient-hover: #E65300;
+      --btn-cta-text: #FFFFFF;
+      --btn-cta-shadow: rgba(255, 92, 0, 0.32);
+      --kdp-bg: #F7F7F7;
+      --kdp-surface: #FFFFFF;
+      --kdp-surface2: #F0F0F0;
+      --kdp-text: #1A1A1A;
+      --accent-gold: #FF5C00;
+      --kdp-muted: #888888;
+
+      background-color: var(--bg) !important;
+      color: var(--text-body) !important;
+    }
+
+    body.site-theme-light::after {
+      opacity: 0.025;
+      mix-blend-mode: multiply;
+    }
+
+    body.site-theme-light ::selection {
+      background: rgba(255, 92, 0, 0.2);
+      color: #1A1A1A;
+    }
+
+    body.site-theme-light .hero-bg,
+    body.site-theme-light .hero-section-wave,
+    body.site-theme-light .goal-section,
+    body.site-theme-light .includes-section,
+    body.site-theme-light .speakers-section,
+    body.site-theme-light .final-cta {
+      background-color: var(--bg) !important;
+    }
+
+    body.site-theme-light .goal-section,
+    body.site-theme-light .includes-section,
+    body.site-theme-light .speakers-section,
+    body.site-theme-light .final-cta {
+      background-image:
+        radial-gradient(ellipse 80% 55% at 50% -5%, rgba(255, 92, 0, 0.08) 0%, transparent 58%),
+        radial-gradient(ellipse 45% 40% at 100% 100%, rgba(255, 92, 0, 0.05) 0%, transparent 55%) !important;
+    }
+
+    body.site-theme-light .how-section-bg,
+    body.site-theme-light .bonus-section,
+    body.site-theme-light .reviews-section {
+      background-color: #FAFAF8 !important;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 20% 0%, rgba(255, 92, 0, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 100%, rgba(255, 92, 0, 0.05) 0%, transparent 50%) !important;
+    }
+
+    body.site-theme-light h1,
+    body.site-theme-light .hero-headline,
+    body.site-theme-light .hero-headline .text-white {
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+    }
+
+    @media (min-width: 992px) {
+      body.site-theme-light .hero-bg .hero-headline,
+      body.site-theme-light h1.hero-headline {
+        color: var(--text-heading) !important;
+        -webkit-text-fill-color: var(--text-heading) !important;
+      }
+    }
+
+    /* Заголовки секцій — темний текст, без градієнта та uppercase */
+    body.site-theme-light .headline-glow,
+    body.site-theme-light h2.headline-glow,
+    body.site-theme-light .faq-title.headline-glow,
+    body.site-theme-light .goal-headline.headline-glow,
+    body.site-theme-light #intro-video .intro-video-title.headline-glow,
+    body.site-theme-light .benefits-closing-title.headline-glow,
+    body.site-theme-light #result .mission-banner-title,
+    body.site-theme-light .bg-white .headline-glow,
+    body.site-theme-light #for-whom .headline-glow,
+    body.site-theme-light #why-now .headline-glow,
+    body.site-theme-light #authors .headline-glow,
+    body.site-theme-light #benefits .headline-glow,
+    body.site-theme-light #cases .headline-glow,
+    body.site-theme-light #program .headline-glow,
+    body.site-theme-light #get .headline-glow,
+    body.site-theme-light #bonus .headline-glow,
+    body.site-theme-light #faq .headline-glow,
+    body.site-theme-light #final-cta .headline-glow {
+      font-weight: 800 !important;
+      text-transform: none !important;
+      letter-spacing: -0.03em !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light .headline-glow .headline-glow-line,
+    body.site-theme-light h2.headline-glow .headline-glow-line,
+    body.site-theme-light h2.headline-glow span:not(.gradient-text),
+    body.site-theme-light .headline-glow span:not(.gradient-text),
+    body.site-theme-light .faq-title.headline-glow span:not(.gradient-text),
+    body.site-theme-light .goal-headline.headline-glow .headline-glow-line {
+      text-transform: none !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light h2:not(.headline-glow),
+    body.site-theme-light .faq-title:not(.headline-glow),
+    body.site-theme-light .goal-headline:not(.headline-glow),
+    body.site-theme-light .includes-title {
+      text-transform: none !important;
+      font-weight: 700 !important;
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+      background: none !important;
+      background-image: none !important;
+    }
+
+    body.site-theme-light #benefits .benefits-closing-lead {
+      text-transform: none !important;
+      font-weight: 600 !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: var(--text-body) !important;
+      -webkit-text-fill-color: var(--text-body) !important;
+    }
+
+    body.site-theme-light .gradient-text,
+    body.site-theme-light h2 .gradient-text,
+    body.site-theme-light h3 .gradient-text,
+    body.site-theme-light .goal-headline-line.gradient-text,
+    body.site-theme-light .faq-title .gradient-text,
+    body.site-theme-light .includes-title .gradient-text,
+    body.site-theme-light .headline-glow .gradient-text,
+    body.site-theme-light h2.gradient-text {
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+    }
+
+    body.site-theme-light .speaker-name {
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light .case-amount,
+    body.site-theme-light .goal-block-title {
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+    }
+
+    body.site-theme-light .goal-hl,
+    body.site-theme-light .text-gold,
+    body.site-theme-light .case-result,
+    body.site-theme-light .bonus-accent {
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+    }
+
+    body.site-theme-light .speakers-section .section-eyebrow,
+    body.site-theme-light .section-eyebrow {
+      color: var(--text-muted) !important;
+    }
+
+    body.site-theme-light #intro-video .intro-video-wrap {
+      background: #FFFFFF !important;
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 8px 28px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    body.site-theme-light #intro-video .intro-video-wrap::before {
+      display: none !important;
+    }
+
+    body.site-theme-light #benefits .reason-item {
+      background: #FFFFFF !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    body.site-theme-light #benefits .reason-item::before {
+      background: linear-gradient(90deg, transparent, rgba(255, 92, 0, 0.12), transparent) !important;
+    }
+
+    body.site-theme-light #benefits .reason-item::after {
+      background: radial-gradient(circle, rgba(255, 92, 0, 0.05) 0%, transparent 70%) !important;
+    }
+
+    body.site-theme-light #benefits .reason-item:hover {
+      border-color: rgba(255, 92, 0, 0.22) !important;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    body.site-theme-light #benefits .reason-title {
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light #benefits .reason-desc {
+      color: var(--text-body) !important;
+      -webkit-text-fill-color: var(--text-body) !important;
+    }
+
+    body.site-theme-light #benefits .reason-desc strong {
+      color: var(--accent) !important;
+    }
+
+    body.site-theme-light #benefits .reason-num {
+      background: var(--accent) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(255, 92, 0, 0.25) !important;
+    }
+
+    body.site-theme-light #get .access-item {
+      background: #FFFFFF !important;
+      border-color: var(--border) !important;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    body.site-theme-light #get .access-item:hover {
+      background: #FAFAFA !important;
+      border-color: rgba(255, 92, 0, 0.22) !important;
+    }
+
+    body.site-theme-light #get .access-text,
+    body.site-theme-light #get .access-item--gift .access-text {
+      color: var(--text-body) !important;
+    }
+
+    /* Тексти по сайту — читабельний контраст на світлому фоні */
+    body.site-theme-light #final-cta .final-cta-copy,
+    body.site-theme-light #why-now .why-now-copy,
+    body.site-theme-light #intro-video .intro-video-caption-line,
+    body.site-theme-light #bonus .bonus-intro-copy,
+    body.site-theme-light #bonus .bonus-intro-copy strong,
+    body.site-theme-light .case-desc,
+    body.site-theme-light .inside-video-desc,
+    body.site-theme-light .faq-answer-inner,
+    body.site-theme-light .manifest-text,
+    body.site-theme-light .for-whom-text,
+    body.site-theme-light .audience-card-text,
+    body.site-theme-light .reason-card p,
+    body.site-theme-light .final-cta-sub,
+    body.site-theme-light .benefits-closing-text {
+      color: var(--text-body) !important;
+      -webkit-text-fill-color: var(--text-body) !important;
+    }
+
+    body.site-theme-light .program-result {
+      color: var(--text-body) !important;
+      background: rgba(255, 92, 0, 0.06) !important;
+      border-color: rgba(255, 92, 0, 0.15) !important;
+    }
+
+    body.site-theme-light .faq-footer-card-inner {
+      background: #FFFFFF !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    body.site-theme-light .faq-footer-title {
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light .faq-footer-text {
+      color: var(--text-body) !important;
+      -webkit-text-fill-color: var(--text-body) !important;
+    }
+
+    body.site-theme-light .faq-footer-icon {
+      color: var(--accent) !important;
+      background: rgba(255, 92, 0, 0.1) !important;
+      border-color: rgba(255, 92, 0, 0.2) !important;
+      box-shadow: 0 4px 14px rgba(255, 92, 0, 0.12) !important;
+    }
+
+    body.site-theme-light .faq-telegram-btn,
+    body.site-theme-light a.faq-telegram-btn {
+      background: var(--accent) !important;
+      background-image: none !important;
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      box-shadow: 0 4px 20px rgba(255, 92, 0, 0.28) !important;
+    }
+
+    body.site-theme-light .faq-telegram-btn:hover,
+    body.site-theme-light a.faq-telegram-btn:hover {
+      background: var(--accent-dark) !important;
+      background-image: none !important;
+    }
+
+    body.site-theme-light .nav-link:hover {
+      color: var(--text-heading) !important;
+      background: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    body.site-theme-light .includes-card {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    body.site-theme-light .includes-card-inner {
+      background: linear-gradient(155deg, #FFFFFF 0%, #FAFAFA 100%) !important;
+    }
+
+    body.site-theme-light .includes-card-title {
+      color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light .includes-card-desc {
+      color: var(--text-muted) !important;
+    }
+
+    body.site-theme-light .goal-headline .muted {
+      color: rgba(26, 26, 26, 0.45) !important;
+    }
+
+    body.site-theme-light .goal-text {
+      color: var(--text-body) !important;
+    }
+
+    body.site-theme-light .goal-icon-tile {
+      background: linear-gradient(145deg, #FFFFFF 0%, #F5F5F5 100%) !important;
+      border-color: rgba(255, 92, 0, 0.2) !important;
+      box-shadow: 0 4px 16px rgba(255, 92, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+    }
+
+    body.site-theme-light .speaker-stat-value {
+      color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light .speaker-stat-label {
+      color: var(--text-muted) !important;
+    }
+
+    body.site-theme-light .speaker-stats {
+      background: rgba(0, 0, 0, 0.03) !important;
+      border-color: var(--border) !important;
+    }
+
+    body.site-theme-light .speaker-bio,
+    body.site-theme-light .speaker-facts li {
+      color: var(--text-body) !important;
+    }
+
+    body.site-theme-light .speaker-facts strong {
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+    }
+
+    body.site-theme-light .speaker-bio,
+    body.site-theme-light .speaker-facts {
+      border-top-color: var(--border) !important;
+    }
+
+    body.site-theme-light .speaker-photo-slot {
+      background:
+        radial-gradient(ellipse 95% 55% at 50% 0%, rgba(255, 92, 0, 0.06) 0%, transparent 58%),
+        radial-gradient(ellipse 70% 65% at 50% 88%, rgba(255, 92, 0, 0.1) 0%, transparent 62%) !important;
+    }
+
+    body.site-theme-light .speaker-card {
+      background: #FFFFFF !important;
+      border-color: var(--border) !important;
+    }
+
+    body.site-theme-light #authors .speaker-card,
+    body.site-theme-light #for-whom .for-whom-item,
+    body.site-theme-light .bonus-panel,
+    body.site-theme-light .inside-video-card,
+    body.site-theme-light .video-card,
+    body.site-theme-light .reason-card,
+    body.site-theme-light .audience-card {
+      background: #FFFFFF !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+      border-color: var(--border) !important;
+    }
+
+    body.site-theme-light #authors .speaker-card:hover,
+    body.site-theme-light #for-whom .for-whom-item:hover,
+    body.site-theme-light .reason-card:hover,
+    body.site-theme-light .audience-card:hover,
+    body.site-theme-light .inside-video-card:hover,
+    body.site-theme-light .speaker-card:hover {
+      border-color: rgba(255, 92, 0, 0.28) !important;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08), 0 0 32px rgba(255, 92, 0, 0.08) !important;
+    }
+
+    body.site-theme-light .bonus-card {
+      background: linear-gradient(145deg, #FFFFFF 0%, #FFF8F0 55%, #FFFFFF 100%) !important;
+      border-color: rgba(255, 92, 0, 0.18) !important;
+    }
+
+    body.site-theme-light .bonus-bento,
+    body.site-theme-light #bonus .bonus-block {
+      background:
+        linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+        linear-gradient(135deg, rgba(255, 92, 0, 0.35), rgba(255, 92, 0, 0.12)) border-box !important;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 0 40px rgba(255, 92, 0, 0.06) !important;
+    }
+
+    body.site-theme-light .faq-item:hover {
+      background: #FAFAFA !important;
+      border-color: rgba(255, 92, 0, 0.2) !important;
+    }
+
+    body.site-theme-light #result .mission-banner {
+      box-shadow:
+        0 0 0 1px rgba(255, 92, 0, 0.18),
+        0 0 32px rgba(255, 92, 0, 0.1),
+        0 16px 40px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    body.site-theme-light #result .mission-banner-inner {
+      background:
+        radial-gradient(circle at 12% 88%, rgba(255, 92, 0, 0.08) 0%, transparent 42%),
+        linear-gradient(180deg, #FFFFFF 0%, #FFF9F3 100%) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+    }
+
+    body.site-theme-light #result .mission-banner-copy {
+      color: var(--text-body) !important;
+    }
+
+    body.site-theme-light .site-footer {
+      background: #FFFFFF !important;
+      border-top-color: var(--border) !important;
+    }
+
+    body.site-theme-light .site-footer-copy,
+    body.site-theme-light .site-footer-legal p,
+    body.site-theme-light .site-footer-legal a,
+    body.site-theme-light .site-footer-policy a {
+      color: var(--text-muted) !important;
+    }
+
+    body.site-theme-light .site-footer-legal a.site-footer-email {
+      color: var(--text-heading) !important;
+    }
+
+    body.site-theme-light .site-footer-legal a.site-footer-email:hover,
+    body.site-theme-light .site-footer-policy a:hover {
+      color: var(--accent) !important;
+    }
+
+    body.site-theme-light .site-footer-legal {
+      border-top-color: var(--border) !important;
+      border-left-color: var(--border) !important;
+    }
+
+    body.site-theme-light .final-cta-note {
+      color: var(--text-muted) !important;
+    }
+
+    body.site-theme-light .video-case-name {
+      color: var(--text-heading) !important;
+      -webkit-text-fill-color: var(--text-heading) !important;
+    }
   </style>
 </head>
-<body class="font-sans antialiased text-white bg-surface">
+<body class="font-sans antialiased site-theme-light text-gray-900 bg-[#F7F7F7]">
 
   <!-- Hero Section -->
-  <section class="hero-section hero-bg flex flex-col">
+  <section class="hero-section hero-bg hero-theme-light flex flex-col">
 
     <header class="site-header">
       <div class="header-inner">
@@ -6455,7 +7265,7 @@
           </div>
           <div class="speakers-photo-wrap">
             <img
-              src="images/speakers-hero.png?v=1"
+              src="images/speakers-hero.png?v=2"
               class="collage-img speakers-combo"
               width="1019"
               height="820"
@@ -6598,12 +7408,12 @@
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">05</span>
           <h3 class="reason-title">Без&nbsp;складу, доставки і&nbsp;спілкування з&nbsp;клієнтами</h3>
-          <p class="reason-desc">Amazon бере на&nbsp;себе друк і&nbsp;доставку,<br>поки&nbsp;ви&nbsp;керуєте бізнесом.</p>
+          <p class="reason-desc">Amazon бере на&nbsp;себе приймання оплат, зберігання та&nbsp;доставку. Вам залишається лише заробляти.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">06</span>
-          <h3 class="reason-title">Теми з&nbsp;потенціалом від&nbsp;$3000&nbsp;на&nbsp;місяць</h3>
-          <p class="reason-desc">Покажемо, як знаходити теми, де конкуренція низька, а&nbsp;попит вже&nbsp;є.</p>
+          <h3 class="reason-title">Книги з&nbsp;потенціалом від&nbsp;$3000&nbsp;на&nbsp;місяць</h3>
+          <p class="reason-desc">Покажемо, як знаходити теми, де конкуренція низька, а&nbsp;попит росте.</p>
         </article>
       </div>
 
@@ -6624,10 +7434,6 @@
   <section id="for-whom" class="bg-white text-gray-900 pt-4 pb-14 sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20">
     <div class="max-w-[1040px] mx-auto px-4 sm:px-6">
 
-      <div class="text-center">
-        <p class="section-eyebrow">Для кого</p>
-      </div>
-
       <h2 class="headline-glow text-center max-w-3xl mx-auto">
         Кому підійде інтенсив?
       </h2>
@@ -6635,7 +7441,7 @@
       <ul class="for-whom-grid">
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">🌱</span>
-          <p class="for-whom-text"><strong>Новачкам</strong>, які хочуть запустити віддалений бізнес і готові інвестувати від $1000.</p>
+          <p class="for-whom-text"><strong>Новачкам</strong>, які хочуть запустити віддалений бізнес і готові інвестувати від $300.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">📈</span>
@@ -6647,7 +7453,7 @@
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">💻</span>
-          <p class="for-whom-text"><strong>Фрилансерам</strong> та IT-фахівцям, які шукають нові джерела високого віддаленого доходу.</p>
+          <p class="for-whom-text"><strong>Фрілансерам</strong> та IT-фахівцям (ілюстраторам, дизайнерам, маркетологам та іншим), які шукають нові джерела високого віддаленого доходу.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">✈️</span>
@@ -6655,11 +7461,11 @@
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">🎨</span>
-          <p class="for-whom-text"><strong>Спеціалістам</strong> (авторам, ілюстраторам, дизайнерам, маркетологам), які планують вийти на світовий ринок.</p>
+          <p class="for-whom-text"><strong>Експертам</strong> (психологам, коучам, нутриціологам та іншим фахівцям), які хочуть заявити про себе, розвинути особистий експертний бренд та отримати конкурентну перевагу над колегами завдяки власній книзі.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">⚡</span>
-          <p class="for-whom-text"><strong>Ентузіастам</strong>, які прагнуть монетизувати нові технології, ШІ-інструменти та автоматизацію у видавництві.</p>
+          <p class="for-whom-text"><strong>Ентузіастам</strong> — тим, хто захоплюється штучним інтелектом і хоче в ньому розібратися.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">📚</span>
