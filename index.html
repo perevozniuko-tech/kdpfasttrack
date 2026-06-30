@@ -111,6 +111,7 @@
       overflow-x: clip;
       overflow-y: visible;
       position: relative;
+      padding-bottom: clamp(2.5rem, 6vh, 4rem);
     }
 
     .hero-container {
@@ -121,8 +122,9 @@
       max-width: 1200px !important;
       width: 100%;
       margin: 0 auto !important;
-      padding: 20px 20px 20px !important;
+      padding: clamp(1rem, 2.5vh, 1.5rem) 20px clamp(2.5rem, 5vh, 4rem) !important;
       height: auto !important;
+      min-height: 0 !important;
       position: relative;
       z-index: 1;
       overflow: visible;
@@ -141,9 +143,14 @@
     }
 
     @media (min-width: 992px) {
+      .hero-container {
+        align-items: flex-start !important;
+      }
+
       .hero-text-content {
         text-align: left;
         align-items: flex-start;
+        padding-top: 0.25rem;
       }
     }
 
@@ -152,8 +159,8 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-top: 32px !important;
-        padding-bottom: 24px !important;
+        padding-top: clamp(1.5rem, 4vh, 2rem) !important;
+        padding-bottom: clamp(2.5rem, 6vh, 3.5rem) !important;
       }
 
       .hero-text-content {
@@ -606,13 +613,14 @@
     /* Hero speaker collage — glow stage + bottom fade */
     .hero-collage-wrapper {
       position: relative !important;
-      width: 440px !important;
-      height: 500px !important;
+      width: min(640px, 92vw) !important;
+      height: auto !important;
+      min-height: 0 !important;
       flex-shrink: 0 !important;
       margin-left: auto !important;
-      margin-right: 10px !important;
-      margin-bottom: -20px !important;
-      align-self: flex-end !important;
+      margin-right: 0 !important;
+      margin-bottom: 0 !important;
+      align-self: center !important;
       overflow: visible !important;
       background: transparent !important;
       border: none !important;
@@ -629,16 +637,60 @@
     }
 
     .speakers-photo-wrap {
-      position: absolute !important;
-      bottom: -20px !important;
-      left: 50% !important;
+      position: relative !important;
+      bottom: auto !important;
+      top: auto !important;
+      left: auto !important;
       right: auto !important;
-      height: 100% !important;
-      transform: translateX(-52%) translateZ(0) !important;
-      transform-origin: center bottom !important;
+      width: 100% !important;
+      height: auto !important;
+      transform: none !important;
+      transform-origin: center center !important;
       z-index: 2 !important;
       line-height: 0;
       overflow: visible;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .collage-speaker {
+      position: relative !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      height: auto !important;
+      width: auto !important;
+      max-width: min(462px, 41.8vw) !important;
+      max-height: clamp(396px, 48.4vh, 572px) !important;
+      min-height: 0 !important;
+      object-fit: contain !important;
+      object-position: bottom center;
+      transform: none !important;
+      flex-shrink: 0;
+      image-rendering: auto !important;
+    }
+
+    .collage-speaker.collage-img {
+      position: relative !important;
+      bottom: auto !important;
+      height: auto !important;
+      max-height: clamp(396px, 48.4vh, 572px) !important;
+      transform: none !important;
+    }
+
+    .collage-speaker--left {
+      z-index: 2;
+      margin-right: -14%;
+      transform: none !important;
+      transform-origin: bottom center;
+    }
+
+    .collage-speaker--right {
+      z-index: 1;
+      transform: none !important;
+      transform-origin: bottom center;
     }
 
     .speakers-photo-fade {
@@ -784,21 +836,21 @@
     }
 
     .badge-income {
-      bottom: 157px !important;
-      right: 248px !important;
+      bottom: 125px !important;
+      right: 195px !important;
       z-index: 4 !important;
     }
 
     .badge-experience {
-      bottom: 91px !important;
-      right: 53px !important;
+      bottom: 72px !important;
+      right: 42px !important;
       z-index: 5 !important;
     }
 
     @media (max-width: 991px) {
       .hero-collage-wrapper {
         width: 100% !important;
-        max-width: min(100%, 340px) !important;
+        max-width: min(100%, 480px) !important;
         height: auto !important;
         margin: 10px auto 0 auto !important;
         overflow: visible !important;
@@ -1894,19 +1946,21 @@
 
     .proof-carousel {
       position: relative;
-      max-width: 420px;
+      max-width: min(540px, 92vw);
       margin: 0 auto;
-      padding: 0 12px;
+      padding: 0 36px;
     }
 
     @media (min-width: 640px) {
       .proof-carousel {
-        max-width: 460px;
+        max-width: 540px;
+        padding: 0 40px;
       }
     }
 
     .proof-carousel-viewport {
       overflow: hidden;
+      aspect-ratio: 1 / 1;
       border-radius: var(--radius);
       border: 1px solid transparent;
       background:
@@ -1917,6 +1971,7 @@
 
     .proof-carousel-track {
       display: flex;
+      height: 100%;
       transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: transform;
     }
@@ -1924,12 +1979,19 @@
     .proof-carousel-slide {
       flex: 0 0 100%;
       min-width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f7f7f7;
     }
 
     .proof-carousel-slide img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
     }
 
     .proof-carousel-btn {
@@ -2046,47 +2108,55 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      min-height: 200px;
-      overflow: hidden;
+      min-height: 300px;
+      overflow: visible;
       border-radius: 12px;
-      background:
-        radial-gradient(ellipse 95% 55% at 50% 0%, rgba(0, 0, 0, 0.5) 0%, transparent 58%),
-        radial-gradient(ellipse 70% 65% at 50% 88%, rgba(255, 153, 0, 0.22) 0%, transparent 62%);
+      background: transparent;
     }
 
-    /* Підсвітка за спікером */
-    .speaker-photo-slot::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 8%;
-      transform: translateX(-50%);
-      width: 72%;
-      height: 70%;
-      background: radial-gradient(ellipse at 50% 65%, rgba(255, 153, 0, 0.5) 0%, rgba(255, 153, 0, 0.22) 38%, transparent 72%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Тінь під ногами */
+    .speaker-photo-slot::before,
     .speaker-photo-slot::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 4%;
-      transform: translateX(-50%);
-      width: 58%;
-      height: 18px;
-      background: radial-gradient(ellipse, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 45%, transparent 72%);
-      filter: blur(8px);
-      pointer-events: none;
-      z-index: 1;
+      display: none !important;
+      content: none !important;
+    }
+
+    @media (min-width: 1200px) {
+      .hero-collage-wrapper {
+        width: min(726px, 55vw) !important;
+        height: clamp(484px, 57.2vh, 616px) !important;
+      }
+
+      .collage-speaker,
+      .collage-speaker.collage-img {
+        max-width: min(484px, 41.8vw) !important;
+        max-height: clamp(440px, 52.8vh, 594px) !important;
+      }
+
+      .speaker-photo-slot {
+        min-height: 300px;
+      }
+
+      .speaker-photo-slot img {
+        max-height: 360px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .hero-section .hero-collage-wrapper .collage-badge.badge-income {
+        bottom: 134px !important;
+        right: 208px !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
+        bottom: 77px !important;
+        right: 45px !important;
+      }
     }
 
     .speaker-photo-slot img {
       position: relative;
       z-index: 2;
-      max-height: 260px;
+      max-height: 340px;
       width: auto;
       max-width: 100%;
       object-fit: contain;
@@ -2094,10 +2164,7 @@
       image-rendering: auto;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      filter:
-        drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55))
-        drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35))
-        drop-shadow(0 0 40px rgba(255, 153, 0, 0.12));
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
     }
 
     .speaker-stat-value {
@@ -2400,13 +2467,11 @@
       font-weight: 700;
       letter-spacing: -0.01em;
       text-transform: none;
-      color: var(--btn-cta-text);
-      background: var(--btn-cta-gradient);
+      color: #FFFFFF;
+      background: #2AABEE;
       border: none;
-      box-shadow:
-        0 4px 24px var(--btn-cta-shadow),
-        0 0 40px rgba(255, 183, 77, 0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 4px 20px rgba(42, 171, 238, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       text-decoration: none;
     }
 
@@ -2419,10 +2484,8 @@
 
     .faq-telegram-btn:hover {
       transform: translateY(-1px);
-      background: var(--btn-cta-gradient-hover);
-      box-shadow:
-        0 6px 28px rgba(255, 153, 0, 0.45),
-        0 0 48px rgba(255, 183, 77, 0.24);
+      background: #229ED9;
+      box-shadow: 0 6px 28px rgba(34, 158, 217, 0.42);
       opacity: 1;
     }
 
@@ -2430,7 +2493,7 @@
       flex-shrink: 0;
       width: 1.15rem;
       height: 1.15rem;
-      color: #0a0a0a;
+      color: #FFFFFF;
     }
 
     .final-cta {
@@ -2805,7 +2868,7 @@
         radial-gradient(ellipse 100% 80% at 50% -20%, rgba(255, 153, 0, 0.2) 0%, transparent 55%),
         radial-gradient(ellipse 60% 50% at 100% 20%, rgba(255, 184, 77, 0.08) 0%, transparent 50%),
         radial-gradient(ellipse 50% 40% at 0% 70%, rgba(255, 153, 0, 0.07) 0%, transparent 50%) !important;
-      padding: 0 !important;
+      padding: 0 0 clamp(2.5rem, 6vh, 4rem) !important;
       overflow-x: clip;
       overflow-y: visible;
     }
@@ -2843,15 +2906,16 @@
       max-width: 1200px !important;
       margin-left: auto !important;
       margin-right: auto !important;
-      padding: 20px 20px 20px !important;
+      padding: clamp(1rem, 2.5vh, 1.5rem) 20px clamp(2.5rem, 5vh, 4rem) !important;
       height: auto !important;
+      min-height: 0 !important;
       position: relative;
       z-index: 1;
     }
 
     @media (min-width: 1024px) {
       .hero-bg .hero-container {
-        padding: 20px 40px 20px !important;
+        padding: clamp(1rem, 2.5vh, 1.5rem) 40px clamp(2.5rem, 5vh, 4rem) !important;
       }
     }
 
@@ -3712,6 +3776,59 @@
       text-transform: none !important;
     }
 
+    #bonus .bonus-pill {
+      padding: 5px 12px;
+      font-size: 12px;
+    }
+
+    #bonus h2.headline-glow .bonus-headline-ending {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 0.38em;
+      flex-wrap: nowrap;
+      line-height: 1.06;
+      width: 100%;
+    }
+
+    #bonus h2.headline-glow .bonus-headline-ending-text {
+      display: inline-block !important;
+      line-height: 1.06;
+      color: var(--hero-orange, var(--accent, #FF5C00)) !important;
+      -webkit-text-fill-color: var(--hero-orange, var(--accent, #FF5C00)) !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+    }
+
+    #bonus .bonus-headline-gift {
+      display: inline-flex !important;
+      width: 1.08em;
+      height: 1.08em;
+      min-width: 34px;
+      min-height: 34px;
+      border-radius: 0.28em;
+      font-size: 0.74em;
+      flex-shrink: 0;
+      margin: 0;
+      align-self: center;
+      text-transform: none !important;
+      -webkit-text-fill-color: initial !important;
+      color: initial !important;
+      background: linear-gradient(180deg, rgba(255, 236, 200, 0.2) 0%, rgba(255, 200, 110, 0.1) 100%) !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+    }
+
+    body.site-theme-light #bonus .bonus-headline-gift {
+      background: linear-gradient(180deg, #fff6e8 0%, #f3dfbb 100%) !important;
+      border: 1px solid rgba(188, 132, 48, 0.28) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75) !important;
+      -webkit-text-fill-color: initial !important;
+      color: initial !important;
+    }
+
     .faq-section { background: transparent !important; }
 
     .faq-title {
@@ -3950,6 +4067,12 @@
     #get .access-text strong {
       color: var(--accent-light);
       font-weight: 600;
+    }
+
+    #final-cta .final-cta-note-accent {
+      color: var(--hero-orange, var(--accent, #FF5C00)) !important;
+      -webkit-text-fill-color: var(--hero-orange, var(--accent, #FF5C00)) !important;
+      font-weight: 800 !important;
     }
 
     /* For whom — audience list */
@@ -4807,36 +4930,32 @@
 
     .faq-telegram-btn,
     a.faq-telegram-btn {
-      background: var(--btn-cta-gradient) !important;
-      background-image: var(--btn-cta-gradient) !important;
-      color: var(--btn-cta-text) !important;
-      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      background: #2AABEE !important;
+      background-image: none !important;
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
       border: none !important;
       border-radius: 9999px !important;
       font-weight: 700 !important;
       text-transform: none !important;
       letter-spacing: -0.01em !important;
-      box-shadow:
-        0 4px 24px var(--btn-cta-shadow),
-        0 0 40px rgba(255, 183, 77, 0.18) !important;
+      box-shadow: 0 4px 20px rgba(42, 171, 238, 0.35) !important;
       width: auto !important;
       max-width: none !important;
     }
 
     .faq-telegram-btn:hover,
     a.faq-telegram-btn:hover {
-      background: var(--btn-cta-gradient-hover) !important;
-      background-image: var(--btn-cta-gradient-hover) !important;
-      color: var(--btn-cta-text) !important;
-      -webkit-text-fill-color: var(--btn-cta-text) !important;
+      background: #229ED9 !important;
+      background-image: none !important;
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
       transform: translateY(-1px) !important;
-      box-shadow:
-        0 6px 28px rgba(255, 153, 0, 0.45),
-        0 0 48px rgba(255, 183, 77, 0.24) !important;
+      box-shadow: 0 6px 28px rgba(34, 158, 217, 0.42) !important;
     }
 
     .faq-telegram-btn svg {
-      color: var(--btn-cta-text) !important;
+      color: #FFFFFF !important;
     }
 
     /* ── Mobile readability ── */
@@ -4864,18 +4983,18 @@
       }
 
       .hero-container {
-        padding: 32px 24px 24px !important;
+        padding: clamp(1.5rem, 4vh, 2rem) 24px clamp(2.5rem, 6vh, 3.5rem) !important;
       }
 
       .hero-bg .hero-container {
         padding-left: 24px !important;
         padding-right: 24px !important;
-        padding-bottom: 24px !important;
+        padding-bottom: clamp(2.5rem, 6vh, 3.5rem) !important;
       }
 
       .hero-collage-wrapper {
         width: 100% !important;
-        max-width: min(100%, 340px) !important;
+        max-width: min(100%, 480px) !important;
         height: auto !important;
         margin: 10px auto 0 !important;
         align-self: center !important;
@@ -5065,14 +5184,14 @@
 
     /* КОМПАКТНИЙ HERO — фінальні правки */
     .hero-container {
-      align-items: center !important;
-      padding-top: 20px !important;
-      padding-bottom: 20px !important;
+      align-items: flex-start !important;
+      padding-top: clamp(1rem, 2.5vh, 1.5rem) !important;
+      padding-bottom: clamp(2.5rem, 5vh, 4rem) !important;
     }
 
     .hero-bg .hero-container {
-      padding-top: 20px !important;
-      padding-bottom: 20px !important;
+      padding-top: clamp(1rem, 2.5vh, 1.5rem) !important;
+      padding-bottom: clamp(2.5rem, 5vh, 4rem) !important;
     }
 
     @media (min-width: 992px) {
@@ -5231,11 +5350,32 @@
       }
     }
 
-    /* Розмір фото спікерів — тільки desktop */
+    /* Розмір фото спікерів — desktop */
     @media (min-width: 992px) {
       .hero-collage-wrapper {
-        width: 440px !important;
-        height: 500px !important;
+        width: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        align-self: flex-start !important;
+      }
+
+      .collage-speaker,
+      .collage-speaker.collage-img {
+        max-width: 462px !important;
+        max-height: 638px !important;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+
+      .collage-speaker--left:not(#hero-speaker-left) {
+        margin-right: -14% !important;
+        transform: none !important;
+      }
+
+      .collage-speaker--right:not(#hero-speaker-right) {
+        transform: none !important;
       }
     }
 
@@ -5899,12 +6039,6 @@
       color: #cccccc !important;
     }
 
-    @media (min-width: 640px) {
-      #benefits .reason-title {
-        min-height: 2.9em;
-      }
-    }
-
     #bonus .bonus-topic {
       hyphens: manual !important;
       -webkit-hyphens: manual !important;
@@ -6117,20 +6251,22 @@
 
     /* Hero badges — фінальна позиція (перебиває все вище) */
     .hero-section .hero-collage-wrapper .collage-badge.badge-income {
-      bottom: 157px !important;
-      right: 248px !important;
+      bottom: 125px !important;
+      right: 195px !important;
       left: auto !important;
     }
 
     .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
-      bottom: 91px !important;
-      right: 53px !important;
+      bottom: 72px !important;
+      right: 42px !important;
       left: auto !important;
     }
 
-    /* Hero speakers — чорний fade внизу без CSS-mask */
+    /* Hero speakers — без зсуву вниз за межі секції */
     .hero-section .hero-collage-wrapper .speakers-photo-wrap {
-      bottom: -20px !important;
+      bottom: auto !important;
+      top: 0 !important;
+      align-items: flex-start !important;
     }
 
     .hero-section .hero-collage-wrapper .speakers-combo {
@@ -6140,12 +6276,25 @@
       mix-blend-mode: normal !important;
     }
 
+    .hero-section .hero-collage-wrapper .collage-speaker,
+    .hero-section .hero-collage-wrapper .collage-speaker.collage-img {
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+      position: relative !important;
+      height: auto !important;
+      max-width: min(462px, 41.8vw) !important;
+      max-height: clamp(396px, 48.4vh, 572px) !important;
+    }
+
     .hero-section .hero-collage-wrapper .speakers-photo-wrap {
       mix-blend-mode: normal !important;
     }
 
     .hero-section .hero-collage-wrapper {
-      margin-bottom: -20px !important;
+      margin-bottom: 0 !important;
+      align-self: flex-start !important;
       background: transparent !important;
     }
 
@@ -6158,7 +6307,7 @@
       .hero-section .hero-container {
         flex-direction: column !important;
         align-items: center !important;
-        padding: 20px 20px 20px !important;
+        padding: clamp(1.25rem, 3vh, 1.75rem) 20px clamp(2.5rem, 6vh, 3.5rem) !important;
         overflow: visible !important;
         display: flex !important;
         gap: 0 !important;
@@ -6280,7 +6429,7 @@
 
       .hero-section .hero-collage-wrapper {
         width: 100% !important;
-        max-width: min(100%, 340px) !important;
+        max-width: min(100%, 480px) !important;
         height: auto !important;
         min-height: 0 !important;
         margin: 10px auto 0 !important;
@@ -6298,6 +6447,30 @@
         height: auto !important;
         width: 100% !important;
         overflow: visible !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-speaker:not(#hero-speaker-left):not(#hero-speaker-right) {
+        position: relative !important;
+        width: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-width: none !important;
+        max-height: 506px !important;
+        object-fit: contain !important;
+        object-position: center bottom !important;
+        display: block !important;
+        transform: none !important;
+        transform-origin: bottom center !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-speaker.collage-img.collage-speaker--left {
+        margin-right: -12% !important;
+      }
+
+      .hero-section .hero-collage-wrapper .speakers-photo-wrap {
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
       }
 
       .hero-section .hero-collage-wrapper .speakers-combo {
@@ -6351,10 +6524,6 @@
         right: 44px !important;
         left: auto !important;
       }
-    }
-
-    .hero-section .hero-collage-wrapper {
-      display: none !important;
     }
 
     /* HERO — 3 теми (лише кольори): hero-theme-dark | hero-theme-light | hero-theme-kdp */
@@ -6653,6 +6822,46 @@
       border-color: rgba(var(--hero-orange-rgb), 0.22) !important;
     }
 
+    /* Hero — композиція без обрізання знизу (плашки лишаються в лівій колонці) */
+    .hero-section.hero-bg {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      overflow-y: visible !important;
+      padding-bottom: clamp(2.5rem, 6vh, 4rem) !important;
+    }
+
+    .hero-section.hero-bg > .hero-container {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    @media (min-width: 992px) {
+      .hero-section .hero-container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        column-gap: 28px !important;
+        padding: 12px 24px 36px !important;
+      }
+
+      .hero-section .hero-text-content {
+        flex: 1 1 52% !important;
+        max-width: 600px !important;
+        align-self: flex-start !important;
+      }
+
+      .hero-section .hero-text-content .hero-benefits {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    #intro-video.intro-video-section,
+    #intro-video {
+      padding-top: clamp(2rem, 5vh, 3rem) !important;
+    }
+
     /* ═══ SITE LIGHT THEME (весь сайт) ═══ */
     body.site-theme-light {
       --bg: #F7F7F7;
@@ -6665,6 +6874,8 @@
       --glass-highlight: rgba(255, 255, 255, 1);
       --glow-orange: rgba(255, 92, 0, 0.22);
       --glow-orange-soft: rgba(255, 92, 0, 0.1);
+      --hero-orange: #FF5C00;
+      --hero-orange-rgb: 255, 92, 0;
       --text-heading: #1A1A1A;
       --text-body: #5C5C5C;
       --text-muted: #888888;
@@ -6872,6 +7083,40 @@
       display: none !important;
     }
 
+    body.site-theme-light #cases .proof-carousel-viewport {
+      background: #FFFFFF !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    body.site-theme-light #cases .proof-carousel-slide {
+      background: #FFFFFF !important;
+    }
+
+    body.site-theme-light #cases .proof-carousel-btn {
+      background: #FFFFFF !important;
+      color: var(--hero-orange, var(--accent)) !important;
+      border-color: rgba(255, 92, 0, 0.22) !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    body.site-theme-light #cases .proof-carousel-btn:hover {
+      background: rgba(255, 92, 0, 0.06) !important;
+      border-color: rgba(255, 92, 0, 0.35) !important;
+    }
+
+    body.site-theme-light #cases .proof-carousel-dot {
+      background: rgba(0, 0, 0, 0.12) !important;
+    }
+
+    body.site-theme-light #cases .proof-carousel-dot.is-active {
+      background: var(--hero-orange, var(--accent)) !important;
+    }
+
+    body.site-theme-light #cases .proof-carousel-wrap {
+      border-top-color: var(--border) !important;
+    }
+
     body.site-theme-light #benefits .reason-item {
       background: #FFFFFF !important;
       border: 1px solid var(--border) !important;
@@ -6983,17 +7228,22 @@
 
     body.site-theme-light .faq-telegram-btn,
     body.site-theme-light a.faq-telegram-btn {
-      background: var(--accent) !important;
+      background: #2AABEE !important;
       background-image: none !important;
       color: #FFFFFF !important;
       -webkit-text-fill-color: #FFFFFF !important;
-      box-shadow: 0 4px 20px rgba(255, 92, 0, 0.28) !important;
+      box-shadow: 0 4px 20px rgba(42, 171, 238, 0.35) !important;
     }
 
     body.site-theme-light .faq-telegram-btn:hover,
     body.site-theme-light a.faq-telegram-btn:hover {
-      background: var(--accent-dark) !important;
+      background: #229ED9 !important;
       background-image: none !important;
+      box-shadow: 0 6px 28px rgba(34, 158, 217, 0.42) !important;
+    }
+
+    body.site-theme-light .faq-telegram-btn svg {
+      color: #FFFFFF !important;
     }
 
     body.site-theme-light .nav-link:hover {
@@ -7060,9 +7310,31 @@
     }
 
     body.site-theme-light .speaker-photo-slot {
-      background:
-        radial-gradient(ellipse 95% 55% at 50% 0%, rgba(255, 92, 0, 0.06) 0%, transparent 58%),
-        radial-gradient(ellipse 70% 65% at 50% 88%, rgba(255, 92, 0, 0.1) 0%, transparent 62%) !important;
+      background: transparent !important;
+    }
+
+    body.site-theme-light .speaker-photo-slot::before,
+    body.site-theme-light .speaker-photo-slot::after {
+      display: none !important;
+    }
+
+    body.site-theme-light #authors .speaker-photo-slot::before,
+    body.site-theme-light #authors .speaker-photo-slot::after {
+      display: block !important;
+      content: '' !important;
+    }
+
+    body.site-theme-light .speaker-photo-slot img {
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08)) !important;
+    }
+
+    body.site-theme-light #authors .speaker-photo-slot img {
+      filter: drop-shadow(0 0 30px rgba(var(--hero-orange-rgb), 0.28)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.06)) !important;
+    }
+
+    body.site-theme-light #authors .speaker-photo-slot {
+      overflow: visible !important;
+      filter: none !important;
     }
 
     body.site-theme-light .speaker-card {
@@ -7158,9 +7430,396 @@
       color: var(--text-muted) !important;
     }
 
+    body.site-theme-light .final-cta-note-accent {
+      color: var(--hero-orange, var(--accent, #FF5C00)) !important;
+      -webkit-text-fill-color: var(--hero-orange, var(--accent, #FF5C00)) !important;
+    }
+
     body.site-theme-light .video-case-name {
       color: var(--text-heading) !important;
       -webkit-text-fill-color: var(--text-heading) !important;
+    }
+
+    /* ═══ HERO SPEAKERS — як hero-section.html / референс ═══ */
+    .hero-section .hero-collage-wrapper {
+      position: relative !important;
+      width: 550px !important;
+      height: 550px !important;
+      min-height: 0 !important;
+      flex-shrink: 0 !important;
+      margin: 20px 10px 0 auto !important;
+      overflow: visible !important;
+      background: transparent !important;
+    }
+
+    .hero-section .hero-collage-wrapper .speakers-photo-wrap {
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      top: auto !important;
+      width: 100% !important;
+      height: 100% !important;
+      transform: none !important;
+      display: block !important;
+      z-index: 2 !important;
+      overflow: visible !important;
+    }
+
+    .hero-section .hero-collage-wrapper .collage-speaker,
+    .hero-section .hero-collage-wrapper .collage-speaker.collage-img {
+      position: absolute !important;
+      bottom: 0 !important;
+      height: 100% !important;
+      width: auto !important;
+      max-width: none !important;
+      max-height: 100% !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      object-fit: contain !important;
+      flex-shrink: 0 !important;
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      filter: none !important;
+    }
+
+    /* Підсвітка спікерів — як у дизайн-системі сайту */
+    .hero-section .hero-collage-wrapper .collage-stage {
+      clip-path: none !important;
+      inset: -48px -28px -8px -28px !important;
+    }
+
+    .hero-section .hero-collage-wrapper .collage-glow--ambient {
+      top: 68% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 88% !important;
+      height: 55% !important;
+      background:
+        radial-gradient(ellipse 55% 65% at 50% 50%,
+          rgba(var(--hero-orange-rgb), 0.16) 0%,
+          rgba(var(--hero-orange-rgb), 0.06) 42%,
+          transparent 72%) !important;
+      filter: blur(28px) !important;
+      opacity: 1 !important;
+      -webkit-mask-image: linear-gradient(
+        to top,
+        transparent 0%,
+        rgba(0, 0, 0, 0.35) 10%,
+        rgba(0, 0, 0, 0.75) 20%,
+        #000 36%,
+        #000 100%
+      ) !important;
+      mask-image: linear-gradient(
+        to top,
+        transparent 0%,
+        rgba(0, 0, 0, 0.35) 10%,
+        rgba(0, 0, 0, 0.75) 20%,
+        #000 36%,
+        #000 100%
+      ) !important;
+    }
+
+    .hero-section .hero-collage-wrapper .collage-glow--dots {
+      opacity: 0.22 !important;
+      background-image: radial-gradient(rgba(var(--hero-orange-rgb), 0.45) 1px, transparent 1px) !important;
+      background-size: 16px 16px !important;
+      mask-image: radial-gradient(ellipse 70% 55% at 54% 72%, black 0%, transparent 78%) !important;
+      -webkit-mask-image: radial-gradient(ellipse 70% 55% at 54% 72%, black 0%, transparent 78%) !important;
+    }
+
+    .hero-section .hero-collage-wrapper::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    #hero-speaker-left,
+    #hero-speaker-right {
+      filter: drop-shadow(0 0 28px rgba(var(--hero-orange-rgb), 0.16)) !important;
+      -webkit-mask-image: linear-gradient(
+        to top,
+        transparent 0%,
+        rgba(0, 0, 0, 0.35) 7%,
+        rgba(0, 0, 0, 0.9) 14%,
+        #000 20%,
+        #000 100%
+      ) !important;
+      mask-image: linear-gradient(
+        to top,
+        transparent 0%,
+        rgba(0, 0, 0, 0.35) 7%,
+        rgba(0, 0, 0, 0.9) 14%,
+        #000 20%,
+        #000 100%
+      ) !important;
+    }
+
+    @media (min-width: 992px) {
+      .hero-section .hero-collage-wrapper .collage-badge.badge-income {
+        bottom: 112px !important;
+        right: 298px !important;
+        left: auto !important;
+        z-index: 5 !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
+        bottom: 99px !important;
+        right: 72px !important;
+        left: auto !important;
+        z-index: 6 !important;
+      }
+    }
+
+    .hero-section .hero-collage-wrapper .speakers-photo-fade {
+      display: block !important;
+      position: absolute !important;
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) !important;
+      width: 185% !important;
+      bottom: -40px !important;
+      height: calc(36% + 40px) !important;
+      z-index: 4 !important;
+      pointer-events: none !important;
+      background: linear-gradient(
+        to top,
+        var(--hero-page-bg, #F7F7F7) 0%,
+        var(--hero-page-bg, #F7F7F7) 34%,
+        color-mix(in srgb, var(--hero-page-bg, #F7F7F7) 94%, transparent) 46%,
+        color-mix(in srgb, var(--hero-page-bg, #F7F7F7) 62%, transparent) 62%,
+        color-mix(in srgb, var(--hero-page-bg, #F7F7F7) 30%, transparent) 78%,
+        transparent 100%
+      ) !important;
+    }
+
+    .hero-section .hero-collage-wrapper::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .hero-section.hero-bg::after {
+      content: "" !important;
+      display: block !important;
+      position: absolute !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      height: clamp(64px, 10vh, 120px) !important;
+      pointer-events: none !important;
+      z-index: 4 !important;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        color-mix(in srgb, var(--hero-page-bg, #F7F7F7) 72%, transparent) 42%,
+        var(--hero-page-bg, #F7F7F7) 100%
+      ) !important;
+    }
+
+    @media (min-width: 992px) {
+      .hero-section .hero-container {
+        align-items: flex-start !important;
+        padding: 8px 24px 48px !important;
+      }
+
+      .hero-section.hero-bg {
+        padding-bottom: 48px !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hero-section .hero-collage-wrapper {
+        width: min(100%, 360px) !important;
+        height: 352px !important;
+        margin: 20px auto 0 auto !important;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .hero-section .hero-collage-wrapper {
+        width: 580px !important;
+        height: 580px !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-income {
+        bottom: 120px !important;
+        right: 308px !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
+        bottom: 101px !important;
+        right: 74px !important;
+      }
+    }
+
+    /* зсув спікерів: базова позиція + окремо 20px */
+    #hero-speaker-left,
+    #hero-speaker-right {
+      position: absolute !important;
+      bottom: 0 !important;
+      height: 100% !important;
+      width: auto !important;
+      margin: 0 !important;
+      image-rendering: auto !important;
+      -webkit-backface-visibility: hidden !important;
+      backface-visibility: hidden !important;
+    }
+
+    #hero-speaker-left {
+      right: calc(50% - 6%) !important;
+      left: auto !important;
+      object-position: bottom right !important;
+      transform-origin: bottom right !important;
+      transform: translate3d(120px, 0, 0) scale(0.975) !important;
+      z-index: 1 !important;
+    }
+
+    #hero-speaker-right {
+      left: calc(50% - 6%) !important;
+      right: auto !important;
+      object-position: bottom left !important;
+      transform: translate3d(-80px, 0, 0) !important;
+      z-index: 3 !important;
+    }
+
+    @media (max-width: 991px) {
+      #hero-speaker-left {
+        right: calc(50% - 8%) !important;
+        transform-origin: bottom right !important;
+        transform: translate3d(72px, 0, 0) scale(0.975) !important;
+      }
+
+      #hero-speaker-right {
+        left: calc(50% - 8%) !important;
+        transform: translate3d(-32px, 0, 0) !important;
+      }
+    }
+
+    /* ═══ AUTHORS — фото спікерів: підсвітка + м’який низ ═══ */
+    #authors .speaker-card-glow {
+      display: block !important;
+      z-index: 0;
+      width: 96%;
+      height: 52%;
+      bottom: -2%;
+      background:
+        radial-gradient(ellipse 68% 78% at 50% 88%,
+          rgba(var(--hero-orange-rgb), 0.48) 0%,
+          rgba(var(--hero-orange-rgb), 0.22) 38%,
+          transparent 72%) !important;
+      filter: blur(22px);
+      opacity: 1;
+    }
+
+    #authors .speaker-photo-slot {
+      overflow: visible !important;
+    }
+
+    #authors .speaker-photo-slot::before {
+      display: block !important;
+      content: '' !important;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 118%;
+      height: 48%;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 62% 72% at 50% 88%,
+          rgba(var(--hero-orange-rgb), 0.42) 0%,
+          rgba(var(--hero-orange-rgb), 0.18) 42%,
+          transparent 74%);
+      filter: blur(20px);
+    }
+
+    #authors .speaker-photo-slot::after {
+      display: block !important;
+      content: '' !important;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4%;
+      z-index: 3;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        color-mix(in srgb, #FFFFFF 92%, transparent) 0%,
+        transparent 100%
+      );
+    }
+
+    #authors .speaker-photo-slot img {
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 0 30px rgba(var(--hero-orange-rgb), 0.28)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.06)) !important;
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+    }
+
+    /* ═══ HERO MOBILE — fade не перекриває плашки, менший відступ до відео ═══ */
+    @media (max-width: 991px) {
+      .hero-section .hero-collage-wrapper {
+        z-index: 6 !important;
+        margin-bottom: 0 !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge,
+      .hero-section .hero-collage-wrapper .collage-badge.badge-income,
+      .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
+        z-index: 8 !important;
+      }
+
+      .hero-section .hero-collage-wrapper .speakers-photo-fade {
+        z-index: 3 !important;
+        bottom: 0 !important;
+        width: 130% !important;
+        height: 18% !important;
+        background: linear-gradient(
+          to top,
+          var(--hero-page-bg, #F7F7F7) 0%,
+          color-mix(in srgb, var(--hero-page-bg, #F7F7F7) 82%, transparent) 55%,
+          transparent 100%
+        ) !important;
+      }
+
+      .hero-section.hero-bg::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      .hero-section.hero-bg {
+        padding-bottom: 0.75rem !important;
+      }
+
+      .hero-section .hero-container {
+        padding-bottom: 0.5rem !important;
+      }
+
+      .hero-section .hero-benefits {
+        margin-bottom: 0 !important;
+      }
+
+      #intro-video.intro-video-section,
+      #intro-video {
+        padding-top: 1rem !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-income {
+        bottom: 90px !important;
+        right: 118px !important;
+        left: auto !important;
+      }
+
+      .hero-section .hero-collage-wrapper .collage-badge.badge-experience {
+        bottom: 95px !important;
+        right: 4px !important;
+        left: auto !important;
+      }
     }
   </style>
 </head>
@@ -7265,16 +7924,29 @@
           </div>
           <div class="speakers-photo-wrap">
             <img
-              src="images/speakers-hero.png?v=2"
-              class="collage-img speakers-combo"
-              width="1019"
-              height="820"
-              alt="Микола Матушевський та Олег Бєлоцерковець"
+              id="hero-speaker-left"
+              src="images/speaker-mykola-hq.png?v=33"
+              srcset="images/speaker-mykola-hq.png?v=33 1x, images/speaker-mykola@2x.png?v=33 2x"
+              class="collage-img collage-speaker collage-speaker--left"
+              width="928"
+              height="1024"
+              alt="Микола Матушевський"
               decoding="async"
               fetchpriority="high"
             />
-            <div class="speakers-photo-fade" aria-hidden="true"></div>
+            <img
+              id="hero-speaker-right"
+              src="images/speaker-oleg-hq.png?v=33"
+              srcset="images/speaker-oleg-hq.png?v=33 1x, images/speaker-oleg@2x.png?v=33 2x"
+              class="collage-img collage-speaker collage-speaker--right"
+              width="874"
+              height="1024"
+              alt="Олег Бєлоцерковець"
+              decoding="async"
+              fetchpriority="high"
+            />
           </div>
+          <div class="speakers-photo-fade" aria-hidden="true"></div>
           <div class="collage-badge badge-income">
             <span class="badge-icon" aria-hidden="true">
               <img src="images/amazon-icon.png" alt="" class="amazon-mark" width="24" height="36" decoding="async">
@@ -7342,7 +8014,7 @@
           <div class="speaker-card-glow" aria-hidden="true"></div>
           <div class="relative z-10 flex flex-col h-full">
             <div class="speaker-photo-slot mb-3">
-              <img src="images/speaker-oleg.png" alt="Олег Бєлоцерковець" width="400" height="500" loading="lazy" />
+              <img src="images/speaker-oleg.png?v=13" alt="Олег Бєлоцерковець" width="874" height="1024" loading="lazy" />
             </div>
             <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">Олег Бєлоцерковець</h3>
             <ul class="speaker-facts mt-auto">
@@ -7358,7 +8030,7 @@
           <div class="speaker-card-glow" aria-hidden="true"></div>
           <div class="relative z-10 flex flex-col h-full">
             <div class="speaker-photo-slot mb-3">
-              <img src="images/speaker-mykola.png?v=1" alt="Микола Матушевський" width="408" height="612" loading="lazy" />
+              <img src="images/speaker-mykola.png?v=13" alt="Микола Матушевський" width="928" height="1024" loading="lazy" />
             </div>
             <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">Микола Матушевський</h3>
             <ul class="speaker-facts mt-auto">
@@ -7388,7 +8060,7 @@
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">01</span>
           <h3 class="reason-title">Почніть без досвіду в&nbsp;Amazon, книгах або&nbsp;онлайн&#8209;бізнесі</h3>
-          <p class="reason-desc">Не&nbsp;потрібно бути письменником, дизайнером чи&nbsp;маркетологом.</p>
+          <p class="reason-desc">Не&nbsp;потрібно бути письменником, відомим автором та&nbsp;замовляти тираж.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">02</span>
@@ -7397,12 +8069,12 @@
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">03</span>
-          <h3 class="reason-title">Отримуйте $, €&nbsp;та&nbsp;£&nbsp;з&nbsp;будь&#8209;якої&nbsp;точки світу</h3>
-          <p class="reason-desc">10+&nbsp;міжнародних ринків. Працює з&nbsp;будь&#8209;якої країни.</p>
+          <h3 class="reason-title">Отримуйте $, €&nbsp;чи&nbsp;£&nbsp;з&nbsp;будь&#8209;якої&nbsp;точки світу</h3>
+          <p class="reason-desc">Продавайте віддалено на&nbsp;10+&nbsp;країн на&nbsp;5&#8209;ти мовах.</p>
         </article>
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">04</span>
-          <h3 class="reason-title">Розвивайте паралельно з&nbsp;основною роботою</h3>
+          <h3 class="reason-title">Поєднуйте з&nbsp;основною роботою</h3>
           <p class="reason-desc">Приділяйте 2–3&nbsp;години на&nbsp;день у&nbsp;зручний для&nbsp;вас час.</p>
         </article>
         <article class="reason-item">
@@ -7413,7 +8085,7 @@
         <article class="reason-item">
           <span class="reason-num" aria-hidden="true">06</span>
           <h3 class="reason-title">Книги з&nbsp;потенціалом від&nbsp;$3000&nbsp;на&nbsp;місяць</h3>
-          <p class="reason-desc">Покажемо, як знаходити теми, де конкуренція низька, а&nbsp;попит росте.</p>
+          <p class="reason-desc">Покажемо, як знаходити теми, де конкуренція ще низька, а&nbsp;попит зростає.</p>
         </article>
       </div>
 
@@ -7445,7 +8117,7 @@
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">📈</span>
-          <p class="for-whom-text"><strong>Підприємцям</strong>, які хочуть запустити новий бізнес і вийти на міжнародні маркетплейси.</p>
+          <p class="for-whom-text"><strong>Підприємцям</strong>, які хочуть запустити новий бізнес і вийти онлайн на найбільший маркетплейс світу.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">🛒</span>
@@ -7453,23 +8125,23 @@
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">💻</span>
-          <p class="for-whom-text"><strong>Фрілансерам</strong> та IT-фахівцям (ілюстраторам, дизайнерам, маркетологам та іншим), які шукають нові джерела високого віддаленого доходу.</p>
+          <p class="for-whom-text"><strong>Фрілансерам</strong> (IT &amp; програмісти, дизайнери, маркетологи, контент-мейкери, копірайтери, перекладачі), які шукають новий дохід.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">✈️</span>
-          <p class="for-whom-text"><strong>Іммігрантам</strong>, яким необхідний стабільний міжнародний онлайн-бізнес для швидкої адаптації за кордоном.</p>
+          <p class="for-whom-text"><strong>Іммігрантам</strong> (Digital, IT, фрілансери, працівники фізичної праці, жінки за кордоном), які вже користуються Amazon.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">🎨</span>
-          <p class="for-whom-text"><strong>Експертам</strong> (психологам, коучам, нутриціологам та іншим фахівцям), які хочуть заявити про себе, розвинути особистий експертний бренд та отримати конкурентну перевагу над колегами завдяки власній книзі.</p>
+          <p class="for-whom-text"><strong>Експертам</strong> (психологи, коучі, бізнес-консультанти та інші), які хочуть підвищити впізнаваність свого експертного бренду, отримати медійність та конкурентну перевагу над колегами завдяки власній книзі.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">⚡</span>
-          <p class="for-whom-text"><strong>AI-Ентузіастам</strong> — тим, хто захоплюється штучним інтелектом і хоче в ньому розібратися.</p>
+          <p class="for-whom-text"><strong>AI-Ентузіастам</strong> — тим, хто захоплюється штучним інтелектом, але ще не використовує AI для створення доходу.</p>
         </li>
         <li class="for-whom-item">
           <span class="ui-icon" aria-hidden="true">📚</span>
-          <p class="for-whom-text"><strong>Видавцям</strong> на KDP, які хочуть збільшити дохід і покращити поточні результати.</p>
+          <p class="for-whom-text"><strong>Авторам або Видавцям</strong>, які тільки хочуть вийти на Amazon або збільшити там свій дохід і кількість книг.</p>
         </li>
       </ul>
 
@@ -7533,6 +8205,29 @@
           <p class="case-desc">Заробив $10,462 за перші 3 місяці, додав нові книги і отримав $197,667.95.</p>
         </article>
 
+      </div>
+
+      <div class="proof-carousel-wrap">
+        <div class="proof-carousel" id="proof-carousel" aria-roledescription="carousel" aria-label="Скріншоти відгуків та результатів учнів">
+          <button type="button" class="proof-carousel-btn proof-carousel-btn--prev" data-proof-prev aria-label="Попередній слайд">‹</button>
+          <div class="proof-carousel-viewport">
+            <div class="proof-carousel-track" data-proof-track>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-01.png?v=2" alt="Відгук про курс — потужна програма та підтримка" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-02.png?v=2" alt="Роялті $5 034 за квітень" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-03.png?v=2" alt="Друга книга — $1 639 роялті за місяць" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-04.png?v=2" alt="Результати учня — $10 462 роялті, окупність за 2 місяці" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-05.png?v=2" alt="Роялті $3 250 за перший місяць" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-06.png?v=2" alt="Бестселер — роялті 5900 фунтів" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-07.png?v=2" alt="Чистий прибуток 1440 фунтів на 1 книзі" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-08.png?v=2" alt="Відгук про курс Олега та Миколи" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-09.png?v=2" alt="Результати реклами — продажі $1 334 за місяць" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-10.png?v=2" alt="Відгуки про цінність курсу та комʼюніті" width="1024" height="1024" loading="lazy" decoding="async"></div>
+              <div class="proof-carousel-slide"><img src="images/reviews/proof-11.png?v=2" alt="Статус Best Seller на Amazon" width="1024" height="1024" loading="lazy" decoding="async"></div>
+            </div>
+          </div>
+          <button type="button" class="proof-carousel-btn proof-carousel-btn--next" data-proof-next aria-label="Наступний слайд">›</button>
+          <div class="proof-carousel-dots" data-proof-dots role="tablist" aria-label="Слайди відгуків"></div>
+        </div>
       </div>
 
       <div class="text-center mt-8 sm:mt-10">
@@ -7673,10 +8368,13 @@
     <div class="max-w-[880px] mx-auto px-4 sm:px-6">
 
       <div class="text-center mb-8 sm:mb-10">
-        <span class="bonus-pill mb-3 mx-auto"><span class="ui-icon ui-icon--sm" aria-hidden="true">🎁</span> Бонус</span>
+        <span class="bonus-pill mb-3 mx-auto">Бонус</span>
         <h2 class="headline-glow max-w-4xl mx-auto">
           <span class="headline-glow-line">30-хвилинна стратегічна сесія</span>
-          <span class="headline-glow-line">у подарунок</span>
+          <span class="headline-glow-line bonus-headline-ending">
+            <span class="bonus-headline-ending-text">у подарунок</span>
+            <span class="ui-icon bonus-headline-gift" aria-hidden="true">🎁</span>
+          </span>
         </h2>
         <p class="bonus-intro-copy mt-4 sm:mt-5">
           За&nbsp;30&nbsp;хвилин експерт складе <strong>покроковий план під&nbsp;вас</strong> за&nbsp;нашою методикою: скільки грошей потрібно для вашої цілі, на&nbsp;що розраховувати і&nbsp;що робити в&nbsp;перші&nbsp;7&nbsp;і&nbsp;30&nbsp;днів.
@@ -7688,11 +8386,11 @@
         <ul class="bonus-topics">
           <li class="bonus-topic">
             <span class="ui-icon" aria-hidden="true">📋</span>
-            <span class="bonus-topic-text">Покроковий план запуску під&nbsp;вашу ситуацію</span>
+            <span class="bonus-topic-text">Ваш персональний покроковий план запуску</span>
           </li>
           <li class="bonus-topic">
             <span class="ui-icon" aria-hidden="true">💰</span>
-            <span class="bonus-topic-text">Бюджет під&nbsp;ціль: скільки вкласти для&nbsp;$1000,&nbsp;$3000&nbsp;або&nbsp;$5000&nbsp;на&nbsp;місяць</span>
+            <span class="bonus-topic-text">Зрозумієте ваш бюджет для виходу на дохід $1000,&nbsp;$3000&nbsp;або&nbsp;$5000+</span>
           </li>
           <li class="bonus-topic">
             <span class="ui-icon" aria-hidden="true">📅</span>
@@ -7884,14 +8582,14 @@
         <span class="headline-glow-line">план на $3000/місяць</span>
       </h2>
 
-      <p class="final-cta-copy mb-6 sm:mb-7">Без досвіду, без англійської, без звільнення з роботи. За один вечір ви побачите, як продавати&nbsp;книги в 10+&nbsp;країн, і отримувати $, € та £ на картку. Ви можете закрити сторінку — і нічого&nbsp;не&nbsp;зміниться. Або натиснути кнопку і вже сьогодні почати шлях, який змінив життя сотням&nbsp;наших&nbsp;студентів.</p>
+      <p class="final-cta-copy mb-6 sm:mb-7">Без досвіду, без англійської, без звільнення з роботи. За один вечір ви побачите, як створювати та продавати&nbsp;книги в 10+&nbsp;країн, і отримувати $, € та £ на рахунок. Ви можете закрити сторінку — і нічого&nbsp;не&nbsp;зміниться. Або натиснути кнопку і вже сьогодні почати шлях, який змінив життя сотням&nbsp;наших&nbsp;учнів.</p>
 
       <a href="#join" class="final-cta-btn">
         Почати за 499 грн →
       </a>
 
       <p class="final-cta-note">
-        Старт одразу після оплати · 30-хвилинна сесія у подарунок
+        Старт одразу після оплати · <strong class="final-cta-note-accent">30-хвилинна сесія у подарунок</strong>
       </p>
 
     </div>
@@ -8043,8 +8741,6 @@
           dot.classList.toggle('is-active', active);
           dot.setAttribute('aria-selected', active ? 'true' : 'false');
         });
-        if (prevBtn) prevBtn.disabled = index === 0;
-        if (nextBtn) nextBtn.disabled = index === total - 1;
       }
 
       if (prevBtn) {
