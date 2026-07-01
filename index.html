@@ -2251,6 +2251,44 @@
       color: #fff;
     }
 
+    #authors .speaker-bio--rich {
+      text-align: left;
+    }
+
+    #authors .speaker-bio--rich p {
+      margin: 0 0 0.65rem;
+    }
+
+    #authors .speaker-bio--rich p:last-child {
+      margin-bottom: 0;
+    }
+
+    #authors .speaker-bio-lead {
+      margin-bottom: 0.75rem !important;
+      font-size: clamp(0.5625rem, 2.45vw, 0.8125rem) !important;
+      line-height: 1.45 !important;
+      letter-spacing: -0.015em;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 640px) {
+      #authors .speaker-bio-lead {
+        letter-spacing: -0.01em;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #authors .speaker-bio-lead {
+        letter-spacing: 0;
+      }
+    }
+
+    #authors .speaker-bio-lead strong {
+      font-weight: 800;
+      color: #FF9900;
+      -webkit-text-fill-color: #FF9900;
+    }
+
     @media (min-width: 640px) {
       .speaker-bio {
         font-size: 0.9375rem;
@@ -2986,6 +3024,26 @@
       font-size: var(--fs-body) !important;
       line-height: var(--lh) !important;
       font-style: normal !important;
+    }
+
+    p.video-case-stat {
+      font-size: 0.75rem !important;
+      font-weight: 700 !important;
+      line-height: 1.4 !important;
+      letter-spacing: 0.02em !important;
+      text-transform: uppercase !important;
+      background: none !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: var(--accent-dark, #E47911) !important;
+      -webkit-text-fill-color: var(--accent-dark, #E47911) !important;
+    }
+
+    @media (min-width: 640px) {
+      p.video-case-stat {
+        font-size: 0.8125rem !important;
+      }
     }
 
     .text-gray-900 {
@@ -7304,6 +7362,11 @@
       -webkit-text-fill-color: var(--accent) !important;
     }
 
+    body.site-theme-light #authors .speaker-bio-lead strong {
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent) !important;
+    }
+
     body.site-theme-light .speaker-bio,
     body.site-theme-light .speaker-facts {
       border-top-color: var(--border) !important;
@@ -7440,6 +7503,11 @@
       -webkit-text-fill-color: var(--text-heading) !important;
     }
 
+    body.site-theme-light .video-case-stat {
+      color: var(--hero-orange, #FF5C00) !important;
+      -webkit-text-fill-color: var(--hero-orange, #FF5C00) !important;
+    }
+
     /* ═══ HERO SPEAKERS — як hero-section.html / референс ═══ */
     .hero-section .hero-collage-wrapper {
       position: relative !important;
@@ -7536,7 +7604,19 @@
       content: none !important;
     }
 
-    #hero-speaker-left,
+    #hero-speaker-left {
+      filter:
+        drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.92))
+        drop-shadow(0 0 5px rgba(255, 255, 255, 0.38))
+        drop-shadow(0 0 14px rgba(var(--hero-orange-rgb), 0.14))
+        drop-shadow(0 0 28px rgba(var(--hero-orange-rgb), 0.16)) !important;
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
     #hero-speaker-right {
       filter: drop-shadow(0 0 28px rgba(var(--hero-orange-rgb), 0.16)) !important;
       -webkit-mask-image: linear-gradient(
@@ -7925,8 +8005,8 @@
           <div class="speakers-photo-wrap">
             <img
               id="hero-speaker-left"
-              src="images/speaker-mykola-hq.png?v=33"
-              srcset="images/speaker-mykola-hq.png?v=33 1x, images/speaker-mykola@2x.png?v=33 2x"
+              src="images/speaker-mykola-hq.png?v=34"
+              srcset="images/speaker-mykola-hq.png?v=34 1x, images/speaker-mykola@2x.png?v=34 2x"
               class="collage-img collage-speaker collage-speaker--left"
               width="928"
               height="1024"
@@ -8017,12 +8097,13 @@
               <img src="images/speaker-oleg.png?v=13" alt="Олег Бєлоцерковець" width="874" height="1024" loading="lazy" />
             </div>
             <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">Олег Бєлоцерковець</h3>
-            <ul class="speaker-facts mt-auto">
-              <li>15+ років в eCommerce</li>
-              <li>10 років в Amazon KDP</li>
-              <li>Автор методики <strong>«ФОРМУЛА ЗАПУСКУ — SFB»</strong></li>
-              <li>300+ книг у 2025 та 300+ учнів</li>
-            </ul>
+            <div class="speaker-bio speaker-bio--rich mt-auto">
+              <p class="speaker-bio-lead"><strong>Експерт з Amazon KDP та Private Label з 10-річним досвідом</strong></p>
+              <p>Автор онлайн-курсу «Формула Книжкового Бізнесу на Amazon», методики «Формула Запуску», інтенсивів, практикумів і майстер-класів з книжкового бізнесу на Amazon.</p>
+              <p>Досвід — 300+ цифрових книг у 8+ країнах 5 мовами, 500+ учнів і клієнтів.</p>
+              <p>Керую Amazon PPC Agency, яка допомогла 100+ Amazon-селерам розвивати продажі від $5,000 до $100,000.</p>
+              <p>Допомагаю авторам, експертам і підприємцям виходити на міжнародні ринки США, Канади та Європи через модель Amazon KDP.</p>
+            </div>
           </div>
         </article>
 
@@ -8030,7 +8111,7 @@
           <div class="speaker-card-glow" aria-hidden="true"></div>
           <div class="relative z-10 flex flex-col h-full">
             <div class="speaker-photo-slot mb-3">
-              <img src="images/speaker-mykola.png?v=13" alt="Микола Матушевський" width="928" height="1024" loading="lazy" />
+              <img src="images/speaker-mykola.png?v=14" alt="Микола Матушевський" width="928" height="1024" loading="lazy" />
             </div>
             <h3 class="speaker-name text-lg sm:text-xl font-extrabold uppercase leading-tight tracking-tight text-center mb-3">Микола Матушевський</h3>
             <ul class="speaker-facts mt-auto">
@@ -8169,7 +8250,7 @@
           <div class="video-embed">
             <iframe src="https://www.youtube-nocookie.com/embed/Ri_ic8ZB5x0?rel=0" title="Вікторія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-          <p class="case-desc">Працювала за наймом. За 3 місяці створила книгу в ніші психології і заробила $7,408.</p>
+          <p class="case-desc">Працювала за наймом. На своїй першій книзі в ніші психології заробила $7,408 за 3 місяці.</p>
         </article>
 
         <article class="video-card">
@@ -8180,7 +8261,7 @@
           <div class="video-embed">
             <iframe src="https://www.youtube-nocookie.com/embed/1qUj8TUGZBA?rel=0" title="Наталія — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-          <p class="case-desc">Живе в Туреччині. Запустила 3 кулінарні книги — одна посіла топ-1 на британському ринку.</p>
+          <p class="case-desc">Живе в Туреччині. Запустила 3 кулінарні книги — одна з яких була Бестселером на протязі 6 місяців на ринку Британії.</p>
         </article>
 
         <article class="video-card">
@@ -8202,7 +8283,7 @@
           <div class="video-embed">
             <iframe src="https://www.youtube-nocookie.com/embed/KVjiYVacIV8?rel=0" title="Денис — кейс" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-          <p class="case-desc">Заробив $10,462 за перші 3 місяці, додав нові книги і отримав $197,667.95.</p>
+          <p class="case-desc">Заробив $10,462 на першій книзі за 3 місяці. Запустив ще десятки книг і зробив за рік $197,667.95.</p>
         </article>
 
       </div>
@@ -8281,7 +8362,7 @@
             <div class="flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1">
               <h3 class="inside-video-title">ВІДЕО 3: АНАТОМІЯ УСПІШНОЇ КНИГИ</h3>
               <p class="inside-video-desc">Розбір ТОП-3 бестселерів, які заробляють від $3000 кожен</p>
-              <p class="program-result"><strong>РЕЗУЛЬТАТ:</strong> Ви побачите зсередини, як влаштовані книги, що реально продаються — і зрозумієте, за яким принципом будувати свою першу книгу.</p>
+              <p class="program-result"><strong>РЕЗУЛЬТАТ:</strong> Ви побачите зсередини, як влаштовані книги, що реально продаються — і зрозумієте, за яким принципом створювати свою першу книгу.</p>
             </div>
           </div>
         </article>
@@ -8617,30 +8698,33 @@
   <script>
     (function () {
       const deadline = new Date();
-      deadline.setDate(deadline.getDate() + 3);
-      deadline.setHours(23, 59, 59, 0);
+      deadline.setHours(23, 59, 59, 999);
+      if (deadline.getTime() <= Date.now()) {
+        deadline.setDate(deadline.getDate() + 1);
+      }
 
       const daysEl = document.getElementById('cd-days');
       const hoursEl = document.getElementById('cd-hours');
       const minsEl = document.getElementById('cd-mins');
       const secsEl = document.getElementById('cd-secs');
+      const daysWrap = daysEl && daysEl.closest('.timer-digit');
+      if (daysWrap) daysWrap.hidden = true;
 
       function pad(n) { return String(n).padStart(2, '0'); }
 
       function tick() {
         const diff = deadline - Date.now();
         if (diff <= 0) {
-          daysEl.textContent = '00';
+          if (daysEl) daysEl.textContent = '00';
           hoursEl.textContent = '00';
           minsEl.textContent = '00';
           secsEl.textContent = '00';
           return;
         }
-        const d = Math.floor(diff / 86400000);
-        const h = Math.floor((diff % 86400000) / 3600000);
+        const h = Math.floor(diff / 3600000);
         const m = Math.floor((diff % 3600000) / 60000);
         const s = Math.floor((diff % 60000) / 1000);
-        daysEl.textContent = pad(d);
+        if (daysEl) daysEl.textContent = '00';
         hoursEl.textContent = pad(h);
         minsEl.textContent = pad(m);
         secsEl.textContent = pad(s);
